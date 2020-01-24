@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id='account_journal_01' model='account.journal'>
+<field name='name'>REOUVERTURE</field>
+<field name='code'>10</field>
+<field name='active'>1</field>
+<field name='type'>general</field>
+</record>
+
+<record id='account_journal_02' model='account.journal'>
+<field name='name'>ACHATS IMPORTATION</field>
+<field name='code'>15</field>
+<field name='active'>1</field>
+<field name='type'>purchase</field>
+</record>
+
+<record id='account_journal_03' model='account.journal'>
+<field name='name'>ACHAT LOCAL</field>
+<field name='code'>16</field>
+<field name='active'>1</field>
+<field name='type'>purchase</field>
+</record>
+
+<record id='account_journal_04' model='account.journal'>
+<field name='name'>VENTES</field>
+<field name='code'>20</field>
+<field name='active'>1</field>
+<field name='type'>sale</field>
+</record>
+
+<!--banque    -->
+<record id='res_bank_ntixis' model='res.bank'>
+    <field name='name'>NATIXIS ALGERIE</field>
+</record>
+
+<record id='res_bank_alsalama' model='res.bank'>
+    <field name='name'>AL SALAM BANK ALGERIA</field>
+</record>
+
+<record id='res_bank_trust' model='res.bank'>
+    <field name='name'>TRUST BANK ALGERIA</field>
+</record>
+
+<record id='res_bank_sg' model='res.bank'>
+    <field name='name'>SOCIETE GENERALE ALGERIE</field>
+</record>
+
+<!--compte bancaire    -->
+<record id='res_partner_bank_natixis' model='res.partner.bank'>
+    <field name='acc_number'>020 00162 7280072001 47</field>
+    <field name='acc_type'>bank</field>
+    <field name='partner_id'>1</field>
+    <field name="bank_id" ref="res_bank_ntixis" />
+</record>
+
+<record id='res_partner_bank_alsalama' model='res.partner.bank'>
+    <field name='acc_number'>03801603000987000192</field>
+    <field name='acc_type'>bank</field>
+    <field name='partner_id'>1</field>
+    <field name="bank_id" ref="res_bank_alsalama" />
+</record>
+
+<record id='res_partner_bank_trust' model='res.partner.bank'>
+    <field name='acc_number'>02900208220026701643</field>
+    <field name='acc_type'>bank</field>
+    <field name='partner_id'>1</field>
+    <field name="bank_id" ref="res_bank_trust" />
+</record>
+
+<record id='res_partner_bank_sg1' model='res.partner.bank'>
+    <field name='acc_number'>021 00004 1130000644 40</field>
+    <field name='acc_type'>bank</field>
+    <field name='partner_id'>1</field>
+    <field name="bank_id" ref="res_bank_sg" />
+</record>
+
+<record id='res_partner_bank_sg2' model='res.partner.bank'>
+    <field name='acc_number'>021 00035 1130009208 55</field>
+    <field name='acc_type'>bank</field>
+    <field name='partner_id'>1</field>
+    <field name="bank_id" ref="res_bank_sg" />
+</record>
+
+<!--journaux-->
+<record id='account_journal_01' model='account.journal'>
+    <field name='name'>REOUVERTURE</field>
+    <field name='code'>10</field>
+    <field name='active'>1</field>
+    <field name='type'>general</field>
+</record>
+
+<record id='account_journal_02' model='account.journal'>
+    <field name='name'>ACHATS IMPORTATION</field>
+    <field name='code'>15</field>
+    <field name='active'>1</field>
+    <field name='type'>purchase</field>
+</record>
+
+<record id='account_journal_03' model='account.journal'>
+    <field name='name'>ACHAT LOCAL</field>
+    <field name='code'>16</field>
+    <field name='active'>1</field>
+    <field name='type'>purchase</field>
+</record>
+
+<record id='account_journal_04' model='account.journal'>
+    <field name='name'>VENTES</field>
+    <field name='code'>20</field>
+    <field name='active'>1</field>
+    <field name='type'>sale</field>
+</record>
+
+<record id='account_journal_05' model='account.journal'>
+    <field name='name'>ALSALAM BANK</field>
+    <field name='code'>BQ/AL</field>
+    <field name='active'>1</field>
+    <field name='type'>bank</field>
+    <field name="bank_account_id" ref="res_partner_bank_alsalama" />
+<!--    <field name="default_debit_account_id" ref="pcg_512400" />-->
+<!--    <field name="default_credit_account_id" ref="pcg_512400" />-->
+</record>
+
+<record id='account_journal_06' model='account.journal'>
+    <field name='name'>BANQUE NATIXIS</field>
+    <field name='code'>BQ/NA</field>
+    <field name='active'>1</field>
+    <field name='type'>bank</field>
+    <field name="bank_account_id" ref="res_partner_bank_natixis" />
+<!--    <field name="default_debit_account_id" ref="pcg_512300" />-->
+<!--    <field name="default_credit_account_id" ref="pcg_512300" />-->
+</record>
+
+<record id='account_journal_07' model='account.journal'>
+    <field name='name'>BANQUE TRUST BANK</field>
+    <field name='code'>BQ/TB</field>
+    <field name='active'>1</field>
+    <field name='type'>bank</field>
+    <field name="bank_account_id" ref="res_partner_bank_trust" />
+<!--    <field name="default_debit_account_id" ref="pcg_512100" />-->
+<!--    <field name="default_credit_account_id" ref="pcg_512100" />-->
+</record>
+
+<record id='account_journal_08' model='account.journal'>
+    <field name='name'>BANQUE SGA 01</field>
+    <field name='code'>BQ1</field>
+    <field name='active'>1</field>
+    <field name='type'>bank</field>
+    <field name="bank_account_id" ref="res_partner_bank_sg1" />
+<!--    <field name="default_debit_account_id" ref="pcg_512000" />-->
+<!--    <field name="default_credit_account_id" ref="pcg_512000" />-->
+</record>
+
+<record id='account_journal_09' model='account.journal'>
+    <field name='name'>BANQUE SGA 02</field>
+    <field name='code'>BQ2</field>
+    <field name='active'>1</field>
+    <field name='type'>bank</field>
+    <field name="bank_account_id" ref="res_partner_bank_sg2" />
+<!--    <field name="default_debit_account_id" ref="pcg_512200" />-->
+<!--    <field name="default_credit_account_id" ref="pcg_512200" />-->
+</record>
+
+<record id='account_journal_10' model='account.journal'>
+    <field name='name'>CAISSE</field>
+    <field name='code'>CA</field>
+    <field name='active'>1</field>
+    <field name='type'>cash</field>
+</record>
+
+<record id='account_journal_11' model='account.journal'>
+    <field name='name'>OPERATIONS DIVERSES</field>
+    <field name='code'>OD</field>
+    <field name='active'>1</field>
+    <field name='type'>general</field>
+</record>
+
+
+</odoo>

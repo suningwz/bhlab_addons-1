@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id='pcg_110013' model='account.account.template'>
+<field name='name'>RESULTAT EN INST. AFF. 2013</field>
+<field name='code'>110013</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_110014' model='account.account.template'>
+<field name='name'>RESULTAT EN INST AFFECTATION 2014</field>
+<field name='code'>110014</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_110015' model='account.account.template'>
+<field name='name'>RESULTAT EN INSTANCE AFFECT 2015</field>
+<field name='code'>110015</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_110016' model='account.account.template'>
+<field name='name'>RESULTAT EN INST AFFECTATION 2016</field>
+<field name='code'>110016</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_1100156' model='account.account.template'>
+<field name='name'>RESULTAT EN INST AFFECTATION 2016</field>
+<field name='code'>1100156</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_110017' model='account.account.template'>
+<field name='name'>RESULTAT EN INSTANCE D AFFECTATION 2017</field>
+<field name='code'>110017</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_164000' model='account.account.template'>
+<field name='name'>EMPRUNTS BANCAIRE</field>
+<field name='code'>164000</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_168000' model='account.account.template'>
+<field name='name'>LEASING (SGA et MLA)</field>
+<field name='code'>168000</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_211000' model='account.account.template'>
+<field name='name'>TERRAINS</field>
+<field name='code'>211000</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_215100' model='account.account.template'>
+<field name='name'>matériel et outillage industriels-REFRIGERATEUR</field>
+<field name='code'>215100</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_218100' model='account.account.template'>
+<field name='name'>AGENCEMENT ET INSTALLATION</field>
+<field name='code'>218100</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_218200' model='account.account.template'>
+<field name='name'>MATERIEL DE COMMUNICATION</field>
+<field name='code'>218200</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_218300' model='account.account.template'>
+<field name='name'>MATERIEL INFORMATIQUE</field>
+<field name='code'>218300</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_218400' model='account.account.template'>
+<field name='name'>MOBILIER DE BUREAU</field>
+<field name='code'>218400</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_218430' model='account.account.template'>
+<field name='name'>MATERIEL ET OUTILLAGE</field>
+<field name='code'>218430</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_218440' model='account.account.template'>
+<field name='name'>MATERIEL DE TRANSPORT</field>
+<field name='code'>218440</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_218500' model='account.account.template'>
+<field name='name'>MATERIEL DE SECURITE</field>
+<field name='code'>218500</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_218600' model='account.account.template'>
+<field name='name'>EQUIPEMENT INDUSTRIEL</field>
+<field name='code'>218600</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_218700' model='account.account.template'>
+<field name='name'>TELEPHONES MOBILES</field>
+<field name='code'>218700</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_238000' model='account.account.template'>
+<field name='name'>Avances et acomptes versés sur commandes d immobilisations</field>
+<field name='code'>238000</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_275000' model='account.account.template'>
+<field name='name'>Dépôts et cautionnement versés</field>
+<field name='code'>275000</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_275100' model='account.account.template'>
+<field name='name'>CAUTION S/ACQUISITION TERRAIN</field>
+<field name='code'>275100</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281100' model='account.account.template'>
+<field name='name'>AMORTISS AGENC ET INSTALLAT</field>
+<field name='code'>281100</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281510' model='account.account.template'>
+<field name='name'>AMORTISS MAT ET OUTILL INDUSTRI</field>
+<field name='code'>281510</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281810' model='account.account.template'>
+<field name='name'>AMORTISS AGENC ET INSTAL</field>
+<field name='code'>281810</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281820' model='account.account.template'>
+<field name='name'>AMORTISS MAT DE COMMUNICATION</field>
+<field name='code'>281820</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281830' model='account.account.template'>
+<field name='name'>AMORT.MATERIEL INFORMATIQUE</field>
+<field name='code'>281830</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281840' model='account.account.template'>
+<field name='name'>AMORTISS MOB DE BUREAU</field>
+<field name='code'>281840</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281843' model='account.account.template'>
+<field name='name'>AMORT.MATERIEL ET OUTILLAGE</field>
+<field name='code'>281843</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281844' model='account.account.template'>
+<field name='name'>AMMORTI MATERIEL DE TRANSPORT</field>
+<field name='code'>281844</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281850' model='account.account.template'>
+<field name='name'>AMORTISS MATERIEL DE SECURITE</field>
+<field name='code'>281850</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281860' model='account.account.template'>
+<field name='name'>AMORTISS EQUIPEMENT INDUSTRIEL</field>
+<field name='code'>281860</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_281870' model='account.account.template'>
+<field name='name'>AMMORTISS TEL MOBILE</field>
+<field name='code'>281870</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_300000' model='account.account.template'>
+<field name='name'>Stocks de marchandises</field>
+<field name='code'>300000</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_380000' model='account.account.template'>
+<field name='name'>ACHAT DE MARCHANDISES</field>
+<field name='code'>380000</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_390000' model='account.account.template'>
+<field name='name'>Pertes de valeur sur stocks de marchandises</field>
+<field name='code'>390000</field>
+<field name='user_type_id' ref='account.data_account_type_current_assets'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='dz_pcg_pay' model='account.account.template'>
+<field name='name'>Fournisseurs Local</field>
+<field name='code'>401000</field>
+<field name='user_type_id' ref='account.data_account_type_payable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_401100' model='account.account.template'>
+<field name='name'>FOURNISSEURS ETRANGERS</field>
+<field name='code'>401100</field>
+<field name='user_type_id' ref='account.data_account_type_payable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+
+<record id='pcg_401300' model='account.account.template'>
+<field name='name'>TAXE DOMICILIATION BANCAIRE</field>
+<field name='code'>401300</field>
+<field name='user_type_id' ref='account.data_account_type_payable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_403000' model='account.account.template'>
+<field name='name'>DROIT DE DOUANE</field>
+<field name='code'>403000</field>
+<field name='user_type_id' ref='account.data_account_type_payable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_408100' model='account.account.template'>
+<field name='name'>TRANSIT CHABANI FACTURE A RECEVOIR</field>
+<field name='code'>408100</field>
+<field name='user_type_id' ref='account.data_account_type_payable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_409000' model='account.account.template'>
+<field name='name'>Fournisseurs débiteurs : avances et acomptes versés</field>
+<field name='code'>409000</field>
+<field name='user_type_id' ref='account.data_account_type_payable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_409100' model='account.account.template'>
+<field name='name'>AVANCE AUX FOURNISSEURS</field>
+<field name='code'>409100</field>
+<field name='user_type_id' ref='account.data_account_type_payable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='dz_pcgre_cv' model='account.account.template'>
+<field name='name'>CLIENT</field>
+<field name='code'>411000</field>
+<field name='user_type_id' ref='account.data_account_type_receivable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_416000' model='account.account.template'>
+<field name='name'>Clients douteux</field>
+<field name='code'>416000</field>
+<field name='user_type_id' ref='account.data_account_type_receivable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_421000' model='account.account.template'>
+<field name='name'> Rémunérations dues au personnel</field>
+<field name='code'>421000</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_425000' model='account.account.template'>
+<field name='name'>Personnel, avances et acomptes accordés</field>
+<field name='code'>425000</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_428063' model='account.account.template'>
+<field name='name'>PERSONNEL CHARGE A PAYER</field>
+<field name='code'>428063</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_431001' model='account.account.template'>
+<field name='name'>Sécurité sociale 9%</field>
+<field name='code'>431001</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_431002' model='account.account.template'>
+<field name='name'>Sécurité sociale 26%</field>
+<field name='code'>431002</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_438063' model='account.account.template'>
+<field name='name'>ORGANISME SOCIAUX CHARGES A PAYER</field>
+<field name='code'>438063</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_442300' model='account.account.template'>
+<field name='name'>TVA SUR ACHATS</field>
+<field name='code'>442300</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_442600' model='account.account.template'>
+<field name='name'>PRECOMPTE</field>
+<field name='code'>442600</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_444000' model='account.account.template'>
+<field name='name'>AVANCES SUR IMPOTS ET TAXE</field>
+<field name='code'>444000</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_444100' model='account.account.template'>
+<field name='name'>IMPOTS  TAP</field>
+<field name='code'>444100</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_444200' model='account.account.template'>
+<field name='name'>DROIT DE TIMBRE</field>
+<field name='code'>444200</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_445000' model='account.account.template'>
+<field name='name'>TVA DUE SUR VENTE</field>
+<field name='code'>445000</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_445100' model='account.account.template'>
+<field name='name'>TVA A PAYER</field>
+<field name='code'>445100</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_445300' model='account.account.template'>
+<field name='name'>TVA SUR ACHAT</field>
+<field name='code'>445300</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_445600' model='account.account.template'>
+<field name='name'>TAV A DEDUIRE MISE A DIPOS</field>
+<field name='code'>445600</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_445700' model='account.account.template'>
+<field name='name'>TVA COLLECTEE_MISE A DEPOT</field>
+<field name='code'>445700</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_447000' model='account.account.template'>
+<field name='name'>IMPOT SUR LE REVENU GLOBAL</field>
+<field name='code'>447000</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_447010' model='account.account.template'>
+<field name='name'>IRG 10%</field>
+<field name='code'>447010</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_447100' model='account.account.template'>
+<field name='name'>TAP</field>
+<field name='code'>447100</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_455100' model='account.account.template'>
+<field name='name'>COMPTE ASSOCIE ANAS BEN HAMIDA</field>
+<field name='code'>455100</field>
+<field name='user_type_id' ref='account.data_account_type_receivable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_455200' model='account.account.template'>
+<field name='name'>COMPTE ASSOCIE REDA BEN HAMIDA</field>
+<field name='code'>455200</field>
+<field name='user_type_id' ref='account.data_account_type_receivable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_462000' model='account.account.template'>
+<field name='name'>Créances sur cessions d immobilisations</field>
+<field name='code'>462000</field>
+<field name='user_type_id' ref='account.data_account_type_receivable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_467000' model='account.account.template'>
+<field name='name'>Autres comptes débiteurs ou créditeurs</field>
+<field name='code'>467000</field>
+<field name='user_type_id' ref='account.data_account_type_receivable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_472000' model='account.account.template'>
+<field name='name'>AVANCE SUR TERRAIN DAR EL BEIDA</field>
+<field name='code'>472000</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_481100' model='account.account.template'>
+<field name='name'>PROVISION FRS</field>
+<field name='code'>481100</field>
+<field name='user_type_id' ref='account.data_account_type_receivable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_486100' model='account.account.template'>
+<field name='name'>CHARGE LOYER CONSTATE D AVANCE</field>
+<field name='code'>486100</field>
+<field name='user_type_id' ref='account.data_account_type_receivable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_487000' model='account.account.template'>
+<field name='name'>Produits constatés d avance</field>
+<field name='code'>487000</field>
+<field name='user_type_id' ref='account.data_account_type_receivable'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_491000' model='account.account.template'>
+<field name='name'>Pertes de valeur sur comptes de clients</field>
+<field name='code'>491000</field>
+<field name='user_type_id' ref='account.data_account_type_current_liabilities'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_512000' model='account.account.template'>
+<field name='name'>Banque SGA 01</field>
+<field name='code'>512000</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='True'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_512100' model='account.account.template'>
+<field name='name'>BANQUE TRUST BANK</field>
+<field name='code'>512100</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_512200' model='account.account.template'>
+<field name='name'>BANQUE SGA 2</field>
+<field name='code'>512200</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_512300' model='account.account.template'>
+<field name='name'>BANQUE NATIXIS</field>
+<field name='code'>512300</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_512400' model='account.account.template'>
+<field name='name'>ALSALAM BANK</field>
+<field name='code'>512400</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_519000' model='account.account.template'>
+<field name='name'>Concours bancaires courants</field>
+<field name='code'>519000</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_530000' model='account.account.template'>
+<field name='name'>CAISSE</field>
+<field name='code'>530000</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_541000' model='account.account.template'>
+<field name='name'>Régies d avances</field>
+<field name='code'>541000</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_5627000' model='account.account.template'>
+<field name='name'>Sans libellé</field>
+<field name='code'>5627000</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_581000' model='account.account.template'>
+<field name='name'>Virements de fonds</field>
+<field name='code'>581000</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_588000' model='account.account.template'>
+<field name='name'>Virement interne</field>
+<field name='code'>588000</field>
+<field name='user_type_id' ref='account.data_account_type_liquidity'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_600' model='account.account.template'>
+<field name='name'>Achats de marchandises vendues</field>
+<field name='code'>600000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_601300' model='account.account.template'>
+<field name='name'>CARBURANT POUR VEHICULES</field>
+<field name='code'>601300</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_601400' model='account.account.template'>
+<field name='name'>CONSOMMATION EAU</field>
+<field name='code'>601400</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_602000' model='account.account.template'>
+<field name='name'>MAT ET FOURNIT BUREAU</field>
+<field name='code'>602000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_602100' model='account.account.template'>
+<field name='name'>FRAIS DE GAZOIL</field>
+<field name='code'>602100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_602500' model='account.account.template'>
+<field name='name'>ELECTRICITE GAZ</field>
+<field name='code'>602500</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_602600' model='account.account.template'>
+<field name='name'>FRAIS TRANSIT SUR DOSSIER IMPORT</field>
+<field name='code'>602600</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_603000' model='account.account.template'>
+<field name='name'>Variations des stocks</field>
+<field name='code'>603000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_613000' model='account.account.template'>
+<field name='name'>LOYER LEASING</field>
+<field name='code'>613000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_613100' model='account.account.template'>
+<field name='name'>FRAIS SUR FRET</field>
+<field name='code'>613100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_613200' model='account.account.template'>
+<field name='name'>FRAIS DE TRANSPORT</field>
+<field name='code'>613200</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_613300' model='account.account.template'>
+<field name='name'>FRAIS DE PARKING ET TAXI</field>
+<field name='code'>613300</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_613400' model='account.account.template'>
+<field name='name'>LOCATION OUDJIFENE BRAHIM</field>
+<field name='code'>613400</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_613500' model='account.account.template'>
+<field name='name'>LOCATION ANAS BENHAMIDA</field>
+<field name='code'>613500</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_613600' model='account.account.template'>
+<field name='name'>LOCATION MAACHOU SALIM</field>
+<field name='code'>613600</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_613700' model='account.account.template'>
+<field name='name'>LOCATION SIEGE</field>
+<field name='code'>613700</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_613800' model='account.account.template'>
+<field name='name'>LOCATION DEPOT BHLAB</field>
+<field name='code'>613800</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_613900' model='account.account.template'>
+<field name='name'>LOCATION CHAIB MOUNIR</field>
+<field name='code'>613900</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_615040' model='account.account.template'>
+<field name='name'>ENTR REPAR MAT DE TRANSPORT</field>
+<field name='code'>615040</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_615100' model='account.account.template'>
+<field name='name'>ENTRETIEN ET REPARATION BATIMENT</field>
+<field name='code'>615100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_615200' model='account.account.template'>
+<field name='name'>ENTR ET REPAR MAT INFORMATIQUE</field>
+<field name='code'>615200</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_616000' model='account.account.template'>
+<field name='name'>ASSURRANCES</field>
+<field name='code'>616000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_616100' model='account.account.template'>
+<field name='name'>ASSURANCE AUTO</field>
+<field name='code'>616100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_616400' model='account.account.template'>
+<field name='name'>ASSURANCE VOYAGE</field>
+<field name='code'>616400</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_618100' model='account.account.template'>
+<field name='name'>FRAIS DE FORMATION</field>
+<field name='code'>618100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_618200' model='account.account.template'>
+<field name='name'>FRAIS DE VISA</field>
+<field name='code'>618200</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_618300' model='account.account.template'>
+<field name='name'>FRAIS DE CAHIER DE CHARGE</field>
+<field name='code'>618300</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_618400' model='account.account.template'>
+<field name='name'>FRAIS D IMPRESSION VIGNETTES</field>
+<field name='code'>618400</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_622300' model='account.account.template'>
+<field name='name'>HONORAIRES AVOCAT</field>
+<field name='code'>622300</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_622400' model='account.account.template'>
+<field name='name'>HONORAIRES</field>
+<field name='code'>622400</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_622500' model='account.account.template'>
+<field name='name'>HONORAIRE NOTAIRE</field>
+<field name='code'>622500</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_623000' model='account.account.template'>
+<field name='name'>Publicité, publication, relations publiques</field>
+<field name='code'>623000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_623100' model='account.account.template'>
+<field name='name'>PUBLICATION COMPTES SOCIAUX</field>
+<field name='code'>623100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_624200' model='account.account.template'>
+<field name='name'>FRAIS DE MAGAZINAGE</field>
+<field name='code'>624200</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_625100' model='account.account.template'>
+<field name='name'>FRAIS DE BILLETS</field>
+<field name='code'>625100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_625200' model='account.account.template'>
+<field name='name'>FRAIS DEPLACEMENT SEJOUR</field>
+<field name='code'>625200</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_625700' model='account.account.template'>
+<field name='name'>FRAIS DE RESTAURATION</field>
+<field name='code'>625700</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_626100' model='account.account.template'>
+<field name='name'>WATANIYA TELECOM ALGERIE</field>
+<field name='code'>626100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_626200' model='account.account.template'>
+<field name='name'>ORASCOM TELECOM ALGERIE</field>
+<field name='code'>626200</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_626300' model='account.account.template'>
+<field name='name'>ALGERIE TELECOM</field>
+<field name='code'>626300</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_626600' model='account.account.template'>
+<field name='name'>FRAIS COURRIER EXPEDITION</field>
+<field name='code'>626600</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+
+<record id='pcg_627000' model='account.account.template'>
+<field name='name'>Services bancaires et assimilés</field>
+<field name='code'>627000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_628100' model='account.account.template'>
+<field name='name'>COTISATION ET DON</field>
+<field name='code'>628100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_631000' model='account.account.template'>
+<field name='name'>TRAITEMENT ET SALAIRES</field>
+<field name='code'>631000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_631200' model='account.account.template'>
+<field name='name'>INDEMNITE DE VEHICULE</field>
+<field name='code'>631200</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_631300' model='account.account.template'>
+<field name='name'>CONGES PAYES</field>
+<field name='code'>631300</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_631400' model='account.account.template'>
+<field name='name'>PRIME DE PANIER</field>
+<field name='code'>631400</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_631500' model='account.account.template'>
+<field name='name'>BONUS</field>
+<field name='code'>631500</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_635000' model='account.account.template'>
+<field name='name'>COTISATIONS SECURITE SOCIALE</field>
+<field name='code'>635000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_636000' model='account.account.template'>
+<field name='name'>CHARGE SOCIALE DE L EXPLOITANT: CASNOS</field>
+<field name='code'>636000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_641000' model='account.account.template'>
+<field name='name'>TAP</field>
+<field name='code'>641000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_642000' model='account.account.template'>
+<field name='name'>Impôts et taxes non récupérables sur chiffre d affaires</field>
+<field name='code'>642000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_645000' model='account.account.template'>
+<field name='name'>Autres impôts et taxes</field>
+<field name='code'>645000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_645300' model='account.account.template'>
+<field name='name'>TAXE DOMICILIATION SUR TRANSFERT</field>
+<field name='code'>645300</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_656100' model='account.account.template'>
+<field name='name'>PENALITE ET AMENDE</field>
+<field name='code'>656100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_657000' model='account.account.template'>
+<field name='name'>Charges exceptionnelles de gestion courante</field>
+<field name='code'>657000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_661000' model='account.account.template'>
+<field name='name'>Charges d intérêts</field>
+<field name='code'>661000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_661100' model='account.account.template'>
+<field name='name'>CHARGES D INTERETS LEASING</field>
+<field name='code'>661100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_666' model='account.account.template'>
+<field name='name'>Pertes de change</field>
+<field name='code'>666000</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_681' model='account.account.template'>
+<field name='name'>Dotations au amortissements,</field>
+<field name='code'>681</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_685003' model='account.account.template'>
+<field name='name'>PROVISION S/CONGES</field>
+<field name='code'>685003</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_685100' model='account.account.template'>
+<field name='name'>PROVISION S PERTE DE CHANGE FRS ETRANGERS</field>
+<field name='code'>685100</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_685200' model='account.account.template'>
+<field name='name'>PROVISION CLIENTS DOUTEUX</field>
+<field name='code'>685200</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_685300' model='account.account.template'>
+<field name='name'>PERTE DE VALEUR SUR STOCKS</field>
+<field name='code'>685300</field>
+<field name='user_type_id' ref='account.data_account_type_expenses'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_700' model='account.account.template'>
+<field name='name'>Ventes de marchandises</field>
+<field name='code'>700000</field>
+<field name='user_type_id' ref='account.data_account_type_revenue'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_700100' model='account.account.template'>
+<field name='name'>VENTE DE MARCHANDISES EXONERE</field>
+<field name='code'>700100</field>
+<field name='user_type_id' ref='account.data_account_type_revenue'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_732000' model='account.account.template'>
+<field name='name'>Production immobilisée</field>
+<field name='code'>732000</field>
+<field name='user_type_id' ref='account.data_account_type_revenue'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+    
+<record id='pcg_752000' model='account.account.template'>
+<field name='name'>Plus values sur sorties d actifs immobilisés non financiers</field>
+<field name='code'>752000</field>
+<field name='user_type_id' ref='account.data_account_type_revenue'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_757100' model='account.account.template'>
+<field name='name'>PRODUIT EXCEPTIONNEL SUR OPERAT DE GESTION</field>
+<field name='code'>757100</field>
+<field name='user_type_id' ref='account.data_account_type_revenue'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_760000' model='account.account.template'>
+<field name='name'>Produits financiers</field>
+<field name='code'>760000</field>
+<field name='user_type_id' ref='account.data_account_type_revenue'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_766' model='account.account.template'>
+<field name='name'>Gains de change</field>
+<field name='code'>766000</field>
+<field name='user_type_id' ref='account.data_account_type_revenue'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_768000' model='account.account.template'>
+<field name='name'>Autres produits financiers</field>
+<field name='code'>768000</field>
+<field name='user_type_id' ref='account.data_account_type_revenue'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+<record id='pcg_786000' model='account.account.template'>
+<field name='name'>Reprises  sur pertes de valeur et provisions</field>
+<field name='code'>786000</field>
+<field name='user_type_id' ref='account.data_account_type_revenue'/>
+<field name='reconcile' eval='False'/>
+<field name='chart_template_id' ref='l10n_dz_chart_template'/>
+</record>
+
+
+    <record id="l10n_dz_chart_template" model="account.chart.template">
+        <field name="property_account_receivable_id" ref="dz_pcgre_cv"/>
+        <field name="property_account_payable_id" ref="dz_pcg_pay"/>
+        <field name="property_account_expense_categ_id" ref="pcg_600"/>
+        <field name="property_account_income_categ_id" ref="pcg_700"/>
+        <field name="expense_currency_exchange_account_id" ref="pcg_666"/>
+        <field name="income_currency_exchange_account_id" ref="pcg_766"/>
+        <field name="default_pos_receivable_account_id" ref="dz_pcgre_cv" />
+    </record>
+</odoo>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+    <record id="view_move_form_mlmc_expiry" model="ir.ui.view">
+        <field name="name">bhlab_expiry.stock.production.lot.inherit.form</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form" />
+        <field name="arch" type="xml">
+            <field name="ref" position="attributes">
+                <attribute name="string">Lot Number</attribute>
+            </field>
+            <field name="name" position="attributes">
+                <attribute name="string">Code a barre</attribute>
+            </field>
+            <field name="product_id" position="after">
+                <label for="available_qty"/>
+                    <div class="o_row">
+                        <field name="available_qty"/>
+                        <field name="product_uom_id" readonly="1" groups="uom.group_uom"/>
+                    </div>
+            </field>
+        <xpath expr="//group[@name='main_group']" position="after">
+            <group string="Exipry Date">
+                <group>
+                    <field name="expiry_date" widget="date"/>
+                </group>
+            </group>
+        </xpath>
+        </field>
+    </record>
+	
+	<record id="view_production_lot_tree_bhlab_expiry" model="ir.ui.view">
+        <field name="name">bhlab_expiry.stock.production.lot.tree.inherit</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_tree" />
+        <field name="arch" type="xml">
+			<xpath expr="//tree/field[@name='name']" position="after">
+				<field name="expiry_date"/>
+			</xpath>
+			
+			<xpath expr="//tree" position="attributes">
+				<attribute name="decoration-success">current_date &lt; expiry_date</attribute>
+				<attribute name="decoration-muted">current_date &gt;= expiry_date</attribute>				
+			</xpath>			
+        </field>
+    </record>
+
+    <record id="bhlab_production_lot_view" model="ir.ui.view">
+        <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+        <field name="model">stock.production.lot</field>
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="string">Code a barre</attribute>
+            </field>
+            <xpath expr="//field[@name='ref']" position="replace">
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="ref" string="Lot Number"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="bhlab_view_move_form_expiry_simple" model="ir.ui.view">
+        <field name="name">bhlab_stock.production.lot.inherit.form</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form_simple" />
+        <field name="arch" type="xml">
+        <xpath expr="//group[@name='main_group']" position="after">
+            <group string="Exipry Date">
+                <group>
+                    <field name="expiry_date"/>
+                </group>
+            </group>
+        </xpath>
+        </field>
+    </record>
+</odoo>
