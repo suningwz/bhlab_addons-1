@@ -28,5 +28,5 @@ class StockPicking(models.Model):
                 if (line.product_uom_qty != line.qty_done):
                     _logger.warn("line.product_uom_qty = %s , line.qty_done = %s",line.product_uom_qty,line.qty_done)
                     raise UserError(
-                        _("Quntity done is not equal to quantity done"))
+                        _("Quntity reserved is not equal to quantity done"))
         return super().button_validate()

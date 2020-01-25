@@ -25,6 +25,9 @@
                 </group>
             </group>
         </xpath>
+         <xpath expr="//group[@name='main_group']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
         </field>
     </record>
 	
@@ -69,6 +72,9 @@
                     <field name="expiry_date"/>
                 </group>
             </group>
+        </xpath>
+        <xpath expr="//group[@name='main_group']" position="attributes">
+            <attribute name="invisible">1</attribute>
         </xpath>
         </field>
     </record>

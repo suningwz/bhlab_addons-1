@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "BHlab Stock picking lot & Exipry date",
+    "summary": " ",
     "version": "12.0.1.0.0",
     "category": "Warehouse",
     "website": "12.0/stock_EoL_lot",
@@ -17,5 +18,6 @@
         "views/production_lot_view.xml",
         "views/quant_view.xml",
         "views/stock_location_view.xml",
+        "views/stock_inventory_view.xml",
     ]
 }

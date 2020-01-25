@@ -3,7 +3,7 @@
 # Copyright 2016 ForgeFlow S.L. (https://www.forgeflow.com)
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
 {
-    "name": "bhlab Stock Available Unreserved",
+    "name": "Stock Available Unreserved",
     "summary": "Quantity of stock available for immediate use",
     "version": "12.0.1.0.0",
     "author": "ForgeFlow, Odoo Community Association (OCA)",

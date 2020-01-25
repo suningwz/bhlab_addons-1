@@ -7,7 +7,6 @@ from odoo import fields, models, api
 
 
 class ResCommune(models.Model):
-    _name = 'res.commune'
     _descritpion = 'Commune'
     _order = 'name,id'
 

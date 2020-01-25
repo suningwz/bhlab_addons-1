@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="bhlab_view_backorder_confirmation" model="ir.ui.view">
+        <field name="name">bhlab_stock.overprocessed.transfer.view.form</field>
+        <field name="model">stock.backorder.confirmation</field>
+		<field name="inherit_id" ref="stock.view_backorder_confirmation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="replace">
+            <form string="Backorder creation">
+                <group>
+                    <p>
+                        You have processed less products than the initial demand.
+                    </p><p class="text-muted">
+                        You have to create a backorder to process the remaining
+                        products later.
+                    </p>
+                </group>
+                <footer>
+                    <button name="process" string="Create Backorder" type="object" class="oe_highlight"/>
+                    <button string="_Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+            </xpath>
+        </field>
+    </record>
+</odoo>
