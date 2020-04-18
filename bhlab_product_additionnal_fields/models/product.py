@@ -10,7 +10,7 @@ class ProductTemplate(models.Model):
     _famille_selection_list = [('none','NONE'),('microbiologie','Microbiologie'),('ia_ocd','IA OCD'),('groupage','GROUPAGE'),('ih','IH'),('hba1c','HBA1C'),('ai','AI'),('cc','CC'),('hemostase','HEMOSTASE'),('cc_ocd','CC OCD'),('biomol','BIOMOL'),('hla','HLA'),('ia&cc_ocd','IA&CC OCD'),('ic','IC'),('oncologie','Oncologie')]
    
     product_type = fields.Selection(_type_selection_list, string='Type', default='none', store=True)
-    cdt = fields.Integer(string='CDT', required=True, store=True)
+    cdt = fields.Integer(string='CDT', store=True)
 
     famille = fields.Selection(_famille_selection_list, string='Famille', default='none', store=True)
 

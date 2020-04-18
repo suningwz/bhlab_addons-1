@@ -9,6 +9,7 @@ from odoo import fields, models, api
 class ResCommune(models.Model):
     _descritpion = 'Commune'
     _order = 'name,id'
+    _name = 'ResCommune'
 
     code = fields.Char(string='Code Commune', size=2, help='Le code de la commune sur deux positions', required=True)
     state_id = fields.Many2one('res.country.state', string='Wilaya', required=True)            
