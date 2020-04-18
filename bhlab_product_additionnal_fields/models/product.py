@@ -6,16 +6,16 @@ from odoo.exceptions import UserError, ValidationError
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    _type_selection_list = [('none', 'NONE'),('rgt', 'RGT'), ('spp', 'SPP'), ('acc', 'ACC'), ('ctl', 'CTL'), ('con', 'con'), ('app', 'APP'), ('cal', 'CAL'), ('fluid', 'FLUID'), ('ser', 'SER')]
+    _type_selection_list = [('none', 'NONE'),('rgt', 'RGT'), ('spp', 'SPP'), ('acc', 'ACC'), ('ctl', 'CTL'), ('cons', 'CONS'), ('app', 'APP'), ('cal', 'CAL'), ('fluid', 'FLUID'), ('ser', 'SER')]
     _famille_selection_list = [('none','NONE'),('microbiologie','Microbiologie'),('ia_ocd','IA OCD'),('groupage','GROUPAGE'),('ih','IH'),('hba1c','HBA1C'),('ai','AI'),('cc','CC'),('hemostase','HEMOSTASE'),('cc_ocd','CC OCD'),('biomol','BIOMOL'),('hla','HLA'),('ia&cc_ocd','IA&CC OCD'),('ic','IC'),('oncologie','Oncologie')]
    
-    product_type = fields.Selection(_type_selection_list, string='Type', default='none', required=True, store=True)
+    product_type = fields.Selection(_type_selection_list, string='Type', default='none', store=True)
     cdt = fields.Integer(string='CDT', required=True, store=True)
 
-    famille = fields.Selection(_famille_selection_list, string='Famille', default='none', required=True, store=True)
+    famille = fields.Selection(_famille_selection_list, string='Famille', default='none', store=True)
 
-    quantity_pi = fields.Integer(string='Quantity PI', required=True, store=True)
-    tarif_douane = fields.Char(string='Tarif Douanlier', required=True, store=True)
+    quantity_pi = fields.Integer(string='Quantity PI', store=True)
+    tarif_douane = fields.Char(string='Tarif Douanlier', store=True)
 
     @api.onchange('cdt')
     def _compute_CDT(self):
