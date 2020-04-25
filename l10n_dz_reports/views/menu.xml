@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+            <menuitem name="Balance" id="rapport_balance_menu1" parent="l10n_dz_base.account_mes_rapports_menu" sequence="10" groups="l10n_dz_reports.group_dl_reports_config"/>
+                <menuitem name="Balance des comptes" id="balance_menu" parent="rapport_balance_menu1" sequence="10" action="dl_action_report_balance_tree_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+                <menuitem name="Lignes balance" id="balance_ligne_menu" parent="rapport_balance_menu1" sequence="20" action="dl_action_report_balance_ligne_tree_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+<!--                <menuitem name="Importer une balance" action="launch_import_balance_wizard" id="import_balance_wizard_menu" parent="rapport_balance_menu1" sequence="60" groups="l10n_dz_reports.group_dl_reports_config"/>-->
+            <menuitem name="Rapport/Bilan" id="rapport_bilan_menu1" parent="l10n_dz_base.account_mes_rapports_menu" sequence="20" groups="l10n_dz_reports.group_dl_reports_config"/>
+                <menuitem name="Bilan" id="dl_account_report_report_bilan_menu" parent="rapport_bilan_menu1" sequence="10" action="dl_action_account_report_report_bilan_tree_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+                <menuitem name="Liasse fiscale" id="dl_account_report_report_lf_menu" parent="rapport_bilan_menu1" sequence="20" action="dl_action_account_report_report_lf_tree_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+                <menuitem name="Rapports Financiers" id="dl_account_report_report_menu" parent="rapport_bilan_menu1" sequence="30" action="dl_action_account_report_report_tree_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+                <menuitem name="Groupes Rapports" id="dl_account_report_group_menu" parent="rapport_bilan_menu1" sequence="35" action="dl_action_account_report_group_tree_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+                <menuitem name="Configuration des modèles de rapports" id="account_report_model_menu" parent="l10n_dz_base.account_dz_config_menu" sequence="20" action="action_account_report_model_tree_view" groups="l10n_dz_reports.group_dl_reports_config"/>
+            <menuitem name="Fiscalité" id="report_fiscal_menu1" parent="l10n_dz_base.account_mes_rapports_menu" sequence="30" groups="l10n_dz_reports.group_dl_reports_config"/>
+                <menuitem name="Etat des Clients" id="etat_client_menu" parent="report_fiscal_menu1" sequence="10" action="dl_action_account_etat_client_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+                <menuitem name="Etat TVA déductibles" id="etat_tva_menu" parent="report_fiscal_menu1" sequence="20" action="dl_action_account_etat_tva_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+                <menuitem name="La TAP" id="etat_tap_menu" parent="report_fiscal_menu1" sequence="30" action="dl_action_account_etat_tap_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+<!--            <menuitem name="Configuration" id="report_config_menu1" parent="l10n_dz_base.account_mes_rapports_menu" sequence="90" groups="l10n_dz_reports.group_dl_reports_config"/>-->
+<!--                <menuitem id="reports_settings_menu" name="Configuration des rapports" parent="report_config_menu1" action="reports_settings_action"/>-->
+    </data>
+</openerp>

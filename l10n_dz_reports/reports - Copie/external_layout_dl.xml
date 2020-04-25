@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_header_dl" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[@class='header']" position="replace">
+            <div class="header">
+                <img src='/l10n_dz_reports/static/src/img/entete.jpg' style="width:100%"/>
+<!---->
+            </div>
+        </xpath>
+    </template>
+
+
+<!--    <template id="report_footer_lt" inherit_id="report.external_layout_footer">-->
+<!--        <xpath expr="//div[@class='footer']" position="replace">-->
+            <!--<div class="footer">-->
+               <!--<img src='/l10n_dz_reports/static/src/img/footer.png' style="width:70%"/>-->
+
+            <!--</div>-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+</odoo>

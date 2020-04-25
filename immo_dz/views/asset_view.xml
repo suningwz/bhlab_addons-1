@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record id="view_account_asset_inherit_form" model="ir.ui.view">
+            <field name="name">account.asset.asset.form.inherit</field>
+            <field name="model">account.asset.asset</field>
+            <field name="priority">2</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_asset_form"/>
+            <field name="arch" type="xml">
+                <data>
+
+                    <notebook position="inside">
+                        <page string="Informations Cession" attrs="{'invisible':[('cession','=', False)]}">
+                            <group>
+                                <group string="Cession">
+                                    <field name="cession"/>
+                                    <field name="cession_date" string="Date"/>
+                                    <field name="cession_montant" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="valeur_ammortissement" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="valeur_net" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </data>
+			</field>
+        </record>
+
+<!--category-->
+<!--   		<record id="view_account_asset_category_inherit_form" model="ir.ui.view">-->
+<!--            <field name="name">account.asset.category.form.inherit</field>-->
+<!--            <field name="model">account.asset.category</field>-->
+<!--            <field name="priority">2</field>-->
+<!--            <field name="inherit_id" ref="account_asset.view_account_asset_category_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <data>-->
+<!--                    <xpath expr="//field[@name='journal_id']" position="before">-->
+<!--                        <field name="code"/>-->
+<!--                        <field name="group_id"/>-->
+<!--                	</xpath>-->
+
+<!--                </data>-->
+<!--			</field>-->
+<!--        </record>-->
+
+<!--    <record model="ir.ui.view" id="category_group_tree_view">-->
+<!--        <field name="name">account.asset.category.group.tree</field>-->
+<!--        <field name="model">account.asset.category.group</field>-->
+<!--        <field name="type">tree</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree toolbar="1" editable="top" string="Groupe category">-->
+<!--                <field name="name"/>-->
+<!--                <field name="parent_id"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record model="ir.actions.act_window" id="action_category_group_tree_view">-->
+<!--        <field name="name">Groupe categorie</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">account.asset.category.group</field>-->
+<!--        <field name="view_type">form</field>-->
+<!--        <field name="view_mode">tree</field>-->
+<!--        <field name="view_id" ref="category_group_tree_view"/>-->
+<!--        <field name="help" type="html">-->
+<!--            <p class="o_view_nocontent_smiling_face">-->
+<!--                Cliquez ici pour créer un nouveau groupe de categories.-->
+<!--            </p><p>-->
+
+<!--            </p><p>-->
+
+<!--            </p>-->
+<!--         </field>-->
+<!--    </record>-->
+
+<!--        <menuitem id="menu_asset_category_group" name="Groupes categories" action="action_category_group_tree_view" parent="account.account_management_menu" sequence="7"/>-->
+
+
+    </data>
+</openerp>

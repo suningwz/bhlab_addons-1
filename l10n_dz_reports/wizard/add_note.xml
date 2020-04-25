@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="add_note_wizard_form_view" model="ir.ui.view">
+            <field name="name">add.note.wizard.form</field>
+            <field name="model">add.note.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Nouvelle note">
+
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="line_id" readonly="1"/>
+                            <!--<field name="line_name" />-->
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <field name="note"/>
+
+                    <footer>
+                         <button class="oe_highlight" string="Appliquer" name="action_validate" type="object"/> or
+                         <button class="oe_link" string="Annuler" special="cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

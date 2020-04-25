@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="account_report_model_tree_view">
+            <field name="name">account.report.model.tree</field>
+            <field name="model">account.report.model</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Modeles de rapports" decoration-success="state == 'done'" decoration-info="state == 'draft'" decoration-muted="state == 'cancel'">
+                    <field name="tableau_num"/>
+                    <field name="name"/>
+                    <field name="sous_titre"/>
+                    <field name="groupe_id"/>
+                    <field name="code"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="account_report_model_form_view" model="ir.ui.view">
+        <field name="name">account.report.model.form</field>
+        <field name="model">account.report.model</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Modele de rapport">
+                <header>
+                    <button name="action_done" string="Valider" states="draft" class="oe_highlight" type="object" groups="l10n_dz_reports.group_dl_reports_manager"/>
+                    <button name="action_draft" string="Remettre a l'état brouillon" states="done" type="object" groups="l10n_dz_reports.group_dl_reports_manager"/>
+                    <field name="state" widget="statusbar" clickable="True" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                    <group>
+                        <group>
+                            <!--<field name="name"/>-->
+                            <field name="sous_titre"/>
+                            <field name="code"/>
+                            <field name="tableau_num"/>
+                        </group>
+
+                        <group>
+                            <field name="groupe_id"/>
+                            <field name="mode_impression"/>
+                            <field name="arrondir"/>
+                            <field name="report_name"/>
+                            <field name="specifique"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Lignes/Colonnes" attrs="{'invisible':[('specifique','=', True)]}">
+
+                            <group>
+                                <group>
+                                    <button name="fomula_delete_rows" type="object" string="Supprimer les lignes" states="draft" groups="l10n_dz_reports.group_dl_reports_config"/>
+                                </group>
+                                <group>
+                                    <button name="fomula_delete_columns" type="object" string="Supprimer Les colonnes" states="draft" groups="l10n_dz_reports.group_dl_reports_config"/>
+                                </group>
+
+                                <group string="Lignes">
+                                    <field name="row_ids" nolabel="1">
+                                        <tree editable="Bottom">
+                                            <field name="ligne_num" widget="handle"/>
+                                            <field name="code"/>
+                                            <field name="name"/>
+                                            <field name="ordre" string="Ordre"/>
+                                            <!--<field name="expression" widget="many2many_tags"/>-->
+                                            <field name="bold"/>
+                                            <field name="aligne"/>
+                                            <field name="police"/>
+                                            <field name="view_data" string="Afficher"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Colonnes">
+                                    <field name="column_ids" nolabel="1">
+                                        <tree editable="Bottom">
+                                            <field name="c_num" widget="handle"/>
+                                            <field name="code"/>
+                                            <field name="name"/>
+                                            <field name="periode"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </group>
+
+
+                        </page>
+                        <page string="Formules"  attrs="{'invisible':[('specifique','=', True)]}">
+                            <group>
+                                <group>
+                                    <button name="fomula_generate_grid" type="object" string="Mettre a jour le tableau" states="draft" class="oe_highlight"  groups="l10n_dz_reports.group_dl_reports_config"/>
+                                    <button name="fomula_delete_all" type="object" string="Supprimer tout" states="draft"  groups="l10n_dz_reports.group_dl_reports_config"/>
+                                    <!--<button name="fomula_delete_blank" type="object" string="Supprimer les vides" class="oe_highlight"/>-->
+
+                                </group>
+                                <group>
+
+                                </group>
+                            </group>
+                            <field name="formula_ids" nolabel="1">
+                                <tree editable="Bottom">
+                                    <field name="name"/>
+                                    <field name="row_id"  />
+                                    <field name="column_id" />
+                                    <!--<field name="column_id" domain="[('report_id','=', active_id)]"/>-->
+                                    <field name="periode"/>
+                                    <field name="ordre"/>
+<!--                                    <field name="formula" widget="many2many_tags"/>-->
+                                    <field name="formula_ch"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Rapport spécifique"  attrs="{'invisible':[('specifique','=', False)]}">
+                            <group>
+                                <group>
+                                    <field name="specifique_rep"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Aide/Formules">
+                            <separator string="Désignation de la periode dans la balance" style="color: #cf0415"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content" style="text-align: left">
+                                <col width="100"/>
+                                <col width="300"/>
+                                <col width="300"/>
+                                <tr>
+                                    <th width="100" class="oe_list_header_columns">Code</th>
+                                    <th width="300" class="oe_list_header_columns">Description</th>
+                                    <th width="300" class="oe_list_header_columns"></th>
+                                </tr>
+                                <tr>
+                                    <td>O</td>
+                                    <td>Ouverture</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>P</td>
+                                    <td>Periode</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>Solde</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td>Ouverture + Periode</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                            <separator string="Désignation du calcul a faire dans la periode" style="color: #3c8c44"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content" style="text-align: left">
+                                <col width="100"/>
+                                <col width="300"/>
+                                <col width="300"/>
+                                <tr>
+                                    <th width="100" class="oe_list_header_columns">Code</th>
+                                    <th width="300" class="oe_list_header_columns">Description</th>
+                                    <th width="300" class="oe_list_header_columns">Exemple</th>
+                                </tr>
+                                <tr>
+                                    <td>DB</td>
+                                    <td>Débit</td>
+                                    <td>SDB Valeur du solde debit</td>
+                                </tr>
+                                <tr>
+                                    <td>CR</td>
+                                    <td>Crédit</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>SD</td>
+                                    <td>Solde débiteur</td>
+                                    <td>SSD Solde débiteur</td>
+                                </tr>
+                                <tr>
+                                    <td>SC</td>
+                                    <td>Solde créditeur</td>
+                                    <td>PSC Solde credit de la periode</td>
+                                </tr>
+                                <tr>
+                                    <td>SX</td>
+                                    <td>Valeur absolu du solde</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>DZ</td>
+                                    <td>Solde débiteur si >0 sinon 0</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>CZ</td>
+                                    <td>Solde créditeur si credit >0 sinon 0</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                            <separator string="Lien vers une autre cellule dans le tableau" style="color: #0095ff"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content" style="text-align: left">
+                                <col width="100"/>
+                                <col width="300"/>
+                                <col width="300"/>
+                                <tr>
+                                    <th width="100" class="oe_list_header_columns">Code</th>
+                                    <th width="300" class="oe_list_header_columns">Description</th>
+                                    <th width="300" class="oe_list_header_columns">Exemple</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>R</strong><u>XX</u><strong>C</strong><u>Y</u></td>
+                                    <td>Résultat d'une celleule dans le meme rapport</td>
+                                    <td>R10C3 = Ligne 10 Colonne 3</td>
+                                </tr>
+                            </table>
+                            <separator string="Lien vers une autre cellule dans un autre tableau du meme groupe de rapports" style="color: #ba07b4"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content" style="text-align: left">
+                                <col width="100"/>
+                                <col width="300"/>
+                                <col width="300"/>
+                                <tr>
+                                    <th width="100" class="oe_list_header_columns">Code</th>
+                                    <th width="300" class="oe_list_header_columns">Description</th>
+                                    <th width="300" class="oe_list_header_columns">Exemple</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>L</strong><u>TT</u><strong>R</strong><u>XX</u><strong>C</strong><u>Y</u></td>
+                                    <td>Lien vers une cellule d'un autre tableau</td>
+                                    <td>
+                                        L03R30C2 <br/>
+                                        <strong>L03</strong> = Tableau Numero 03 <br/>
+                                        <strong>R30C2</strong> = Ligne 30 Colonne 2<br/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <separator string="Valeur a saisir manuellement" style="color: #FFD700"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content" style="text-align: left">
+                                <col width="100"/>
+                                <col width="300"/>
+                                <col width="300"/>
+                                <tr>
+                                    <th width="100" class="oe_list_header_columns">Code</th>
+                                    <th width="300" class="oe_list_header_columns">Description</th>
+                                    <th width="300" class="oe_list_header_columns">Exemple</th>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>Montant de la cellule saisie manuellement</td>
+                                    <td>Valeur a saisir dans l'onglet Saisie</td>
+                                </tr>
+                            </table>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_account_report_model_tree_view">
+            <field name="name">Modele de rapports</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.report.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="account_report_model_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cliquez ici pour créer un nouveau modele.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

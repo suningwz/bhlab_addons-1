@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+<record id="dl_report_configuration" model="ir.ui.view">
+    <field name="name">Configuration des rapports</field>
+    <field name="model">reports.config.settings</field>
+    <field name="arch" type="xml">
+        <form string="Configuration des rapports" class="oe_form_configuration">
+            <header>
+                <button string="Save" type="object" name="execute" class="oe_highlight"/>
+                or
+                <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+            </header>
+            <group>
+                <group string="TVA Déductible (Invistissements)">
+                    <field name="default_journal_ch"/>
+                    <field name="default_ht_inv_tva"/>
+                    <field name="default_tva_inv_tva"/>
+                </group>
+                <group string="TVA Déductible (Achats et services)">
+                    <separator/><separator/>
+                    <separator/><separator/>
+                    <field name="default_ht_ach_tva"/>
+                    <field name="default_tva_ach_tva"/>
+                </group>
+                <group  string="Etat client 104 et TAP">
+                    <field name="default_journal_104"/>
+                    <field name="default_ht_104"/>
+                    <field name="default_tva_104"/>
+                    <field name="default_tap_tap"/>
+                </group>
+
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="reports_settings_action" model="ir.actions.act_window">
+    <field name="name">Configuration des rapports</field>
+    <field name="res_model">reports.config.settings</field>
+    <field name="view_id" ref="dl_report_configuration"/>
+    <field name="view_mode">form</field>
+    <field name="target">inline</field>
+</record>
+
+
+
+    </data>
+</odoo>

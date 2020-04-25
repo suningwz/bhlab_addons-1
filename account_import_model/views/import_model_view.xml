@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="account_import_model_tree_view">
+            <field name="name">account.import.model.tree</field>
+            <field name="model">account.import.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <!--<field name="use_to"/>-->
+                    <field name="use_number_1"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="account_import_model_form_view" model="ir.ui.view">
+        <field name="name">account.import.model.form</field>
+        <field name="model">account.import.model</field>
+        <field name="arch" type="xml">
+            <form string="Modele importation des ecritures comptables">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <!--<field name="use_to"/>-->
+                        <!--<field name="use_to_ids" widget="many2many_tags"/>-->
+                        <field name="use_number_1"/>
+                    </group>
+                    <notebook>
+                        <page string="Numéros de colonnes"  attrs="{'invisible': [('use_number_1','!=', 'nombre')]}">
+<!--                            <label string="une colonne qui n'existe pas sur le fichier excel doit etre représentée par la valeur -1"/><separator/>-->
+                            <group>
+                                <group>
+                                    <field name="col_name"/>
+                                    <field name="col_libelle"/>
+                                    <field name="col_ref"/>
+                                    <field name="col_date"/>
+                                    <field name="col_sequence"/>
+
+                                </group>
+                                <group>
+                                    <field name="col_account"/>
+                                    <field name="col_journal"/>
+                                    <field name="col_partner"/>
+                                    <field name="col_debit"/>
+                                    <field name="col_credit"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Noms des colonnes" attrs="{'invisible': [('use_number_1','=', 'nombre')]}">
+<!--                            <label string="une colonne qui n'existe pas sur le fichier excel doit etre représentée par un vide"/><separator/>-->
+                            <group>
+                                <group>
+                                    <field name="col_a_name"/>
+                                    <field name="col_a_libelle"/>
+                                    <field name="col_a_ref"/>
+                                    <field name="col_a_date"/>
+                                    <field name="col_a_sequence"/>
+                                </group>
+                                <group>
+                                    <field name="col_a_account"/>
+                                    <field name="col_a_journal"/>
+                                    <field name="col_a_partner"/>
+                                    <field name="col_a_debit"/>
+                                    <field name="col_a_credit"/>
+                                </group>
+                            </group>
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_account_import_model_tree_view">
+            <field name="name">Modele importation des écritures comptables</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.import.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="account_import_model_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cliquez ici pour créer un nouveau modele.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+<!--    <menuitem id="account_autre_config_menu" name="Autres configuration" parent="account.menu_finance_configuration" sequence="90" groups="account.group_account_invoice"/>-->
+    <menuitem id="account_model_menu" name="Modèles d'importation des écritures"
+              parent="l10n_dz_base.account_dz_config_menu" sequence="80"
+              action="action_account_import_model_tree_view" groups="account.group_account_invoice"/>
+
+    </data>
+</openerp>

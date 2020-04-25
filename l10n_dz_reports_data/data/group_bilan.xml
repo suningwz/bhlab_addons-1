@@ -1,0 +1,2767 @@
+<openerp>
+  <data noupdate="1">
+
+  <!-- ACTIF -->
+
+      <!-- le rapport -->
+      <record id='bl_act' model='account.report.model'>
+          <field name='name'>ACTIF</field>
+          <field name='code'>ACT</field>
+          <field name='groupe_id' ref='l10n_dz_reports.group_bilan'/>
+          <field name='tableau_num'>01</field>
+          <field name='specifique'>False</field>
+          <field name='specifique_rep'>standard</field>
+          <field name='mode_impression'>Portrait</field>
+          <field name='state'>done</field>
+      </record>
+
+      <!-- les lignes -->
+      <record id='row_bl_act_1' model='account.report.model.row'>
+          <field name='name'>ACTIF IMMMOBILISE (NON COURANT)</field>
+          <field name='code'>R01</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>1</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>False</field>
+      </record>
+
+      <record id='row_bl_act_2' model='account.report.model.row'>
+          <field name='name'>Ecarts d'acquisition (goodwill positif ou négatif)</field>
+          <field name='code'>R02</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>2</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_3' model='account.report.model.row'>
+          <field name='name'>Immobilisations incorporelles</field>
+          <field name='code'>R03</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>3</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_4' model='account.report.model.row'>
+          <field name='name'>Immobilisations corporelles</field>
+          <field name='code'>R04</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>4</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_5' model='account.report.model.row'>
+          <field name='name'>Terrains</field>
+          <field name='code'>R05</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>5</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_6' model='account.report.model.row'>
+          <field name='name'>Bâtiments</field>
+          <field name='code'>R06</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>6</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_7' model='account.report.model.row'>
+          <field name='name'>Autres immobilisations corporelles</field>
+          <field name='code'>R07</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>7</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_8' model='account.report.model.row'>
+          <field name='name'>Immobilisations en concession</field>
+          <field name='code'>R08</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>8</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_9' model='account.report.model.row'>
+          <field name='name'>Immobilisations en cours</field>
+          <field name='code'>R09</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>9</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_10' model='account.report.model.row'>
+          <field name='name'>Immobilisations financières</field>
+          <field name='code'>R10</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>10</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_11' model='account.report.model.row'>
+          <field name='name'>Titres mis en équivalence</field>
+          <field name='code'>R11</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>11</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_12' model='account.report.model.row'>
+          <field name='name'>Autres participations et créances rattachées</field>
+          <field name='code'>R12</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>12</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_13' model='account.report.model.row'>
+          <field name='name'>Autres titres immobilisés</field>
+          <field name='code'>R13</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>13</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_14' model='account.report.model.row'>
+          <field name='name'>Prêts et autres actifs financiers non courants</field>
+          <field name='code'>R14</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>14</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_15' model='account.report.model.row'>
+          <field name='name'>Impôts différés actif</field>
+          <field name='code'>R15</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>15</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_16' model='account.report.model.row'>
+          <field name='name'>TOTAL ACTIF NON COURANT</field>
+          <field name='code'>R16</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>3</field>
+          <field name='aligne'>D</field>
+          <field name='ligne_num'>16</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_17' model='account.report.model.row'>
+          <field name='name'>ACTIF COURANT</field>
+          <field name='code'>R17</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>17</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>False</field>
+      </record>
+
+      <record id='row_bl_act_18' model='account.report.model.row'>
+          <field name='name'>Stocks et en cours</field>
+          <field name='code'>R18</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>18</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_19' model='account.report.model.row'>
+          <field name='name'>Créances et emplois assimilés</field>
+          <field name='code'>R19</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>19</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_20' model='account.report.model.row'>
+          <field name='name'>Clients</field>
+          <field name='code'>R20</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>20</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_21' model='account.report.model.row'>
+          <field name='name'>Autres débiteurs</field>
+          <field name='code'>R21</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>21</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_22' model='account.report.model.row'>
+          <field name='name'>Impôts et assimilés</field>
+          <field name='code'>R22</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>22</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_23' model='account.report.model.row'>
+          <field name='name'>Autres créances et emplois assimilés</field>
+          <field name='code'>R23</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>23</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_24' model='account.report.model.row'>
+          <field name='name'>Disponibilités et assimilés</field>
+          <field name='code'>R24</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>24</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_25' model='account.report.model.row'>
+          <field name='name'>Placements et autres actifs financiers courants</field>
+          <field name='code'>R25</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>25</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_26' model='account.report.model.row'>
+          <field name='name'>Trésorerie</field>
+          <field name='code'>R26</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>26</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_27' model='account.report.model.row'>
+          <field name='name'>TOTAL ACTIF COURANT</field>
+          <field name='code'>R27</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>3</field>
+          <field name='aligne'>D</field>
+          <field name='ligne_num'>27</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_act_28' model='account.report.model.row'>
+          <field name='name'>TOTAL GENERAL ACTIF</field>
+          <field name='code'>R28</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='ordre'>4</field>
+          <field name='aligne'>D</field>
+          <field name='ligne_num'>28</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <!-- les colonnes -->
+      <record id='col_bl_act_1' model='account.report.model.column'>
+          <field name='name'>Brut (N)</field>
+          <field name='code'>C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='periode'>N</field>
+          <field name='c_num'>1</field>
+      </record>
+
+      <record id='col_bl_act_2' model='account.report.model.column'>
+          <field name='name'>Amort./Prov. (N)</field>
+          <field name='code'>C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='periode'>N</field>
+          <field name='c_num'>2</field>
+      </record>
+
+      <record id='col_bl_act_3' model='account.report.model.column'>
+          <field name='name'>Net (N)</field>
+          <field name='code'>C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='periode'>N</field>
+          <field name='c_num'>3</field>
+      </record>
+
+      <record id='col_bl_act_4' model='account.report.model.column'>
+          <field name='name'>Net (N-1)</field>
+          <field name='code'>C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='periode'>N-1</field>
+          <field name='c_num'>4</field>
+      </record>
+
+      <!-- les formules -->
+      <record id='for_bl_act_1' model='account.report.model.formula'>
+          <field name='name'>R02C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_2'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>207</field>
+      </record>
+
+      <record id='for_bl_act_2' model='account.report.model.formula'>
+          <field name='name'>R02C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_2'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>2807+2907</field>
+      </record>
+
+      <record id='for_bl_act_3' model='account.report.model.formula'>
+          <field name='name'>R02C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_2'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R02C1-R02C2</field>
+      </record>
+
+      <record id='for_bl_act_4' model='account.report.model.formula'>
+          <field name='name'>R02C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_2'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>207-2807-2907</field>
+      </record>
+
+      <record id='for_bl_act_5' model='account.report.model.formula'>
+          <field name='name'>R03C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_3'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>20-207</field>
+      </record>
+
+      <record id='for_bl_act_6' model='account.report.model.formula'>
+          <field name='name'>R03C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_3'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>280+290-2807-2907</field>
+      </record>
+
+      <record id='for_bl_act_7' model='account.report.model.formula'>
+          <field name='name'>R03C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_3'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R03C1-R03C2</field>
+      </record>
+
+      <record id='for_bl_act_8' model='account.report.model.formula'>
+          <field name='name'>R03C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_3'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>20+80+90-207-2807-2907</field>
+      </record>
+
+      <record id='for_bl_act_9' model='account.report.model.formula'>
+          <field name='name'>R05C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_5'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>211</field>
+      </record>
+
+      <record id='for_bl_act_10' model='account.report.model.formula'>
+          <field name='name'>R05C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_5'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>2811+2911</field>
+      </record>
+
+      <record id='for_bl_act_11' model='account.report.model.formula'>
+          <field name='name'>R05C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_5'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R05C1-R05C2</field>
+      </record>
+
+      <record id='for_bl_act_12' model='account.report.model.formula'>
+          <field name='name'>R05C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_5'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>211-2811-2911</field>
+      </record>
+
+      <record id='for_bl_act_13' model='account.report.model.formula'>
+          <field name='name'>R06C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_6'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>212+213</field>
+      </record>
+
+      <record id='for_bl_act_14' model='account.report.model.formula'>
+          <field name='name'>R06C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_6'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>2812+2912+2813+2913</field>
+      </record>
+
+      <record id='for_bl_act_15' model='account.report.model.formula'>
+          <field name='name'>R06C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_6'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R06C1-R06C2</field>
+      </record>
+
+      <record id='for_bl_act_16' model='account.report.model.formula'>
+          <field name='name'>R06C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_6'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>212+213-2812-2912-2813-2913</field>
+      </record>
+
+      <record id='for_bl_act_17' model='account.report.model.formula'>
+          <field name='name'>R07C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_7'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>21-211-212-213</field>
+      </record>
+
+      <record id='for_bl_act_18' model='account.report.model.formula'>
+          <field name='name'>R07C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_7'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>281+291-2811-2911-2812-2912-2813-2913</field>
+      </record>
+
+      <record id='for_bl_act_19' model='account.report.model.formula'>
+          <field name='name'>R07C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_7'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R07C1-R07C2</field>
+      </record>
+
+      <record id='for_bl_act_20' model='account.report.model.formula'>
+          <field name='name'>R07C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_7'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>21-211-212-213-281-291+2811+2911+2812+2912+2813+2913</field>
+      </record>
+
+      <record id='for_bl_act_21' model='account.report.model.formula'>
+          <field name='name'>R08C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_8'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>22</field>
+      </record>
+
+      <record id='for_bl_act_22' model='account.report.model.formula'>
+          <field name='name'>R08C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_8'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>282+292</field>
+      </record>
+
+      <record id='for_bl_act_23' model='account.report.model.formula'>
+          <field name='name'>R08C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_8'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R08C1-R08C2</field>
+      </record>
+
+      <record id='for_bl_act_24' model='account.report.model.formula'>
+          <field name='name'>R08C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_8'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>22-282-292</field>
+      </record>
+
+      <record id='for_bl_act_25' model='account.report.model.formula'>
+          <field name='name'>R09C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_9'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>23</field>
+      </record>
+
+      <record id='for_bl_act_26' model='account.report.model.formula'>
+          <field name='name'>R09C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_9'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>293</field>
+      </record>
+
+      <record id='for_bl_act_27' model='account.report.model.formula'>
+          <field name='name'>R09C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_9'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R09C1-R09C2</field>
+      </record>
+
+      <record id='for_bl_act_28' model='account.report.model.formula'>
+          <field name='name'>R09C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_9'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>23+293</field>
+      </record>
+
+      <record id='for_bl_act_29' model='account.report.model.formula'>
+          <field name='name'>R14C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_14'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>274+275+276</field>
+      </record>
+
+      <record id='for_bl_act_30' model='account.report.model.formula'>
+          <field name='name'>R14C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_14'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R14C1-R14C2</field>
+      </record>
+
+      <record id='for_bl_act_31' model='account.report.model.formula'>
+          <field name='name'>R14C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_14'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>274+275+276</field>
+      </record>
+
+      <record id='for_bl_act_32' model='account.report.model.formula'>
+          <field name='name'>R16C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_16'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R02C1+R03C1+R05C1+R06C1+R07C1+R08C1+R09C1+R14C1</field>
+      </record>
+
+      <record id='for_bl_act_33' model='account.report.model.formula'>
+          <field name='name'>R16C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_16'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R02C2+R03C2+R05C2+R06C2+R07C2+R08C2+R09C2+R14C2</field>
+      </record>
+
+      <record id='for_bl_act_34' model='account.report.model.formula'>
+          <field name='name'>R16C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_16'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R02C3+R03C3+R05C3+R06C3+R07C3+R08C3+R09C3+R14C3</field>
+      </record>
+
+      <record id='for_bl_act_35' model='account.report.model.formula'>
+          <field name='name'>R16C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_16'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R02C4+R03C4+R05C4+R06C4+R07C4+R08C4+R09C4+R14C4</field>
+      </record>
+
+      <record id='for_bl_act_36' model='account.report.model.formula'>
+          <field name='name'>R18C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_18'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>SDB3-SDB39</field>
+      </record>
+
+      <record id='for_bl_act_37' model='account.report.model.formula'>
+          <field name='name'>R18C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_18'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>39</field>
+      </record>
+
+      <record id='for_bl_act_38' model='account.report.model.formula'>
+          <field name='name'>R18C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_18'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R18C1-R18C2</field>
+      </record>
+
+      <record id='for_bl_act_39' model='account.report.model.formula'>
+          <field name='name'>R18C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_18'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>3</field>
+      </record>
+
+      <record id='for_bl_act_40' model='account.report.model.formula'>
+          <field name='name'>R20C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_20'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>SDB41-SDB419</field>
+      </record>
+
+      <record id='for_bl_act_41' model='account.report.model.formula'>
+          <field name='name'>R20C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_20'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>491</field>
+      </record>
+
+      <record id='for_bl_act_42' model='account.report.model.formula'>
+          <field name='name'>R20C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_20'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R20C1-R20C2</field>
+      </record>
+
+      <record id='for_bl_act_43' model='account.report.model.formula'>
+          <field name='name'>R20C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_20'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>SDB41-SDB419-491</field>
+      </record>
+
+      <record id='for_bl_act_44' model='account.report.model.formula'>
+          <field name='name'>R21C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_21'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>409+SDB42+SDB43+SDB44+SDB45+SDB46+SDB486+SDB489-SDB444-SDB445-SDB446-SDB447-SDB448+47</field>
+      </record>
+
+      <record id='for_bl_act_45' model='account.report.model.formula'>
+          <field name='name'>R21C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_21'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>495+496</field>
+      </record>
+
+      <record id='for_bl_act_46' model='account.report.model.formula'>
+          <field name='name'>R21C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_21'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R21C1-R21C2</field>
+      </record>
+
+      <record id='for_bl_act_47' model='account.report.model.formula'>
+          <field name='name'>R21C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_21'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>409+SDB42+SDB43+SDB44+SDB45+SDB46+SDB486+SDB489-SDB444-SDB445-SDB446-SDB447-SDB448+495+496+47</field>
+      </record>
+
+      <record id='for_bl_act_48' model='account.report.model.formula'>
+          <field name='name'>R22C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_22'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>SDB444+SDB445+SDB447</field>
+      </record>
+
+      <record id='for_bl_act_49' model='account.report.model.formula'>
+          <field name='name'>R22C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_22'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R22C1-R22C2</field>
+      </record>
+
+      <record id='for_bl_act_50' model='account.report.model.formula'>
+          <field name='name'>R22C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_22'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>SDB444+SDB445+SDB447</field>
+      </record>
+
+      <record id='for_bl_act_51' model='account.report.model.formula'>
+          <field name='name'>R23C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_23'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>SDB48-SDB486-SDB489</field>
+      </record>
+
+      <record id='for_bl_act_52' model='account.report.model.formula'>
+          <field name='name'>R23C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_23'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R23C1-R23C2</field>
+      </record>
+
+      <record id='for_bl_act_53' model='account.report.model.formula'>
+          <field name='name'>R23C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_23'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>SDB48-SDB486-SDB489</field>
+      </record>
+
+      <record id='for_bl_act_54' model='account.report.model.formula'>
+          <field name='name'>R25C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_25'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>50-509</field>
+      </record>
+
+      <record id='for_bl_act_55' model='account.report.model.formula'>
+          <field name='name'>R25C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_25'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R25C1-R25C2</field>
+      </record>
+
+      <record id='for_bl_act_56' model='account.report.model.formula'>
+          <field name='name'>R25C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_25'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>50-509</field>
+      </record>
+
+      <record id='for_bl_act_57' model='account.report.model.formula'>
+          <field name='name'>R26C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_26'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>SDB51+SDB52+SDB53+SDB54+SDB58-SCR541</field>
+      </record>
+
+      <record id='for_bl_act_58' model='account.report.model.formula'>
+          <field name='name'>R26C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_26'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>59</field>
+      </record>
+
+      <record id='for_bl_act_59' model='account.report.model.formula'>
+          <field name='name'>R26C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_26'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R26C1-R26C2</field>
+      </record>
+
+      <record id='for_bl_act_60' model='account.report.model.formula'>
+          <field name='name'>R26C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_26'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>SDB51+SDB52+SDB53+SDB54+59+SDB58</field>
+      </record>
+
+      <record id='for_bl_act_61' model='account.report.model.formula'>
+          <field name='name'>R27C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_27'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R18C1+R20C1+R21C1+R22C1+R23C1+R25C1+R26C1</field>
+      </record>
+
+      <record id='for_bl_act_62' model='account.report.model.formula'>
+          <field name='name'>R27C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_27'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R18C2+R20C2+R21C2+R22C2+R23C2+R25C2+R26C2</field>
+      </record>
+
+      <record id='for_bl_act_63' model='account.report.model.formula'>
+          <field name='name'>R27C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_27'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R18C3+R20C3+R21C3+R22C3+R23C3+R25C3+R26C3</field>
+      </record>
+
+      <record id='for_bl_act_64' model='account.report.model.formula'>
+          <field name='name'>R27C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_27'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R18C4+R20C4+R21C4+R22C4+R23C4+R25C4+R26C4</field>
+      </record>
+
+      <record id='for_bl_act_65' model='account.report.model.formula'>
+          <field name='name'>R28C1</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_28'/>
+          <field name='column_id' ref='col_bl_act_1'/>
+          <field name='ordre'>4</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R16C1+R27C1</field>
+      </record>
+
+      <record id='for_bl_act_66' model='account.report.model.formula'>
+          <field name='name'>R28C2</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_28'/>
+          <field name='column_id' ref='col_bl_act_2'/>
+          <field name='ordre'>4</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R16C2+R27C2</field>
+      </record>
+
+      <record id='for_bl_act_67' model='account.report.model.formula'>
+          <field name='name'>R28C3</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_28'/>
+          <field name='column_id' ref='col_bl_act_3'/>
+          <field name='ordre'>4</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R16C3+R27C3</field>
+      </record>
+
+      <record id='for_bl_act_68' model='account.report.model.formula'>
+          <field name='name'>R28C4</field>
+          <field name='report_id' ref='bl_act'/>
+          <field name='row_id' ref='row_bl_act_28'/>
+          <field name='column_id' ref='col_bl_act_4'/>
+          <field name='ordre'>4</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R16C4+R27C4</field>
+      </record>
+
+
+  <!-- PASSIF -->
+
+      <!-- le rapport -->
+      <record id='bl_pas' model='account.report.model'>
+          <field name='name'>PASSIF</field>
+          <field name='code'>PAS</field>
+          <field name='groupe_id' ref='l10n_dz_reports.group_bilan'/>
+          <field name='tableau_num'>02</field>
+          <field name='specifique'>False</field>
+          <field name='specifique_rep'>standard</field>
+          <field name='mode_impression'>Portrait</field>
+          <field name='state'>done</field>
+      </record>
+
+      <!-- les lignes -->
+      <record id='row_bl_pas_1' model='account.report.model.row'>
+          <field name='name'>CAPITAUX PROPRES</field>
+          <field name='code'>R01</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>1</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>False</field>
+      </record>
+
+      <record id='row_bl_pas_2' model='account.report.model.row'>
+          <field name='name'>Capital émis</field>
+          <field name='code'>R02</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>2</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_3' model='account.report.model.row'>
+          <field name='name'>Capital non appelé</field>
+          <field name='code'>R03</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>3</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_4' model='account.report.model.row'>
+          <field name='name'>Primes et réserves -  Réserves consolidées (1)</field>
+          <field name='code'>R04</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>4</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_5' model='account.report.model.row'>
+          <field name='name'>Ecart de réévaluation</field>
+          <field name='code'>R05</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>5</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_6' model='account.report.model.row'>
+          <field name='name'>Ecart d'équivalence (1)</field>
+          <field name='code'>R06</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>6</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_7' model='account.report.model.row'>
+          <field name='name'>Résultat net - Résultat net part du groupe (1)</field>
+          <field name='code'>R07</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>7</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_8' model='account.report.model.row'>
+          <field name='name'>Autres capitaux propores - Report à nouveau</field>
+          <field name='code'>R08</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>8</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_9' model='account.report.model.row'>
+          <field name='name'>Part de la société consolidante (1)</field>
+          <field name='code'>R09</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>D</field>
+          <field name='ligne_num'>9</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_10' model='account.report.model.row'>
+          <field name='name'>Part des minoritaires (1)</field>
+          <field name='code'>R10</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>D</field>
+          <field name='ligne_num'>10</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_11' model='account.report.model.row'>
+          <field name='name'>TOTAL I</field>
+          <field name='code'>R11</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>3</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>11</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_12' model='account.report.model.row'>
+          <field name='name'>PASSIFS NON-COURANTS</field>
+          <field name='code'>R12</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>12</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>False</field>
+      </record>
+
+      <record id='row_bl_pas_13' model='account.report.model.row'>
+          <field name='name'>Emprunts et dettes financières</field>
+          <field name='code'>R13</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>13</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_14' model='account.report.model.row'>
+          <field name='name'>Impôts (différés et provisionnés)</field>
+          <field name='code'>R14</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>14</field>
+          <field name='bold'>True</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_15' model='account.report.model.row'>
+          <field name='name'>Autres dettes non courantes</field>
+          <field name='code'>R15</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>15</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_16' model='account.report.model.row'>
+          <field name='name'>Provisions et produits constatés d'avance</field>
+          <field name='code'>R16</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>16</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_17' model='account.report.model.row'>
+          <field name='name'>TOTAL II</field>
+          <field name='code'>R17</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>3</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>17</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_18' model='account.report.model.row'>
+          <field name='name'>PASSIFS COURANTS</field>
+          <field name='code'>R18</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>18</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>False</field>
+      </record>
+
+      <record id='row_bl_pas_19' model='account.report.model.row'>
+          <field name='name'>Fournisseurs et comptes rattachés</field>
+          <field name='code'>R19</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>19</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_20' model='account.report.model.row'>
+          <field name='name'>Impôts</field>
+          <field name='code'>R20</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>20</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_21' model='account.report.model.row'>
+          <field name='name'>Autres dettes</field>
+          <field name='code'>R21</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>21</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_22' model='account.report.model.row'>
+          <field name='name'>Trésorerie passif</field>
+          <field name='code'>R22</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>22</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_23' model='account.report.model.row'>
+          <field name='name'>TOTAL III</field>
+          <field name='code'>R23</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>3</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>23</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_pas_24' model='account.report.model.row'>
+          <field name='name'>TOTAL GENERAL PASSIF (I+II+III)</field>
+          <field name='code'>R24</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='ordre'>4</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>24</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <!-- les colonnes -->
+      <record id='col_bl_pas_1' model='account.report.model.column'>
+          <field name='name'>N</field>
+          <field name='code'>C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='periode'>N</field>
+          <field name='c_num'>1</field>
+      </record>
+
+      <record id='col_bl_pas_2' model='account.report.model.column'>
+          <field name='name'>N-1</field>
+          <field name='code'>C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='periode'>N-1</field>
+          <field name='c_num'>2</field>
+      </record>
+
+      <!-- les formules -->
+      <record id='for_bl_pas_1' model='account.report.model.formula'>
+          <field name='name'>R02C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_2'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>101+108</field>
+      </record>
+
+      <record id='for_bl_pas_2' model='account.report.model.formula'>
+          <field name='name'>R02C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_2'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>101+108</field>
+      </record>
+
+      <record id='for_bl_pas_3' model='account.report.model.formula'>
+          <field name='name'>R03C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_3'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>109</field>
+      </record>
+
+      <record id='for_bl_pas_4' model='account.report.model.formula'>
+          <field name='name'>R03C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_3'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>109</field>
+      </record>
+
+      <record id='for_bl_pas_5' model='account.report.model.formula'>
+          <field name='name'>R04C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_4'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>103+104+106</field>
+      </record>
+
+      <record id='for_bl_pas_6' model='account.report.model.formula'>
+          <field name='name'>R04C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_4'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>103+104+106</field>
+      </record>
+
+      <record id='for_bl_pas_7' model='account.report.model.formula'>
+          <field name='name'>R05C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_5'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>105</field>
+      </record>
+
+      <record id='for_bl_pas_8' model='account.report.model.formula'>
+          <field name='name'>R05C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_5'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>105</field>
+      </record>
+
+      <record id='for_bl_pas_9' model='account.report.model.formula'>
+          <field name='name'>R06C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_6'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>107</field>
+      </record>
+
+      <record id='for_bl_pas_10' model='account.report.model.formula'>
+          <field name='name'>R06C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_6'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>107</field>
+      </record>
+
+      <record id='for_bl_pas_11' model='account.report.model.formula'>
+          <field name='name'>R07C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_7'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>7-6+12</field>
+      </record>
+
+      <record id='for_bl_pas_12' model='account.report.model.formula'>
+          <field name='name'>R07C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_7'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>7-6+12</field>
+      </record>
+
+      <record id='for_bl_pas_13' model='account.report.model.formula'>
+          <field name='name'>R08C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_8'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>11</field>
+      </record>
+
+      <record id='for_bl_pas_14' model='account.report.model.formula'>
+          <field name='name'>R08C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_8'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>11</field>
+      </record>
+
+      <record id='for_bl_pas_15' model='account.report.model.formula'>
+          <field name='name'>R11C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_11'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R02C1+R03C1+R04C1+R05C1+R06C1+R07C1+R08C1</field>
+      </record>
+
+      <record id='for_bl_pas_16' model='account.report.model.formula'>
+          <field name='name'>R11C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_11'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R02C2+R03C2+R04C2+R05C2+R06C2+R07C2+R08C2</field>
+      </record>
+
+      <record id='for_bl_pas_17' model='account.report.model.formula'>
+          <field name='name'>R13C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_13'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>16+17</field>
+      </record>
+
+      <record id='for_bl_pas_18' model='account.report.model.formula'>
+          <field name='name'>R13C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_13'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>16+17</field>
+      </record>
+
+      <record id='for_bl_pas_19' model='account.report.model.formula'>
+          <field name='name'>R14C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_14'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>134+155</field>
+      </record>
+
+      <record id='for_bl_pas_20' model='account.report.model.formula'>
+          <field name='name'>R14C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_14'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>134+155</field>
+      </record>
+
+      <record id='for_bl_pas_21' model='account.report.model.formula'>
+          <field name='name'>R15C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_15'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>229</field>
+      </record>
+
+      <record id='for_bl_pas_22' model='account.report.model.formula'>
+          <field name='name'>R15C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_15'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>229</field>
+      </record>
+
+      <record id='for_bl_pas_23' model='account.report.model.formula'>
+          <field name='name'>R16C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_16'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>13+15+155+134+133</field>
+      </record>
+
+      <record id='for_bl_pas_24' model='account.report.model.formula'>
+          <field name='name'>R16C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_16'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>13+15+155+134+133</field>
+      </record>
+
+      <record id='for_bl_pas_25' model='account.report.model.formula'>
+          <field name='name'>R17C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_17'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R13C1+R14C1+R15C1+R16C1</field>
+      </record>
+
+      <record id='for_bl_pas_26' model='account.report.model.formula'>
+          <field name='name'>R17C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_17'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R13C2+R14C2+R15C2+R16C2</field>
+      </record>
+
+      <record id='for_bl_pas_27' model='account.report.model.formula'>
+          <field name='name'>R19C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_19'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>40+409</field>
+      </record>
+
+      <record id='for_bl_pas_28' model='account.report.model.formula'>
+          <field name='name'>R19C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_19'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>40+409</field>
+      </record>
+
+      <record id='for_bl_pas_29' model='account.report.model.formula'>
+          <field name='name'>R20C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_20'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>SCR444+SCR445+SCR447</field>
+      </record>
+
+      <record id='for_bl_pas_30' model='account.report.model.formula'>
+          <field name='name'>R20C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_20'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>SCR444+SCR445+SCR447</field>
+      </record>
+
+      <record id='for_bl_pas_31' model='account.report.model.formula'>
+          <field name='name'>R21C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_21'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>SCR419+SCR509+SCR42+SCR43+SCR440+SCR441+SCR442+SCR443+SCR448+SCR449+SCR45+SCR46+SCR48</field>
+      </record>
+
+      <record id='for_bl_pas_32' model='account.report.model.formula'>
+          <field name='name'>R21C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_21'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>SCR419+SCR509+SCR42+SCR43+SCR440+SCR441+SCR442+SCR443+SCR448+SCR449+SCR45+SCR46+SCR48</field>
+      </record>
+
+      <record id='for_bl_pas_33' model='account.report.model.formula'>
+          <field name='name'>R22C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_22'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>SCR51+SCR52+SCR53+SCR54-SCR58-SCR541</field>
+      </record>
+
+      <record id='for_bl_pas_34' model='account.report.model.formula'>
+          <field name='name'>R22C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_22'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>SCR51+SCR52+SCR53+SCR54+59-SCR58-SCR541</field>
+      </record>
+
+      <record id='for_bl_pas_35' model='account.report.model.formula'>
+          <field name='name'>R23C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_23'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R19C1+R20C1+R21C1+R22C1</field>
+      </record>
+
+      <record id='for_bl_pas_36' model='account.report.model.formula'>
+          <field name='name'>R23C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_23'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R19C2+R20C2+R21C2+R22C2</field>
+      </record>
+
+      <record id='for_bl_pas_37' model='account.report.model.formula'>
+          <field name='name'>R24C1</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_24'/>
+          <field name='column_id' ref='col_bl_pas_1'/>
+          <field name='ordre'>4</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R11C1+R17C1+R23C1</field>
+      </record>
+
+      <record id='for_bl_pas_38' model='account.report.model.formula'>
+          <field name='name'>R24C2</field>
+          <field name='report_id' ref='bl_pas'/>
+          <field name='row_id' ref='row_bl_pas_24'/>
+          <field name='column_id' ref='col_bl_pas_2'/>
+          <field name='ordre'>4</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R11C2+R17C2+R23C2</field>
+      </record>
+
+
+  <!-- COMPTE DE RESULTAT -->
+
+      <!-- le rapport -->
+      <record id='bl_crn' model='account.report.model'>
+          <field name='name'>COMPTE DE RESULTAT</field>
+          <field name='code'>CRN</field>
+          <field name='groupe_id' ref='l10n_dz_reports.group_bilan'/>
+          <field name='tableau_num'>03</field>
+          <field name='specifique'>False</field>
+          <field name='specifique_rep'>standard</field>
+          <field name='sous_titre'>par Nature</field>
+          <field name='mode_impression'>Portrait</field>
+          <field name='state'>done</field>
+      </record>
+
+      <!-- les lignes -->
+      <record id='row_bl_crn_1' model='account.report.model.row'>
+          <field name='name'>Ventes et produits annexes</field>
+          <field name='code'>R01</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>1</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_2' model='account.report.model.row'>
+          <field name='name'>Variation stocks produits finis et en cours</field>
+          <field name='code'>R02</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>2</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_3' model='account.report.model.row'>
+          <field name='name'>Production immobilisée</field>
+          <field name='code'>R03</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>3</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_4' model='account.report.model.row'>
+          <field name='name'>Subventions d'exploitation</field>
+          <field name='code'>R04</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>4</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_5' model='account.report.model.row'>
+          <field name='name'>I-PRODUCTION DE L'EXERCICE</field>
+          <field name='code'>R05</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>5</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_6' model='account.report.model.row'>
+          <field name='name'>Achats consommés</field>
+          <field name='code'>R06</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>6</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_7' model='account.report.model.row'>
+          <field name='name'>Services extérieurs et autres consommations</field>
+          <field name='code'>R07</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>7</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_8' model='account.report.model.row'>
+          <field name='name'>II-CONSOMMATION DE L'EXERCICE</field>
+          <field name='code'>R08</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>8</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_9' model='account.report.model.row'>
+          <field name='name'>III-VALEUR AJOUTEE D'EXPLOITATION (I-II)</field>
+          <field name='code'>R09</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>3</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>9</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_10' model='account.report.model.row'>
+          <field name='name'>Charges de personnel</field>
+          <field name='code'>R10</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>10</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_11' model='account.report.model.row'>
+          <field name='name'>Impôts, taxes et versements assimilés</field>
+          <field name='code'>R11</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>11</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_12' model='account.report.model.row'>
+          <field name='name'>IV-EXCEDENT BRUT D'EXPLOITATION</field>
+          <field name='code'>R12</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>12</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_13' model='account.report.model.row'>
+          <field name='name'>Autres produits opérationnels</field>
+          <field name='code'>R13</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>13</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_14' model='account.report.model.row'>
+          <field name='name'>Autres charges opérationnelles</field>
+          <field name='code'>R14</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>14</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_15' model='account.report.model.row'>
+          <field name='name'>Dotations aux amortissements, provisions et pertes de valeurs</field>
+          <field name='code'>R15</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>15</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_16' model='account.report.model.row'>
+          <field name='name'>Reprise sur pertes de valeur et provisions</field>
+          <field name='code'>R16</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>16</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_17' model='account.report.model.row'>
+          <field name='name'>V- RESULTAT OPERATIONNEL</field>
+          <field name='code'>R17</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>17</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_18' model='account.report.model.row'>
+          <field name='name'>Produits financiers</field>
+          <field name='code'>R18</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>18</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_19' model='account.report.model.row'>
+          <field name='name'>Charges financières</field>
+          <field name='code'>R19</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>19</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_20' model='account.report.model.row'>
+          <field name='name'>VI-RESULTAT FINANCIER</field>
+          <field name='code'>R20</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>20</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_21' model='account.report.model.row'>
+          <field name='name'>VII-RESULTAT ORDINAIRE AVANT IMPOTS ( V+VI)</field>
+          <field name='code'>R21</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>3</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>21</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_22' model='account.report.model.row'>
+          <field name='name'>Impôts exigibles sur résultats ordinaires</field>
+          <field name='code'>R22</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>22</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_23' model='account.report.model.row'>
+          <field name='name'>Impôts différés ( Variations ) sur résultats ordinaires</field>
+          <field name='code'>R23</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>23</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_24' model='account.report.model.row'>
+          <field name='name'>TOTAL DES PRODUITS DES ACTIVITES ORDINAIRES</field>
+          <field name='code'>R24</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>24</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_25' model='account.report.model.row'>
+          <field name='name'>TOTAL DES CHARGES DES ACTIVITES ORDINAIRES</field>
+          <field name='code'>R25</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>25</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_26' model='account.report.model.row'>
+          <field name='name'>VIII-RESULTAT NET DES ACTIVITES ORDINAIRES</field>
+          <field name='code'>R26</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>2</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>26</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_27' model='account.report.model.row'>
+          <field name='name'>Eléments extraordinaires (produits) (à préciser)</field>
+          <field name='code'>R27</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>27</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_28' model='account.report.model.row'>
+          <field name='name'>Eléments extraordinaires (charges) (à préciser)</field>
+          <field name='code'>R28</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>1</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>28</field>
+          <field name='bold'>False</field>
+          <field name='police'>1</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_29' model='account.report.model.row'>
+          <field name='name'>IX-RESULTAT EXTRAORDINAIRE</field>
+          <field name='code'>R29</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>4</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>29</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <record id='row_bl_crn_30' model='account.report.model.row'>
+          <field name='name'>X-RESULTAT NET DE L'EXERCICE</field>
+          <field name='code'>R30</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='ordre'>4</field>
+          <field name='aligne'>G</field>
+          <field name='ligne_num'>30</field>
+          <field name='bold'>True</field>
+          <field name='police'>2</field>
+          <field name='view_data'>True</field>
+      </record>
+
+      <!-- les colonnes -->
+      <record id='col_bl_crn_1' model='account.report.model.column'>
+          <field name='name'>N</field>
+          <field name='code'>C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='periode'>N</field>
+          <field name='c_num'>1</field>
+      </record>
+
+      <record id='col_bl_crn_2' model='account.report.model.column'>
+          <field name='name'>N-1</field>
+          <field name='code'>C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='periode'>N-1</field>
+          <field name='c_num'>2</field>
+      </record>
+
+      <!-- les formules -->
+      <record id='for_bl_crn_1' model='account.report.model.formula'>
+          <field name='name'>R01C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_1'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>70</field>
+      </record>
+
+      <record id='for_bl_crn_2' model='account.report.model.formula'>
+          <field name='name'>R01C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_1'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>70</field>
+      </record>
+
+      <record id='for_bl_crn_3' model='account.report.model.formula'>
+          <field name='name'>R02C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_2'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>72</field>
+      </record>
+
+      <record id='for_bl_crn_4' model='account.report.model.formula'>
+          <field name='name'>R02C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_2'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>72</field>
+      </record>
+
+      <record id='for_bl_crn_5' model='account.report.model.formula'>
+          <field name='name'>R03C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_3'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>73</field>
+      </record>
+
+      <record id='for_bl_crn_6' model='account.report.model.formula'>
+          <field name='name'>R03C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_3'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>73</field>
+      </record>
+
+      <record id='for_bl_crn_7' model='account.report.model.formula'>
+          <field name='name'>R04C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_4'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>74</field>
+      </record>
+
+      <record id='for_bl_crn_8' model='account.report.model.formula'>
+          <field name='name'>R04C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_4'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>74</field>
+      </record>
+
+      <record id='for_bl_crn_9' model='account.report.model.formula'>
+          <field name='name'>R05C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_5'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>2</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R02C1+R03C1+R04C1+R01C1</field>
+      </record>
+
+      <record id='for_bl_crn_10' model='account.report.model.formula'>
+          <field name='name'>R05C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_5'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>2</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R01C2+R02C2+R03C2+R04C2</field>
+      </record>
+
+      <record id='for_bl_crn_11' model='account.report.model.formula'>
+          <field name='name'>R06C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_6'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-60</field>
+      </record>
+
+      <record id='for_bl_crn_12' model='account.report.model.formula'>
+          <field name='name'>R06C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_6'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-60</field>
+      </record>
+
+      <record id='for_bl_crn_13' model='account.report.model.formula'>
+          <field name='name'>R07C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_7'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-61-62</field>
+      </record>
+
+      <record id='for_bl_crn_14' model='account.report.model.formula'>
+          <field name='name'>R07C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_7'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-61-62</field>
+      </record>
+
+      <record id='for_bl_crn_15' model='account.report.model.formula'>
+          <field name='name'>R08C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_8'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>2</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R06C1+R07C1</field>
+      </record>
+
+      <record id='for_bl_crn_16' model='account.report.model.formula'>
+          <field name='name'>R08C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_8'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>2</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R06C2+R07C2</field>
+      </record>
+
+      <record id='for_bl_crn_17' model='account.report.model.formula'>
+          <field name='name'>R09C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_9'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R05C1+R08C1</field>
+      </record>
+
+      <record id='for_bl_crn_18' model='account.report.model.formula'>
+          <field name='name'>R09C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_9'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R05C2+R08C2</field>
+      </record>
+
+      <record id='for_bl_crn_19' model='account.report.model.formula'>
+          <field name='name'>R10C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_10'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-63</field>
+      </record>
+
+      <record id='for_bl_crn_20' model='account.report.model.formula'>
+          <field name='name'>R10C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_10'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-63</field>
+      </record>
+
+      <record id='for_bl_crn_21' model='account.report.model.formula'>
+          <field name='name'>R11C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_11'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-64</field>
+      </record>
+
+      <record id='for_bl_crn_22' model='account.report.model.formula'>
+          <field name='name'>R11C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_11'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-64</field>
+      </record>
+
+      <record id='for_bl_crn_23' model='account.report.model.formula'>
+          <field name='name'>R12C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_12'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>4</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R09C1+R10C1+R11C1</field>
+      </record>
+
+      <record id='for_bl_crn_24' model='account.report.model.formula'>
+          <field name='name'>R12C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_12'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>4</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R09C2+R10C2+R11C2</field>
+      </record>
+
+      <record id='for_bl_crn_25' model='account.report.model.formula'>
+          <field name='name'>R13C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_13'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>75+897</field>
+      </record>
+
+      <record id='for_bl_crn_26' model='account.report.model.formula'>
+          <field name='name'>R13C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_13'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>75</field>
+      </record>
+
+      <record id='for_bl_crn_27' model='account.report.model.formula'>
+          <field name='name'>R14C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_14'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-65-896</field>
+      </record>
+
+      <record id='for_bl_crn_28' model='account.report.model.formula'>
+          <field name='name'>R14C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_14'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-65</field>
+      </record>
+
+      <record id='for_bl_crn_29' model='account.report.model.formula'>
+          <field name='name'>R15C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_15'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-68</field>
+      </record>
+
+      <record id='for_bl_crn_30' model='account.report.model.formula'>
+          <field name='name'>R15C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_15'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-68</field>
+      </record>
+
+      <record id='for_bl_crn_31' model='account.report.model.formula'>
+          <field name='name'>R16C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_16'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>78</field>
+      </record>
+
+      <record id='for_bl_crn_32' model='account.report.model.formula'>
+          <field name='name'>R16C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_16'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>78</field>
+      </record>
+
+      <record id='for_bl_crn_33' model='account.report.model.formula'>
+          <field name='name'>R17C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_17'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>5</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R12C1+R13C1+R14C1+R15C1+R16C1</field>
+      </record>
+
+      <record id='for_bl_crn_34' model='account.report.model.formula'>
+          <field name='name'>R17C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_17'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>5</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R12C2+R13C2+R14C2+R15C2+R16C2</field>
+      </record>
+
+      <record id='for_bl_crn_35' model='account.report.model.formula'>
+          <field name='name'>R18C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_18'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>76</field>
+      </record>
+
+      <record id='for_bl_crn_36' model='account.report.model.formula'>
+          <field name='name'>R18C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_18'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>76</field>
+      </record>
+
+      <record id='for_bl_crn_37' model='account.report.model.formula'>
+          <field name='name'>R19C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_19'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-66</field>
+      </record>
+
+      <record id='for_bl_crn_38' model='account.report.model.formula'>
+          <field name='name'>R19C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_19'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-66</field>
+      </record>
+
+      <record id='for_bl_crn_39' model='account.report.model.formula'>
+          <field name='name'>R20C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_20'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>2</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R18C1+R19C1</field>
+      </record>
+
+      <record id='for_bl_crn_40' model='account.report.model.formula'>
+          <field name='name'>R20C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_20'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>2</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R18C2+R19C2</field>
+      </record>
+
+      <record id='for_bl_crn_41' model='account.report.model.formula'>
+          <field name='name'>R21C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_21'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>6</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R17C1+R20C1</field>
+      </record>
+
+      <record id='for_bl_crn_42' model='account.report.model.formula'>
+          <field name='name'>R21C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_21'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>6</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R17C2+R20C2</field>
+      </record>
+
+      <record id='for_bl_crn_43' model='account.report.model.formula'>
+          <field name='name'>R22C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_22'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-695-698</field>
+      </record>
+
+      <record id='for_bl_crn_44' model='account.report.model.formula'>
+          <field name='name'>R22C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_22'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-695-698</field>
+      </record>
+
+      <record id='for_bl_crn_45' model='account.report.model.formula'>
+          <field name='name'>R23C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_23'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-692-693</field>
+      </record>
+
+      <record id='for_bl_crn_46' model='account.report.model.formula'>
+          <field name='name'>R23C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_23'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-692-693</field>
+      </record>
+
+      <record id='for_bl_crn_47' model='account.report.model.formula'>
+          <field name='name'>R24C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_24'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>897+7+77</field>
+      </record>
+
+      <record id='for_bl_crn_48' model='account.report.model.formula'>
+          <field name='name'>R24C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_24'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>897+7+77</field>
+      </record>
+
+      <record id='for_bl_crn_49' model='account.report.model.formula'>
+          <field name='name'>R25C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_25'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-896-67-6</field>
+      </record>
+
+      <record id='for_bl_crn_50' model='account.report.model.formula'>
+          <field name='name'>R25C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_25'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-896-67-6</field>
+      </record>
+
+      <record id='for_bl_crn_51' model='account.report.model.formula'>
+          <field name='name'>R26C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_26'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>2</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R24C1+R25C1</field>
+      </record>
+
+      <record id='for_bl_crn_52' model='account.report.model.formula'>
+          <field name='name'>R26C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_26'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>2</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R24C2+R25C2</field>
+      </record>
+
+      <record id='for_bl_crn_53' model='account.report.model.formula'>
+          <field name='name'>R27C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_27'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>77</field>
+      </record>
+
+      <record id='for_bl_crn_54' model='account.report.model.formula'>
+          <field name='name'>R27C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_27'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>77</field>
+      </record>
+
+      <record id='for_bl_crn_55' model='account.report.model.formula'>
+          <field name='name'>R28C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_28'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>-67</field>
+      </record>
+
+      <record id='for_bl_crn_56' model='account.report.model.formula'>
+          <field name='name'>R28C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_28'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>1</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>-67</field>
+      </record>
+
+      <record id='for_bl_crn_57' model='account.report.model.formula'>
+          <field name='name'>R29C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_29'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>2</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R27C1+R28C1</field>
+      </record>
+
+      <record id='for_bl_crn_58' model='account.report.model.formula'>
+          <field name='name'>R29C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_29'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>2</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R27C2+R28C2</field>
+      </record>
+
+      <record id='for_bl_crn_59' model='account.report.model.formula'>
+          <field name='name'>R30C1</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_30'/>
+          <field name='column_id' ref='col_bl_crn_1'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N</field>
+          <field name='formula_ch'>R26C1+R29C1</field>
+      </record>
+
+      <record id='for_bl_crn_60' model='account.report.model.formula'>
+          <field name='name'>R30C2</field>
+          <field name='report_id' ref='bl_crn'/>
+          <field name='row_id' ref='row_bl_crn_30'/>
+          <field name='column_id' ref='col_bl_crn_2'/>
+          <field name='ordre'>3</field>
+          <field name='periode'>N-1</field>
+          <field name='formula_ch'>R26C2+R29C2</field>
+      </record>
+
+  </data>
+</openerp>

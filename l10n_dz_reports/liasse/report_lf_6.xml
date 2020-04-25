@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="report_lf_6">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <style>
+                        .page-style{
+                        padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px; border: 0px solid #000000; height:1305px; width:920px; margin-top:10px;
+                        }
+                        .titre-style{
+                        text-align: center; font-size: 24px; font-style: normal; font-variant: normal;
+                        padding: 0px;font-weight: bold;
+                        }
+                        .bold-style{
+                        font-size: 22px; font-style: normal; font-variant: normal;
+                        padding: 0px;font-weight: bold;
+                        }
+
+                        div, p {
+                        font-family: Arial;
+                        }
+
+                        th, td {
+                        border: 1px solid black; text-align: left; padding: 2px;
+                        }
+                        .transp{
+                        border :none;
+                        }
+                    </style>
+
+                    <div class="page-style" style="padding:0px;">
+                        <table style="margin:0px; padding:10px;">
+                            <tr >
+                                <td><strong>NIF : </strong><span t-field="o.company_id.nif"/></td>
+                            </tr>
+                        <tr>
+                            <td style="font-weight:bold;">IMPRIME DESTINE A L'ADMINISTRATION</td>
+                        </tr>
+                        </table>
+
+                        <table style="width:100%; border: 1px solid black;">
+                            <tr >
+                                <td style="width:25%; border:none;">Désignation de l'entreprise : </td>
+                                <td style="border:none;"><strong><span t-field="o.company_id"/></strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">Activité : </td>
+                                <td style="border:none;"><strong><span t-field="o.company_id.activite"/></strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">Adresse : </td>
+                                <td style="border:none; padding-bottom:60px;"><strong><span t-field="o.company_id.adresse_simple"/></strong></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:35%;">
+                            <tr>
+                                <td style="text-align:center;">Exercice du </td>
+                                <td style="text-align:center;"><strong><span t-field="o.date_debut"/></strong></td>
+                                <td style="text-align:center;"> au </td>
+                                <td style="text-align:center;"><strong><span t-field="o.date_fin"/></strong></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:80%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="text-align:left; font-weight:bold; font-size:18px;">
+                                    6/Tableau des immobilisations créées ou acquises au cours de l'exercice :
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        <table style="width:100%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="width:30%; text-align:center; vertical-align: middle;">Rubrique (Nature des immobilisations (créees ou acquises à détailler)</td>
+                                <td style="width:20%; text-align:center; vertical-align: middle;">Montants bruts</td>
+                                <td style="width:20%; text-align:center; vertical-align: middle;">TVA déduite</td>
+                                <td style="width:20%; text-align:center; vertical-align: middle;">Montant net à amortir</td>
+                            </tr>
+                        </table>
+
+                        <t t-set="i" t-value="0"/>
+
+                        <table style="width:100%;">
+                            <t t-foreach="[1, 2, 3, 4, 5]" t-as="j">
+                                <tr style="height:30px;">
+                                    <td style="width:30%; height:40px; text-align:center; vertical-align: middle;">
+                                        <span t-field="o.grid_ids[i].name"/>
+                                    </td>
+                                    <td style="width:20%; text-align:right; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_1 != 0">
+                                            <span t-field="o.grid_ids[i].amount_1" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:20%; text-align:right; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_2 != 0">
+                                            <span t-field="o.grid_ids[i].amount_2" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:20%; text-align:right; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_3 != 0"> <!--test equal zero-->
+                                            <span t-field="o.grid_ids[i].amount_3" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+
+                                    <t t-set="i" t-value="i+1"/>
+                                </tr>
+                            </t>
+                            <tr style="height:30px;"> <!-- LIGNE TOTAL ALIGNEMENT A DROITE -->
+                                <td style="width:30%; font-weight:bold; text-align:right; vertical-align: middle;">
+                                    <span t-field="o.grid_ids[i].name"/>
+                                </td>
+                                <td style="width:20%; font-weight:bold; text-align:right; vertical-align: middle;">
+                                    <t t-if="o.grid_ids[i].amount_1 != 0">
+                                        <span t-field="o.grid_ids[i].amount_1" t-options='{"precision": 0}'/>
+                                    </t>
+                                </td>
+                                <td style="width:20%; font-weight:bold; text-align:right; vertical-align: middle;">
+                                    <t t-if="o.grid_ids[i].amount_2 != 0">
+                                        <span t-field="o.grid_ids[i].amount_2" t-options='{"precision": 0}'/>
+                                    </t>
+                                </td>
+                                <td style="width:20%; font-weight:bold; text-align:right; vertical-align: middle;">
+                                    <t t-if="o.grid_ids[i].amount_3 != 0"> <!--test equal zero-->
+                                        <span t-field="o.grid_ids[i].amount_3" t-options='{"precision": 0}'/>
+                                    </t>
+                                </td>
+
+                                <t t-set="i" t-value="i+1"/>
+                            </tr>
+                        </table>
+
+
+                    </div>
+
+
+
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="report_lf_5">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <style>
+                        .page-style{
+                        padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px; border: 0px solid #000000; height:1305px; width:920px; margin-top:10px;
+                        }
+                        .titre-style{
+                        text-align: center; font-size: 24px; font-style: normal; font-variant: normal;
+                        padding: 0px;font-weight: bold;
+                        }
+                        .bold-style{
+                        font-size: 22px; font-style: normal; font-variant: normal;
+                        padding: 0px;font-weight: bold;
+                        }
+
+                        div, p {
+                        font-family: Arial;
+                        }
+
+                        th, td {
+                        border: 1px solid black; text-align: left; padding: 2px;
+                        }
+                        .transp{
+                        border :none;
+                        }
+                    </style>
+
+                    <div class="page-style" style="padding:0px;">
+                        <table style="margin:0px; padding:10px;">
+                            <tr >
+                                <td><strong>NIF : </strong><span t-field="o.company_id.nif"/></td>
+                            </tr>
+                        <tr>
+                            <td style="font-weight:bold;">IMPRIME DESTINE A L'ADMINISTRATION</td>
+                        </tr>
+                        </table>
+
+                        <table style="width:100%; border: 1px solid black;">
+                            <tr >
+                                <td style="width:25%; border:none;">Désignation de l'entreprise : </td>
+                                <td style="border:none;"><strong><span t-field="o.company_id"/></strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">Activité : </td>
+                                <td style="border:none;"><strong><span t-field="o.company_id.activite"/></strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">Adresse : </td>
+                                <td style="border:none; padding-bottom:60px;"><strong><span t-field="o.company_id.adresse_simple"/></strong></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:35%;">
+                            <tr>
+                                <td style="text-align:center;">Exercice du </td>
+                                <td style="text-align:center;"><strong><span t-field="o.date_debut"/></strong></td>
+                                <td style="text-align:center;"> au </td>
+                                <td style="text-align:center;"><strong><span t-field="o.date_fin"/></strong></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:60%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="text-align:left; font-weight:bold; font-size:18px;">
+                                    5/Tableau des amortissements et pertes de valeurs :
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        <table style="width:100%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="width:14%; height:40px; text-align:center; vertical-align: middle;">Rubriques et Postes</td>
+                                <td style="width:16%; height:40px; text-align:center; vertical-align: middle;">Dotations Cumulées en début d'exercice</td>
+                                <td style="width:14%; height:40px; text-align:center; vertical-align: middle;">Dotations de l'exercice (1)</td>
+                                <td style="width:14%; height:40px; text-align:center; vertical-align: middle;">Diminutions éléments sortis</td>
+                                <td style="width:14%; height:40px; text-align:center; vertical-align: middle;">Dotations cumulées en fin d'exercice</td>
+                                <td style="width:14%; height:40px; text-align:center; vertical-align: middle;">Dotations fiscales de l'exercice (2)</td>
+                                <td style="width:14%; height:40px; text-align:center; vertical-align: middle;">Ecarts (1)-(2)</td>
+                            </tr>
+                        </table>
+
+                        <t t-set="i" t-value="0"/>
+
+                        <table style="width:100%;">
+                            <t t-foreach="[1, 2, 3, 4, 5]" t-as="j">
+                                <tr>
+                                    <td style="width:14%; height:40px; text-align:center; vertical-align: middle;">
+                                        <span t-field="o.grid_ids[i].name"/>
+                                    </td>
+                                    <td style="width:16%; height:40px; text-align:right; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_1 != 0">
+                                            <span t-field="o.grid_ids[i].amount_1" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:14%; height:40px; text-align:right; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_2 != 0">
+                                            <span t-field="o.grid_ids[i].amount_2" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:14%; height:40px; text-align:right; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_3 != 0"> <!--test equal zero-->
+                                            <span t-field="o.grid_ids[i].amount_3" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:14%; height:40px; text-align:right; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_4 != 0"> <!--test equal zero-->
+                                            <span t-field="o.grid_ids[i].amount_4" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:14%; height:40px; text-align:right; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_5 != 0"> <!--test equal zero-->
+                                            <span t-field="o.grid_ids[i].amount_5" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:14%; height:40px; text-align:right; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_6 != 0"> <!--test equal zero-->
+                                            <span t-field="o.grid_ids[i].amount_6" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+
+                                    <t t-set="i" t-value="i+1"/>
+                                </tr>
+                            </t>
+                                <tr>
+                                    <td style="width:14%; height:40px; text-align:center; font-weight:bold; vertical-align: middle;">
+                                        <span t-field="o.grid_ids[i].name"/>
+                                    </td>
+                                    <td style="width:16%; height:40px; text-align:right; font-weight:bold; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_1 != 0">
+                                            <span t-field="o.grid_ids[i].amount_1" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:14%; height:40px; text-align:right; font-weight:bold; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_2 != 0">
+                                            <span t-field="o.grid_ids[i].amount_2" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:14%; height:40px; text-align:right; font-weight:bold; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_3 != 0"> <!--test equal zero-->
+                                            <span t-field="o.grid_ids[i].amount_3" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:14%; height:40px; text-align:right; font-weight:bold; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_4 != 0"> <!--test equal zero-->
+                                            <span t-field="o.grid_ids[i].amount_4" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:14%; height:40px; text-align:right; font-weight:bold; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_5 != 0"> <!--test equal zero-->
+                                            <span t-field="o.grid_ids[i].amount_5" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="width:14%; height:40px; text-align:right; font-weight:bold; vertical-align: middle;">
+                                        <t t-if="o.grid_ids[i].amount_6 != 0"> <!--test equal zero-->
+                                            <span t-field="o.grid_ids[i].amount_6" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+
+                                    <t t-set="i" t-value="i+1"/>
+                                </tr>
+                        </table>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

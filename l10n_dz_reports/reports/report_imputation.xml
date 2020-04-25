@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="l10n_dz_reports.imputation">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row ">
+                            <h4 class="text-left">Direction des finances et de la comptabilité </h4>
+                            <table  style="border: none !important; width:100%;">
+                                <tr>
+                                    <th>
+                                       <h4 class="text-left">Excercice : <span t-esc="datetime.datetime.strptime(doc.date, '%Y-%m-%d').strftime('%Y')"/></h4>
+                                    </th>
+                                    <th>
+                                       <h4 class="text-right">BH LAB</h4>
+                                    </th>
+                                </tr>
+                            </table>
+                            <h3 class="text-center">Fiche d'Imputation N° <strong><span t-field="doc.name" /></strong> </h3>
+                            <br></br>
+                            <table class="table table-condensed" style="width: 700px;   float:right; margin-right:10px;">
+                                <tr>
+                                    <th class="text-center" style="width:30%; border: 1px solid black;padding:10px;" ><strong>Journal auxiliaire + N° du Journal</strong></th>
+                                    <th class="text-center" style="width:40%;border: 1px solid black;padding:10px;" ><strong>Période</strong></th>
+                                    <th class="text-center" style="width:30%;border: 1px solid black;padding:10px;" ><strong>Pièce </strong></th>
+                                </tr>
+                                <tr  >
+                                    <th class="text-center" style="width:30%; border: 1px solid black;padding:10px;" ><strong><span t-field="doc.journal_id"/> : <span t-field="doc.journal_id.code"/></strong></th>
+                                    <th class="text-center" style="width:40%;border: 1px  solid black;padding:10px;" ><strong><span t-field="doc.date"/></strong></th>
+                                    <th class="text-center" style="width:30%;border: 1px solid black;padding:10px;" ><strong><span t-field="doc.ref"/></strong></th>
+                                 </tr>
+                            </table>
+                        </div>
+                        <table class="table table-condensed" >
+                            <tr  style="background-color:#ACAFB6;">
+                                <th class="text-center" style="width:25%; border: 1px solid black;padding:5px;" colspan="2"><strong>Compte</strong></th>
+                                <th class="text-center" style="width:50%;border: 1px solid black;padding:5px;" rowspan="2"><strong>Libellé</strong></th>
+                                <th class="text-center" style="width:25%;border: 1px solid black;padding:5px;" colspan="2"><strong>Montant </strong></th>
+                            </tr>
+                             <tr  style="background-color:#ACAFB6;">
+                                <th class="text-center" style="border: 1px solid black;padding:5px;"><strong>Débit </strong></th>
+                                <th class="text-center" style="border: 1px solid black;padding:5px;"><strong>Crédit </strong></th>
+                                <th class="text-center" style="border: 1px solid black;padding:5px;"><strong>Débit </strong></th>
+                                <th class="text-center" style="border: 1px solid black;padding:5px;"><strong>Crédit </strong></th>
+                            </tr>
+                            <tr t-foreach="doc.line_ids" t-as="l">
+                                <td class="text-center" style="border: 1px solid black; padding:5px;">
+                                    <t t-if="l.debit"><span t-field="l.account_id.code" />
+                                        <t t-if="l.partner_id"><strong> + </strong><span t-field="l.partner_id.code_tiers" style="font-size:14px;"/>
+                                        </t>
+                                    </t>
+                                </td>
+                                <td class="text-center"   style="border: 1px solid black; padding:1px;">
+                                    <t t-if="l.credit"><span t-field="l.account_id.code"/>
+                                        <t t-if="l.partner_id"><strong> + </strong><span t-field="l.partner_id.code_tiers" style="font-size:14px;"/>
+                                        </t>
+                                    </t>
+                                </td>
+                                <td class="text-left"  style="border: 1px solid black; padding:1px;"><span t-field="l.name"/></td>
+                                <td class="text-center"  style="border-left: 1px solid black;border-right: 1px solid black;padding:2px;"><span t-field="l.debit"/></td>
+                                <td class="text-center"  style="border-left: 1px solid black;border-right: 1px solid black;padding:2px;"><span t-field="l.credit"/></td>
+                            </tr>
+                            <tr >
+                                <th class="text-center" style="padding:10px;" colspan="2"></th>
+                                <th class="text-right" style="border: 1px solid black;padding:10px;background-color:#ACAFB6;"><strong>Totaux</strong></th>
+                                <th class="text-right" style="border: 1px solid black;padding:10px;background-color:#ACAFB6;"><strong><t t-esc="sum(l.debit for l in doc.line_ids)"/></strong></th>
+                                <th class="text-right" style="border: 1px solid black;padding:10px;background-color:#ACAFB6;"><strong><t t-esc="sum(l.credit for l in doc.line_ids)"/></strong></th>
+                            </tr>
+                        </table>
+                        <br></br><br></br>
+                        <table class="table table-condensed" style="min-width: 100px;max-width: 200px;">
+                            <tr  >
+                                <th class="text-center" style="width:30%; border: 1px solid black;padding:10px;" ><strong><u>Le CADRE COMPTABLE</u></strong><br></br><br></br><br></br><br></br><br></br></th>
+                                <th class="text-center" style="width:40%;border: 1px solid black;padding:10px;" ><strong><u>LE CHEF DE SERVICE</u></strong></th>
+                                <th class="text-center" style="width:30%;border: 1px solid black;padding:10px;" ><strong><u>LE CHEF DE DEPARTEMENT </u></strong></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-center" style="width:30%; border: 1px solid black;padding:10px;" ><strong><u>Le S/DIRECTEUR</u></strong><br></br><br></br><br></br><br></br><br></br></th>
+                                <th class="text-center" style="width:40%;border: 1px solid black;padding:10px;" ><strong><u>LE DIRECTEUR FINANCES ET COMPTABILITE</u></strong></th>
+                                <th class="text-center" style="width:30%;border: 1px solid black;padding:10px;" ><strong></strong></th>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

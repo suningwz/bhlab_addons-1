@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="dl_account_etat_client_tree_view">
+            <field name="name">account.etat.client.tree</field>
+            <field name="model">account.etat.client</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Etat des clients">
+                    <field name="name"/>
+                    <field name="date_debut"/>
+                    <field name="date_fin"/>
+                    <field name="total_ht"/>
+                    <field name="total_tva"/>
+                    <field name="total_ttc"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="dl_account_etat_client_form_view" model="ir.ui.view">
+        <field name="name">account.etat.client.form</field>
+        <field name="model">account.etat.client</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Etat clients">
+                <header>
+                    <button name="compute_data" type="object" states="draft" string="Calculer" class="oe_highlight" />
+                    <button name="action_validate" string="Valider" states="draft" class="oe_highlight" type="object" groups="l10n_dz_reports.group_dl_reports_manager"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <h1><field name="name"/></h1>
+                    <group>
+                        <group>
+                            <field name="exercice_id" options='{"no_open": True, "no_create": True}'/>
+                            <field name="period_id" domain="[('exercice_id', '=', exercice_id)]" options='{"no_open": True, "no_create": True}'/>
+                            <field name="date_debut"/>
+                            <field name="date_fin"/>
+
+                        </group>
+                        <group>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="type_calcul"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Details">
+                            <field name="line_ids" nolabel="1">
+                                <tree editable="Bottom">
+                                    <field name="partner_id"/>
+                                    <field name="partner_adress"/>
+                                    <field name="partner_num_agrement"/>
+                                    <field name="partner_rc"/>
+                                    <field name="partner_nif"/>
+                                    <field name="partner_ai"/>
+                                    <field name="total_ht"/>
+                                    <field name="total_tva"/>
+                                    <field name="total_ttc"/>
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                <field name="total_ht" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                <field name="total_tva" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                    <label for="total_ttc" />
+                                </div>
+                                <field name="total_ttc" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+        <!--<record id="view_balance_line_search" model="ir.ui.view">-->
+              <!--<field name="name">dl.report.balance.line.filter</field>-->
+              <!--<field name="model">dl.report.balance.line</field>-->
+              <!--<field name="arch" type="xml">-->
+                    <!--<search string="Recherche Colis">-->
+                         <!--<group col="10" colspan="4">-->
+                            <!--<field name="name"/>-->
+                            <!--<field name="code"/>-->
+                            <!--<field name="report_id" />-->
+                        <!--</group>-->
+                        <!--<separator/>-->
+                        <!--<group expand="0" string="Group By" >-->
+                            <!--<filter string="Compte" name="code" context="{'group_by':'code'}" />-->
+                            <!--<filter string="Balance" name="report_id" context="{'group_by':'report_id'}" />-->
+                        <!--</group>-->
+                    <!--</search>-->
+              <!--</field>-->
+        <!--</record>-->
+
+        <record model="ir.actions.act_window" id="dl_action_account_etat_client_view">
+            <field name="name">Etat detaille des clients</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.etat.client</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="dl_account_etat_client_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cliquez ici pour créer un nouvel etat client.
+                </p><p>
+
+                </p><p>
+                </p>
+            </field>
+        </record>
+    </data>
+</openerp>

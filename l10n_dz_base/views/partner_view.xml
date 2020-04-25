@@ -14,7 +14,7 @@
                         <separator/><separator/>
                         <field name="code_tiers" placeholder="Code tiers"/>
 <!--                        <field name="banque_id"/>-->
-<!--                        <field name="num_agrement"/>-->
+                        <field name="num_agrement"/>
                         <field name="rc"/>
                         <field name="nif"/>
                         <field name="nis"/>

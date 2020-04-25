@@ -1,0 +1,25 @@
+<openerp>
+    <data>
+
+         <record model="account.report.unite" id="unite_dzd">
+             <field name="name">DZD</field>
+             <field name="division">1</field>
+         </record>
+
+         <record model="account.report.unite" id="unite_kilo_dzd">
+             <field name="name">Kilo DZD</field>
+             <field name="division">1000</field>
+         </record>
+
+         <record model="account.report.group" id="group_bilan">
+             <field name="name">Bilan</field>
+             <field name="code">BL</field>
+         </record>
+
+         <record model="account.report.group" id="group_liasse">
+             <field name="name">Liasse fiscale</field>
+             <field name="code">LF</field>
+         </record>
+
+    </data>
+</openerp>

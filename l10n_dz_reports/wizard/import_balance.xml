@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="import_balance_wizard_form_view">
+            <field name="name">import.balance.wizard.form</field>
+            <field name="model">import.balance.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Importation de la balance">
+                    <label string="Sélectionnez le fichier a importer"/><separator/>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="filename"  invisible="1"/>
+                            <field name="w_file_name" widget='file'  filename="filename"/>
+                            <field name="print_report"/>
+                            <field name="cntrl_only"/>
+                        </group>
+                        <group>
+
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button name="action_import" type="object" string="Importer" class="oe_highlight"/>
+                        ou
+                        <button special="cancel" string="Annuler"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="launch_import_balance_wizard"
+                    name="Importer une balance"
+                    src_model="import.balance.wizard"
+                    res_model="import.balance.wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+
+
+
+    </data>
+</openerp>

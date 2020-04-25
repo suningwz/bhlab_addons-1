@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="exercice_tree_view">
+            <field name="name">account.exercice.tree</field>
+            <field name="model">account.exercice</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Etat des clients">
+                    <field name="name"/>
+                    <field name="date_debut"/>
+                    <field name="date_fin"/>
+                    <field name="defaut"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="exercice_form_view" model="ir.ui.view">
+        <field name="name">account.exercice.form</field>
+        <field name="model">account.exercice</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Exercice comptable">
+                <header>
+                    <button name="action_create_periodes" states="draft" type="object" string="Créer les periodes" class="oe_highlight" />
+                    <button name="action_set_default" states="actif" type="object" string="Rendre par defaut" class="oe_highlight" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                    <group>
+                        <group>
+                            <field name="date_debut"/>
+                            <field name="date_fin"/>
+                        </group>
+                        <group>
+                            <field name="defaut"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Periodes">
+                            <field name="period_ids" nolabel="1">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="mois"/>
+                                    <field name="date_debut"/>
+                                    <field name="date_fin"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+        <record model="ir.actions.act_window" id="action_exercice_view">
+            <field name="name">Exercices comptables</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.exercice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="exercice_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cliquez ici pour créer un nouvel exercice.
+                </p><p>
+
+                </p><p>
+                </p>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -15,6 +15,7 @@ class ResCompany(models.Model):
     ai = fields.Char(string='Article d\'imposition')
     code_activite = fields.Char(string='Code d\'activité')
     activite = fields.Char(string='Activité')
+    adresse_simple = fields.Char(string='Adresse simple')
     impot_dir = fields.Many2one('res.country.state', string='Direction des impôrts')
     impot_rec = fields.Char(string='Recette des impôts de')
     impot_com = fields.Many2one('res.commune', string='Commune de')

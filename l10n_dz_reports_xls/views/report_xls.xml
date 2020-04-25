@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <record id="report_xls_form_view" model="ir.ui.view">
+            <field name="name">report.xls.form</field>
+            <field name="model">dl.account.report.report</field>
+            <field name="inherit_id" ref="l10n_dz_reports.dl_account_report_report_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='action_print']" position="after">
+                    <button help="Exporter vers Excel" name="action_export_excel" type="object"
+                            groups="l10n_dz_reports.group_dl_reports_manager"
+                            icon="fa-download"
+                            attrs="{'invisible':[('specifique_rep','!=', 'standard')]}"
+                    />
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

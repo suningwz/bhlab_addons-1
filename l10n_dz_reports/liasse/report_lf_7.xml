@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="l10n_dz_reports.report_lf_7">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <style>
+                        .page-style{
+                        padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px; border: 0px solid #000000; height:1305px; width:920px; margin-top:10px;
+                        }
+                        .titre-style{
+                        text-align: center; font-size: 24px; font-style: normal; font-variant: normal;
+                        padding: 0px;font-weight: bold;
+                        }
+                        .bold-style{
+                        font-size: 22px; font-style: normal; font-variant: normal;
+                        padding: 0px;font-weight: bold;
+                        }
+
+                        div, p {
+                        font-family: Arial;
+                        }
+
+                        th, td {
+                        border: 1px solid black; text-align: left; padding: 2px;
+                        }
+                        .transp{
+                        border :none;
+                        }
+                    </style>
+
+                    <div class="page-style" style="padding:0px;">
+                        <table style="margin:0px; padding:10px;">
+                            <tr >
+                                <td><strong>NIF : </strong><span t-field="o.company_id.nif"/></td>
+                            </tr>
+                        <tr>
+                            <td style="font-weight:bold;">IMPRIME DESTINE A L'ADMINISTRATION</td>
+                        </tr>
+                        </table>
+
+                        <table style="width:100%; border: 1px solid black;">
+                            <tr >
+                                <td style="width:25%; border:none;">Désignation de l'entreprise : </td>
+                                <td style="border:none;"><strong><span t-field="o.company_id"/></strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">Activité : </td>
+                                <td style="border:none;"><strong><span t-field="o.company_id.activite"/></strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">Adresse : </td>
+                                <td style="border:none; padding-bottom:60px;"><strong><span t-field="o.company_id.adresse_simple"/></strong></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:50%;">
+                        <tr>
+                            <td style="text-align:center;">Exercice du </td>
+                            <td style="text-align:center;"><strong><span t-field="o.date_debut"/></strong></td>
+                            <td style="text-align:center;"> Au </td>
+                            <td style="text-align:center;"><strong><span t-field="o.date_fin"/></strong></td>
+                        </tr>
+                         </table>
+
+                        <table style="width:90%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="text-align:left; font-weight:bold; font-size:18px;">7/Tableau des immobilisations cédées (plus ou moins values) au cours de l'exercice</td>
+                            </tr>
+                        </table>
+
+                        <table style="width:100%;">
+                            <thead>
+                                <tr style="background-color:#D3D3D3;">
+                                    <th  rowspan="2" style="text-align:center; vertical-align: middle;">Nature des Immobilisations cédées</th>
+                                    <th  rowspan="2" style="text-align:center; vertical-align: middle;">Date acquisition</th>
+                                    <th  rowspan="2" style="text-align:center; vertical-align: middle;">Montant net figurant à l'actif</th>
+                                    <th  rowspan="2" style="text-align:center; vertical-align: middle;">amortissements pratiqués</th>
+                                    <th  rowspan="2" style="text-align:center; vertical-align: middle;">Valeur nette comptable</th>
+                                    <th  rowspan="2" style="text-align:center; vertical-align: middle;">Prix de cession</th>
+                                    <th  colspan="2" style="text-align:center; vertical-align: middle;">Plus ou moins value</th>
+
+                                </tr>
+                                <tr style="background-color:#D3D3D3;">
+                                    <th style="text-align:center; vertical-align: middle;">Plus value</th>
+                                    <th style="text-align:center; vertical-align: middle;">Moins value</th>
+                                </tr>
+                            </thead>
+                            <tbody class="report_tbody">
+                                <tr t-foreach="o.rep_specifique7_ids" t-as="c">
+                                    <td style="border: 1px solid black"><span t-field="c.name"/></td>
+                                    <td style="border: 1px solid black"><span t-field="c.date_acquisition"/></td>
+                                    <td style="text-align:right;border: 1px solid black">
+                                        <t t-if="c.amount_value != 0">
+                                            <span t-field="c.amount_value" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="text-align:right;border: 1px solid black">
+                                        <t t-if="c.amount_amort != 0">
+                                            <span t-field="c.amount_amort" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="text-align:right;border: 1px solid black">
+                                        <t t-if="c.amount_net != 0">
+                                            <span t-field="c.amount_net" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="text-align:right;border: 1px solid black">
+                                        <t t-if="c.amount_price != 0">
+                                            <span t-field="c.amount_price" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="text-align:right;border: 1px solid black">
+                                        <t t-if="c.plus_value != 0">
+                                            <span t-field="c.plus_value" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                    <td style="text-align:right;border: 1px solid black">
+                                        <t t-if="c.moins_value != 0">
+                                            <span t-field="c.moins_value" t-options='{"precision": 0}'/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tr>
+                                <td colspan="2" class="text-right">Total</td>
+                                <td style="text-align:right; font-weight:bold;border: 1px solid black">
+                                    <t t-esc="sum(m.amount_value for m in o.rep_specifique7_ids)"/>
+                                </td>
+                                <td style="text-align:right; font-weight:bold;border: 1px solid black">
+                                    <t t-esc="sum(m.amount_amort for m in o.rep_specifique7_ids)"/>
+                                </td>
+                                <td style="text-align:right; font-weight:bold;border: 1px solid black">
+                                    <t t-esc="sum(m.amount_net for m in o.rep_specifique7_ids)"/>
+                                </td>
+                                <td style="text-align:right; font-weight:bold;border: 1px solid black">
+                                    <t t-esc="sum(m.amount_price for m in o.rep_specifique7_ids)"/>
+                                </td>
+                                <td style="text-align:right; font-weight:bold;border: 1px solid black">
+                                    <t t-esc="sum(m.plus_value for m in o.rep_specifique7_ids)"/>
+                                </td>
+                                <td style="text-align:right; font-weight:bold;border: 1px solid black">
+                                    <t t-esc="sum(m.moins_value for m in o.rep_specifique7_ids)" />
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

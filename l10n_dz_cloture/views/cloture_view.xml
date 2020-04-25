@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record id="view_cloture_tree" model="ir.ui.view">
+            <field name="name">account.cloture.tree</field>
+            <field name="model">account.cloture</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Cloture comptable">
+                    <field name="name"/>
+                    <field name="exercice"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="view_cloture_form" model="ir.ui.view">
+        <field name="name">account.cloture.form</field>
+        <field name="model">account.cloture</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Operation de cloture">
+                <header>
+                    <button name="create_journaux" string="Générer les journaux" states="new" class="oe_highlight" type="object" groups="account.group_account_invoice"/>
+                    <button name="create_journaux" string="Mise a jour des journaux" states="controle" type="object" groups="account.group_account_invoice"/>
+                    <button name="action_valider" string="Valider les journaux" states="controle" class="oe_highlight" type="object" groups="account.group_account_invoice"/>
+                    <button name="action_done" string="Cloturer et terminer" states="cloture" class="oe_highlight" type="object" groups="account.group_account_invoice"/>
+<!--                    <span class="label label-danger" states="draft">Il faut traiter les pieces non encore validées</span>-->
+                    <field name="state" widget="statusbar" clickable="True" statusbar_visible="new,controle,cloture,done"/>
+                </header>
+                <sheet>
+                    <h1><field name="name"/></h1>
+                    <group>
+                        <group>
+<!--                            <field name="name"/>-->
+                            <field name="exercice_id" domain="[('state', '=', 'actif')]" options='{"no_open": True, "no_create": True}'/>
+                            <field name="exercice" invisible="1"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="nbr_piece" invisible="1"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="jrn_cloture_id" domain="[('saisie', '=', 'automatic')]"  options='{"no_open": True, "no_create": True}'/>
+                            <field name="jrn_ouverture_id" domain="[('saisie', '=', 'automatic')]" options='{"no_open": True, "no_create": True}'/>
+                            <field name="jrn_regroupement_id" domain="[('saisie', '=', 'automatic')]" options='{"no_open": True, "no_create": True}'/>
+                        </group>
+
+                    </group>
+                    <notebook>
+                        <page string="Pieces non cloturées" attrs="{'invisible': [('nbr_piece','=', 0)]}">
+                            <group>
+                                <group>
+                                    <span class="label label-danger" attrs="{'invisible': [('nbr_piece', '=', 0)]}">Il faut traiter les pieces non encore validées</span>
+                                </group>
+                                <group>
+                                    <button name="valider_pieces_ouvertes" string="Valider tout" class="oe_highlight" type="object" groups="account.group_account_invoice"/>
+                                </group>
+                            </group>
+                            <field name="piece_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="move_id"/>
+                                    <field name="date"/>
+                                    <field name="journal_id"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Journal cloture" attrs="{'invisible': ['|', ('nbr_piece','!=', 0), ('state', '=', 'new')]}">
+                            <group>
+                                <group>
+                                    <field name="piece_cloture_id" string="Pièce créée" states="done"/>
+
+                                </group>
+                                <group>
+                                    <field name="cloture_debit"/>
+                                    <field name="cloture_credit"/>
+                                </group>
+                            </group>
+                            <field name="jrn_cloture">
+                                <tree>
+                                    <field name="account_id"/>
+                                    <field name="partner_id"/>
+                                    <field name="libelle"/>
+                                    <field name="debit" sum="s_debit"/>
+                                    <field name="credit" sum="s_credit"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Journal réouverture "  attrs="{'invisible': ['|', ('nbr_piece','!=', 0), ('state', '=', 'new')]}">
+                            <group>
+                                <group>
+                                    <field name="piece_ouverture_id" string="Pièce créée" states="done"/>
+                                </group>
+                                <group>
+                                    <field name="ouvert_debit"/>
+                                    <field name="ouvert_credit"/>
+                                </group>
+
+                            </group>
+                            <field name="jrn_ouverture">
+                                <tree>
+<!--                                    <field name="code"/>-->
+                                    <field name="account_id"/>
+                                    <field name="partner_id"/>
+                                    <field name="libelle"/>
+                                    <field name="debit" sum="o_debit"/>
+                                    <field name="credit" sum="o_credit"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Journal regroupement"  attrs="{'invisible': ['|', ('nbr_piece','!=', 0), ('state', '=', 'new')]}">
+                            <group>
+                                <group>
+                                    <field name="piece_regroup_id" string="Pièce créée" states="done"/>
+                                </group>
+                                <group>
+                                    <field name="regroup_debit"/>
+                                    <field name="regroup_credit"/>
+                                </group>
+                            </group>
+                            <field name="jrn_regroupement">
+                                <tree>
+<!--                                    <field name="code"/>-->
+                                    <field name="account_id"/>
+                                    <field name="partner_id"/>
+                                    <field name="libelle"/>
+                                    <field name="debit" sum="r_debit"/>
+                                    <field name="credit" sum="r_credit"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_account_cloture">
+            <field name="name">Cloture comptable</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.cloture</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="view_cloture_tree"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cliquez ici pour lancer une nouvelle operation de cloture.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+<!--        <menuitem id="account_mes_traitements_mouv_menu" name="Mouvements" parent="l10n_dz_base.account_mes_traitements_menu" sequence="10" groups="account.group_account_invoice"/>-->
+    <menuitem id="account_cloture_menu" name="Cloture exercice" parent="l10n_dz_base.account_mes_traitements_menu" sequence="99" action="action_account_cloture" groups="account.group_account_invoice"/>
+
+    </data>
+</openerp>

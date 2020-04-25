@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="account_import_moves_tree_view">
+            <field name="name">account.import.moves.tree</field>
+            <field name="model">account.import.moves</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="exercice_id"/>
+                    <field name="user_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="account_import_moves_form_view">
+            <field name="name">account.import.moves.form</field>
+            <field name="model">account.import.moves</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Importation ecritures">
+                    <header>
+                        <button name="action_control" string="Controle les données" states="draft" class="oe_highlight" type="object" />
+                        <button name="action_draft" string="Relancer l'opération" states="error,cancel" class="oe_highlight" type="object" />
+                        <button name="action_importer" string="Importer" states="pret" class="oe_highlight" type="object" />
+                        <button name="action_done" string="Valider" states="import" class="oe_highlight" type="object" />
+                        <button name="action_cancel" string="Annuler" states="draft,pret,import" type="object" />
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft,pret,import,done"/>
+                    </header>
+                    <sheet>
+                        <h1><field name="name"/></h1>
+
+                        <group>
+                            <group>
+                                <field name="date"/>
+                                <field name="user_id" options='{"no_open": True, "no_create": True}'/>
+                                <field name="exercice_id" options='{"no_open": True, "no_create": True}'/>
+                            </group>
+                            <group>
+                                <field name="filename"  invisible="1"/>
+                                <field name="w_file_name" widget='file'  filename="filename"/>
+                                <field name="model2_id" options="{'no_create':True}"/>
+                                <field name="journal_id"  domain="[('saisie', '=', 'automatic')]" options='{"no_open": True, "no_create": True}'/>
+                                <field name="format_date" />
+                                <field name="state_piece" />
+                            </group>
+                            <group states="import,done">
+                                <field name="nbr_piece"/>
+                                <field name="nbr_ecriture"/>
+                            </group>
+                            <group states="import,done">
+                                <field name="debit"/>
+                                <field name="credit"/>
+                            </group>
+                        </group>
+                        <notebook states="error,import,done">
+                            <page string="Piece" states="import,done">
+                                <field name="pcs_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="journal_id"/>
+                                        <field name="ref"/>
+                                        <field name="date"/>
+                                        <field name="partner_id"/>
+                                        <field name="amount"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="name"/>
+                                                <field name="ref"/>
+                                                <field name="date"/>
+                                            </group>
+                                            <group>
+                                                <field name="journal_id"/>
+                                                <field name="partner_id"/>
+                                                <field name="amount"/>
+                                                <field name="currency_id" invisible="1"/>
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Ecritures">
+                                                <field name="ecr_ids">
+                                                    <tree>
+                                                        <field name="name"/>
+<!--                                                        <field name="piece_id"/>-->
+                                                        <field name="account_id"/>
+<!--                                                        <field name="journal_id"/>-->
+                                                        <field name="ref"/>
+                                                        <field name="date"/>
+                                                        <field name="partner_id"/>
+                                                        <field name="debit" sum="deb"/>
+                                                        <field name="credit" sum="cre"/>
+                                                        <field name="currency_id" invisible="1"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Ecritures" states="import,done">
+                                <field name="ecr_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="piece_id"/>
+                                        <field name="account_id"/>
+                                        <field name="journal_id"/>
+                                        <field name="ref"/>
+                                        <field name="date"/>
+                                        <field name="partner_id"/>
+                                        <field name="debit"/>
+                                        <field name="credit"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Erreurs" states="error">
+                                <field name="err_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="type"/>
+                                        <field name="elem"/>
+                                        <field name="lines"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="action_account_import_moves_tree_view">
+            <field name="name">Importation écritures comptables</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.import.moves</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="account_import_moves_tree_view"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Exécuter une nouvelle opération d'importation.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="Importation ecritures" action="action_account_import_moves_tree_view" id="import_moves_menu_v2"
+                  parent="l10n_dz_base.account_dz_config_menu"
+                  sequence="81"  groups="account.group_account_invoice"/>
+
+    </data>
+</openerp>

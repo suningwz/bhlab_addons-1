@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="l10n_dz_reports.report_etat_tva_doc">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+
+                    <h2 class="text-center">ETAT  DES  DEDUCTIONS  TVA / G50 </h2>
+                    <p class="text-center">du <span t-field="o.date_debut"/> au <span t-field="o.date_fin"/> </p>
+                    <br></br><br></br>
+
+                    <table  style="border: 1px solid black;font-size:12px; position: relative; display: table-row; height: 100%;">
+
+                        <tr >
+                            <th class="text-center" style="width:300px;border: 1px solid black;padding:5px;"><strong>N° Identifiant</strong></th>
+                            <th class="text-center" style="width:400px;border: 1px solid black;padding:5px;"><strong>Nom et prénom(s) ou raison sociale</strong></th>
+                            <th class="text-center" style="width:100px;border: 1px solid black;padding:5px;"><strong>Adresse</strong></th>
+                            <th class="text-center" style="width:100px;border: 1px solid black;padding:5px;"><strong>Date Facture</strong></th>
+                            <th class="text-center" style="width:100px;border: 1px solid black;padding:5px;"><strong>N° Facture</strong></th>
+                            <th class="text-center" style="width:100px;border: 1px solid black;padding:5px;"><strong>N° RC</strong></th>
+                            <th class="text-center" style="width:200px;border: 1px solid black;padding:5px;"><strong>Montant HT</strong></th>
+                            <th class="text-center" style="width:200px;border: 1px solid black;padding:5px;"><strong>TVA à récuperer</strong></th>
+
+                        </tr>
+                        <tr t-foreach="o.line_ids" t-as="l">
+                            <td class="text-center" style="border: 1px solid black;padding:5px;"><span t-field="l.partner_ai" /></td>
+                            <td class="text-left"   style="border: 1px solid black;padding:5px;"><span t-field="l.partner_id"/></td>
+                            <td class="text-right"  style="border: 1px solid black;padding:5px;"><span t-field="l.partner_adress"/></td>
+                            <td class="text-right"  style="border: 1px solid black;padding:5px;"><span t-field="l.date"/></td>
+                            <td class="text-right"  style="border: 1px solid black;padding:5px;"><span t-field="l.numero"/></td>
+                            <td class="text-right"  style="border: 1px solid black;padding:5px;"><span t-field="l.partner_rc"/></td>
+                            <td class="text-right"  style="border: 1px solid black;padding:5px;"><span t-field="l.total_ht"/></td>
+                            <td class="text-right"  style="border: 1px solid black;padding:5px;"><span t-field="l.total_tva"/></td>
+                        </tr>
+                        <tr  >
+                            <th class="text-center" style="padding:10px;" colspan="6"></th>
+                            <th class="text-right" style="width:200px;"><strong><t t-esc="sum(l.total_ht for l in o.line_ids)"/></strong></th>
+                            <th class="text-right" style="width:200px;"><strong><t t-esc="sum(l.total_tva for l in o.line_ids)"/></strong></th>
+                        </tr>
+
+                    </table>
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+</odoo>

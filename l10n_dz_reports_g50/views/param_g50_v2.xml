@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="account_g50_param_tree_view">
+            <field name="name">account.g50.param.tree</field>
+            <field name="model">account.g50.param</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Paramétrage G50">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="account_g50_param_form_view" model="ir.ui.view">
+        <field name="name">account.g50.param.form</field>
+        <field name="model">account.g50.param</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Parametrage G50">
+                <header>
+                    <button name="action_done" string="Valider" states="draft" class="oe_highlight" type="object"/>
+                    <button name="action_draft" string="Remettre a l'état brouillon" states="done" type="object"/>
+                    <field name="state" widget="statusbar" clickable="True" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <h1><field name="name"/></h1>
+
+                    <notebook>
+                        <page string="Page 1">
+                            <separator string="Taxe sur l'activité professionnelle au taux de 2%"  style="color: #FFA500"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content" style="text-align: left">
+                                <col width="60"/>
+                                <col width="400"/>
+                                <col width="200"/>
+                                <col width="200"/>
+                                <col width="60"/>
+                                <col width="200"/>
+                                <tr>
+                                    <th width="60" class="oe_list_header_columns"/>
+                                    <th width="400" class="oe_list_header_columns"/>
+                                    <th width="200" class="oe_list_header_columns" style="text-align: left">Chiffre d'affaire</th>
+                                    <th width="200" class="oe_list_header_columns" style="text-align: left">CA Imposable</th>
+                                    <th width="60" class="oe_list_header_columns" style="text-align: center">Taux</th>
+                                    <th width="200" class="oe_list_header_columns" style="text-align: left">a payer (D.A)</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">C 1 A 11</td>
+                                    <td style="text-align: left">Affaires bénéficiant d'une réfaction de 50</td>
+                                    <td>
+                                        <field name="c1a11_brut" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        c1a11_brut X 50%
+                                    </td>
+                                    <td style="text-align: center">2</td>
+                                    <td>
+                                        c1a11_imp X 2%
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">C 1 A 12</td>
+                                    <td style="text-align: left">Affaires bénéficiant d'une réfaction de 30</td>
+                                    <td>
+                                        <field name="c1a12_brut" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        c1a12_brut X 70%
+                                    </td>
+                                    <td style="text-align: center">2</td>
+                                    <td>
+                                        c1a12_brut X 2%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">C 1 A 13</td>
+                                    <td style="text-align: left">Affaires sans réfaction</td>
+                                    <td>
+                                        <field name="c1a13_brut" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        c1a13_brut
+                                    </td>
+                                    <td style="text-align: center">2</td>
+                                    <td>
+                                        c1a13_brut X 2%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">C 1 A 14</td>
+                                    <td style="text-align: left">Affaires exonérées</td>
+                                    <td>
+                                        <field name="c1a14_brut" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>0,00</td>
+                                    <td style="text-align: center">2</td>
+                                    <td>0,00</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">C 1 A 20</td>
+                                    <td style="text-align: left">Recettes professionnelles (Professions libérales)</td>
+                                    <td>
+                                        <field name="c1a20_brut" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="c1a20_imp"/>
+                                    </td>
+                                    <td style="text-align: center">2</td>
+                                    <td>
+                                        c1a20_imp X 2%
+                                    </td>
+                                </tr>
+                            </table>
+                            <separator/><separator/><separator/><separator/>
+                            <separator string="Acomptes IBS" style="color: #FFD700"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content" style="text-align: left">
+                                <col width="60"/>
+                                <col width="400"/>
+                                <col width="400"/>
+                                <col width="260"/>
+                                <tr>
+                                    <th width="60" class="oe_list_header_columns"/>
+                                    <th width="400" class="oe_list_header_columns">Acomptes IBS</th>
+                                    <th width="400" class="oe_list_header_columns">Determination des acomptes provionneles</th>
+                                    <th width="260" class="oe_list_header_columns" style="text-align: left">Montant a payer (en DA)</th>
+                                </tr>
+                                <tr>
+                                    <td>A 1 M 10</td>
+                                    <td><field name="t211" attrs="{'readonly':[('state','!=','draft')]}"/></td>
+                                    <td>
+                                        <field name="t212" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: left">
+                                        <field name="t213" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <separator/><separator/><separator/><separator/>
+                            <separator string="IRG salaires et autres retenues à la source IRG / IBS" style="color: #3CB371"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content"  style="text-align: left">
+                                <col width="60"/>
+                                <col width="460"/>
+                                <col width="250"/>
+                                <col width="100"/>
+                                <col width="250"/>
+                                <tr>
+                                    <th width="60" class="oe_list_header_columns"/>
+                                    <th width="460" class="oe_list_header_columns" style="text-align: left">Catégories de revenus soumis à une retenue à la source IRG ou IBS</th>
+                                    <th width="250" class="oe_list_header_columns" style="text-align: left">Revenus nets imposables</th>
+                                    <th width="100" class="oe_list_header_columns" style="text-align: center">Taux</th>
+                                    <th width="250" class="oe_list_header_columns" style="text-align: left">Montant a payer (en DA)</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E1L20</td>
+                                    <td style="text-align: left"> IRG / Traitements,salaires, pensions et rentes viagères</td>
+                                    <td>
+                                        <field name="e1l20_imp" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">Barème</td>
+                                    <td>
+                                        <field name="e1l20_retenu" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E1L30</td>
+                                    <td style="text-align: left"> IRG / RCDC (titres nominatifs)</td>
+                                    <td>
+                                        <field name="e1l30_imp" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td  style="text-align: center">10</td>
+                                    <td>
+                                        e1l30_imp X 10%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E1L40</td>
+                                    <td style="text-align: left"> IRG / Bénéfices distribués par les sociétés de capitaux</td>
+                                    <td>
+                                        <field name="e1l40_imp" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">15</td>
+                                    <td>
+                                        e1l40_imp X 15%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E1L60</td>
+                                    <td style="text-align: left"> IRG / Revenus des bons de caisse anonymes</td>
+                                    <td>
+                                        <field name="e1l60_imp" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">50</td>
+                                    <td>
+                                        e1l60_imp X 50%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E1L80</td>
+                                    <td style="text-align: left"> IRG / Autres retenues à la source</td>
+                                    <td>
+                                        <field name="e1l80_imp" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <field name="e1l80_taux" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        e1l80_imp X e1l80_taux %
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E1M30</td>
+                                    <td style="text-align: left"> IBS / Entreprises étrangères non installées (Prest. services) (1)</td>
+                                    <td>
+                                        <field name="e1m30_imp" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">24</td>
+                                    <td>
+                                        e1m30_imp X 24%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E1M40</td>
+                                    <td style="text-align: left"> IBS / Autres retenues à la source</td>
+                                    <td>
+                                        <field name="e1m40_imp" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <field name="e1m40_taux" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        e1m40_imp X e1m40_taux %
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </page>
+                        <page string="Page 2">
+                            <separator string="Droit de timbre sur état" style="color: #BA55D3"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content"  style="text-align: left">
+                                <col width="60"/>
+                                <col width="460"/>
+                                <col width="250"/>
+                                <col width="100"/>
+                                <col width="250"/>
+                                <tr>
+                                    <th width="60" class="oe_list_header_columns"/>
+                                    <th width="460" class="oe_list_header_columns" style="text-align: left">Opératoins imposables</th>
+                                    <th width="250" class="oe_list_header_columns" style="text-align: left">Chiffre d'affaire imposable</th>
+                                    <th width="100" class="oe_list_header_columns" style="text-align: center">Taux</th>
+                                    <th width="250" class="oe_list_header_columns" style="text-align: left">Montant a payer (en DA)</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E2E00</td>
+                                    <td style="text-align: left">
+                                        <field name="e2e00_1_libelle" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="e2e00_1_imp" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <field name="e2e00_1_taux" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: left">
+                                        <field name="e2e00_2_libelle" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="e2e00_2_imp" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <field name="e2e00_2_taux" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: left">
+                                        <field name="e2e00_3_libelle" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="e2e00_3_imp" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <field name="e2e00_3_taux" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <separator/><separator/><separator/><separator/>
+                            <separator string="Impots et taxes non repris ci-dessus" style="color: #1E90FF"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content"  style="text-align: left">
+                                <col width="60"/>
+                                <col width="460"/>
+                                <col width="250"/>
+                                <col width="100"/>
+                                <col width="250"/>
+                                <tr>
+                                    <th width="60" class="oe_list_header_columns"/>
+                                    <th width="460" class="oe_list_header_columns" style="text-align: left">Opératoins imposables</th>
+                                    <th width="250" class="oe_list_header_columns" style="text-align: left">Chiffre d'affaire imposable</th>
+                                    <th width="100" class="oe_list_header_columns" style="text-align: center">Taux</th>
+                                    <th width="250" class="oe_list_header_columns" style="text-align: left">Montant a payer (en DA)</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: left">
+                                        <field name="t511" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t512" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <field name="t513" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: left">
+                                        <field name="t521" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t522" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <field name="t523" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: left">
+                                        <field name="t531" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t532" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <field name="t533" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <separator/><separator/><separator/><separator/>
+                            <separator string="Recapitulation" style="color: #A52A2A"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content"  style="text-align: left">
+                                <col width="60"/>
+                                <col width="60"/>
+                                <col width="350"/>
+                                <col width="350"/>
+                                <col width="300"/>
+                                <tr>
+                                    <th width="60" class="oe_list_header_columns"/>
+                                    <th width="60" class="oe_list_header_columns"></th>
+                                    <th width="350" class="oe_list_header_columns" style="text-align: left">Recapitulation</th>
+                                    <th width="350" class="oe_list_header_columns"></th>
+                                    <th width="300" class="oe_list_header_columns" style="text-align: left">Montant a payer (en DA)</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td>TAP.</td>
+                                    <td>C/500 026/A</td>
+                                    <td style="text-align: left">
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td></td>
+                                    <td>AP / IBS.</td>
+                                    <td>C/201 001/M1</td>
+                                    <td style="text-align: left">
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td>IRG Salaires.</td>
+                                    <td>C/201 001/100</td>
+                                    <td style="text-align: left">
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>IRG / Autres ret. sources.</td>
+                                    <td>C/201 001/101/A/B/C</td>
+                                    <td style="text-align: left">
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>IBS / Ret. à la source.</td>
+                                    <td>C/201 001/M2 et 3</td>
+                                    <td style="text-align: left">
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td>-</td>
+                                    <td>TIC.</td>
+                                    <td>C/201 003/303/A/B</td>
+                                    <td style="text-align: left">
+                                        <field name="t661"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td></td>
+                                    <td>Droits de timbre</td>
+                                    <td>C/201 002/201</td>
+                                    <td style="text-align: left">
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td></td>
+                                    <td>Autres.</td>
+                                    <td>C/</td>
+                                    <td style="text-align: left">
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>6</td>
+                                    <td></td>
+                                    <td>TVA.</td>
+                                    <td>C/500 020/A</td>
+                                    <td style="text-align: left">
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </page>
+                        <page string="Page 3">
+                            <separator string="A / Chiffres d'affaires imposables" style="color: #00BFFF"/><separator/>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content"  style="text-align: left">
+                                <col width="60"/>
+                                <col width="440"/>
+                                <col width="140"/>
+                                <col width="140"/>
+                                <col width="140"/>
+                                <col width="60"/>
+                                <col width="140"/>
+                                <tr>
+                                    <th width="60" class="oe_list_header_columns"/>
+                                    <th width="440" class="oe_list_header_columns" style="text-align: left">Opératoins assujetties à la TVA</th>
+                                    <th width="140" class="oe_list_header_columns" style="text-align: left">CA Total</th>
+                                    <th width="140" class="oe_list_header_columns" style="text-align: left">CA exonéré</th>
+                                    <th width="140" class="oe_list_header_columns" style="text-align: left">CA imposable</th>
+                                    <th width="60" class="oe_list_header_columns" style="text-align: center">Taux</th>
+                                    <th width="140" class="oe_list_header_columns" style="text-align: left">Mtn des droits (en DA)</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B11</td>
+                                    <td style="text-align: left">Biens, produits et denrées visées par l'article 23 du C. TCA</td>
+                                    <td>
+                                        <field name="t711" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t712" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">9%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B12</td>
+                                    <td style="text-align: left">Prestations de services visées par l'article 23 du C. TCA</td>
+                                    <td>
+                                        <field name="t721" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t722" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">9%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B13</td>
+                                    <td style="text-align: left">Opérations immobilières visées par l'article 23 du C. TCA</td>
+                                    <td>
+                                        <field name="t731" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t732" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">9%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B14</td>
+                                    <td style="text-align: left">Actes médicaux</td>
+                                    <td>
+                                        <field name="t741" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t742" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">9%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B15</td>
+                                    <td style="text-align: left">Commissionnaires et courtiers</td>
+                                    <td>
+                                        <field name="t751" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t752" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">9%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B16</td>
+                                    <td style="text-align: left">Fourniture d'énergie</td>
+                                    <td>
+                                        <field name="t761" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t762" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">9%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">----</td>
+                                    <td style="text-align: left">----------------------------------</td>
+                                    <td>-----------------</td>
+                                    <td>-----------------</td>
+                                    <td>-----------------</td>
+                                    <td style="text-align: center">---</td>
+                                    <td>-----------------</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B21</td>
+                                    <td style="text-align: left">Productions : biens, produits et denrées visées par l'art. 21 du C. TCA</td>
+                                    <td>
+                                        <field name="t771" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t772" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B22</td>
+                                    <td style="text-align: left">Revente en l'état : biens, produits et denrées visées par l'art. 21 du C. TCA</td>
+                                    <td>
+                                        <field name="t781" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t782" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B23</td>
+                                    <td style="text-align: left">Travaux immobiliers autres que ceux soumis au taux de 7%</td>
+                                    <td>
+                                        <field name="t791" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t792" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B24</td>
+                                    <td style="text-align: left">Professions libérales</td>
+                                    <td>
+                                        <field name="t7a1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7a2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B25</td>
+                                    <td style="text-align: left">Opérations de banques et d'assurances</td>
+                                    <td>
+                                        <field name="t7b1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7b2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B26</td>
+                                    <td style="text-align: left">Prestations de téléphones et de télex</td>
+                                    <td>
+                                        <field name="t7c1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7c2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B28</td>
+                                    <td style="text-align: left">Autres prestations de services</td>
+                                    <td>
+                                        <field name="t7d1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7d2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B31</td>
+                                    <td style="text-align: left">Débits de boissons</td>
+                                    <td>
+                                        <field name="t7e1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7e2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B32</td>
+                                    <td style="text-align: left">Productions : biens, produits et denrées visées par l'article 21 du C. TCA</td>
+                                    <td>
+                                        <field name="t7f1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7f2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B33</td>
+                                    <td style="text-align: left">Revente en l'état : biens, produits et denrées visées par l'art. 21 du C. TCA</td>
+                                    <td>
+                                        <field name="t7g1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7g2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B34</td>
+                                    <td style="text-align: left">Tabacs et allumettes</td>
+                                    <td>
+                                        <field name="t7h1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7h2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B35</td>
+                                    <td style="text-align: left">Spectacles, jeux et divertissements autres que ceux de l'art. 21 du C. TCA</td>
+                                    <td>
+                                        <field name="t7i1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7i2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B36</td>
+                                    <td style="text-align: left">Autres prestations de services visées à l'article 21 du C. TCA</td>
+                                    <td>
+                                        <field name="t7j1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7j2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left">E3B37</td>
+                                    <td style="text-align: left">Consommations sur place</td>
+                                    <td>
+                                        <field name="t7k1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+                                        <field name="t7k2" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td style="text-align: center">19%</td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <group>
+                                <group>
+                                    <separator string="B / Déduction à opérer" style="color: #F08080"/><separator/>
+                                </group>
+                                <group>
+                                    <separator string="C / TVA à payer" style="color: #711C91"/><separator/>
+                                </group>
+                            </group>
+                            <table cellspacing="0" cellpadding="0" class="oe_list_content"  style="text-align: left">
+                                        <col width="60"/>
+                                        <col width="400"/>
+                                        <col width="100"/>
+                                        <col width="60"/>
+                                        <col width="60"/>
+                                        <col width="400"/>
+                                        <col width="100"/>
+                                        <tr>
+                                            <th width="60" class="oe_list_header_columns"/>
+                                            <th width="400" class="oe_list_header_columns" style="text-align: left">Nature des déductions</th>
+                                            <th width="100" class="oe_list_header_columns" style="text-align: left">Montant</th>
+                                            <th width="60" class="oe_list_header_columns" />
+                                            <th width="60" class="oe_list_header_columns" />
+                                            <th width="400" class="oe_list_header_columns" style="text-align: left">TVA a payer</th>
+                                            <th width="100" class="oe_list_header_columns" style="text-align: left">Montant</th>
+
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">E3B91</td>
+                                            <td style="text-align: left">Précompte antérieurs (mois précédent)</td>
+                                            <td>
+                                                <field name="t811" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                            </td>
+                                            <td></td>
+                                            <td style="text-align: left">C</td>
+                                            <td style="text-align: left">- Total des droits dus</td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">E3B92</td>
+                                            <td style="text-align: left">TVA sur achats de biens, matières et services (art. 29 C. TCA)</td>
+                                            <td>
+                                                <field name="t821" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                            </td>
+                                            <td></td>
+                                            <td style="text-align: left">E3B97</td>
+                                            <td style="text-align: left">Régularisation du prorata (art. 40 C. TCA) (+) (déduction excédentaire)</td>
+                                            <td>
+                                                <field name="t921" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">E3B93</td>
+                                            <td style="text-align: left">TVA sur achats de biens amortissables (art. 38 C. TCA)</td>
+                                            <td>
+                                                <field name="t831" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                            </td>
+                                            <td></td>
+                                            <td style="text-align: left">E3B98</td>
+                                            <td style="text-align: left">- Reversement de la déduction (art. 38 C. TCA) (+)</td>
+                                            <td>
+                                                <field name="t931" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">E3B94</td>
+                                            <td style="text-align: left">Régularisation du prorata (déduction complémentaire) (art. 40 C. TCA)</td>
+                                            <td>
+                                                <field name="t841" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                            </td>
+                                            <td></td>
+                                            <td style="text-align: left"></td>
+                                            <td style="text-align: left">TOTAL A RAPPELER (C)</td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">E3B95</td>
+                                            <td style="text-align: left">TVA à récupérer sur factures annulées ou impayées (art. 18 C. TCA)</td>
+                                            <td>
+                                                <field name="t851" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                            </td>
+                                            <td></td>
+                                            <td style="text-align: left">B</td>
+                                            <td style="text-align: left">- Total des déductions à opérer (B) ( - )</td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left">E3B96</td>
+                                            <td style="text-align: left">Autres déductions (notification de précompte, etc.…)</td>
+                                            <td>
+                                                <field name="t861" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                            </td>
+                                            <td></td>
+                                            <td style="text-align: left">E3B00</td>
+                                            <td style="text-align: left">TVA à payer au titre du mois (C – B)</td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td style="text-align: left">E3B99</td>
+                                            <td style="text-align: left">Précompte à reporter sur le mois suivant (B – C)</td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        
+                                    </table>
+                        </page>
+
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_account_g50_param_tree_view">
+            <field name="name">Parametrage G50</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.g50.param</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="account_g50_param_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cliquez ici pour créer un nouveau paramétrage g50.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+    </data>
+</openerp>

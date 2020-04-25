@@ -1,0 +1,1188 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_dz_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0e+e-20180619\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-31 16:14+0000\n"
+"PO-Revision-Date: 2019-01-31 17:46+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar_SY\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: l10n_dz_reports
+#: selection:periode,periode_sel:0
+msgid "1er Trimestre"
+msgstr "الفصل الاول"
+
+#. module: l10n_dz_reports
+#: selection:periode,periode_sel:0
+msgid "2eme Trimestre"
+msgstr "الفصل الثاني"
+
+#. module: l10n_dz_reports
+#: selection:periode,periode_sel:0
+msgid "3eme Trimestre"
+msgstr "الفصل الثالث"
+
+#. module: l10n_dz_reports
+#: selection:periode,periode_sel:0
+msgid "4eme Trimestre"
+msgstr "الفصل الرابع"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_grid_name
+msgid "Rubrique"
+msgstr "الرصيد ا-1"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+msgid "<strong>Compte</strong>"
+msgstr "<strong>Compte</strong>"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+msgid "<strong>Crédit initial</strong>"
+msgstr "<strong>Crédit initial</strong>"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+msgid "<strong>Crédit période</strong>"
+msgstr "<strong>Crédit période</strong>"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+msgid "<strong>Débit initial</strong>"
+msgstr "<strong>Débit initial</strong>"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+msgid "<strong>Débit période</strong>"
+msgstr "<strong>Débit période</strong>"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+msgid "<strong>Intitulé</strong>"
+msgstr "<strong>Intitulé</strong>"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+msgid "<strong>Solde crédit</strong>"
+msgstr "<strong>Solde crédit</strong>"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+msgid "<strong>Solde débit</strong>"
+msgstr "<strong>Solde débit</strong>"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+msgid "<strong>Totaux</strong>"
+msgstr "<strong>Totaux</strong>"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Afficher"
+msgstr "Afficher"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_view_data
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_view_data
+msgid "Afficher les montants"
+msgstr "Afficher les montants"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_print_report
+msgid "Afficher un rapport d'erreur"
+msgstr "Afficher un rapport d'erreur"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_form_view
+msgid "Ajouter une note"
+msgstr "Ajouter une note"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_aligne
+msgid "Aligne"
+msgstr "Aligne"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.add_note_wizard_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.import_balance_wizard_form_view
+msgid "Annuler"
+msgstr "الغاء"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.add_note_wizard_form_view
+msgid "Appliquer"
+msgstr "تثبيت"
+
+#. module: l10n_dz_reports
+#: model:ir.actions.report,name:l10n_dz_reports.action_print_balance
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_report_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_id
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+#: model:ir.ui.view,arch_db:l10n_dz_reports.view_balance_line_search
+msgid "Balance"
+msgstr "الرصيد"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_parent_id
+msgid "Balance N-1"
+msgstr "الرصيد ا-1"
+
+#. module: l10n_dz_reports
+#: model:ir.actions.act_window,name:l10n_dz_reports.dl_action_account_report_report_balance_ligne_tree_view
+#: model:ir.actions.act_window,name:l10n_dz_reports.dl_action_account_report_report_balance_tree_view
+#: model:ir.ui.menu,name:l10n_dz_reports.balance_menu
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+msgid "Balance des comptes"
+msgstr "Balance des comptes"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_tree_view
+msgid "Balances des comptes"
+msgstr "Balances des comptes"
+
+#. module: l10n_dz_reports
+#: selection:account.report.model,state:0
+#: selection:dl.account.report.report,state:0
+#: selection:dl.account.report.report.balance,state:0
+msgid "Brouillon"
+msgstr "Brouillon"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+msgid "Calculer"
+msgstr "Calculer"
+
+#. module: l10n_dz_reports
+#: model:ir.actions.act_window,help:l10n_dz_reports.action_account_report_model_tree_view
+msgid "Cliquez ici pour créer un nouveau modele."
+msgstr "Cliquez ici pour créer un nouveau modele."
+
+#. module: l10n_dz_reports
+#: model:ir.actions.act_window,help:l10n_dz_reports.dl_action_account_report_report_tree_view
+msgid "Cliquez ici pour créer un nouveau rapport financier."
+msgstr "Cliquez ici pour créer un nouveau rapport financier."
+
+#. module: l10n_dz_reports
+#: model:ir.actions.act_window,help:l10n_dz_reports.dl_action_account_report_report_balance_tree_view
+msgid "Cliquez ici pour créer un nouvelle balance."
+msgstr "Cliquez ici pour créer un nouvelle balance."
+
+#. module: l10n_dz_reports
+#: model:ir.actions.act_window,help:l10n_dz_reports.dl_action_account_report_report_balance_ligne_tree_view
+msgid "Cliquez ici pour créer un nouvelle ligne de balance."
+msgstr "Cliquez ici pour créer un nouvelle ligne de balance."
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_code
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_code
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_code
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_code
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_code
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_code
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_code
+msgid "Code"
+msgstr "الكود"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_code
+msgid "Code Cellule"
+msgstr "Code Cellule"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_code
+msgid "Code Rubrique"
+msgstr "Code Rubrique"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_column_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_col_id
+msgid "Colonne"
+msgstr "Colonne"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_amount_1
+msgid "Colonne 1"
+msgstr "Colonne 1"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_amount_2
+msgid "Colonne 2"
+msgstr "Colonne 2"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_amount_3
+msgid "Colonne 3"
+msgstr "Colonne 3"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_amount_4
+msgid "Colonne 4"
+msgstr "Colonne 4"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_amount_5
+msgid "Colonne 5"
+msgstr "Colonne 5"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_amount_6
+msgid "Colonne 6"
+msgstr "Colonne 6"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_amount_7
+msgid "Colonne 7"
+msgstr "Colonne 7"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_amount_8
+msgid "Colonne 8"
+msgstr "Colonne 8"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_ids
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_ids
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Colonnes"
+msgstr "Colonnes"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.view_balance_line_search
+msgid "Compte"
+msgstr "Compte"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.menu,name:l10n_dz_reports.configuration_report_menu1
+#: model:res.groups,name:l10n_dz_reports.group_dl_reports_config
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_devise_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_group_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_var_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_create_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_devise_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_group_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_var_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_create_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_inti_credit
+msgid "Crédit initial"
+msgstr "Crédit initial"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_periode_credit
+msgid "Crédit période"
+msgstr "Crédit période"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc_p
+msgid "DESIGNATION DE L'ENTREPRISE :"
+msgstr "إسم الشركة:   "
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_date_debut
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_date_debut
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_date_from
+msgid "Date début"
+msgstr "التاريخ البداية"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_date_fin
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_date_fin
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_date_to
+msgid "Date fin"
+msgstr "التاريخ النهاية "
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_Entete
+msgid "Designation de l'entreprise"
+msgstr "Designation de l'entreprise"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_devise_name
+msgid "Devise"
+msgstr "الوحدة"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_devise_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_group_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_var_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_display_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_devise_division
+msgid "Diviser le montant par "
+msgstr "Diviser le montant par "
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_init_debit
+msgid "Débit initial"
+msgstr "Débit initial"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_periode_debit
+msgid "Débit période"
+msgstr "Débit période"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_form_view
+msgid "Entrez ici une explication ou des notes..."
+msgstr "Entrez ici une explication ou des notes..."
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_error
+msgid "Erreur"
+msgstr "خطأ"
+
+#. module: l10n_dz_reports
+#: code:addons/l10n_dz_reports/wizard/import_balance.py:42
+#, python-format
+msgid "Erreur a la ligne , Le champs () est vide, veuillez corriger sur le fichier excel et relancer l'importation"
+msgstr "Erreur a la ligne , Le champs () est vide, veuillez corriger sur le fichier excel et relancer l'importation"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_state
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_state
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_state
+msgid "Etat"
+msgstr "الحالة"
+
+#. module: l10n_dz_reports
+#: model:ir.actions.report,name:l10n_dz_reports.action_print_report_doc
+msgid "Etat financier 1"
+msgstr "Etat financier 1"
+
+#. module: l10n_dz_reports
+#: model:ir.actions.report,name:l10n_dz_reports.action_print_report_doc_paysage
+msgid "Etat financier 2"
+msgstr "Etat financier 2"
+
+#. module: l10n_dz_reports
+#: model:ir.module.category,name:l10n_dz_reports.dl_reports_management
+msgid "Etats financiers (DZ)"
+msgstr "Etats financiers (DZ)"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_exercice
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_exercice
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_exercice
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_balance
+#: selection:periode,periode_sel:0
+msgid "Exercice"
+msgstr "السنة"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_cntrl_only
+msgid "Faire un controle seulement"
+msgstr "Faire un controle seulement"
+
+#. module: l10n_dz_reports
+#: code:addons/l10n_dz_reports/wizard/import_balance.py:169
+#, python-format
+msgid "Fichier contient des anomalies, veuillez consulter le fichier log généré [erreur_importation.csv]"
+msgstr "Fichier contient des anomalies, veuillez consulter le fichier log généré [erreur_importation.csv]"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_filename
+msgid "Filename"
+msgstr "اسم الملف"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Formules"
+msgstr "Formules"
+
+#. module: l10n_dz_reports
+#: model:res.groups,name:l10n_dz_reports.group_dl_reports_manager
+msgid "Gestionnaire"
+msgstr "Gestionnaire"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_bold
+msgid "Gras"
+msgstr "Gras"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.view_balance_line_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_group_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_groupe_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_groupe_id
+msgid "Groupe"
+msgstr "Groupe"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_form_view
+msgid "Génération du tableau"
+msgstr "Génération du tableau"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_devise_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_group_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_var_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_id_5581
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.import_balance_wizard_form_view
+msgid "Importation de la balance"
+msgstr "Importation de la balance"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.import_balance_wizard_form_view
+msgid "Importer"
+msgstr "Importer"
+
+#. module: l10n_dz_reports
+#: model:ir.actions.act_window,name:l10n_dz_reports.launch_import_balance_wizard
+#: model:ir.ui.menu,name:l10n_dz_reports.import_balance_wizard_menu
+msgid "Importer une balance"
+msgstr "Importer une balance"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_form_view
+msgid "Imprimer"
+msgstr "Imprimer"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_compte
+msgid "Intitulé"
+msgstr "Intitulé"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_ligne_tree_view
+msgid "La balance des comptes"
+msgstr "La balance des comptes"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_devise___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_group___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_var___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard___last_update
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_devise_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_group_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_var_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_write_uid
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_devise_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_group_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_var_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_write_date
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_row_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_row_id
+msgid "Ligne"
+msgstr "Ligne"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_row_id
+msgid "Ligne Rapport"
+msgstr "Ligne Rapport"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_report_row_id
+msgid "Ligne du modele"
+msgstr "Ligne du modele"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_ids
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_line_ids
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_grid_ids
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_grid_ids_2
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_grid_ids_4
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_grid_ids_8
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Lignes"
+msgstr "Lignes"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.menu,name:l10n_dz_reports.balance_ligne_menu
+msgid "Lignes balance"
+msgstr "Lignes balance"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Lignes/Colonnes"
+msgstr "Lignes/Colonnes"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard_line_id
+msgid "Line"
+msgstr "بند"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_periode_sel
+msgid "Liste periodes"
+msgstr "Liste periodes"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.menu,name:l10n_dz_reports.account_mes_rapports_menu
+msgid "Mes rapports"
+msgstr "Mes rapports"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Mettre a jour le tableau"
+msgstr "Mettre a jour le tableau"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_model_id
+msgid "Modele"
+msgstr "Modele"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Modele de rapport"
+msgstr "Modele de rapport"
+
+#. module: l10n_dz_reports
+#: model:ir.actions.act_window,name:l10n_dz_reports.action_account_report_model_tree_view
+msgid "Modele de rapports"
+msgstr "Modele de rapports"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_tree_view
+msgid "Modeles de rapports"
+msgstr "Modeles de rapports"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.menu,name:l10n_dz_reports.account_report_model_menu
+msgid "Modèles de rapports"
+msgstr "Modèles de rapports"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_amount
+msgid "Montant"
+msgstr "Montant"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_input_ids
+msgid "Montants saisis"
+msgstr "Montants saisis"
+
+#. module: l10n_dz_reports
+#: selection:account.report.model.column,periode:0
+msgid "N-1"
+msgstr "N-1"
+
+#. module: l10n_dz_reports
+#: selection:account.report.model.column,periode:0
+msgid "N-2"
+msgstr "N-2"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_nbr_col
+msgid "Nombre colonnes"
+msgstr "Nombre colonnes"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_nbr_col
+msgid "Nombre de colonne"
+msgstr "Nombre de colonne"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_nbr_input
+msgid "Nombre de valeurs saisie"
+msgstr "Nombre de valeurs saisie"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_ids
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_note
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_note
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard_note
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_grid_form_view
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_liste
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_notes
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_note_ids
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_notes
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_grid_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc_p
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.add_note_wizard_form_view
+msgid "Nouvelle note"
+msgstr "Nouvelle note"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_name
+msgid "Numero"
+msgstr "Numero"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_c_num
+msgid "Numéro colonne"
+msgstr "Numéro colonne"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_num_identif
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_num_identif
+msgid "Numéro d'identification"
+msgstr "Numéro d'identification"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_ligne_num
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_ligne_num
+msgid "Numéro ligne"
+msgstr "Numéro ligne"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc_p
+msgid "N° D'IDENTIFICATION :"
+msgstr "رقم التعريف : "
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_ordre
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Ordre"
+msgstr "Ordre"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_ordre
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_ordre
+msgid "Ordre de calcul"
+msgstr "Ordre de calcul"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_mode_impression
+msgid "Orientation Impression"
+msgstr "Orientation Impression"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_mode_impression
+msgid "Orientation impression"
+msgstr "Orientation impression"
+
+#. module: l10n_dz_reports
+#: selection:account.report.model,mode_impression:0
+msgid "Paysage"
+msgstr "Paysage"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_periode
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_periode
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_periode_name
+msgid "Periode"
+msgstr "Periode"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_pied
+msgid "Pied de page"
+msgstr "Pied de page"
+
+#. module: l10n_dz_reports
+#: selection:account.report.model,mode_impression:0
+msgid "Portrait"
+msgstr "Portrait"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_report_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_report_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_report_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_report_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_report_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_input_report_id
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_tree_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_tree_view
+msgid "Rapport"
+msgstr "Rapport"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_form_view
+msgid "Rapport Financier"
+msgstr "Rapport Financier"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.menu,name:l10n_dz_reports.dl_account_report_report_menu
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_tree_view
+msgid "Rapports Financiers"
+msgstr "Rapports Financiers"
+
+#. module: l10n_dz_reports
+#: model:ir.actions.act_window,name:l10n_dz_reports.dl_action_account_report_report_tree_view
+msgid "Rapports financiers"
+msgstr "Rapports financiers"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.view_balance_line_search
+msgid "Recherche Colis"
+msgstr "Recherche Colis"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_form_view
+msgid "Remettre a l'état brouillon"
+msgstr "Remettre a l'état brouillon"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard_line_name
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc_p
+msgid "Rubrique"
+msgstr "موضوع"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc_p
+msgid "Résultat du"
+msgstr "النتائج من "
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_form_view
+msgid "Saisie"
+msgstr "Saisie"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_company_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_company_id
+msgid "Société"
+msgstr "Société"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_solde_credit
+msgid "Solde crédit"
+msgstr "Solde crédit"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_balance_line_solde_debit
+msgid "Solde débit"
+msgstr "Solde débit"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_sous_titre
+msgid "Sous titre"
+msgstr "Sous titre"
+
+#. module: l10n_dz_reports
+#: code:addons/l10n_dz_reports/models/report_model.py:83
+#, python-format
+msgid ""
+"Suppression non autorisée ! \n"
+"\n"
+"  Le modéle est validé ! \n"
+"\n"
+" Remettez en brouillon pour pouvoir supprimer"
+msgstr ""
+"Suppression non autorisée ! \n"
+"\n"
+"  Le modéle est validé ! \n"
+"\n"
+" Remettez en brouillon pour pouvoir supprimer"
+
+#. module: l10n_dz_reports
+#: code:addons/l10n_dz_reports/models/report_balance.py:114
+#: code:addons/l10n_dz_reports/models/report_report.py:323
+#, python-format
+msgid ""
+"Suppression non autorisée ! \n"
+"\n"
+"  Le rapport est validé ! \n"
+"\n"
+" Remettez en brouillon pour pouvoir supprimer"
+msgstr ""
+"Suppression non autorisée ! \n"
+"\n"
+"  Le rapport est validé ! \n"
+"\n"
+" Remettez en brouillon pour pouvoir supprimer"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Supprimer Les colonnes"
+msgstr "Supprimer Les colonnes"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Supprimer les lignes"
+msgstr "Supprimer les lignes"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+msgid "Supprimer tout"
+msgstr "Supprimer tout"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_import_balance_wizard_w_file_name
+msgid "Sélectionnez le document"
+msgstr "Sélectionnez le document"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.import_balance_wizard_form_view
+msgid "Sélectionnez le fichier a importer"
+msgstr "Sélectionnez le fichier a importer"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_tableau_num
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_tableau_num
+msgid "Tableau Numero"
+msgstr "Tableau Numero"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc_p
+msgid "Tableau N°"
+msgstr "جدول رقم"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc_p
+msgid "au "
+msgstr " إلى "
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_row_police
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_police
+msgid "Taille"
+msgstr "Taille"
+
+#. module: l10n_dz_reports
+#: selection:account.report.model,state:0
+#: selection:dl.account.report.report,state:0
+#: selection:dl.account.report.report.balance,state:0
+msgid "Terminé"
+msgstr "Terminé"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_column_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_name
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_name
+msgid "Titre"
+msgstr "Titre"
+
+#. module: l10n_dz_reports
+#: code:addons/l10n_dz_reports/wizard/import_balance.py:172
+#, python-format
+msgid "Tout est OK"
+msgstr "Tout est OK"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_balance_devise_id
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_dl_account_report_report_devise_id
+msgid "Unité d'affichage"
+msgstr "Unité d'affichage"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_note_user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: l10n_dz_reports
+#: model:ir.module.category,description:l10n_dz_reports.dl_reports_management
+msgid "User access level for this module"
+msgstr "User access level for this module"
+
+#. module: l10n_dz_reports
+#: model:res.groups,name:l10n_dz_reports.group_dl_reports_user
+msgid "Utilisateur"
+msgstr "Utilisateur"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.account_report_model_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_form_view
+msgid "Valider"
+msgstr "Valider"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_model_formula_formula
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_var_name
+msgid "Var"
+msgstr "Var"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_devise
+msgid "account.report.devise"
+msgstr "account.report.devise"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_group
+msgid "account.report.group"
+msgstr "account.report.group"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_model
+msgid "account.report.model"
+msgstr "account.report.model"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_model_column
+msgid "account.report.model.column"
+msgstr "account.report.model.column"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_model_formula
+msgid "account.report.model.formula"
+msgstr "account.report.model.formula"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_model_row
+msgid "account.report.model.row"
+msgstr "account.report.model.row"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_report_balance_line
+msgid "dl.report.balance.line"
+msgstr "dl.report.balance.line"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_report_grid
+msgid "account.report.report.grid"
+msgstr "account.report.report.grid"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_report_grid_note
+msgid "account.report.report.grid.note"
+msgstr "account.report.report.grid.note"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_report_input
+msgid "account.report.report.input"
+msgstr "account.report.report.input"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_account_report_var
+msgid "account.report.var"
+msgstr "account.report.var"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_add_note_wizard
+msgid "add.note.wizard"
+msgstr "add.note.wizard"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_aligne
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_account_report_report_grid_bold
+msgid "aligne"
+msgstr "aligne"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc
+#: model:ir.ui.view,arch_db:l10n_dz_reports.report_doc_p
+msgid "au"
+msgstr "au"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_dl_account_report_report
+msgid "dl.account.report.report"
+msgstr "dl.account.report.report"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_dl_account_report_report_balance
+msgid "dl.account.report.report.balance"
+msgstr "dl.account.report.report.balance"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_ligne_tree_view
+msgid "ic"
+msgstr "ic"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_ligne_tree_view
+msgid "id"
+msgstr "id"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_import_balance_wizard
+msgid "import.balance.wizard"
+msgstr "import.balance.wizard"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,field_description:l10n_dz_reports.field_add_note_wizard_name
+msgid "operation"
+msgstr "operation"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.add_note_wizard_form_view
+msgid "or"
+msgstr "or"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.import_balance_wizard_form_view
+msgid "ou"
+msgstr "ou"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_ligne_tree_view
+msgid "pc"
+msgstr "pc"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_ligne_tree_view
+msgid "pd"
+msgstr "pd"
+
+#. module: l10n_dz_reports
+#: model:ir.model,name:l10n_dz_reports.model_periode
+msgid "periode"
+msgstr "periode"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_ligne_tree_view
+msgid "sc"
+msgstr "sc"
+
+#. module: l10n_dz_reports
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_form_view
+#: model:ir.ui.view,arch_db:l10n_dz_reports.dl_account_report_report_balance_ligne_tree_view
+msgid "sd"
+msgstr "sd"
+
+#. module: l10n_dz_reports
+#: model:ir.model.fields,help:l10n_dz_reports.field_dl_account_report_report_nbr_input
+msgid "utilisé pour afficher ou pas longlet saisie"
+msgstr "utilisé pour afficher ou pas longlet saisie"

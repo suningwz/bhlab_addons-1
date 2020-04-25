@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="account_mes_traitements_menu" name="Traitements" parent="account_accountant.menu_accounting" sequence="13" groups="account.group_account_invoice"/>
+                <menuitem id="account_exe_menu" name="Exercices comptables" parent="account_mes_traitements_menu" sequence="80" action="l10n_dz_base.action_exercice_view" groups="account.group_account_invoice"/>
+
+        <menuitem id="account_mes_rapports_menu" name="Dz rapports" parent="account_accountant.menu_accounting" sequence="14" groups="account.group_account_invoice"/>
+
+        <menuitem id="account_dz_config_menu" name="Configuration DZ" parent="account.menu_finance_configuration" sequence="90" groups="account.group_account_invoice"/>
+
+
+    </data>
+</openerp>

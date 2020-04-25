@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--        Actif-->
+         <report
+            id="action_print_report_lf_actif"
+            model="dl.account.report.report"
+            string="Bilan Actif"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_actif"
+            name="l10n_dz_reports.report_lf_actif"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+
+        />
+
+<!--        Passif-->
+         <report
+            id="action_print_report_lf_passif"
+            model="dl.account.report.report"
+            string="Bilan Passif"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_passif"
+            name="l10n_dz_reports.report_lf_passif"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+
+        />
+
+        <!--        Compte de résultat -->
+        <report
+            id="action_print_report_lf_tcr"
+            model="dl.account.report.report"
+            string="Tableau Compte de Résultat"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_tcr"
+            name="l10n_dz_reports.report_lf_tcr"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+
+        />
+        <!--        Stock 1 _ 2 -->
+         <report
+            id="action_print_report_lf_1_2"
+            model="dl.account.report.report"
+            string="Tableau 2"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_1_2"
+            name="l10n_dz_reports.report_lf_1_2"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+
+        />
+
+        <!--        charge personnel 3 -->
+         <report
+            id="action_print_report_lf_3"
+            model="dl.account.report.report"
+            string="Tableau 3"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_3"
+            name="l10n_dz_reports.report_lf_3"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+
+        />
+
+        <!--        charge produits opérationel 4 -->
+         <report
+            id="action_print_report_lf_4"
+            model="dl.account.report.report"
+            string="Tableau 4"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_4"
+            name="l10n_dz_reports.report_lf_4"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+
+        />
+
+        <!--        charge produits opérationel 5 -->
+         <report
+            id="action_print_report_lf_5"
+            model="dl.account.report.report"
+            string="Tableau 5"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_5"
+            name="l10n_dz_reports.report_lf_5"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+
+        />
+
+        <!--        charge produits opérationel 6 -->
+         <report
+            id="action_print_report_lf_6"
+            model="dl.account.report.report"
+            string="Tableau 6"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_6"
+            name="l10n_dz_reports.report_lf_6"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+
+<!--        Tabeau des amortissements-->
+         <report
+            id="action_report_lf_7"
+            model="dl.account.report.report"
+            string="Tableau 7"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_7"
+            name="l10n_dz_reports.report_lf_7"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+
+<!--         8-->
+         <report
+            id="action_report_lf_8"
+            model="dl.account.report.report"
+            string="Tableau 8"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_8"
+            name="l10n_dz_reports.report_lf_8"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+<!--         9-->
+         <report
+            id="action_report_lf_9"
+            model="dl.account.report.report"
+            string="Tableau 9"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_9"
+            name="l10n_dz_reports.report_lf_9"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+
+<!--         9-->
+         <report
+            id="action_report_lf_10"
+            model="dl.account.report.report"
+            string="Tableau 10"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_10"
+            name="l10n_dz_reports.report_lf_10"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+
+<!--         11-->
+         <report
+            id="action_report_lf_11"
+            model="dl.account.report.report"
+            string="Tableau 11"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_11"
+            name="l10n_dz_reports.report_lf_11"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+
+<!--         12-->
+         <report
+            id="action_report_lf_12"
+            model="dl.account.report.report"
+            string="Tableau 12"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_12"
+            name="l10n_dz_reports.report_lf_12"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+
+<!--         13-->
+         <report
+            id="action_report_lf_13"
+            model="dl.account.report.report"
+            string="Tableau 13"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_lf_13"
+            name="l10n_dz_reports.report_lf_13"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+
+
+    </data>
+
+</odoo>

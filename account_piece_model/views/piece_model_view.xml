@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="account_piece_model_tree_view">
+            <field name="name">account.piece.modele.tree</field>
+            <field name="model">account.piece.modele</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Modele piece comptable">
+                    <field name="name"/>
+                    <field name="journal_id"/>
+                    <field name="reference"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="account_import_model_form_view" model="ir.ui.view">
+        <field name="name">account.piece.modele.form</field>
+        <field name="model">account.piece.modele</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Modele piece comptable">
+                <header>
+                    <button name="action_create_move" string="Créer une piece a partir de ce modele" class="oe_highlight" type="object"  groups="account.group_account_invoice"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="journal_id"/>
+                        </group>
+                        <group>
+                            <field name="reference"/>
+<!--                            <field name="journal_id"/>-->
+                        </group>
+
+                    </group>
+                    <notebook>
+                        <page string="Ecritures" >
+                            <field name="line_ids">
+                                <tree editable="buttom">
+                                    <field name="account_id"/>
+                                    <field name="libelle"/>
+                                    <field name="debit_credit"/>
+                                    <field name="taux"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_account_piece_modele_view">
+            <field name="name">Modele piece comptables</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.piece.modele</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="account_piece_model_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cliquez ici pour créer un nouveau modele.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+<!--    <menuitem id="account_piece_model_root_menu" name="Modele piece comptable" parent="account.menu_finance_configuration" sequence="80" groups="account.group_account_invoice"/>-->
+    <menuitem id="account_piece_model_menu" name="Modèles pieces comptables" parent="l10n_dz_base.account_dz_config_menu" sequence="90" action="action_account_piece_modele_view" groups="account.group_account_invoice"/>
+<!--    <menuitem id="account_piece_model_root_menu" name="Modele piece comptable" parent="l10n_dz_base.account_mes_traitements_menu" sequence="40" groups="account.group_account_invoice"/>-->
+<!--    <menuitem id="account_piece_model_menu" name="Modèles pieces comptables" parent="account_piece_model_root_menu" sequence="90" action="action_account_piece_modele_view" groups="account.group_account_invoice"/>-->
+
+    </data>
+</openerp>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+ <!-- saisie assistée -->
+		<record id="view_ra_account_move_wizard_inherit_form" model="ir.ui.view">
+            <field name="name">ra.account.move.wizard.form.inherit</field>
+            <field name="model">account.move</field>
+            <field name="priority">2</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <data>
+                	<button name="action_post" position="after">
+                        <button name="action_saisie_assistee" string="Saisie assistée" type="object" attrs="{'invisible':[('state','=', 'posted')]}"/>
+                	</button>
+
+                </data>
+			</field>
+        </record>
+
+    </data>
+</openerp>

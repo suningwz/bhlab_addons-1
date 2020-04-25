@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="paperformat_g50" model="report.paperformat">
+            <field name="name">Format G50</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Landscape</field>
+            <field name="header_spacing">10</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="dpi">80</field>
+        </record>
+    <report
+            id="action_report_g50"
+            model="account.g50"
+            string="G_50"
+            name="l10n_dz_reports_g50.report_g50"
+            file="l10n_dz_reports_g50.report_g50"
+            report_type="qweb-pdf"
+            paperformat="l10n_dz_reports_g50.paperformat_g50"
+        />
+    <template id="l10n_dz_reports_g50.report_g50">
+         <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page" style=" background-image:url('l10n_dz_reports_g50/static/src/img/g50_1.png'); background-size: 1360px, 1000; backgroubd-repeat: no-repeat;">
+                        <div class="row ">
+                            <br style=" line-height:72px;"></br>
+                            <table  style=" border: none !important; width:100%;">
+                                <tr>
+                                    <th style=" padding-left:140px; width:40%; height:48px; font-size:16px;"><span t-field="doc.impot_id" /><span style=" padding-left:205px; " t-field="doc.mois" /></th>
+                                    <th ></th>
+                                </tr>
+                                 <tr>
+                                    <th style=" padding-left:230px;  height:35px; font-size:14px;"><span t-field="doc.inspection" /></th>
+                                    <th></th>
+                                 </tr>
+                                <tr>
+                                     <th style=" padding-left:220px; height:28px; font-size:14px;"><span t-field="doc.recette" /></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th style=" padding-left:150px;  height:32px; font-size:14px;"> <span t-field="doc.commune_id" /></th>
+                                    <th style=" font-size:16px;"> <span t-field="doc.company_id" /></th>
+                                </tr>
+                                <tr>
+                                    <th style=" padding-left:100px; height:25px; font-size:12px;"> <span t-field="doc.nis" /></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th style=" padding-left:120px; height:25px; font-size:12px;"> <span t-field="doc.nif" /></th>
+                                    <th class="text-left" style=" padding-left:110px; height:25px; font-size:14px;"><span t-field="doc.activite" /></th>
+                                </tr>
+                                <tr>
+                                    <th style=" padding-left:190px; height:25px; font-size:12px;"> <span t-field="doc.ai" /></th>
+                                    <th style=" padding-left:50px; height:25px; font-size:14px;"><span t-field="doc.commune_id" /></th>
+                                </tr>
+                            </table>
+                         </div>
+                        <!--tableau1-->
+                        <br style=" line-height:80px;"></br>
+                        <table  style=" width:100%;" >
+                            <tr  >
+                                <th class="text-right" style=" width:56%; padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a11_brut"><span t-field="doc.c1a11_brut" /></t></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a11_imp"><span t-field="doc.c1a11_imp" /></t></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a11_mtn"><span t-field="doc.c1a11_mtn" /></t></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:56%; padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a12_brut"><span t-field="doc.c1a12_brut" /></t></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a12_imp"><span t-field="doc.c1a12_imp" /></t></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a12_mtn"><span t-field="doc.c1a12_mtn" /></t></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:56%; padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a13_brut"><span t-field="doc.c1a13_brut" /></t></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a13_imp"><span t-field="doc.c1a13_imp" /></t></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px;height:25px; font-size:12px;" ><t t-if="doc.c1a13_mtn"><span t-field="doc.c1a13_mtn" /></t></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:56%; padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a14_brut"><span t-field="doc.c1a14_brut" /></t></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a14_imp"><span t-field="doc.c1a14_imp" /></t></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a14_mtn"><span t-field="doc.c1a14_mtn" /></t></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:56%; padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a20_brut"><span t-field="doc.c1a20_brut" /></t></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a20_imp"><span t-field="doc.c1a20_imp" /></t></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; height:25px; font-size:12px;" ><t t-if="doc.c1a20_mtn"><span t-field="doc.c1a20_mtn" /></t></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:56%; padding-right:40px; padding-top:5px;  height:30px; font-size:14px;" ><strong t-if="doc.c1a_brut_total"><span t-field="doc.c1a_brut_total" /></strong></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; padding-top:5px; height:30px; font-size:14px;" ><strong t-if="doc.c1a_imp_total"><span t-field="doc.c1a_imp_total" /></strong></th>
+                                <th class="text-right" style=" width:22%;padding-right:40px; padding-top:5px; height:30px; font-size:14px;" ><strong t-if="doc.c1a_mtn_total"><span t-field="doc.c1a_mtn_total" /></strong></th>
+                            </tr>
+                        </table>
+                       <br style="line-height:60px;"></br>
+                        <!--tableau2-->
+                        <!--<table class="table table-condensed" style=" border: none !important; width:100%;">-->
+                        <table  style=" width:100%;" >
+                            <tr  >
+                                <th class="text-center" style=" width:40%; padding:1px;height:30px; font-size:12px;" ><t t-if="doc.t211"><span t-field="doc.t211" /></t></th>
+                                <th class="text-center" style=" width:35%;padding:1px;height:30px; font-size:12px;" ><t t-if="doc.t212"><span t-field="doc.t212" /></t></th>
+                                <th class="text-center" style=" width:20%;padding:1px;height:30px; font-size:12px;" ><t t-if="doc.t213"><span t-field="doc.t213" /></t></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-center" style=" width:40%; padding:1px;height:30px; font-size:12px;" ></th>
+                                <th class="text-center" style=" width:35%;padding:1px;height:30px; font-size:12px;" ></th>
+                                <th class="text-center" style=" width:20%;padding:1px;height:30px; font-size:12px;" ><t t-if="doc.t23"><span t-field="doc.t23" /></t></th>
+                            </tr>
+                        </table>
+                        <br style="line-height:70px;"></br>
+                        <!--tableau3-->
+                         <table style=" border: none !important; width:100%;">
+                             <tr  >
+                                 <th class="text-right" style=" width:70%; padding-right:20px;;height:22px; font-size:12px;" ><t t-if="doc.e1l20_imp"><span t-field="doc.e1l20_imp" /></t></th>
+                                 <th class="text-center" style=" width:10%;padding:1px;height:22px; font-size:12px;" ></th>
+                                 <th class="text-center" style=" width:20%;padding:1px;height:22px; font-size:12px;" ><t t-if="doc.e1l20_retenu"><span t-field="doc.e1l20_retenu" /></t></th>
+                             </tr>
+                             <tr  >
+                                 <th class="text-right" style=" width:70%; padding-right:20px;;height:22px; font-size:12px;" ><t t-if="doc.e1l30_imp"><span t-field="doc.e1l30_imp" /></t></th>
+                                 <th class="text-center" style=" width:10%;padding:1px;height:22px; font-size:12px;" ></th>
+                                 <th class="text-center" style=" width:20%;padding:1px;height:22px; font-size:12px;" ><t t-if="doc.e1l30_retenu"><span t-field="doc.e1l30_retenu" /></t></th>
+                             </tr>
+                             <tr  >
+                                 <th class="text-right" style=" width:70%; padding-right:20px;;height:22px; font-size:12px;" ><t t-if="doc.e1l40_imp"><span t-field="doc.e1l40_imp" /></t></th>
+                                 <th class="text-center" style=" width:10%;padding:1px;height:22px; font-size:12px;" ></th>
+                                 <th class="text-center" style=" width:20%;padding:1px;height:22px; font-size:12px;" ><t t-if="doc.e1l40_retenu"><span t-field="doc.e1l40_retenu" /></t></th>
+                             </tr>
+                             <tr  >
+                                 <th class="text-right" style=" width:70%; padding-right:20px;;height:22px; font-size:12px;" ><t t-if="doc.e1l60_imp"><span t-field="doc.e1l60_imp" /></t></th>
+                                 <th class="text-center" style=" width:10%;padding:1px;height:22px; font-size:12px;" ></th>
+                                 <th class="text-center" style=" width:20%;padding:1px;height:22px; font-size:12px;" ><t t-if="doc.e1l60_retenu"><span t-field="doc.e1l60_retenu" /></t></th>
+                             </tr>
+                             <tr  >
+                                 <th class="text-right" style=" width:70%; padding-right:20px;;height:22px; font-size:12px;" ><t t-if="doc.e1l80_imp"><span t-field="doc.e1l80_imp" /></t></th>
+                                 <th class="text-right" style=" width:10%;padding-right:60px;height:23px; font-size:12px;" ><t t-if="doc.e1l80_taux"><span t-field="doc.e1l80_taux" /></t></th>
+                                 <th class="text-center" style=" width:20%;padding:1px;height:22px; font-size:12px;" ><t t-if="doc.e1l80_retenu"><span t-field="doc.e1l80_retenu" /></t></th>
+                             </tr>
+                              <tr  >
+                                 <th class="text-right" style=" width:70%; padding-right:20px;;height:22px; font-size:12px;" ><t t-if="doc.e1m30_imp"><span t-field="doc.e1m30_imp" /></t></th>
+                                 <th class="text-center" style=" width:10%;padding:1px;height:22px; font-size:12px;" ></th>
+                                 <th class="text-center" style=" width:20%;padding:1px;height:22px; font-size:12px;" ><t t-if="doc.e1m30_retenu"><span t-field="doc.e1m30_retenu" /></t></th>
+                            </tr>
+                            <tr  >
+                                 <th class="text-right" style=" width:70%; padding-right:20px;height:24px; font-size:12px;" ><t t-if="doc.e1m40_imp"><span t-field="doc.e1m40_imp" /></t></th>
+                                 <th class="text-center" style=" width:10%;padding:1px;height:22px; font-size:12px;" ></th>
+                                 <th class="text-center" style=" width:20%;padding:1px;height:22px; font-size:12px;" ><t t-if="doc.e1m40_retenu"><span t-field="doc.e1m40_retenu" /></t></th>
+                            </tr>
+                             <tr  >
+                                 <th class="text-right" style=" width:70%; padding-right:20px; padding-top:10px;height:25px; font-size:14px;" ><strong t-if="doc.tab3_total_imp"><span t-field="doc.tab3_total_imp" /></strong></th>
+                                 <th class="text-center" style=" width:10%; padding-top:5px;height:25px; font-size:14px;" ></th>
+                                 <th class="text-center" style=" width:20%; padding-top:5px;height:25px; font-size:14px;" ><strong t-if="doc.tab3_total_retenu"><span t-field="doc.tab3_total_retenu" /></strong></th>
+                            </tr>
+                        </table>
+                        <br style="line-height:30px;"></br>
+                    </div>
+                    <div class="page" style=" background-image:url('l10n_dz_reports_g50/static/src/img/g50_2.png'); background-size: 1360px, 1000; backgroubd-repeat: no-repeat;">
+                        <br style="line-height:105px;"></br>
+                        <!--tableau4-->
+                         <table  style=" width: 100%;">
+                            <tr  >
+                                <th class="text-right" style=" width:70%; padding-right:20px; height:23px; font-size:12px;"  ><t t-if="doc.e2e00_1_libelle"><span t-field="doc.e2e00_1_libelle" /></t></th>
+                                <th class="text-right" style=" width:10%;padding-right:60px;height:23px; font-size:12px;"  ><t t-if="doc.e2e00_1_imp"><span t-field="doc.e2e00_1_imp" /></t></th>
+                                <th class="text-center" style=" width:20%;padding:1px;height:25px; font-size:12px;"><t t-if="doc.e2e00_1_taux"><span t-field="doc.e2e00_1_taux" /></t></th>
+                            </tr>
+                             <tr  >
+                                <th  class="text-right" style=" width:70%; padding-right:20px;;height:22px; font-size:12px;"  ></th>
+                                <th class="text-right" style=" width:10%;padding-right:60px; height:23px; font-size:12px;"  ><t t-if="doc.e2e00_2_imp"><span t-field="doc.e2e00_2_imp" /></t></th>
+                                <th class="text-center" style=" width:20%;padding:1px;height:22px; font-size:12px;" ><t t-if="doc.e2e00_2_taux"><span t-field="doc.e2e00_2_taux" /></t></th>
+                            </tr>
+                             <tr  >
+                                <th  class="text-right" style=" width:70%; padding-right:20px;;height:45px; font-size:12px;"  ></th>
+                                <th class="text-right" style=" width:10%;padding-right:60px;height:45px; font-size:12px;" ><t t-if="doc.e2e00_3_imp"><span t-field="doc.e2e00_3_imp" /></t></th>
+                                <th class="text-center" style=" width:20%;padding:1px;height:45px; font-size:12px;" ><t t-if="doc.e2e00_3_taux"><span t-field="doc.e2e00_3_taux" /></t></th>
+                            </tr>
+                             <tr  >
+                                <th  class="text-right" style=" width:70%; padding-right:20px;;height:40px; font-size:14px;" ><t t-if="doc.tab4_total_imp"><span t-field="doc.tab4_total_imp" /></t></th>
+                                <th ></th>
+                                <th class="text-center" style=" width:20%;padding:1px;height:40px; font-size:14px;" ><strong t-if="doc.tab4_total_a_payer"><span t-field="doc.tab4_total_a_payer" /></strong></th>
+                            </tr>
+                         </table>
+                         <br style="line-height:80px;"></br>
+                        <!--tableau5-->
+                         <table  style=" width: 100%;">
+                            <tr  >
+                                <th  class="text-right" style=" width:70%; padding-right:20px;;height:22px; font-size:12px;"  ></th>
+                                <th class="text-center" style=" width:10%;height:27px; font-size:12px;"  ><t t-if="doc.t511"><span t-field="doc.t511" /></t></th>
+                                <th class="text-center" style=" width:20%;height:27px; font-size:12px;" ><t t-if="doc.t512"><span t-field="doc.t512" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th ></th>
+                                <th class="text-center" style=" width:10%;height:70px; font-size:12px;"  ><t t-if="doc.t521"><span t-field="doc.t521" /></t></th>
+                                <th class="text-center" style=" width:20%;height:70px; font-size:12px;"><t t-if="doc.t522"><span t-field="doc.t522" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th  class="text-right" style=" width:70%; padding-right:20px;;height:23px; font-size:14px;"  ><strong t-if="doc.t52"><span t-field="doc.t52" /></strong></th>
+                                <th ></th>
+                                <th class="text-center" style=" width:20%;height:40px;pading-right:20px; font-size:14px;" ><strong t-if="doc.t54"><span t-field="doc.t54" /></strong></th>
+                            </tr>
+                         </table>
+                        <!--tableau6-->
+                         <br style="line-height:80px;"></br>
+                         <table style=" width: 100%;">
+                            <tr  >
+                                <th class="text-right" style=" width:40%; padding-right:20px;;height:30px; font-size:12px;"  ><t t-if="doc.t611"><span t-field="doc.t611" /></t></th>
+                                <th  ></th>
+                            </tr>
+                           <tr  >
+                                <th class="text-right" style=" width:40%; padding-right:20px;;height:30px; font-size:12px;" ><t t-if="doc.t621"><span t-field="doc.t621" /></t></th>
+                                <th></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:40%; padding-right:20px;;height:30px; font-size:12px;"  ><t t-if="doc.t631"><span t-field="doc.t631" /></t></th>
+                                <th  ></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:40%; padding-right:20px;;height:30px; font-size:12px;"  ><t t-if="doc.t641"><span t-field="doc.t641" /></t></th>
+                                <th ></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:40%; padding-right:20px;;height:30px; font-size:12px;" ><t t-if="doc.t651"><span t-field="doc.t651" /></t></th>
+                                <th ><span style=" padding-left:40px; padding-top:20px;" t-field="doc.inspection"/><span style=" padding-left:20px;padding-top:20px;" t-field="doc.date" /></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:40%; padding-right:20px;;height:30px; font-size:12px;" ><t t-if="doc.t661"><span t-field="doc.t661" /></t></th>
+                                <th ></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:40%; padding-right:20px;;height:30px; font-size:12px;"  ><t t-if="doc.t671"><span t-field="doc.t671" /></t></th>
+                                <th  ></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:40%; padding-right:20px;;height:30px; font-size:12px;"  ><t t-if="doc.t681"><span t-field="doc.t681" /></t></th>
+                                <th ></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:40%; padding-right:20px;;height:80px; font-size:12px;"  ><t t-if="doc.t691"><span t-field="doc.t691" /></t></th>
+                                <th ></th>
+                            </tr>
+                             <tr  >
+                                <th class="text-right" style=" width:40%; padding-right:20px;;height:30px; font-size:14px;"  ><strong t-if="doc.t61"><span t-field="doc.t61" /></strong></th>
+                                <th ></th>
+                            </tr>
+                         </table>
+                        <br style="line-height:70px;"></br>
+                    </div>
+                     <div class="page" style=" background-image:url('l10n_dz_reports_g50/static/src/img/g50_3.png'); background-size: 1340px, 1000; backgroubd-repeat: no-repeat;">
+                        <!--tableau7-->
+                         <br style="line-height:165px;"></br>
+                         <table  style=" width: 100%;">
+                            <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t711"><span t-field="doc.t711" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t712"><span t-field="doc.t712" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t713"><span t-field="doc.t713" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t714"><span t-field="doc.t714" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t721"><span t-field="doc.t721" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t722"><span t-field="doc.t722" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t723"><span t-field="doc.t723" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t724"><span t-field="doc.t724" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t731"><span t-field="doc.t731" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t732"><span t-field="doc.t732" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t733"><span t-field="doc.t733" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t734"><span t-field="doc.t734" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t741"><span t-field="doc.t741" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t742"><span t-field="doc.t742" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t743"><span t-field="doc.t743" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t744"><span t-field="doc.t744" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t751"><span t-field="doc.t751" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t752"><span t-field="doc.t752" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t753"><span t-field="doc.t753" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t754"><span t-field="doc.t754" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%;height:35px; padding-right:20px; font-size:12px;"><t t-if="doc.t761"><span t-field="doc.t761" /></t></th>
+                                <th class="text-right" style=" width:15%;height:35px; padding-right:50px; font-size:12px;" ><t t-if="doc.t762"><span t-field="doc.t762" /></t></th>
+                                <th class="text-right" style=" width:15%;height:35px; padding-right:50px; font-size:12px;" ><t t-if="doc.t763"><span t-field="doc.t763" /></t></th>
+                                <th class="text-right" style=" width:15%;height:35px; padding-right:50px; font-size:12px;" ><t t-if="doc.t764"><span t-field="doc.t764" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t771"><span t-field="doc.t771" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t772"><span t-field="doc.t772" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t773"><span t-field="doc.t773" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t774"><span t-field="doc.t774" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t781"><span t-field="doc.t781" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t782"><span t-field="doc.t782" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t783"><span t-field="doc.t783" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t784"><span t-field="doc.t784" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t791"><span t-field="doc.t791" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t792"><span t-field="doc.t792" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t793"><span t-field="doc.t793" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t794"><span t-field="doc.t794" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7a1"><span t-field="doc.t7a1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7a2"><span t-field="doc.t7a2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7a3"><span t-field="doc.t7a3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7a4"><span t-field="doc.t7a4" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7b1"><span t-field="doc.t7b1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7b2"><span t-field="doc.t7b2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7b3"><span t-field="doc.t7b3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7b4"><span t-field="doc.t7b4" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7c1"><span t-field="doc.t7c1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7c2"><span t-field="doc.t7c2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7c3"><span t-field="doc.t7c3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7c4"><span t-field="doc.t7c4" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7d1"><span t-field="doc.t7d1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7d2"><span t-field="doc.t7d2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7d3"><span t-field="doc.t7d3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7d4"><span t-field="doc.t7d4" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7e1"><span t-field="doc.t7e1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7e2"><span t-field="doc.t7e2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7e3"><span t-field="doc.t7e3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7e4"><span t-field="doc.t7e4" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7f1"><span t-field="doc.t7f1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7f2"><span t-field="doc.t7f2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7f3"><span t-field="doc.t7f3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7f4"><span t-field="doc.t7f4" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7g1"><span t-field="doc.t7g1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7g2"><span t-field="doc.t7g2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7g3"><span t-field="doc.t7g3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7g4"><span t-field="doc.t7g4" /></t></th>
+                            </tr>
+                              <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7h1"><span t-field="doc.t7h1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7h2"><span t-field="doc.t7h2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7h3"><span t-field="doc.t7h3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7h4"><span t-field="doc.t7h4" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7i1"><span t-field="doc.t7i1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7i2"><span t-field="doc.t7i2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7i3"><span t-field="doc.t7i3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7i4"><span t-field="doc.t7i4" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7j1"><span t-field="doc.t7j1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7j2"><span t-field="doc.t7j2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7j3"><span t-field="doc.t7j3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7j4"><span t-field="doc.t7j4" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:55%; height:22px; padding-right:20px; font-size:12px;"><t t-if="doc.t7k1"><span t-field="doc.t7k1" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7k2"><span t-field="doc.t7k2" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7k3"><span t-field="doc.t7k3" /></t></th>
+                                <th class="text-right" style=" width:15%;height:22px; padding-right:50px; font-size:12px;" ><t t-if="doc.t7k4"><span t-field="doc.t7k4" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:55%; height:23px; padding-right:10px;padding-top:10px; font-size:14px;"><strong t-if="doc.t71"><span t-field="doc.t71" /></strong></th>
+                                <th class="text-center" style=" width:15%;height:23px; pading-top:5px;font-size:14px;" ><strong t-if="doc.t72"><span t-field="doc.t72" /></strong></th>
+                                <th class="text-center" style=" width:15%;height:23px; pading-top:5px; font-size:14px;" ><strong t-if="doc.t73"><span t-field="doc.t73" /></strong></th>
+                                <th class="text-center" style=" width:15%;height:23px; pading-top:5px;font-size:14px;" ><strong t-if="doc.t74"><span t-field="doc.t74" /></strong></th>
+                            </tr>
+                         </table>
+                     <!--tableaux 8 &9-->
+                         <br style=" line-height:55px;"></br>
+                        <table  style=" width: 100%;">
+                            <tr  >
+                                <th class="text-right" style=" width:50%; padding-right:20px;height:22px; font-size:12px;" ><t t-if="doc.t811"><span t-field="doc.t811" /></t></th>
+                                <th class="text-right" style=" width:50%; padding-right:50px;height:22px; font-size:12px;"><t t-if="doc.t911"><span t-field="doc.t911" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:50%; padding-right:20px;height:22px; font-size:12px;" ><t t-if="doc.t821"><span t-field="doc.t821" /></t></th>
+                                <th class="text-right" style=" width:50%; padding-right:50px;height:22px; font-size:12px;"><t t-if="doc.t921"><span t-field="doc.t921" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:50%; padding-right:20px;height:22px; font-size:12px;"><t t-if="doc.t831"><span t-field="doc.t831" /></t></th>
+                                <th class="text-right" style=" width:50%; padding-right:50px;height:22px; font-size:12px;" ><t t-if="doc.t931"><span t-field="doc.t931" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:50%; padding-right:20px;height:22px; font-size:12px;"><t t-if="doc.t841"><span t-field="doc.t841" /></t></th>
+                                <th class="text-right" style=" width:50%; padding-right:50px;height:22px; font-size:12px;" ><t t-if="doc.t941"><span t-field="doc.t941" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:50%; padding-right:20px;height:22px; font-size:12px;"><t t-if="doc.t851"><span t-field="doc.t851" /></t></th>
+                                <th class="text-right" style=" width:50%; padding-right:50px;height:22px; font-size:12px;" ><t t-if="doc.t951"><span t-field="doc.t951" /></t></th>
+                            </tr>
+                            <tr  >
+                                <th class="text-right" style=" width:50%; padding-right:20px;height:45px; font-size:12px;"><t t-if="doc.t861"><span t-field="doc.t861" /></t></th>
+                                <th class="text-right" style=" width:50%; padding-right:50px;height:45px; font-size:12px;" ><t t-if="doc.t961"><span t-field="doc.t961" /></t></th>
+                            </tr>
+                             <tr  >
+                                 <th class="text-right" style=" width:50%; padding-right:20px;height:25px; font-size:14px;"><strong t-if="doc.t81"><span t-field="doc.t81" /></strong></th>
+                                <th class="text-right" style=" width:50%; padding-right:50px;height:25px; font-size:14px;" ><t t-if="doc.t971"><span t-field="doc.t971" /></t></th>
+                            </tr>
+                        </table>
+                         <br style=" line-height:55px;"></br>
+                     </div>
+                     <div class="page" style=" background-image:url('l10n_dz_reports_g50/static/src/img/g50_4.png'); background-size: 1360px, 1000; backgroubd-repeat: no-repeat;">
+                     <br style=" line-height:930px;"></br>
+                     </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

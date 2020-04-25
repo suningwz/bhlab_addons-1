@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem name="G50" id="dl_g50_menu" parent="l10n_dz_reports.report_fiscal_menu1" sequence="90" action="action_account_g50_tree_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+        <menuitem name="Parametrage G50" id="dl_g50_param_menu" parent="l10n_dz_base.account_dz_config_menu" sequence="91" action="action_account_g50_param_tree_view" groups="l10n_dz_reports.group_dl_reports_user"/>
+
+    </data>
+</openerp>

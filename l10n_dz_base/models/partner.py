@@ -10,7 +10,7 @@ class Partner(models.Model):
     code_tiers   = fields.Char('Code tiers')
     # banque_id    = fields.Many2one('res.partner', string='Banque associée')
     employee     = fields.Boolean('Employé')
-    # num_agrement = fields.Char('N° CA/Argument')
+    num_agrement = fields.Char(u'N° CA/Agrement')
     rc  = fields.Char('R.C')
     nif = fields.Char('N.I.F', size=15)
     nis = fields.Char('N.I.S', size=15)

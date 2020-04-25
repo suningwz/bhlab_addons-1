@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_direction_impot_config,direction.impot config,model_direction_impot,l10n_dz_reports.group_dl_reports_user,1,1,1,1
+access_account_g50_config,account.g50 config,model_account_g50,l10n_dz_reports.group_dl_reports_user,1,1,1,1
+access_account_g50_param_config,account.g50.param config,model_account_g50_param,l10n_dz_reports.group_dl_reports_user,1,1,1,1

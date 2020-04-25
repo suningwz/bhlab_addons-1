@@ -1,0 +1,31 @@
+<openerp>
+    <data>
+        <!-- chargement du modele d'importation DLG-->
+
+         <record model="account.import.model" id="model_dlg">
+             <field name="name">Modele d'importation écritures DLG</field>
+             <field name="use_number_1">lettre</field>
+             <field name="col_a_name">B</field>
+             <field name="col_a_libelle">E</field>
+             <field name="col_a_ref">D</field>
+             <field name="col_a_date">C</field>
+             <field name="col_a_sequence">I</field>
+             <field name="col_a_account">G</field>
+             <field name="col_a_journal">F</field>
+             <field name="col_a_partner">H</field>
+             <field name="col_a_debit">L</field>
+             <field name="col_a_credit">M</field>
+             <field name="col_name">1</field>
+             <field name="col_libelle">4</field>
+             <field name="col_ref">3</field>
+             <field name="col_date">2</field>
+             <field name="col_sequence">8</field>
+             <field name="col_account">6</field>
+             <field name="col_journal">5</field>
+             <field name="col_partner">7</field>
+             <field name="col_debit">11</field>
+             <field name="col_credit">12</field>
+         </record>
+
+    </data>
+</openerp>

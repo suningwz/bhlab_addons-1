@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="report_charge_personnel">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <style>
+                        .page-style{
+                        padding-top:10px; padding-bottom:10px; padding-left:10px; padding-right:10px; border: 2px solid #000000; height:1350px; width:920px; margin-top:10px;
+                        }
+                        .titre-style{
+                        text-align: center; font-size: 24px; font-style: normal; font-variant: normal;
+                        padding: 0px;font-weight: bold;
+                        }
+                        .bold-style{
+                        font-size: 22px; font-style: normal; font-variant: normal;
+                        padding: 0px;font-weight: bold;
+                        }
+
+                        div, p {
+                        font-family: Arial;
+                        }
+
+                        th, td {
+                        border: 1px solid black; text-align: left; padding: 2px;
+                        }
+                        .transp{
+                        border :none;
+                        }
+                    </style>
+
+                    <div class="page-style" style="padding:0px;">
+                        <table style="margin:0px; padding:10px;">
+                            <tr >
+                                <td><strong>NIF : </strong>000716 0974 70140</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:bold;">IMPRIME DESTINE A L'ADMINISTRATION</td>
+                            </tr>
+                        </table>
+
+                        <table style="width:100%; border: 1px solid black;">
+                            <tr >
+                                <td style="width:25%; border:none;">Désignation de l'entreprise : </td>
+                                <td style="border:none;"><strong>SARL BH LAB</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">Activité : </td>
+                                <td style="border:none;"><strong>IMPORT  EQUIPEMENTS ET REACTIFS LAB</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">Adresse : </td>
+                                <td style="border:none; padding-bottom:60px;"><strong>130 CITE CADAT ROUIBA</strong></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:35%;">
+                            <tr>
+                                <td style="text-align:center;">Exercice du</td>
+                                <td style="text-align:center;"><strong>31/12/2018</strong></td>
+                                <td style="text-align:center;">au</td>
+                                <td style="text-align:center;"><strong>31/12/2018</strong></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:80%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="text-align:center; font-weight:bold; font-size:16px;">3/Charges de personnel, impôts, taxes et versements assimilés, autres services :</td>
+                            </tr>
+                        </table>
+
+                        <table style="width:100%; background-color:#D3D3D3;">
+                        <tr>
+                            <td style="width:70%; text-align:center; vertical-align: middle;">Rubrique</td>
+                            <td style="width:15%; text-align:center; vertical-align: middle;">Montants</td>
+                        </tr>
+                        <tr>
+                            <td style="width:70%; text-align:center; vertical-align: middle;">Autres services</td>
+                            <td style="width:15%; text-align:center; vertical-align: middle;"></td>
+                        </tr>
+                    </table>
+
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:70%;">LOCATIONS VEHICULES</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Etudes et recherches</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">DOCUMENTATION ET  DIVERS</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">FRAIS DE TRANSPORT</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">FRAIS DE POSTES ET TELECOMMUNICATIONS</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">SERVICES BANCAIRES ET ASSIMILEES</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Cotisations et divers</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%; font-weight:bold; text-align:right;">TOTAL (1)</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                        </table>
+
+
+
+                        <table style="width:100%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="width:70%; text-align:center; vertical-align: middle;">Charges de personnel</td>
+                                <td style="width:15%; text-align:center; vertical-align: middle;"></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:70%;">Rémunération du personnel</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Rémunération de l'exploitant individuel</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Cotisations aux organismes sociaux</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Charges sociales de l'exploitant individuel</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Autres charges sociales</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Autres charges de personnel</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%; font-weight:bold; text-align:right;">TOTAL (2)</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                        </table>
+
+
+
+                        <table style="width:100%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="width:70%; text-align:center; vertical-align: middle;">Impôts, taxes et versements assimilés</td>
+                                <td style="width:15%; text-align:center; vertical-align: middle;"></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:70%;">Impôts, taxes et versements assimilés sur rémunérations</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Impôts et taxes non récupérables sur chiffre d'affaires</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">AUTRES IMPOTS ET TAXES</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%; font-weight:bold; text-align:right;">TOTAL (3)</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%; font-weight:bold; text-align:right;">TOTAL (1)+(2)+(3)</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+
+                    <div class="page-style" style="padding:0px; page-break-before: always;">
+                        <table style="margin:0px; padding:10px;">
+                            <tr >
+                                <td><strong>NIF : </strong>000716 0974 70140</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:bold;">IMPRIME DESTINE A L'ADMINISTRATION</td>
+                            </tr>
+                        </table>
+
+                        <table style="width:100%; border: 1px solid black;">
+                            <tr >
+                                <td style="width:25%; border:none;">Désignation de l'entreprise : </td>
+                                <td style="border:none;"><strong>SARL BH LAB</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">Activité : </td>
+                                <td style="border:none;"><strong>IMPORT  EQUIPEMENTS ET REACTIFS LAB</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;">Adresse : </td>
+                                <td style="border:none; padding-bottom:60px;"><strong>130 CITE CADAT ROUIBA</strong></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:35%;">
+                            <tr>
+                                <td style="text-align:center;">Exercice du</td>
+                                <td style="text-align:center;"><strong>31/12/2018</strong></td>
+                                <td style="text-align:center;">au</td>
+                                <td style="text-align:center;"><strong>31/12/2018</strong></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:40%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="text-align:center; font-weight:bold; font-size:16px;">4/Autres charges et produits opérationnels : </td>
+                            </tr>
+                        </table>
+
+                        <table style="width:100%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="width:70%; text-align:center; vertical-align: middle;">Autres charges opérationnelles</td>
+                                <td style="width:15%; text-align:center; vertical-align: middle;">Montants</td>
+                            </tr>
+                        </table>
+
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:70%;">Redevances pour concessions, brevets, licences, logiciels, droits et valeurs similaires</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Moins values sur sortie d'actifs immobilisés non financiers</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Jetons de présence</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Pertes sur créances  irrécouvrables</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Quote-part de résultat sur opérations faites en commun</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Amendes et pénalités, subventions accordés, dons et libéralités</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Charges exceptionnelles de gestion courante</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Autres charges de gestion courante</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%; font-weight:bold; text-align:right;">TOTAL </td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                        </table>
+
+
+
+                        <table style="width:100%; background-color:#D3D3D3;">
+                            <tr>
+                                <td style="width:70%; text-align:center; vertical-align: middle;">Autres produits opérationnels</td>
+                                <td style="width:15%; text-align:center; vertical-align: middle;"></td>
+                            </tr>
+                        </table>
+
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:70%;">Redevances pour concessions, brevets, licences, logiciels et valeurs similaires</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Plus values sur sorties d'actifs immobilisés non financiers</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Jetons de présences et rémunérations d'administrateurs ou de gérant</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Quotes-parts de subventions d'investissement virées au résultat de l'exercice</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Quote-part de résultat sur opérations faites en commun</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Rentrées sur créances amorties</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">PRODUITS EXCEPTIONNELS SUR OP DE GESTION</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%;">Autres produits de gestion courante</td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:70%; font-weight:bold; text-align:right;">TOTAL </td>
+                                <td style="width:15%; text-align:right;"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <record id="balance_xls_form_view" model="ir.ui.view">
+            <field name="name">balance.xls.form</field>
+            <field name="model">dl.report.balance</field>
+            <field name="inherit_id" ref="l10n_dz_reports.dl_report_balance_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='total_compte']" position="after">
+                    <button string="Export Excel" name="action_export_excel" type="object" groups="l10n_dz_reports.group_dl_reports_manager"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_cloture_user,account.cloture user,model_account_cloture,account.group_account_invoice,1,1,1,1
+access_account_cloture_cloture_journal_user,account.cloture.cloture.journal user,model_account_cloture_cloture_journal,account.group_account_invoice,1,1,1,1
+access_account_cloture_ouverture_journal_user,account.cloture.ouverture.journal user,model_account_cloture_ouverture_journal,account.group_account_invoice,1,1,1,1
+access_account_cloture_regroupement_journal_user,account.cloture.regroupement.journal user,model_account_cloture_regroupement_journal,account.group_account_invoice,1,1,1,1
+access_account_cloture_move_draft_user,account.cloture.move.draft user,model_account_cloture_move_draft,account.group_account_invoice,1,1,1,1

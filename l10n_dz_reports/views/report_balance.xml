@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="dl_report_balance_tree_view">
+            <field name="name">dl.report.balance.tree</field>
+            <field name="model">dl.report.balance</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Balances des comptes" decoration-success="state == 'done'" decoration-info="state == 'draft'" decoration-muted="state == 'cancel'">
+                    <field name="code"/>
+                    <field name="name" string="Rapport"/>
+                    <field name="exercice_id" options='{"no_open": True, "no_create": True}'/>
+                    <field name="date_debut"/>
+                    <field name="date_fin"/>
+                    <field name="parent_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="dl_report_balance_form_view" model="ir.ui.view">
+        <field name="name">dl.report.balance.form</field>
+        <field name="model">dl.report.balance</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Balance des comptes">
+                <header>
+                    <button name="total_compte" type="object" string="Calculer" states="draft" class="oe_highlight"  groups="l10n_dz_reports.group_dl_reports_config"/>
+                    <button name="action_done" string="Valider" states="draft" class="oe_highlight" type="object" groups="l10n_dz_reports.group_dl_reports_manager"/>
+                    <button name="action_draft" string="Remettre a l'état brouillon" states="done" type="object" groups="l10n_dz_reports.group_dl_reports_manager"/>
+                    <field name="state" widget="statusbar" clickable="True" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="parent_id"/>
+                        </group>
+
+                        <group>
+                            <field name="exercice_id" options='{"no_open": True, "no_create": True}'/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="exercice" invisible="1"/>
+                            <field name="date_debut"/>
+                            <field name="date_fin"/>
+                            <field name="devise_id" options='{"no_open": True, "no_create": True}'/>
+                            <field name="currency_id" options='{"no_open": True, "no_create": True}' invisible="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+
+                        <page string="Balance">
+                            <group>
+                                <group>
+                                    <field name="init_debit"/>
+                                    <field name="inti_credit"/>
+                                    <separator/><separator/>
+                                    <field name="periode_debit"/>
+                                    <field name="periode_credit"/>
+                                </group>
+                                <group>
+                                    <field name="solde_debit"/>
+                                    <field name="solde_credit"/>
+                                </group>
+                            </group>
+
+                            <field name="line_ids" nolabel="1">
+                                <tree editable="Bottom">
+                                    <field name="code"/>
+                                    <field name="name" />
+                                    <field name="init_debit"     sum="id"/>
+                                    <field name="inti_credit"    sum="ic"/>
+                                    <field name="periode_debit"  sum="pd"/>
+                                    <field name="periode_credit" sum="pc"/>
+                                    <field name="solde_debit"    sum="sd"/>
+                                    <field name="solde_credit"   sum="sc"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Notes">
+                            <field name="notes" widget="html" placeholder="Entrez ici une explication ou des notes..."/>
+                        </page>
+
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="dl_action_report_balance_tree_view">
+            <field name="name">Balance des comptes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dl.report.balance</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="dl_report_balance_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cliquez ici pour créer un nouvelle balance.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+        <!--lignes de la balance-->
+        <record model="ir.ui.view" id="dl_report_balance_ligne_tree_view">
+            <field name="name">dl.report.balance.ligne.tree</field>
+            <field name="model">dl.report.balance.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="La balance des comptes">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="report_id"/>
+                    <field name="init_debit" sum="id"/>
+                    <field name="inti_credit" sum="ic"/>
+                    <field name="periode_debit" sum="pd"/>
+                    <field name="periode_credit" sum="pc"/>
+                    <field name="solde_debit" sum="sd"/>
+                    <field name="solde_credit" sum="sc"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_balance_line_search" model="ir.ui.view">
+              <field name="name">dl.report.balance.line.filter</field>
+              <field name="model">dl.report.balance.line</field>
+              <field name="arch" type="xml">
+                    <search string="Recherche Colis">
+                         <group col="10" colspan="4">
+                             <field name="code"/>
+                             <field name="name"/>
+                             <field name="report_id" />
+                        </group>
+                        <separator/>
+                        <group expand="0" string="Group By" >
+                            <filter string="Compte" name="code" context="{'group_by':'code'}" />
+                            <filter string="Balance" name="report_id" context="{'group_by':'report_id'}" />
+                        </group>
+                    </search>
+              </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="dl_action_report_balance_ligne_tree_view">
+            <field name="name">Balance des comptes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dl.report.balance.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="dl_report_balance_ligne_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cliquez ici pour créer un nouvelle ligne de balance.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

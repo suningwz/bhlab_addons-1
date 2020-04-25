@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="saisie_assistee_wizard_form_view">
+            <field name="name">account.saisie.assistee.wizard.form</field>
+            <field name="model">account.saisie.assistee.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Saisie assistee">
+                    <group>
+                        <group colspan="4">
+                              <field name="move_id"/>
+                              <field name="journal_id"/>
+                              <field name="currency_id" invisible="1"/>
+                              <field name="montant"/>
+                              <field name="modele_id" domain="[('journal_id', '=', journal_id)]"/>
+                        </group>
+
+                        <group colspan="4">
+                            <field name="line_ids" nolabel="1">
+                                <tree editable="buttom">
+                                    <field name="account_id"/>
+                                    <field name="libelle"/>
+                                    <field name="debit"/>
+                                    <field name="credit"/>
+                                    <field name="currency_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button class="oe_highlight" string="Valider" name="action_validate" type="object"/> ou
+                        <button class="oe_link" string="Annuler" special="cancel"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+
+<!--                <act_window id="launch_saisie_assistee_wizard"-->
+<!--                    name="Saisie assistee"-->
+<!--                    src_model="account.saisie.assistee.wizard"-->
+<!--                    res_model="account.saisie.assistee.wizard"-->
+<!--                    view_mode="form"-->
+<!--                    target="new"-->
+<!--                    context = "{'move_id': active_id'}"-->
+<!--                    key2="client_action_multi"/>-->
+
+
+    </data>
+</openerp>

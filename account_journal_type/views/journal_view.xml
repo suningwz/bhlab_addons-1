@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+ <!-- interface Journal -->
+		<record id="view_journal_inherit_form" model="ir.ui.view">
+            <field name="name">account.journal.inherit.form.inherit</field>
+            <field name="model">account.journal</field>
+            <field name="priority">2</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <data>
+                	<xpath expr="//field[@name='type']" position="after">
+                        <field name="saisie"/>
+                	</xpath>
+
+                </data>
+			</field>
+        </record>
+
+        <record id="view_journal_inherit_tree" model="ir.ui.view">
+            <field name="name">account.journal.inherit.tree.inherit</field>
+            <field name="model">account.journal</field>
+            <field name="priority">2</field>
+            <field name="inherit_id" ref="account.view_account_journal_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                	<xpath expr="//field[@name='type']" position="after">
+                        <field name="code"/>
+                	</xpath>
+                </data>
+			</field>
+        </record>
+
+        <!--journal; rajouter le code dans la recherche-->
+        <record id="view_journal_inherit_search" model="ir.ui.view">
+              <field name="name">account.journal.expand2.filter</field>
+              <field name="model">account.journal</field>
+              <field name="inherit_id" ref="account.view_account_journal_search"/>
+              <field name="arch" type="xml">
+                    <xpath expr="//search" position="inside">
+                        <field name="code" />
+                    </xpath>
+              </field>
+        </record>
+    </data>
+</openerp>

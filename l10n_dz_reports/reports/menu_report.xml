@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="paperformat_a4_paysage" model="report.paperformat">
+            <field name="name">Format Etat Paysage</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <!--<field name="page_height">80</field>-->
+            <!--<field name="page_width">175</field>-->
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">100</field>
+            <field name="dpi">80</field>
+        </record>
+
+        <record id="paperformat_a4_portrait" model="report.paperformat">
+            <field name="name">Format Etat Portrait</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <!--<field name="footer_line" eval="False"/>-->
+            <field name="header_spacing">0</field>
+            <field name="dpi">80</field>
+        </record>
+
+        <record id="paperformat_balance" model="report.paperformat">
+            <field name="name">Format balance</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <!--<field name="page_height">80</field>-->
+            <!--<field name="page_width">175</field>-->
+            <field name="orientation">Landscape</field>
+            <field name="header_spacing">100</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">3</field>
+            <field name="dpi">80</field>
+        </record>
+
+        <report
+            id="action_print_balance"
+            model="dl.report.balance"
+            string="Balance"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_balance"
+            name="l10n_dz_reports.report_balance"
+            paperformat="l10n_dz_reports.paperformat_balance"
+        />
+
+        <report
+            id="action_print_report_doc"
+            model="dl.account.report.report"
+            string="Etat financier 1"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_doc"
+            name="l10n_dz_reports.report_doc"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+
+        <report
+            id="action_print_report_web_doc"
+            model="dl.account.report.report"
+            string="Etat financier 1"
+            report_type="qweb-html"
+            file="l10n_dz_reports.report_doc"
+            name="l10n_dz_reports.report_doc"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+
+        <report
+            id="action_print_report_doc_arabic"
+            model="dl.account.report.report"
+            string="Etat financier 1"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_doc_arabic"
+            name="l10n_dz_reports.report_doc_arabic"
+            paperformat="l10n_dz_reports.paperformat_a4_portrait"
+            menu="False"
+        />
+
+
+        <report
+            id="action_print_report_doc_paysage"
+            model="dl.account.report.report"
+            string="Etat financier 2"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_doc_p"
+            name="l10n_dz_reports.report_doc_p"
+            paperformat="l10n_dz_reports.paperformat_a4_paysage"
+            menu="False"
+        />
+
+        <report
+            id="action_print_report_doc_paysage_arabic"
+            model="dl.account.report.report"
+            string="Etat financier 2"
+            report_type="qweb-pdf"
+            file="l10n_dz_reports.report_doc_p_arabic"
+            name="l10n_dz_reports.report_doc_p_arabic"
+            paperformat="l10n_dz_reports.paperformat_a4_paysage"
+            menu="False"
+        />
+
+        <report
+            id="report_imputation"
+            model="account.move"
+            string="Imputation"
+            name="l10n_dz_reports.imputation"
+            file="f_rapport2"
+            report_type="qweb-pdf"
+        />
+
+        <report
+            id="action_report_etat_client"
+            model="account.etat.client"
+            string="Etat 104"
+            name="l10n_dz_reports.report_etat_client_doc"
+            file="l10n_dz_reports.report_etat_client_doc"
+            report_type="qweb-pdf"
+        />
+
+        <report
+            id="action_report_etat_tap"
+            model="account.etat.tap"
+            string="Etat TAP"
+            name="l10n_dz_reports.report_etat_tap_doc"
+            file="l10n_dz_reports.report_etat_tap_doc"
+            report_type="qweb-pdf"
+        />
+
+        <report
+            id="action_report_etat_tva"
+            model="account.etat.tva"
+            string="Etat tva deductible"
+            name="l10n_dz_reports.report_etat_tva_doc"
+            file="l10n_dz_reports.report_etat_tva_doc"
+            report_type="qweb-pdf"
+        />
+
+    </data>
+
+</odoo>

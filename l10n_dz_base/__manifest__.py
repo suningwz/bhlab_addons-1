@@ -13,11 +13,13 @@
 
     """,
     'images': ['static/description/icon.png',],
-    'depends': ['base', 'account'],
+    'depends': ['account_accountant'],
     'data': [
         'views/partner_view.xml',
-        # 'views/exercice_view.xml',
+        'views/exercice_view.xml',
         'views/company_view.xml',
+        'views/menu_view.xml',
+        'security/ir.model.access.csv',
              ],
     'demo': [],
     'test': [],

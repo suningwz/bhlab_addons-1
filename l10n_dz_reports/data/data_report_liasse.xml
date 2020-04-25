@@ -1,0 +1,3653 @@
+<openerp>
+    <data>
+
+        <!-- documents -->
+<record id='lf_actif' model='account.report.model'>
+	<field name='name'>ACTIF</field>
+	<field name='code'>ACT</field>
+	<field name='groupe_id' ref='group_liasse'/>
+	<field name='tableau_num'>01</field>
+	<field name='sous_titre'></field>
+	<field name='state'>draft</field>
+</record>
+
+<record id='lf_passif' model='account.report.model'>
+	<field name='name'>PASSIF</field>
+	<field name='code'>PAS</field>
+	<field name='groupe_id' ref='group_liasse'/>
+	<field name='tableau_num'>02</field>
+	<field name='sous_titre'></field>
+	<field name='state'>draft</field>
+</record>
+
+<record id='lf_tcr' model='account.report.model'>
+	<field name='name'>COMPTE DE RESULTAT</field>
+	<field name='code'>CR</field>
+	<field name='groupe_id' ref='group_liasse'/>
+	<field name='tableau_num'>03</field>
+	<field name='sous_titre'></field>
+	<field name='state'>draft</field>
+</record>
+
+<record id='lf_tms' model='account.report.model'>
+	<field name='name'>1/Tableau des mouvements des stocks(I</field>
+	<field name='code'>TMS</field>
+	<field name='groupe_id' ref='group_liasse'/>
+	<field name='tableau_num'>04</field>
+	<field name='sous_titre'></field>
+	<field name='state'>draft</field>
+</record>
+
+<record id='lf_tfps' model='account.report.model'>
+	<field name='name'>2°/Tableau de la fluctuation de la production stockée</field>
+	<field name='code'>TFPS</field>
+	<field name='groupe_id' ref='group_liasse'/>
+	<field name='tableau_num'>05</field>
+	<field name='sous_titre'></field>
+	<field name='state'>draft</field>
+</record>
+
+<record id='lf_cp' model='account.report.model'>
+<field name='name'>3/Charges de personnel, impôts, taxes et versements assimilés, autres services :</field>
+<field name='code'>CP</field>
+<field name='groupe_id' ref='group_liasse'/>
+<field name='tableau_num'>06</field>
+<field name='sous_titre'></field>
+<field name='state'>draft</field>
+</record>
+
+<record id='lf_acpo' model='account.report.model'>
+<field name='name'>4/Autres charges et produits opérationnels :</field>
+<field name='code'>ACPO</field>
+<field name='groupe_id' ref='group_liasse'/>
+<field name='tableau_num'>07</field>
+<field name='sous_titre'></field>
+<field name='state'>draft</field>
+</record>
+
+<!-- colonnes -->
+<record id='col_lf_actif_1' model='account.report.model.column'>
+<field name='name'>Montants Bruts</field>
+<field name='code'>C1</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='periode'>N</field>
+<field name='c_num'>1</field>
+</record>
+
+<record id='col_lf_actif_2' model='account.report.model.column'>
+<field name='name'>Amortissements Provisions et pertes de valeurs</field>
+<field name='code'>C2</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='periode'>N</field>
+<field name='c_num'>2</field>
+</record>
+
+<record id='col_lf_actif_3' model='account.report.model.column'>
+<field name='name'>Net</field>
+<field name='code'>C3</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='periode'>N</field>
+<field name='c_num'>3</field>
+</record>
+
+<record id='col_lf_actif_4' model='account.report.model.column'>
+<field name='name'>Net (N-1)</field>
+<field name='code'>C4</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='periode'>N-1</field>
+<field name='c_num'>4</field>
+</record>
+
+<record id='col_lf_passif_1' model='account.report.model.column'>
+<field name='name'>N</field>
+<field name='code'>C1</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='periode'>N</field>
+<field name='c_num'>1</field>
+</record>
+
+<record id='col_lf_passif_2' model='account.report.model.column'>
+<field name='name'>N-1</field>
+<field name='code'>C2</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='periode'>N-1</field>
+<field name='c_num'>2</field>
+</record>
+
+<record id='col_lf_tcr_1' model='account.report.model.column'>
+	<field name='name'>DEBIT (en dinars) - N</field>
+	<field name='code'>C1</field>
+	<field name='report_id' ref='lf_tcr'/>
+	<field name='periode'>N</field>
+	<field name='c_num'>1</field>
+</record>
+
+<record id='col_lf_tcr_2' model='account.report.model.column'>
+	<field name='name'>CREDIT (en dinars) - N</field>
+	<field name='code'>C2</field>
+	<field name='report_id' ref='lf_tcr'/>
+	<field name='periode'>N</field>
+	<field name='c_num'>2</field>
+</record>
+
+<record id='col_lf_tcr_3' model='account.report.model.column'>
+	<field name='name'>DEBIT (en dinars) - N-1</field>
+	<field name='code'>C3</field>
+	<field name='report_id' ref='lf_tcr'/>
+	<field name='periode'>N-1</field>
+	<field name='c_num'>3</field>
+</record>
+
+<record id='col_lf_tcr_4' model='account.report.model.column'>
+	<field name='name'>CREDIT (en dinars) - N-1</field>
+	<field name='code'>C4</field>
+	<field name='report_id' ref='lf_tcr'/>
+	<field name='periode'>N-1</field>
+	<field name='c_num'>4</field>
+</record>
+
+<record id='col_tms_1' model='account.report.model.column'>
+<field name='name'>Solde de début d exercice</field>
+<field name='code'>C1</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='periode'>N</field>
+<field name='c_num'>1</field>
+</record>
+
+<record id='col_tms_2' model='account.report.model.column'>
+<field name='name'>Mouvements de la période - Débit</field>
+<field name='code'>C2</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='periode'>N</field>
+<field name='c_num'>2</field>
+</record>
+
+<record id='col_tms_3' model='account.report.model.column'>
+<field name='name'>Mouvements de la période - Crédit</field>
+<field name='code'>C3</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='periode'>N</field>
+<field name='c_num'>3</field>
+</record>
+
+<record id='col_tms_4' model='account.report.model.column'>
+<field name='name'>Solde de fin d execrice</field>
+<field name='code'>C4</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='periode'>N</field>
+<field name='c_num'>4</field>
+</record>
+
+<record id='col_lf_cp_1' model='account.report.model.column'>
+<field name='name'>Montants</field>
+<field name='code'>C1</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='periode'>N</field>
+<field name='c_num'>1</field>
+</record>
+
+<record id='col_lf_acpo_1' model='account.report.model.column'>
+<field name='name'>Montants</field>
+<field name='code'>C1</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='periode'>N</field>
+<field name='c_num'>1</field>
+</record>
+
+<!-- lignes -->
+<record id='row_lf_actif_1' model='account.report.model.row'>
+<field name='name'>ACTIFS NON COURANTS</field>
+<field name='code'>R01</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>1</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>G</field>
+<field name='view_data'>0</field>
+</record>
+
+<record id='row_lf_actif_2' model='account.report.model.row'>
+<field name='name'>Ecarts d'acquisition (goodwill positif ou négatif)</field>
+<field name='code'>R02</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>2</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_3' model='account.report.model.row'>
+<field name='name'>Immobilisations incorporelles</field>
+<field name='code'>R03</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>3</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_4' model='account.report.model.row'>
+<field name='name'>Immobilisations corporelles</field>
+<field name='code'>R04</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>4</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_5' model='account.report.model.row'>
+<field name='name'>Terrains</field>
+<field name='code'>R05</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>5</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_6' model='account.report.model.row'>
+<field name='name'>Bâtiments</field>
+<field name='code'>R06</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>6</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_7' model='account.report.model.row'>
+<field name='name'>Autres immobilisations corporelles</field>
+<field name='code'>R07</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>7</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_8' model='account.report.model.row'>
+<field name='name'>Immobilisations en concession</field>
+<field name='code'>R08</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>8</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_9' model='account.report.model.row'>
+<field name='name'>Immobilisations en cours</field>
+<field name='code'>R09</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>9</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_10' model='account.report.model.row'>
+<field name='name'>Immobilisations financières</field>
+<field name='code'>R10</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>10</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_11' model='account.report.model.row'>
+<field name='name'>Titres mis en équivalence</field>
+<field name='code'>R11</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>11</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_12' model='account.report.model.row'>
+<field name='name'>Autres participations et créances rattachées</field>
+<field name='code'>R12</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>12</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_13' model='account.report.model.row'>
+<field name='name'>Autres titres immobilisés</field>
+<field name='code'>R13</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>13</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_14' model='account.report.model.row'>
+<field name='name'>Prêts et autres actifs financiers non courants</field>
+<field name='code'>R14</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>14</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_15' model='account.report.model.row'>
+<field name='name'>Impôts différés actif</field>
+<field name='code'>R15</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>15</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_16' model='account.report.model.row'>
+<field name='name'>TOTAL ACTIF NON COURANT</field>
+<field name='code'>R16</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>3</field>
+<field name='ligne_num'>16</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_17' model='account.report.model.row'>
+<field name='name'>ACTIF COURANT</field>
+<field name='code'>R17</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>17</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>G</field>
+<field name='view_data'>0</field>
+</record>
+
+<record id='row_lf_actif_18' model='account.report.model.row'>
+<field name='name'>Stocks et en cours</field>
+<field name='code'>R18</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>18</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_19' model='account.report.model.row'>
+<field name='name'>Créances et emplois assimilés</field>
+<field name='code'>R19</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>19</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_20' model='account.report.model.row'>
+<field name='name'>Clients</field>
+<field name='code'>R20</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>20</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_21' model='account.report.model.row'>
+<field name='name'>Autres débiteurs</field>
+<field name='code'>R21</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>21</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_22' model='account.report.model.row'>
+<field name='name'>Impôts et assimilés</field>
+<field name='code'>R22</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>22</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_23' model='account.report.model.row'>
+<field name='name'>Autres créances et emplois assimilés</field>
+<field name='code'>R23</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>23</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_24' model='account.report.model.row'>
+<field name='name'>Disponibilités et assimilés</field>
+<field name='code'>R24</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>24</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_25' model='account.report.model.row'>
+<field name='name'>Placements et autres actifs financiers courants</field>
+<field name='code'>R25</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>25</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_26' model='account.report.model.row'>
+<field name='name'>Trésorerie</field>
+<field name='code'>R26</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>26</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_27' model='account.report.model.row'>
+<field name='name'>TOTAL ACTIF COURANT</field>
+<field name='code'>R27</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>3</field>
+<field name='ligne_num'>27</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_actif_28' model='account.report.model.row'>
+<field name='name'>TOTAL GENERAL ACTIF</field>
+<field name='code'>R28</field>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>4</field>
+<field name='ligne_num'>28</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+
+<record id='row_lf_passif_1' model='account.report.model.row'>
+<field name='name'>CAPITAUX PROPRES</field>
+<field name='code'>R01</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>1</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>G</field>
+<field name='view_data'>0</field>
+</record>
+
+<record id='row_lf_passif_2' model='account.report.model.row'>
+<field name='name'>Capital émis</field>
+<field name='code'>R02</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>2</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_3' model='account.report.model.row'>
+<field name='name'>Capital non appelé</field>
+<field name='code'>R03</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>3</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_4' model='account.report.model.row'>
+<field name='name'>Primes et réserves -  Réserves consolidées (1)</field>
+<field name='code'>R04</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>4</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_5' model='account.report.model.row'>
+<field name='name'>Ecart de réévaluation</field>
+<field name='code'>R05</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>5</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_6' model='account.report.model.row'>
+<field name='name'>Ecart d'équivalence (1)</field>
+<field name='code'>R06</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>6</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_7' model='account.report.model.row'>
+<field name='name'>Résultat net - Résultat net part du groupe (1)</field>
+<field name='code'>R07</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>7</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_8' model='account.report.model.row'>
+<field name='name'>Autres capitaux propores - Report à nouveau</field>
+<field name='code'>R08</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>8</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_9' model='account.report.model.row'>
+<field name='name'>Part de la société consolidante (1)</field>
+<field name='code'>R09</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>9</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_10' model='account.report.model.row'>
+<field name='name'>Part des minoritaires (1)</field>
+<field name='code'>R10</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>10</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_11' model='account.report.model.row'>
+<field name='name'>TOTAL I</field>
+<field name='code'>R11</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>3</field>
+<field name='ligne_num'>11</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_12' model='account.report.model.row'>
+<field name='name'>PASSIFS NON-COURANTS</field>
+<field name='code'>R12</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>12</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>G</field>
+<field name='view_data'>0</field>
+</record>
+
+<record id='row_lf_passif_13' model='account.report.model.row'>
+<field name='name'>Emprunts et dettes financières</field>
+<field name='code'>R13</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>13</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_14' model='account.report.model.row'>
+<field name='name'>Impôts (différés et provisionnés)</field>
+<field name='code'>R14</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>14</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_15' model='account.report.model.row'>
+<field name='name'>Autres dettes non courantes</field>
+<field name='code'>R15</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>15</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_16' model='account.report.model.row'>
+<field name='name'>Provisions et produits constatés d'avance</field>
+<field name='code'>R16</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>16</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_17' model='account.report.model.row'>
+<field name='name'>TOTAL II</field>
+<field name='code'>R17</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>3</field>
+<field name='ligne_num'>17</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_18' model='account.report.model.row'>
+<field name='name'>PASSIFS COURANTS</field>
+<field name='code'>R18</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>18</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>G</field>
+<field name='view_data'>0</field>
+</record>
+
+<record id='row_lf_passif_19' model='account.report.model.row'>
+<field name='name'>Fournisseurs et comptes rattachés</field>
+<field name='code'>R19</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>19</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_20' model='account.report.model.row'>
+<field name='name'>Impôts</field>
+<field name='code'>R20</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>20</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_21' model='account.report.model.row'>
+<field name='name'>Autres dettes</field>
+<field name='code'>R21</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>21</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_22' model='account.report.model.row'>
+<field name='name'>Trésorerie passif</field>
+<field name='code'>R22</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>22</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_23' model='account.report.model.row'>
+<field name='name'>TOTAL III</field>
+<field name='code'>R23</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>3</field>
+<field name='ligne_num'>23</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_passif_24' model='account.report.model.row'>
+<field name='name'>TOTAL GENERAL PASSIF (I+II+III)</field>
+<field name='code'>R24</field>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>4</field>
+<field name='ligne_num'>24</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_1' model='account.report.model.row'>
+<field name='name'>Ventes de marchandises</field>
+<field name='code'>R01</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>1</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_2' model='account.report.model.row'>
+<field name='name'>Production vendue -> Produits fabriqués</field>
+<field name='code'>R02</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>2</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_3' model='account.report.model.row'>
+<field name='name'>Production vendue -> Prestations de services</field>
+<field name='code'>R03</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>3</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_4' model='account.report.model.row'>
+<field name='name'>Production vendue -> Vente de travaux</field>
+<field name='code'>R04</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>4</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_5' model='account.report.model.row'>
+<field name='name'>Produits annexes</field>
+<field name='code'>R05</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>5</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_6' model='account.report.model.row'>
+<field name='name'>Rabais, remises, ristournes accordés</field>
+<field name='code'>R06</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>6</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_7' model='account.report.model.row'>
+<field name='name'>Chiffre d affaires net des Rabais, remises, ristournes</field>
+<field name='code'>R07</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>7</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_8' model='account.report.model.row'>
+<field name='name'>Production stockée ou déstockée</field>
+<field name='code'>R08</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>8</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_9' model='account.report.model.row'>
+<field name='name'>Production immobilisée</field>
+<field name='code'>R09</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>9</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_10' model='account.report.model.row'>
+<field name='name'>Subventions d exploitation</field>
+<field name='code'>R10</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>10</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_11' model='account.report.model.row'>
+<field name='name'>I-Production de l'exercice</field>
+<field name='code'>R11</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>3</field>
+<field name='ligne_num'>11</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_12' model='account.report.model.row'>
+<field name='name'>Achats de marchandises vendues</field>
+<field name='code'>R12</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>12</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_13' model='account.report.model.row'>
+<field name='name'>Matières premières</field>
+<field name='code'>R13</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>13</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_14' model='account.report.model.row'>
+<field name='name'>Autres approvisionnements</field>
+<field name='code'>R14</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>14</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_15' model='account.report.model.row'>
+<field name='name'>Variations des stocks</field>
+<field name='code'>R15</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>15</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_16' model='account.report.model.row'>
+<field name='name'>Achats d études et de prestations de services</field>
+<field name='code'>R16</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>16</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_17' model='account.report.model.row'>
+<field name='name'>Autres consommations</field>
+<field name='code'>R17</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>17</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_18' model='account.report.model.row'>
+<field name='name'>Rabais; remises, ristournes obtenus sur achats</field>
+<field name='code'>R18</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>18</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_19' model='account.report.model.row'>
+<field name='name'>Services extérieurs -> Sous-traitance générale</field>
+<field name='code'>R19</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>19</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_20' model='account.report.model.row'>
+<field name='name'>Services extérieurs -> Locations</field>
+<field name='code'>R20</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>20</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_21' model='account.report.model.row'>
+<field name='name'>Services extérieurs -> Entretien, réparations et maintenance</field>
+<field name='code'>R21</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>21</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_22' model='account.report.model.row'>
+<field name='name'>Services extérieurs -> Primes d assurances</field>
+<field name='code'>R22</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>22</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_23' model='account.report.model.row'>
+<field name='name'>Services extérieurs -> Personnel extérieur à l entreprise</field>
+<field name='code'>R23</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>23</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_24' model='account.report.model.row'>
+<field name='name'>Services extérieurs -> Rémunération d'intermédiaires et honoraires</field>
+<field name='code'>R24</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>24</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_25' model='account.report.model.row'>
+<field name='name'>Services extérieurs -> Publicité</field>
+<field name='code'>R25</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>25</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_26' model='account.report.model.row'>
+<field name='name'>Services extérieurs -> Déplacements, missions et réceptions</field>
+<field name='code'>R26</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>26</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_27' model='account.report.model.row'>
+<field name='name'>Autres services</field>
+<field name='code'>R27</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>27</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_28' model='account.report.model.row'>
+<field name='name'>Rabais, remises, ristournes obtenus sur services extérieurs</field>
+<field name='code'>R28</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>28</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_29' model='account.report.model.row'>
+<field name='name'>II-Consommations de l exercice</field>
+<field name='code'>R29</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>29</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_30' model='account.report.model.row'>
+<field name='name'>III-Valeur ajoutée d exploitation (I-II)</field>
+<field name='code'>R30</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>4</field>
+<field name='ligne_num'>30</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_31' model='account.report.model.row'>
+<field name='name'>Charges de personnel</field>
+<field name='code'>R31</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>31</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_32' model='account.report.model.row'>
+<field name='name'>Impôts et taxes et versements assimilés</field>
+<field name='code'>R32</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>32</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_33' model='account.report.model.row'>
+<field name='name'>IV-Excédent brut d xploitation</field>
+<field name='code'>R33</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>5</field>
+<field name='ligne_num'>33</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_34' model='account.report.model.row'>
+<field name='name'>Autres produits opérationnels</field>
+<field name='code'>R34</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>34</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_35' model='account.report.model.row'>
+<field name='name'>Autres charges opérationnelles</field>
+<field name='code'>R35</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>35</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_36' model='account.report.model.row'>
+<field name='name'>Dotations aux amortissements</field>
+<field name='code'>R36</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>36</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_37' model='account.report.model.row'>
+<field name='name'>Provision</field>
+<field name='code'>R37</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>37</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_38' model='account.report.model.row'>
+<field name='name'>Pertes de valeur</field>
+<field name='code'>R38</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>38</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_39' model='account.report.model.row'>
+<field name='name'>Reprise sur pertes de valeur et provisions</field>
+<field name='code'>R39</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>39</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_40' model='account.report.model.row'>
+<field name='name'>V-Résultat opérationnel</field>
+<field name='code'>R40</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>6</field>
+<field name='ligne_num'>40</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_41' model='account.report.model.row'>
+<field name='name'>Produits financiers</field>
+<field name='code'>R41</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>41</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_42' model='account.report.model.row'>
+<field name='name'>Charges financières</field>
+<field name='code'>R42</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>42</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_43' model='account.report.model.row'>
+<field name='name'>VI-Résultat financier</field>
+<field name='code'>R43</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>7</field>
+<field name='ligne_num'>43</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_44' model='account.report.model.row'>
+<field name='name'>VII-Résultat ordinaire (V+VI)</field>
+<field name='code'>R44</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>8</field>
+<field name='ligne_num'>44</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_45' model='account.report.model.row'>
+<field name='name'>Eléments extraordinaires (produits) (*)</field>
+<field name='code'>R45</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>45</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_46' model='account.report.model.row'>
+<field name='name'>Eléments extraordinaires (charges) (*)</field>
+<field name='code'>R46</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>46</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_47' model='account.report.model.row'>
+<field name='name'>VIII-Résultat extraordinaire</field>
+<field name='code'>R47</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>9</field>
+<field name='ligne_num'>47</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_48' model='account.report.model.row'>
+<field name='name'>Impôts exigibles sur résultats</field>
+<field name='code'>R48</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>48</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_49' model='account.report.model.row'>
+<field name='name'>Impôts différés (variations) sur résultats ordinaire</field>
+<field name='code'>R49</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>49</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tcr_50' model='account.report.model.row'>
+<field name='name'>IX-RESULTAT NET DE L EXERCICE</field>
+<field name='code'>R50</field>
+<field name='report_id' ref='lf_tcr'/>
+<field name='ordre'>10</field>
+<field name='ligne_num'>50</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tms_1' model='account.report.model.row'>
+<field name='name'>Stocks de marchandises</field>
+<field name='code'>R01</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>1</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tms_2' model='account.report.model.row'>
+<field name='name'>Matières et fournitures</field>
+<field name='code'>R02</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>2</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tms_3' model='account.report.model.row'>
+<field name='name'>Autres approvisionnements</field>
+<field name='code'>R03</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>3</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tms_4' model='account.report.model.row'>
+<field name='name'>Encours de production de biens</field>
+<field name='code'>R04</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>4</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tms_5' model='account.report.model.row'>
+<field name='name'>Encours de production de services</field>
+<field name='code'>R05</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>5</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tms_6' model='account.report.model.row'>
+<field name='name'>Stocks de produits</field>
+<field name='code'>R06</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>6</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tms_7' model='account.report.model.row'>
+<field name='name'>Stocks provenant d immobilisations</field>
+<field name='code'>R07</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>7</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_tms_8' model='account.report.model.row'>
+<field name='name'>Stocks à l extérieur</field>
+<field name='code'>R08</field>
+<field name='report_id' ref='lf_tms'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>8</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_1' model='account.report.model.row'>
+<field name='name'>Autres services</field>
+<field name='code'>R01</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>1</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>C</field>
+<field name='view_data'>0</field>
+</record>
+
+<record id='row_lf_cp_2' model='account.report.model.row'>
+<field name='name'>LOCATIONS VEHICULES</field>
+<field name='code'>R02</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>2</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_3' model='account.report.model.row'>
+<field name='name'>Etudes et recherches</field>
+<field name='code'>R03</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>3</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_4' model='account.report.model.row'>
+<field name='name'>DOCUMENTATION ET  DIVERS</field>
+<field name='code'>R04</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>4</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_5' model='account.report.model.row'>
+<field name='name'>FRAIS DE TRANSPORT</field>
+<field name='code'>R05</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>5</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_6' model='account.report.model.row'>
+<field name='name'>FRAIS DE POSTES ET TELECOMMUNICATIONS</field>
+<field name='code'>R06</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>6</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_7' model='account.report.model.row'>
+<field name='name'>SERVICES BANCAIRES ET ASSIMILEES</field>
+<field name='code'>R07</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>7</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_8' model='account.report.model.row'>
+<field name='name'>Cotisations et divers</field>
+<field name='code'>R08</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>8</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_9' model='account.report.model.row'>
+<field name='name'>TOTAL (1)</field>
+<field name='code'>R09</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>9</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_10' model='account.report.model.row'>
+<field name='name'>Charges de personnel</field>
+<field name='code'>R10</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>10</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>C</field>
+<field name='view_data'>0</field>
+</record>
+
+<record id='row_lf_cp_11' model='account.report.model.row'>
+<field name='name'>Rémunération du personnel</field>
+<field name='code'>R11</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>11</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_12' model='account.report.model.row'>
+<field name='name'>Rémunération de l exploitant individuel</field>
+<field name='code'>R12</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>12</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_13' model='account.report.model.row'>
+<field name='name'>Cotisations aux organismes sociaux</field>
+<field name='code'>R13</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>13</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_14' model='account.report.model.row'>
+<field name='name'>Charges sociales de l exploitant individuel</field>
+<field name='code'>R14</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>14</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_15' model='account.report.model.row'>
+<field name='name'>Autres charges sociales</field>
+<field name='code'>R15</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>15</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_16' model='account.report.model.row'>
+<field name='name'>Autres charges de personnel</field>
+<field name='code'>R16</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>16</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_17' model='account.report.model.row'>
+<field name='name'>TOTAL (2)</field>
+<field name='code'>R17</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>17</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_18' model='account.report.model.row'>
+<field name='name'>Impôts, taxes et versements assimilés</field>
+<field name='code'>R18</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>18</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>C</field>
+<field name='view_data'>0</field>
+</record>
+
+<record id='row_lf_cp_19' model='account.report.model.row'>
+<field name='name'>Impôts, taxes et versements assimilés sur rémunérations</field>
+<field name='code'>R19</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>19</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_20' model='account.report.model.row'>
+<field name='name'>Impôts et taxes non récupérables sur chiffre d affaires</field>
+<field name='code'>R20</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>20</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_21' model='account.report.model.row'>
+<field name='name'>AUTRES IMPOTS ET TAXES</field>
+<field name='code'>R21</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>21</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_22' model='account.report.model.row'>
+<field name='name'>TOTAL (3)</field>
+<field name='code'>R22</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>22</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_cp_23' model='account.report.model.row'>
+<field name='name'>TOTAL (1)+(2)+(3)</field>
+<field name='code'>R23</field>
+<field name='report_id' ref='lf_cp'/>
+<field name='ordre'>3</field>
+<field name='ligne_num'>23</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_1' model='account.report.model.row'>
+<field name='name'>Autres charges opérationnelles</field>
+<field name='code'>R01</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>1</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>C</field>
+<field name='view_data'>0</field>
+</record>
+
+<record id='row_lf_acpo_2' model='account.report.model.row'>
+<field name='name'>Redevances pour concessions, brevets, licences, logiciels, droits et valeurs similaires</field>
+<field name='code'>R02</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>2</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_3' model='account.report.model.row'>
+<field name='name'>Moins values sur sortie d actifs immobilisés non financiers</field>
+<field name='code'>R03</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>3</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_4' model='account.report.model.row'>
+<field name='name'>Jetons de présence</field>
+<field name='code'>R04</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>4</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_5' model='account.report.model.row'>
+<field name='name'>Pertes sur créances  irrécouvrables</field>
+<field name='code'>R05</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>5</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_6' model='account.report.model.row'>
+<field name='name'>Quote-part de résultat sur opérations faites en commun</field>
+<field name='code'>R06</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>6</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_7' model='account.report.model.row'>
+<field name='name'>Amendes et pénalités, subventions accordés, dons et libéralités</field>
+<field name='code'>R07</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>7</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_8' model='account.report.model.row'>
+<field name='name'>Charges exceptionnelles de gestion courante</field>
+<field name='code'>R08</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>8</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_9' model='account.report.model.row'>
+<field name='name'>Autres charges de gestion courante</field>
+<field name='code'>R09</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>9</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_10' model='account.report.model.row'>
+<field name='name'>TOTAL</field>
+<field name='code'>R10</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>10</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_11' model='account.report.model.row'>
+<field name='name'>Autres produits opérationnels</field>
+<field name='code'>R11</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>11</field>
+<field name='bold'>1</field>
+<field name='police'>1</field>
+<field name='aligne'>C</field>
+<field name='view_data'>0</field>
+</record>
+
+<record id='row_lf_acpo_12' model='account.report.model.row'>
+<field name='name'>Redevances pour concessions, brevets, licences, logiciels et valeurs similaires</field>
+<field name='code'>R12</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>12</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_13' model='account.report.model.row'>
+<field name='name'>Plus values sur sorties d actifs immobilisés non financiers</field>
+<field name='code'>R13</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>13</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_14' model='account.report.model.row'>
+<field name='name'>Jetons de présences et rémunérations d administrateurs ou de gérant</field>
+<field name='code'>R14</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>14</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_15' model='account.report.model.row'>
+<field name='name'>Quotes-parts de subventions d'investissement virées au résultat de l'exercice</field>
+<field name='code'>R15</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>15</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_16' model='account.report.model.row'>
+<field name='name'>Quote-part de résultat sur opérations faites en commun</field>
+<field name='code'>R16</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>16</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_17' model='account.report.model.row'>
+<field name='name'>Rentrées sur créances amorties</field>
+<field name='code'>R17</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>17</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_18' model='account.report.model.row'>
+<field name='name'>PRODUITS EXCEPTIONNELS SUR OP DE GESTION</field>
+<field name='code'>R18</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>18</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_19' model='account.report.model.row'>
+<field name='name'>Autres produits de gestion courante</field>
+<field name='code'>R19</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>1</field>
+<field name='ligne_num'>19</field>
+<field name='bold'>0</field>
+<field name='police'>1</field>
+<field name='aligne'>G</field>
+<field name='view_data'>1</field>
+</record>
+
+<record id='row_lf_acpo_20' model='account.report.model.row'>
+<field name='name'>TOTAL</field>
+<field name='code'>R20</field>
+<field name='report_id' ref='lf_acpo'/>
+<field name='ordre'>2</field>
+<field name='ligne_num'>20</field>
+<field name='bold'>1</field>
+<field name='police'>2</field>
+<field name='aligne'>D</field>
+<field name='view_data'>1</field>
+</record>
+
+
+
+
+        <!-- formules -->
+<record id='for_lf_actif_1' model='account.report.model.formula'>
+<field name='name'>R01C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_1'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_2' model='account.report.model.formula'>
+<field name='name'>R02C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_2'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>207</field>
+</record>
+
+<record id='for_lf_actif_3' model='account.report.model.formula'>
+<field name='name'>R03C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_3'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>20-207</field>
+</record>
+
+<record id='for_lf_actif_4' model='account.report.model.formula'>
+<field name='name'>R04C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_4'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>21+22+229</field>
+</record>
+
+<record id='for_lf_actif_5' model='account.report.model.formula'>
+<field name='name'>R05C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_5'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_6' model='account.report.model.formula'>
+<field name='name'>R06C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_6'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_7' model='account.report.model.formula'>
+<field name='name'>R07C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_7'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_8' model='account.report.model.formula'>
+<field name='name'>R08C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_8'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_9' model='account.report.model.formula'>
+<field name='name'>R09C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_9'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>23</field>
+</record>
+
+<record id='for_lf_actif_10' model='account.report.model.formula'>
+<field name='name'>R10C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_10'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_11' model='account.report.model.formula'>
+<field name='name'>R11C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_11'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_12' model='account.report.model.formula'>
+<field name='name'>R12C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_12'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_13' model='account.report.model.formula'>
+<field name='name'>R13C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_13'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_14' model='account.report.model.formula'>
+<field name='name'>R14C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_14'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>274+275+276</field>
+</record>
+
+<record id='for_lf_actif_15' model='account.report.model.formula'>
+<field name='name'>R15C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_15'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_16' model='account.report.model.formula'>
+<field name='name'>R16C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_actif_16'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R02C1+R03C1+R04C1+R09C1+R14C1</field>
+</record>
+
+<record id='for_lf_actif_17' model='account.report.model.formula'>
+<field name='name'>R17C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_17'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_18' model='account.report.model.formula'>
+<field name='name'>R18C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_18'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>SD3-SD39</field>
+</record>
+
+<record id='for_lf_actif_19' model='account.report.model.formula'>
+<field name='name'>R19C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_19'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_20' model='account.report.model.formula'>
+<field name='name'>R20C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_20'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>SD41-SD419</field>
+</record>
+
+<record id='for_lf_actif_21' model='account.report.model.formula'>
+<field name='name'>R21C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_21'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>409+SD42+SD43+SD44+SD45+SD46+SD486+SD489-SD444-SD445-SD446-SD447-SD448+47</field>
+</record>
+
+<record id='for_lf_actif_22' model='account.report.model.formula'>
+<field name='name'>R22C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_22'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>SD444+SD445+SD447</field>
+</record>
+
+<record id='for_lf_actif_23' model='account.report.model.formula'>
+<field name='name'>R23C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_23'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>SD48-SD486-SD489</field>
+</record>
+
+<record id='for_lf_actif_24' model='account.report.model.formula'>
+<field name='name'>R24C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_24'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_25' model='account.report.model.formula'>
+<field name='name'>R25C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_25'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>50-509</field>
+</record>
+
+<record id='for_lf_actif_26' model='account.report.model.formula'>
+<field name='name'>R26C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_26'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>SD51+SD52+SD53+SD54+SD58-SC541</field>
+</record>
+
+<record id='for_lf_actif_27' model='account.report.model.formula'>
+<field name='name'>R27C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_actif_27'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R18C1+R20C1+R21C1+R22C1+R23C1+R25C1+R26C1</field>
+</record>
+
+<record id='for_lf_actif_28' model='account.report.model.formula'>
+<field name='name'>R28C1</field>
+<field name='column_id' ref='col_lf_actif_1'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>4</field>
+<field name='row_id' ref='row_lf_actif_28'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R16C1+R27C1</field>
+</record>
+
+
+
+<record id='for_lf_actif_31' model='account.report.model.formula'>
+<field name='name'>R01C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_1'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_32' model='account.report.model.formula'>
+<field name='name'>R02C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_2'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>2807+2907</field>
+</record>
+
+<record id='for_lf_actif_33' model='account.report.model.formula'>
+<field name='name'>R03C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_3'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>280+290+R02C2</field>
+</record>
+
+<record id='for_lf_actif_34' model='account.report.model.formula'>
+<field name='name'>R04C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_4'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>281+282+291+292</field>
+</record>
+
+<record id='for_lf_actif_35' model='account.report.model.formula'>
+<field name='name'>R05C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_5'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_36' model='account.report.model.formula'>
+<field name='name'>R06C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_6'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_37' model='account.report.model.formula'>
+<field name='name'>R07C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_7'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_38' model='account.report.model.formula'>
+<field name='name'>R08C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_8'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_39' model='account.report.model.formula'>
+<field name='name'>R09C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_9'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>293</field>
+</record>
+
+<record id='for_lf_actif_40' model='account.report.model.formula'>
+<field name='name'>R10C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_10'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_41' model='account.report.model.formula'>
+<field name='name'>R11C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_11'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_42' model='account.report.model.formula'>
+<field name='name'>R12C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_12'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_43' model='account.report.model.formula'>
+<field name='name'>R13C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_13'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_44' model='account.report.model.formula'>
+<field name='name'>R14C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_14'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_45' model='account.report.model.formula'>
+<field name='name'>R15C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_15'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_46' model='account.report.model.formula'>
+<field name='name'>R16C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_actif_16'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R02C2+R03C2+R04C2+R09C2+R14C2</field>
+</record>
+
+<record id='for_lf_actif_47' model='account.report.model.formula'>
+<field name='name'>R17C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_17'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_48' model='account.report.model.formula'>
+<field name='name'>R18C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_18'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>39</field>
+</record>
+
+<record id='for_lf_actif_49' model='account.report.model.formula'>
+<field name='name'>R19C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_19'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_50' model='account.report.model.formula'>
+<field name='name'>R20C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_20'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>491</field>
+</record>
+
+<record id='for_lf_actif_51' model='account.report.model.formula'>
+<field name='name'>R21C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_21'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>495+496</field>
+</record>
+
+<record id='for_lf_actif_52' model='account.report.model.formula'>
+<field name='name'>R22C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_22'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_53' model='account.report.model.formula'>
+<field name='name'>R23C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_23'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_54' model='account.report.model.formula'>
+<field name='name'>R24C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_24'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_55' model='account.report.model.formula'>
+<field name='name'>R25C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_25'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_56' model='account.report.model.formula'>
+<field name='name'>R26C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_26'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>59</field>
+</record>
+
+<record id='for_lf_actif_57' model='account.report.model.formula'>
+<field name='name'>R27C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_actif_27'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R18C2+R20C2+R21C2+R22C2+R23C2+R25C2+R26C2</field>
+</record>
+
+<record id='for_lf_actif_58' model='account.report.model.formula'>
+<field name='name'>R28C2</field>
+<field name='column_id' ref='col_lf_actif_2'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>4</field>
+<field name='row_id' ref='row_lf_actif_28'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R16C2+R27C2</field>
+</record>
+
+
+
+<record id='for_lf_actif_61' model='account.report.model.formula'>
+<field name='name'>R01C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_1'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_62' model='account.report.model.formula'>
+<field name='name'>R02C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_2'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R02C1-R02C2</field>
+</record>
+
+<record id='for_lf_actif_63' model='account.report.model.formula'>
+<field name='name'>R03C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_3'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R03C1-R03C2</field>
+</record>
+
+<record id='for_lf_actif_64' model='account.report.model.formula'>
+<field name='name'>R04C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_4'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R04C1-R04C2</field>
+</record>
+
+<record id='for_lf_actif_65' model='account.report.model.formula'>
+<field name='name'>R05C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_5'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_66' model='account.report.model.formula'>
+<field name='name'>R06C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_6'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_67' model='account.report.model.formula'>
+<field name='name'>R07C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_7'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_68' model='account.report.model.formula'>
+<field name='name'>R08C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_8'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_69' model='account.report.model.formula'>
+<field name='name'>R09C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_9'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R09C1-R09C2</field>
+</record>
+
+<record id='for_lf_actif_70' model='account.report.model.formula'>
+<field name='name'>R10C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_10'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_71' model='account.report.model.formula'>
+<field name='name'>R11C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_11'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_72' model='account.report.model.formula'>
+<field name='name'>R12C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_12'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_73' model='account.report.model.formula'>
+<field name='name'>R13C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_13'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_74' model='account.report.model.formula'>
+<field name='name'>R14C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_14'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R14C1-R14C2</field>
+</record>
+
+<record id='for_lf_actif_75' model='account.report.model.formula'>
+<field name='name'>R15C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_15'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_76' model='account.report.model.formula'>
+<field name='name'>R16C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_actif_16'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R02C3+R03C3+R04C3+R09C3+R14C3</field>
+</record>
+
+<record id='for_lf_actif_77' model='account.report.model.formula'>
+<field name='name'>R17C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_17'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_78' model='account.report.model.formula'>
+<field name='name'>R18C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_18'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R18C1-R18C2</field>
+</record>
+
+<record id='for_lf_actif_79' model='account.report.model.formula'>
+<field name='name'>R19C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_19'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_80' model='account.report.model.formula'>
+<field name='name'>R20C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_20'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R20C1-R20C2</field>
+</record>
+
+<record id='for_lf_actif_81' model='account.report.model.formula'>
+<field name='name'>R21C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_21'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R21C1-R21C2</field>
+</record>
+
+<record id='for_lf_actif_82' model='account.report.model.formula'>
+<field name='name'>R22C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_22'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R22C1-R22C2</field>
+</record>
+
+<record id='for_lf_actif_83' model='account.report.model.formula'>
+<field name='name'>R23C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_23'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R23C1-R23C2</field>
+</record>
+
+<record id='for_lf_actif_84' model='account.report.model.formula'>
+<field name='name'>R24C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_24'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_85' model='account.report.model.formula'>
+<field name='name'>R25C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_25'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R25C1-R25C2</field>
+</record>
+
+<record id='for_lf_actif_86' model='account.report.model.formula'>
+<field name='name'>R26C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_26'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R26C1-R26C2</field>
+</record>
+
+<record id='for_lf_actif_87' model='account.report.model.formula'>
+<field name='name'>R27C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_actif_27'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R18C3+R20C3+R21C3+R22C3+R23C3+R25C3+R26C3</field>
+</record>
+
+<record id='for_lf_actif_88' model='account.report.model.formula'>
+<field name='name'>R28C3</field>
+<field name='column_id' ref='col_lf_actif_3'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>4</field>
+<field name='row_id' ref='row_lf_actif_28'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R16C3+R27C3</field>
+</record>
+
+
+
+<record id='for_lf_actif_91' model='account.report.model.formula'>
+<field name='name'>R01C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_1'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_92' model='account.report.model.formula'>
+<field name='name'>R02C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_2'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>207+2807+2907</field>
+</record>
+
+<record id='for_lf_actif_93' model='account.report.model.formula'>
+<field name='name'>R03C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_3'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>20+80+90-207-2807-2907</field>
+</record>
+
+<record id='for_lf_actif_94' model='account.report.model.formula'>
+<field name='name'>R04C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_4'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>21+22+281+282+291+292</field>
+</record>
+
+<record id='for_lf_actif_95' model='account.report.model.formula'>
+<field name='name'>R05C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_5'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_96' model='account.report.model.formula'>
+<field name='name'>R06C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_6'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_97' model='account.report.model.formula'>
+<field name='name'>R07C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_7'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_98' model='account.report.model.formula'>
+<field name='name'>R08C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_8'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_99' model='account.report.model.formula'>
+<field name='name'>R09C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_9'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>23+293</field>
+</record>
+
+<record id='for_lf_actif_100' model='account.report.model.formula'>
+<field name='name'>R10C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_10'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_101' model='account.report.model.formula'>
+<field name='name'>R11C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_11'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_102' model='account.report.model.formula'>
+<field name='name'>R12C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_12'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_103' model='account.report.model.formula'>
+<field name='name'>R13C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_13'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_104' model='account.report.model.formula'>
+<field name='name'>R14C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_14'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>274+275+276</field>
+</record>
+
+<record id='for_lf_actif_105' model='account.report.model.formula'>
+<field name='name'>R15C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_15'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_106' model='account.report.model.formula'>
+<field name='name'>R16C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_actif_16'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>R02C4+R03C4+R04C4+R09C4+R14C4</field>
+</record>
+
+<record id='for_lf_actif_107' model='account.report.model.formula'>
+<field name='name'>R17C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_17'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_108' model='account.report.model.formula'>
+<field name='name'>R18C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_18'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>3</field>
+</record>
+
+<record id='for_lf_actif_109' model='account.report.model.formula'>
+<field name='name'>R19C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_19'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_110' model='account.report.model.formula'>
+<field name='name'>R20C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_20'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>41+491-419</field>
+</record>
+
+<record id='for_lf_actif_111' model='account.report.model.formula'>
+<field name='name'>R21C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_21'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>409+SD42+SD43+SD44+SD45+SD46+SD486+SD489-SD444-SD445-SD446-SD447-SD448+495+496+47</field>
+</record>
+
+<record id='for_lf_actif_112' model='account.report.model.formula'>
+<field name='name'>R22C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_22'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>SD444+SD445+SD447</field>
+</record>
+
+<record id='for_lf_actif_113' model='account.report.model.formula'>
+<field name='name'>R23C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_23'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>SD48-SD486-SD489</field>
+</record>
+
+<record id='for_lf_actif_114' model='account.report.model.formula'>
+<field name='name'>R24C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_actif_24'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_actif_115' model='account.report.model.formula'>
+<field name='name'>R25C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_25'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>50-509</field>
+</record>
+
+<record id='for_lf_actif_116' model='account.report.model.formula'>
+<field name='name'>R26C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_actif_26'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>SD51+SD52+SD53+SD54+59+SD58</field>
+</record>
+
+<record id='for_lf_actif_117' model='account.report.model.formula'>
+<field name='name'>R27C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_actif_27'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>R18C4+R20C4+R21C4+R22C4+R23C4+R25C4+R26C4</field>
+</record>
+
+<record id='for_lf_actif_118' model='account.report.model.formula'>
+<field name='name'>R28C4</field>
+<field name='column_id' ref='col_lf_actif_4'/>
+<field name='report_id' ref='lf_actif'/>
+<field name='ordre'>4</field>
+<field name='row_id' ref='row_lf_actif_28'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>R16C4+R27C4</field>
+</record>
+
+
+
+<record id='for_lf_passif_1' model='account.report.model.formula'>
+<field name='name'>R01C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_passif_1'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_passif_2' model='account.report.model.formula'>
+<field name='name'>R02C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_2'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>101+108</field>
+</record>
+
+<record id='for_lf_passif_3' model='account.report.model.formula'>
+<field name='name'>R03C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_3'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>109</field>
+</record>
+
+<record id='for_lf_passif_4' model='account.report.model.formula'>
+<field name='name'>R04C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_4'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>103+104+106</field>
+</record>
+
+<record id='for_lf_passif_5' model='account.report.model.formula'>
+<field name='name'>R05C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_5'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>105</field>
+</record>
+
+<record id='for_lf_passif_6' model='account.report.model.formula'>
+<field name='name'>R06C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_6'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>107</field>
+</record>
+
+<record id='for_lf_passif_7' model='account.report.model.formula'>
+<field name='name'>R07C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_7'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>7-6+12</field>
+</record>
+
+<record id='for_lf_passif_8' model='account.report.model.formula'>
+<field name='name'>R08C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_8'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>11</field>
+</record>
+
+<record id='for_lf_passif_9' model='account.report.model.formula'>
+<field name='name'>R09C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_9'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_passif_10' model='account.report.model.formula'>
+<field name='name'>R10C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_10'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_passif_11' model='account.report.model.formula'>
+<field name='name'>R11C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_passif_11'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R02C1+R03C1+R04C1+R05C1+R06C1+R07C1+R08C1</field>
+</record>
+
+<record id='for_lf_passif_12' model='account.report.model.formula'>
+<field name='name'>R12C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_passif_12'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_passif_13' model='account.report.model.formula'>
+<field name='name'>R13C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_13'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>16+17</field>
+</record>
+
+<record id='for_lf_passif_14' model='account.report.model.formula'>
+<field name='name'>R14C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_14'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>134+155</field>
+</record>
+
+<record id='for_lf_passif_15' model='account.report.model.formula'>
+<field name='name'>R15C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_15'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>229</field>
+</record>
+
+<record id='for_lf_passif_16' model='account.report.model.formula'>
+<field name='name'>R16C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_16'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>13+15+155+134+133</field>
+</record>
+
+<record id='for_lf_passif_17' model='account.report.model.formula'>
+<field name='name'>R17C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_passif_17'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R13C1+R14C1+R15C1+R16C1</field>
+</record>
+
+<record id='for_lf_passif_18' model='account.report.model.formula'>
+<field name='name'>R18C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_passif_18'/>
+<field name='periode'>N</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_passif_19' model='account.report.model.formula'>
+<field name='name'>R19C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_19'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>40+409</field>
+</record>
+
+<record id='for_lf_passif_20' model='account.report.model.formula'>
+<field name='name'>R20C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_20'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>SC444+SC445+SC447</field>
+</record>
+
+<record id='for_lf_passif_21' model='account.report.model.formula'>
+<field name='name'>R21C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_21'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>SC419+SC509+SC42+SC43+SC440+SC441+SC442+SC443+SC448+SC449+SC45+SC46+SC48</field>
+</record>
+
+<record id='for_lf_passif_22' model='account.report.model.formula'>
+<field name='name'>R22C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_22'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>SC51+SC52+SC53+SC54-SC58-SC541</field>
+</record>
+
+<record id='for_lf_passif_23' model='account.report.model.formula'>
+<field name='name'>R23C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_passif_23'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R19C1+R20C1+R21C1+R22C1</field>
+</record>
+
+<record id='for_lf_passif_24' model='account.report.model.formula'>
+<field name='name'>R24C1</field>
+<field name='column_id' ref='col_lf_passif_1'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>4</field>
+<field name='row_id' ref='row_lf_passif_24'/>
+<field name='periode'>N</field>
+<field name='formula_ch'>R11C1+R17C1+R23C1</field>
+</record>
+
+
+
+<record id='for_lf_passif_25' model='account.report.model.formula'>
+<field name='name'>R01C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_passif_1'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_passif_26' model='account.report.model.formula'>
+<field name='name'>R02C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_2'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>101+108</field>
+</record>
+
+<record id='for_lf_passif_27' model='account.report.model.formula'>
+<field name='name'>R03C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_3'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>109</field>
+</record>
+
+<record id='for_lf_passif_28' model='account.report.model.formula'>
+<field name='name'>R04C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_4'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>103+104+106</field>
+</record>
+
+<record id='for_lf_passif_29' model='account.report.model.formula'>
+<field name='name'>R05C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_5'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>105</field>
+</record>
+
+<record id='for_lf_passif_30' model='account.report.model.formula'>
+<field name='name'>R06C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_6'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>107</field>
+</record>
+
+<record id='for_lf_passif_31' model='account.report.model.formula'>
+<field name='name'>R07C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_7'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>7-6+12</field>
+</record>
+
+<record id='for_lf_passif_32' model='account.report.model.formula'>
+<field name='name'>R08C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_8'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>11</field>
+</record>
+
+<record id='for_lf_passif_33' model='account.report.model.formula'>
+<field name='name'>R09C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_9'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_passif_34' model='account.report.model.formula'>
+<field name='name'>R10C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_10'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_passif_35' model='account.report.model.formula'>
+<field name='name'>R11C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_passif_11'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>R02C2+R03C2+R04C2+R05C2+R06C2+R07C2+R08C2</field>
+</record>
+
+<record id='for_lf_passif_36' model='account.report.model.formula'>
+<field name='name'>R12C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_passif_12'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_passif_37' model='account.report.model.formula'>
+<field name='name'>R13C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_13'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>16+17</field>
+</record>
+
+<record id='for_lf_passif_38' model='account.report.model.formula'>
+<field name='name'>R14C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_14'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>134+155</field>
+</record>
+
+<record id='for_lf_passif_39' model='account.report.model.formula'>
+<field name='name'>R15C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_15'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>229</field>
+</record>
+
+<record id='for_lf_passif_40' model='account.report.model.formula'>
+<field name='name'>R16C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_16'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>13+15+155+134+133</field>
+</record>
+
+<record id='for_lf_passif_41' model='account.report.model.formula'>
+<field name='name'>R17C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_passif_17'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>R13C2+R14C2+R15C2+R16C2</field>
+</record>
+
+<record id='for_lf_passif_42' model='account.report.model.formula'>
+<field name='name'>R18C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>2</field>
+<field name='row_id' ref='row_lf_passif_18'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'></field>
+</record>
+
+<record id='for_lf_passif_43' model='account.report.model.formula'>
+<field name='name'>R19C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_19'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>40+409</field>
+</record>
+
+<record id='for_lf_passif_44' model='account.report.model.formula'>
+<field name='name'>R20C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_20'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>SC444+SC445+SC447</field>
+</record>
+
+<record id='for_lf_passif_45' model='account.report.model.formula'>
+<field name='name'>R21C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_21'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>SC419+SC509+SC42+SC43+SC440+SC441+SC442+SC443+SC448+SC449+SC45+SC46+SC48</field>
+</record>
+
+<record id='for_lf_passif_46' model='account.report.model.formula'>
+<field name='name'>R22C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>1</field>
+<field name='row_id' ref='row_lf_passif_22'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>SC51+SC52+SC53+SC54-SC58-SC541</field>
+</record>
+
+<record id='for_lf_passif_47' model='account.report.model.formula'>
+<field name='name'>R23C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>3</field>
+<field name='row_id' ref='row_lf_passif_23'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>R19C2+R20C2+R21C2+R22C2</field>
+</record>
+
+<record id='for_lf_passif_48' model='account.report.model.formula'>
+<field name='name'>R24C2</field>
+<field name='column_id' ref='col_lf_passif_2'/>
+<field name='report_id' ref='lf_passif'/>
+<field name='ordre'>4</field>
+<field name='row_id' ref='row_lf_passif_24'/>
+<field name='periode'>N-1</field>
+<field name='formula_ch'>R11C2+R17C2+R23C2</field>
+</record>
+
+
+
+
+    </data>
+</openerp>

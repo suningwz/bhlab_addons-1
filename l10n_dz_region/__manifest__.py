@@ -20,10 +20,10 @@ This module applies to companies based in Algeria.
     'website': 'http://www.osis-dz.net/',
     'depends': ['base'],
     'data': [
-	    'security/ir.model.access.csv',
+	'security/ir.model.access.csv',
         'data/wilayas_data.xml',
         'data/commune_data.xml',
-	    'views/res_commune.xml'
+	# 'views/res_commune.xml'
     ],
 
     'installable': True,

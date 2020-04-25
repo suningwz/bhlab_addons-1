@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="dl_account_report_group_tree_view">
+            <field name="name">account.report.group.tree</field>
+            <field name="model">account.report.group</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Groupes Rapports Financiers">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="dl_account_report_group_form_view" model="ir.ui.view">
+        <field name="name">account.report.group.form</field>
+        <field name="model">account.report.group</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Groupe Rapport Financier">
+                <header>
+                    <button name="open_wizard" string="Créer les rapports" type="object" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+
+                        <page string="Rapport">
+                            <field name="report_ids" >
+                                <tree decoration-success="state == 'done'" decoration-info="state == 'draft'" decoration-muted="state == 'cancel'">
+                                    <field name="code"/>
+                                    <field name="name" string="Rapport"/>
+                                    <field name="balance_id"/>
+                                    <field name="exercice"/>
+                                    <field name="date_debut"/>
+                                    <field name="date_fin"/>
+                                    <field name="state"/>
+                                    <button name="action_print_html" type="object" string="Visualiser" icon="fa-file-text-o"/>
+                                    <button name="action_print" type="object" string="Imprimer" icon="fa-print"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                        <page string="Notes">
+                            <field name="notes" widget="html" placeholder="Entrez ici une explication ou des notes..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="dl_action_account_report_group_tree_view">
+            <field name="name">Groupes Rapports financiers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.report.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="dl_account_report_group_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créer un nouveau groupe rapport financier.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_import_moves_user,account.import.moves user,model_account_import_moves,base.group_user,1,1,1,1
+access_account_import_moves_ecriture_user,account.import.moves.ecriture user,model_account_import_moves_ecriture,base.group_user,1,1,1,1
+access_account_import_moves_piece_user,account.import.moves.piece user,model_account_import_moves_piece,base.group_user,1,1,1,1
+access_account_import_moves_error_user,account.import.moves.error user,model_account_import_moves_error,base.group_user,1,1,1,1

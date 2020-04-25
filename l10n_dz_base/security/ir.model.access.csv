@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_exercice_user,account.exercice user,model_account_exercice,account.group_account_invoice,1,1,1,1
+access_account_exercice_period_user,account.exercice.period user,model_account_exercice_period,account.group_account_invoice,1,1,1,1

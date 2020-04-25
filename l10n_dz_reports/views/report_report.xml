@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="dl_account_report_report_tree_view">
+            <field name="name">account.report.report.tree</field>
+            <field name="model">dl.account.report.report</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Rapports Financiers" decoration-success="state == 'done'" decoration-info="state == 'draft'" decoration-muted="state == 'cancel'">
+                    <field name="code"/>
+                    <field name="name" string="Rapport"/>
+                    <field name="balance_id"/>
+                    <field name="exercice"/>
+                    <field name="date_debut"/>
+                    <field name="date_fin"/>
+                    <field name="groupe_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="dl_account_report_report_form_view" model="ir.ui.view">
+        <field name="name">account.report.report.form</field>
+        <field name="model">dl.account.report.report</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Rapport Financier">
+                <header>
+                    <button name="update_all" type="object" string="Actualiser" class="oe_highlight"
+                            groups="l10n_dz_reports.group_dl_reports_config"
+                            attrs="{'invisible':['|', ('specifique_rep','!=', 'standard'),('state','!=','draft')]}"
+                    />
+                    <button name="update_specifique7" type="object" string="Actualiser" class="oe_highlight"
+                            groups="l10n_dz_reports.group_dl_reports_config"
+                            attrs="{'invisible':['|', ('specifique_rep','!=', '7_immo_cede'), ('state','!=','draft')]}"
+                    />
+                    <button name="action_done" string="Valider" class="oe_highlight" type="object"
+                            groups="l10n_dz_reports.group_dl_reports_manager"
+                            states="draft"
+                    />
+                    <button name="action_draft" string="Remettre a l'état brouillon" states="done" type="object" groups="l10n_dz_reports.group_dl_reports_manager"/>
+                    <!--<button name="grid_correction" string="Appliquer des corrections" states="draft" type="object"  groups="l10n_dz_reports.group_dl_reports_config"/>-->
+                    <button name="action_print" string="Imprimer" type="object" />
+<!--                    <button name="%(action_print_report_doc_arabic)d" string="Imprimer arabic" class="oe_highlight" type="action" attrs="{'invisible':[('mode_impression','=', 'Paysage')]}"/>-->
+                    <field name="state" widget="statusbar" clickable="True" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+
+                    <group>
+                        <group>
+                            <!--<field name="name"/>-->
+                            <field name="model_id"/>
+
+                            <field name="code"/>
+                            <field name="tableau_num"/>
+                            <field name="groupe_id"/>
+                            <field name="mode_impression"/>
+                            <field name="report_name" invisible="1"/>
+                        </group>
+
+                        <group>
+                            <field name="balance_id"/>
+                            <field name="exercice"/>
+                            <field name="date_debut"/>
+                            <field name="date_fin"/>
+                            <field name="devise_id"/>
+
+                            <field name="nbr_col" invisible="1"/>
+                            <field name="nbr_input" invisible="1"/>
+                            <field name="specifique" invisible="1"/>
+                            <field name="specifique_rep" invisible="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+
+                        <page string="Rapport" attrs="{'invisible':[('specifique_rep','!=', 'standard')]}">
+<!--                            <group>-->
+<!--                                <group>-->
+<!--                                    <button name="update_all" type="object" string="Génération du tableau" states="draft" class="oe_highlight"  groups="l10n_dz_reports.group_dl_reports_config"/>-->
+                                    <!--<button name="grid_generate" type="object" string="Créer les lignes" states="draft" class="oe_highlight"  groups="l10n_dz_reports.group_dl_reports_config"/>-->
+                                    <!--<button name="grid_compute_all" type="object" string="Calculer tout" states="draft" class="oe_highlight"  groups="l10n_dz_reports.group_dl_reports_config"/>-->
+<!--                                </group>-->
+<!--                                <group>-->
+                                    <!--<button name="grid_delete" type="object" string="Supprimer tout" states="draft"  groups="l10n_dz_reports.group_dl_reports_config"/>-->
+                                    <!--<button name="fomula_delete_blank" type="object" string="Supprimer les vides" class="oe_highlight"/>-->
+<!--                                </group>-->
+<!--                            </group>-->
+                            <field name="grid_ids_1" nolabel="1" attrs="{'invisible':[('nbr_col','!=', 1)]}">
+                                <tree editable="Bottom">
+                                    <field name="ligne_num"/>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="note_liste"/>
+                                    <field name="ordre" invisible="1"/>
+                                    <field name="amount_1" attrs="{'invisible':[('amount_1','=', 0)]}"/>
+
+                                    <button name="action_add_note" string="Ajouter une note" type="object" icon="fa-edit"/>
+
+                                </tree>
+                            </field>
+                            <field name="grid_ids_2" nolabel="1" attrs="{'invisible':[('nbr_col','!=', 2)]}">
+                                <tree editable="Bottom">
+                                    <field name="ligne_num"/>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="note_liste"/>
+                                    <field name="ordre" invisible="1"/>
+                                    <field name="amount_1" attrs="{'invisible':[('amount_1','=', 0)]}"/>
+                                    <field name="amount_2" attrs="{'invisible':[('amount_2','=', 0)]}"/>
+
+                                    <button name="action_add_note" string="Ajouter une note" type="object" icon="fa-edit"/>
+
+                                </tree>
+                            </field>
+                            <field name="grid_ids_3" nolabel="1" attrs="{'invisible':[('nbr_col','!=', 3)]}">
+                                <tree editable="Bottom">
+                                    <field name="ligne_num"/>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="note_liste"/>
+                                    <field name="ordre" invisible="1"/>
+<!--                                    <field name="amount_1" widget="integer" attrs="{'invisible':[('amount_1','=', 0)]}"/>-->
+                                    <field name="amount_1" attrs="{'invisible':[('amount_1','=', 0)]}"/>
+                                    <field name="amount_2" attrs="{'invisible':[('amount_2','=', 0)]}"/>
+                                    <field name="amount_3" attrs="{'invisible':[('amount_3','=', 0)]}"/>
+
+                                    <button name="action_add_note" string="Ajouter une note" type="object" icon="fa-edit"/>
+
+                                </tree>
+                            </field>
+                            <field name="grid_ids_4" nolabel="1" attrs="{'invisible':[('nbr_col','!=', 4)]}">
+                                <tree editable="Bottom">
+                                    <field name="ligne_num"/>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="note_liste"/>
+                                    <field name="ordre" invisible="1"/>
+<!--                                    <field name="amount_1" widget="integer" attrs="{'invisible':[('amount_1','=', 0)]}"/>-->
+                                    <field name="amount_1" attrs="{'invisible':[('amount_1','=', 0)]}"/>
+                                    <field name="amount_2" attrs="{'invisible':[('amount_2','=', 0)]}"/>
+                                    <field name="amount_3" attrs="{'invisible':[('amount_3','=', 0)]}"/>
+                                    <field name="amount_4" attrs="{'invisible':[('amount_4','=', 0)]}"/>
+
+                                    <button name="action_add_note" string="Ajouter une note" type="object" icon="fa-edit"/>
+
+                                </tree>
+                            </field>
+                            <field name="grid_ids_5" nolabel="1" attrs="{'invisible':[('nbr_col','!=', 5)]}">
+                                <tree editable="Bottom">
+                                    <field name="ligne_num"/>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="note_liste"/>
+                                    <field name="ordre" invisible="1"/>
+                                    <field name="amount_1" attrs="{'invisible':[('amount_1','=', 0)]}"/>
+                                    <field name="amount_2" attrs="{'invisible':[('amount_2','=', 0)]}"/>
+                                    <field name="amount_3" attrs="{'invisible':[('amount_3','=', 0)]}"/>
+                                    <field name="amount_4" attrs="{'invisible':[('amount_4','=', 0)]}"/>
+                                    <field name="amount_5" attrs="{'invisible':[('amount_5','=', 0)]}"/>
+
+                                    <button name="action_add_note" string="Ajouter une note" type="object" icon="fa-edit"/>
+
+                                </tree>
+                            </field>
+                            <field name="grid_ids_6" nolabel="1" attrs="{'invisible':[('nbr_col','!=', 6)]}">
+                                <tree editable="Bottom">
+                                    <field name="ligne_num"/>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="note_liste"/>
+                                    <field name="ordre" invisible="1"/>
+                                    <field name="amount_1" attrs="{'invisible':[('amount_1','=', 0)]}"/>
+                                    <field name="amount_2" attrs="{'invisible':[('amount_2','=', 0)]}"/>
+                                    <field name="amount_3" attrs="{'invisible':[('amount_3','=', 0)]}"/>
+                                    <field name="amount_4" attrs="{'invisible':[('amount_4','=', 0)]}"/>
+                                    <field name="amount_5" attrs="{'invisible':[('amount_5','=', 0)]}"/>
+                                    <field name="amount_6" attrs="{'invisible':[('amount_6','=', 0)]}"/>
+
+                                    <button name="action_add_note" string="Ajouter une note" type="object" icon="fa-edit"/>
+
+                                </tree>
+                            </field>
+                            <field name="grid_ids_7" nolabel="1" attrs="{'invisible':[('nbr_col','!=', 7)]}">
+                                <tree editable="Bottom">
+                                    <field name="ligne_num"/>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="note_liste"/>
+                                    <field name="ordre" invisible="1"/>
+                                    <field name="amount_1" attrs="{'invisible':[('amount_1','=', 0)]}"/>
+                                    <field name="amount_2" attrs="{'invisible':[('amount_2','=', 0)]}"/>
+                                    <field name="amount_3" attrs="{'invisible':[('amount_3','=', 0)]}"/>
+                                    <field name="amount_4" attrs="{'invisible':[('amount_4','=', 0)]}"/>
+                                    <field name="amount_5" attrs="{'invisible':[('amount_5','=', 0)]}"/>
+                                    <field name="amount_6" attrs="{'invisible':[('amount_6','=', 0)]}"/>
+                                    <field name="amount_7" attrs="{'invisible':[('amount_7','=', 0)]}"/>
+                                    <button name="action_add_note" string="Ajouter une note" type="object" icon="fa-edit"/>
+
+                                </tree>
+                            </field>
+                            <field name="grid_ids_8" nolabel="1" attrs="{'invisible':[('nbr_col','!=', 8)]}">
+                                <tree editable="Bottom">
+                                    <field name="ligne_num"/>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="note_liste"/>
+                                    <field name="ordre" invisible="1"/>
+                                    <field name="amount_1" attrs="{'invisible':[('amount_1','=', 0)]}"/>
+                                    <field name="amount_2" attrs="{'invisible':[('amount_2','=', 0)]}"/>
+                                    <field name="amount_3" attrs="{'invisible':[('amount_3','=', 0)]}"/>
+                                    <field name="amount_4" attrs="{'invisible':[('amount_4','=', 0)]}"/>
+                                    <field name="amount_5" attrs="{'invisible':[('amount_5','=', 0)]}"/>
+                                    <field name="amount_6" attrs="{'invisible':[('amount_6','=', 0)]}"/>
+                                    <field name="amount_7" attrs="{'invisible':[('amount_7','=', 0)]}"/>
+                                    <field name="amount_8" attrs="{'invisible':[('amount_8','=', 0)]}"/>
+                                    <button name="action_add_note" string="Ajouter une note" type="object" icon="fa-edit"/>
+
+                                </tree>
+                            </field>
+                        </page>
+
+                        <page string="Saisie" attrs="{'invisible':['|',('nbr_input', '=', 0),('specifique_rep','!=', 'standard')]}">
+                            <field name="input_ids" nolabel="1">
+                                <tree editable="Bottom">
+                                    <field name="name" readonly="1"/>
+                                    <field name="code" readonly="1"/>
+                                    <field name="row_id" readonly="1"/>
+                                    <field name="col_id" readonly="1"/>
+                                    <field name="amount"/>
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Notes"  attrs="{'invisible':[('specifique_rep','!=', 'standard')]}">
+                            <field name="notes" widget="html" placeholder="Entrez ici une explication ou des notes..."/>
+                            <field name="note_ids">
+                                <tree>
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="note"/>
+                                    <field name="date"/>
+                                    <field name="user_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Rapport"  attrs="{'invisible':[('specifique_rep','!=', '7_immo_cede')]}">
+                            <field name="rep_specifique7_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="date_acquisition"/>
+                                    <field name="date_cession"/>
+                                    <field name="amount_value"/>
+                                    <field name="amount_amort"/>
+                                    <field name="amount_net"/>
+                                    <field name="amount_price"/>
+                                    <field name="plus_value"/>
+                                    <field name="moins_value"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Rapport"  attrs="{'invisible':[('specifique_rep','!=', '12_commission')]}">
+                            <field name="rep_specifique12_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="num_if"/>
+                                    <field name="adresse"/>
+                                    <field name="amount" sum="tot"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="dl_action_account_report_report_tree_view">
+            <field name="name">Rapports financiers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dl.account.report.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="dl_account_report_report_tree_view"/>
+            <field name="domain">[('groupe_name', 'not in', ('Bilan', 'Liasse fiscale', ))]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créer un nouveau rapport financier.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="dl_action_account_report_report_bilan_tree_view">
+            <field name="name">Rapports du bilan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dl.account.report.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="dl_account_report_report_tree_view"/>
+            <field name="context">{'default_groupe_id': 1}</field>
+            <field name="domain">[('groupe_name', '=', 'Bilan')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créer un nouveau rapport financier.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="dl_action_account_report_report_lf_tree_view">
+            <field name="name">Rapports du bilan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dl.account.report.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="dl_account_report_report_tree_view"/>
+            <field name="context">{'default_groupe_id': 2}</field>
+            <field name="domain">[('groupe_name', '=', 'Liasse fiscale')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créer un nouveau rapport Liasse fiscale.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+
+        <!--les lignes pour visualiser les notes-->
+    <record id="dl_account_report_report_grid_form_view" model="ir.ui.view">
+        <field name="name">account.report.report.grid.form</field>
+        <field name="model">account.report.report.grid</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Note">
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="amount_1"/>
+                            <field name="amount_2"/>
+                        </group>
+
+                        <group>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Notes">
+                            <field name="note_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="note"/>
+                                    <field name="date"/>
+                                    <field name="user_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    </data>
+</openerp>

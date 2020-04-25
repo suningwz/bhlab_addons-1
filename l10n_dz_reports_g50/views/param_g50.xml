@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="account_g50_param_tree_view">
+            <field name="name">account.g50.param.tree</field>
+            <field name="model">account.g50.param</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1" string="Parametrage G50">
+                    <field name="name"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="account_g50_param_form_view" model="ir.ui.view">
+        <field name="name">account.g50.param.form</field>
+        <field name="model">account.g50.param</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Parametrage G50">
+                <header>
+                    <button name="action_creation" string="Créer le tableau de paramétrage" type="object" attrs="{'invisible':[('state','=', 'done')]}"/>
+                    <button name="action_done" string="Valider" states="draft" class="oe_highlight" type="object"/>
+                    <button name="action_draft" string="Remettre a l'état brouillon" states="done" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+
+                        <group>
+                            <field name="create_date" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Ligne parametrage">
+                            <field name="line_ids" nolabel="1">
+                                <tree editable="Bottom">
+                                    <field name="sequence" widget='handle' />
+                                    <field name="tableau"/>
+                                    <field name="ligne"/>
+                                    <field name="col"/>
+                                    <field name="name" />
+                                    <field name="code"/>
+                                    <field name="designation"/>
+                                    <field name="formula_ch"/>
+                                    <field name="value"/>
+                                    <field name="type_value"/>
+                                    <field name="journal_ch"/>
+                                    <field name="arrondi"/>
+<!--                                    <field name="formula"/>-->
+<!--                                    <field name="journal_ids"/>-->
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_account_g50_param_tree_view">
+            <field name="name">Parametrage G50</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.g50.param</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="view_id" ref="account_g50_param_tree_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cliquez ici pour créer un nouveau paramétrage g50.
+                </p><p>
+
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

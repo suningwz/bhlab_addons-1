@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="seq_etat_104" model="ir.sequence">
+           <field name="name">number_etat_104_sequence</field>
+           <field name="code">account.etat.client</field>
+           <field name="active">TRUE</field>
+           <field name="prefix">CLI/%(range_year)s/</field>
+           <field name="padding">2</field>
+           <field name="number_next">1</field>
+           <field name="number_increment">1</field>
+            <field name="use_date_range" eval="True" />
+        </record>
+
+        <record id="seq_etat_tva" model="ir.sequence">
+           <field name="name">number_etat_tva_sequence</field>
+           <field name="code">account.etat.tva</field>
+           <field name="active">TRUE</field>
+           <field name="prefix">TVA/%(range_year)s/</field>
+           <field name="padding">2</field>
+           <field name="number_next">1</field>
+           <field name="number_increment">1</field>
+            <field name="use_date_range" eval="True" />
+        </record>
+
+        <record id="seq_etat_tap" model="ir.sequence">
+           <field name="name">number_etat_tap_sequence</field>
+           <field name="code">account.etat.tap</field>
+           <field name="active">TRUE</field>
+           <field name="prefix">TAP/%(range_year)s/</field>
+           <field name="padding">2</field>
+           <field name="number_next">1</field>
+           <field name="number_increment">1</field>
+            <field name="use_date_range" eval="True" />
+        </record>
+
+    </data>
+</openerp>

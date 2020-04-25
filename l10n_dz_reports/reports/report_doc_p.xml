@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="l10n_dz_reports.report_doc_p">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="web.external_layout">
+
+                <div class="page">
+
+                    <div class="row mt32 mb32">
+
+                        <table class="table table-condensed">
+                            <tr>
+                                <th style="width:55%;">
+                                    <p><h3>DESIGNATION DE L'ENTREPRISE : <strong><span t-field="doc.company_id.name"/></strong></h3></p>
+                                    <p><h4>N° D'IDENTIFICATION : <strong><span t-field="doc.num_identif"/></strong></h4></p>
+                                </th>
+                                <th style="width:5%;">
+                                </th>
+                                <th style="width:50%;">
+                                    <h3 >Tableau N° <strong><span t-field="doc.model_id.tableau_num"/></strong></h3>
+                                    <p><h4 >Résultat du <span t-field="doc.date_debut"/> au <span t-field="doc.date_fin"/></h4></p>
+                                </th>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <h2 style="text-align:center" t-field="doc.name"/>
+                    <h3 style="text-align:center" t-field="doc.model_id.sous_titre"/>
+
+                    <br></br><br></br>
+
+                    <table class="table table-condensed" name="report_line_table"
+                     style="border: 1px solid black;float: right;position: relative;overflow: hidden;display: table-row; height: 100%;">
+                        <thead>
+                            <tr style="background-color:#C6C8CE;">
+                                <th style="border: 1px solid black">Rubrique</th>
+                                <th style="border: 1px solid black">Notes</th>
+                                <th style="border: 1px solid black" class="text-right"><span t-field="doc.model_id.column_ids[0].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>1"><span t-field="doc.model_id.column_ids[1].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>2"><span t-field="doc.model_id.column_ids[2].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>3"><span t-field="doc.model_id.column_ids[3].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>4"><span t-field="doc.model_id.column_ids[4].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>5"><span t-field="doc.model_id.column_ids[5].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>6"><span t-field="doc.model_id.column_ids[6].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>7"><span t-field="doc.model_id.column_ids[7].name"/></th>
+                            </tr>
+                        </thead>
+                        <tbody class="report_tbody">
+                            <tr t-foreach="doc.grid_ids" t-as="c">
+                                <td style="border: 1px solid black">
+                                    <span t-if="c.police==3">
+                                        <span t-if="c.bold"><strong><span t-field="c.name" style="font-size:16px;"/></strong></span>
+                                        <span t-if="c.bold==False"><span t-field="c.name" style="font-size:16px;"/></span>
+                                    </span>
+                                    <span t-if="c.police==2">
+                                        <span t-if="c.bold"><strong><span t-field="c.name" style="font-size:14px;"/></strong></span>
+                                        <span t-if="c.bold==False"><span t-field="c.name" style="font-size:14px;"/></span>
+                                    </span>
+                                    <span t-if="c.police==1">
+                                        <span t-if="c.bold"><strong><span t-field="c.name" style="font-size:12px;"/></strong></span>
+                                        <span t-if="c.bold==False"><span t-field="c.name" style="font-size:12px;"/></span>
+                                    </span>
+                                </td>
+                                <td class="text-center"  style="border: 1px solid black"><strong><span t-field="c.note_liste"/></strong></td>
+                                <td  style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>0">
+                                    <!--<span t-esc="'{0:,.0f}'.format(int(c.amount_1))"/>-->
+                                    <span t-if="c.view_data and c.amount_1 != 0">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td  style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>1">
+                                    <span t-if="c.view_data and c.amount_2 != 0">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>2">
+                                    <span t-if="c.view_data and c.amount_3 != 0">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                 <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>3">
+                                     <span t-if="c.view_data and c.amount_4 != 0">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>4">
+                                     <span t-if="c.view_data and c.amount_5 != 0">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>5">
+                                     <span t-if="c.view_data and c.amount_6 != 0">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>6">
+                                     <span t-if="c.view_data and c.amount_7 != 0">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>7">
+                                     <span t-if="c.view_data and c.amount_8 != 0">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </t>
+        </t>
+    </t>
+</template>
+<template id="l10n_dz_reports.report_doc_p_arabic">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="web.external_layout">
+
+                <div class="page">
+
+                    <div class="row mt32 mb32">
+
+                        <table class="table table-condensed">
+                            <tr>
+                                <th style="width:55%;">
+                                    <h4 style="text-align:left"><strong><span t-field="doc.model_id.tableau_num"/></strong> جدول رقم </h4>
+                                    <p><h4 style="text-align:left"><span t-field="doc.date_fin"/> النتائج من <span t-field="doc.date_debut"/> الى </h4></p>
+                                </th>
+                                <th style="width:5%;">
+                                </th>
+                                <th style="width:50%;">
+                                    <h4 style="text-align:right"><strong><span t-field="doc.company_id.name"/></strong> إسم الشركة</h4>
+                                    <p><h4 style="text-align:right"><strong><span t-field="doc.num_identif"/></strong> رقم التعریف </h4></p>
+                                </th>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <h2 style="text-align:center" t-field="doc.name"/>
+                    <h3 style="text-align:center" t-field="doc.model_id.sous_titre"/>
+
+                    <br></br>
+
+                    <table class="table table-condensed" name="report_line_table"
+                     style="border: 1px solid black;float: right;position: relative;overflow: hidden;display: table-row; height: 100%;">
+                        <thead>
+                            <tr style="background-color:#C6C8CE;">
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>7"><span t-field="doc.model_id.column_ids[7].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>6"><span t-field="doc.model_id.column_ids[6].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>5"><span t-field="doc.model_id.column_ids[5].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>4"><span t-field="doc.model_id.column_ids[4].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>3"><span t-field="doc.model_id.column_ids[3].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>2"><span t-field="doc.model_id.column_ids[2].name"/></th>
+                                <th style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>1"><span t-field="doc.model_id.column_ids[1].name"/></th>
+                                <th style="border: 1px solid black" class="text-right"><span t-field="doc.model_id.column_ids[0].name"/></th>
+                                <th style="text-align:right; border: 1px solid black">ملاحظات</th>
+                                <th style="text-align:right; border: 1px solid black">العناوين</th>
+                            </tr>
+                        </thead>
+                        <tbody class="report_tbody">
+                            <tr t-foreach="doc.grid_ids" t-as="c">
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>7">
+                                     <span t-if="c.view_data">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_8" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>6">
+                                     <span t-if="c.view_data">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_7" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>5">
+                                     <span t-if="c.view_data">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_6" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>4">
+                                     <span t-if="c.view_data">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_5" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>3">
+                                     <span t-if="c.view_data">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_4" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>2">
+                                    <span t-if="c.view_data">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_3" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td  style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>1">
+                                    <span t-if="c.view_data">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_2" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td  style="border: 1px solid black" class="text-right" t-if="doc.nbr_col>0">
+                                    <!--<span t-esc="'{0:,.0f}'.format(int(c.amount_1))"/>-->
+                                    <span t-if="c.view_data">
+                                        <span t-if="c.police==3">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}' style="font-size:16px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==2">
+                                            <span t-if="c.bold"><strong><span t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}' style="font-size:14px;"/></span>
+                                        </span>
+                                        <span t-if="c.police==1">
+                                            <span t-if="c.bold"><strong><span  t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></strong></span>
+                                            <span t-if="c.bold==False"><span  t-esc="c.amount_1" t-options='{"widget": "float", "precision": 2}'  style="font-size:12px;"/></span>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="text-center"  style="border: 1px solid black"><strong><span t-field="c.note_liste"/></strong></td>
+                                <td style="text-align:right; border: 1px solid black">
+                                    <span t-if="c.police==3">
+                                        <span t-if="c.bold"><strong><span t-field="c.name" style="font-size:16px;"/></strong></span>
+                                        <span t-if="c.bold==False"><span t-field="c.name" style="font-size:16px;"/></span>
+                                    </span>
+                                    <span t-if="c.police==2">
+                                        <span t-if="c.bold"><strong><span t-field="c.name" style="font-size:14px;"/></strong></span>
+                                        <span t-if="c.bold==False"><span t-field="c.name" style="font-size:14px;"/></span>
+                                    </span>
+                                    <span t-if="c.police==1">
+                                        <span t-if="c.bold"><strong><span t-field="c.name" style="font-size:12px;"/></strong></span>
+                                        <span t-if="c.bold==False"><span t-field="c.name" style="font-size:12px;"/></span>
+                                    </span>
+                                </td>
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </t>
+        </t>
+    </t>
+</template>
+</odoo>
