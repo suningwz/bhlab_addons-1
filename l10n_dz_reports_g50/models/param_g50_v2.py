@@ -11,7 +11,7 @@ class ParamG50(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _order   = 'name'
 
-    name    = fields.Char('Titre')
+    name        = fields.Char('Titre')
     state   = fields.Selection([('draft', 'Brouillon'), ('done', u'Validé')], string='Etat', default='draft')
 
     # data
