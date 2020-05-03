@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding='UTF-8'?>
 <odoo>
-    <record id="view_move_form_mlmc_expiry" model="ir.ui.view">
+    <record id="view_move_form_bhlab_expiry" model="ir.ui.view">
         <field name="name">bhlab_expiry.stock.production.lot.inherit.form</field>
         <field name="model">stock.production.lot</field>
         <field name="inherit_id" ref="stock.view_production_lot_form" />
@@ -23,27 +23,26 @@
                 <group>
                     <field name="expiry_date" widget="date"/>
                 </group>
+                <group>
+                    <field name="_alert_date" widget="date"/>
+                </group>
             </group>
-        </xpath>
-         <xpath expr="//group[@name='main_group']" position="attributes">
-            <attribute name="invisible">1</attribute>
         </xpath>
         </field>
     </record>
-	
+
 	<record id="view_production_lot_tree_bhlab_expiry" model="ir.ui.view">
         <field name="name">bhlab_expiry.stock.production.lot.tree.inherit</field>
         <field name="model">stock.production.lot</field>
         <field name="inherit_id" ref="stock.view_production_lot_tree" />
         <field name="arch" type="xml">
 			<xpath expr="//tree/field[@name='name']" position="after">
-				<field name="expiry_date"/>
+				<field name="expiry_date" widget="date"/>
 			</xpath>
-			
 			<xpath expr="//tree" position="attributes">
 				<attribute name="decoration-success">current_date &lt; expiry_date</attribute>
-				<attribute name="decoration-muted">current_date &gt;= expiry_date</attribute>				
-			</xpath>			
+				<attribute name="decoration-muted">current_date &gt;= expiry_date</attribute>
+			</xpath>
         </field>
     </record>
 
@@ -69,13 +68,23 @@
         <xpath expr="//group[@name='main_group']" position="after">
             <group string="Exipry Date">
                 <group>
-                    <field name="expiry_date"/>
+                    <field name="expiry_date" widget="date"/>
+                </group>
+                <group>
+                    <field name="_alert_date" widget="date"/>
                 </group>
             </group>
         </xpath>
-        <xpath expr="//group[@name='main_group']" position="attributes">
-            <attribute name="invisible">1</attribute>
-        </xpath>
         </field>
     </record>
+    <!-- <record id="bhlab_product_expiry.view_move_form_expiry" model="ir.ui.view">
+        <field name="name">product_expiry.view_move_form_expiry.inherit</field>
+        <field name="inherit_id" ref="product_expiry.view_move_form_expiry" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='Dates']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record> -->
+
 </odoo>
