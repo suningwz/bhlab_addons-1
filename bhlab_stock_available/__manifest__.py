@@ -5,7 +5,8 @@
 {
     'name': 'bhlab Stock available',
     'version': '12.0.1.0.1',
-    'author': 'nadir BHLab',
+    'author': 'Numérigraphe, Sodexis, Odoo Community Association (OCA)',
+    'website': 'https://github.com/OCA/stock-logistics-warehouse',
     'development_status': 'Production/Stable',
     'category': 'Warehouse',
     'depends': ['stock'],

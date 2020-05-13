@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Eficent Business and IT bhlab Services S.L.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+    <record id="bhlab_view_inventory_tree" model="ir.ui.view">
+        <field name="name">bhlab_stock.inventory.tree-add_lot_and_dlc</field>
+        <field name="model">stock.inventory.line</field>
+        <field name="inherit_id" ref="stock.stock_inventory_line_tree2"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="ref"/>
+                <field name="expiry_date" widget="date"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

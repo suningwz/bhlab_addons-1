@@ -19,5 +19,8 @@
         "views/quant_view.xml",
         "views/stock_location_view.xml",
         "views/stock_inventory_view.xml",
+        "views/product_template_views.xml",
+        "views/stock_inventory_detail_view.xml",
+        #"views/res_config_settings_views.xml",
     ]
 }

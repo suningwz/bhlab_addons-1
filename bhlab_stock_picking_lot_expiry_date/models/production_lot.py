@@ -8,7 +8,7 @@ _logger = logging.getLogger(__name__)
 class StockProductionLot(models.Model):
 	_inherit = 'stock.production.lot'
 	_order = "expiry_date"
-
+	
 	expiry_date = fields.Datetime(string='Expiry Date',
 		help='This is the date on which the goods with this Serial Number may become dangerous and must not be consumed.',
 		stor=True)
@@ -36,7 +36,7 @@ class StockProductionLot(models.Model):
 			if spl.expiry_date:
 				spl._alert_date = self._alert_date
 				#_logger.warn('\ninfo> expiry_date: %s; _alert_date: %s',spl.expiry_date, spl._alert_date)
-
+	
 	def _get_dates(self, product_id=None):
 		"""Returns dates based on number of days configured in current lot's product."""
 		mapped_fields = {
@@ -68,7 +68,7 @@ class StockProductionLot(models.Model):
 		dates_dict = self._get_dates()
 		for field, value in dates_dict.items():
 			setattr(self, field, value)
-
+	
 	@api.one
 	def _product_available_qty(self):
         # We only care for the quants in internal or transit locations and is_stock_quantity_not_reserved.

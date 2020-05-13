@@ -30,7 +30,7 @@
         </xpath>
         </field>
     </record>
-
+	
 	<record id="view_production_lot_tree_bhlab_expiry" model="ir.ui.view">
         <field name="name">bhlab_expiry.stock.production.lot.tree.inherit</field>
         <field name="model">stock.production.lot</field>
@@ -41,8 +41,8 @@
 			</xpath>
 			<xpath expr="//tree" position="attributes">
 				<attribute name="decoration-success">current_date &lt; expiry_date</attribute>
-				<attribute name="decoration-muted">current_date &gt;= expiry_date</attribute>
-			</xpath>
+				<attribute name="decoration-muted">current_date &gt;= expiry_date</attribute>				
+			</xpath>			
         </field>
     </record>
 
@@ -83,7 +83,7 @@
         <field name="arch" type="xml">
             <xpath expr="//group[@name='Dates']" position="attributes">
                 <attribute name="invisible">True</attribute>
-            </xpath>
+            </xpath>			
         </field>
     </record> -->
 
