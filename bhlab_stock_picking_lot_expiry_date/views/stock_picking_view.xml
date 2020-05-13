@@ -12,7 +12,7 @@
                 <attribute name="string">Code a barre</attribute>
             </xpath>
             <xpath expr="//field[@name='move_line_ids_without_package']/tree/field[@name='lot_name']" position="attributes">
-                <attribute name="string">Code a barre name</attribute>
+                <attribute name="string">Code a barre</attribute>
             </xpath>
             <xpath expr="//field[@name='move_line_ids_without_package']/tree/field[@name='lot_id']" position="after">
                 <field name="ref" attrs="{'column_invisible': [('parent.show_lots_text', '=', True)]}" readonly="True"/>
