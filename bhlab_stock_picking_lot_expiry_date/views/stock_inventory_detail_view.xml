@@ -8,7 +8,7 @@
         <field name="model">stock.inventory.line</field>
         <field name="inherit_id" ref="stock.stock_inventory_line_tree2"/>
         <field name="arch" type="xml">
-            <field name="partner_id" position="attributes">
+            <field name="prod_lot_id" position="attributes">
                 <attribute name="string">Code a barre</attribute>
             </field>
             <field name="partner_id" position="before">
