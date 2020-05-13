@@ -4,7 +4,7 @@
 # Copyright (c) 2017  - MLMConseil- www.mlmconseil.dz
 
 {
-    'name': 'disable overprocessed transfert',
+    'name': 'bhlab disable overprocessed transfert',
     'version': '0.2',
     'category': 'stock',
     'description': """

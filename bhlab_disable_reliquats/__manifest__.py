@@ -4,7 +4,7 @@
 # Copyright (c) 2017  - MLMConseil- www.mlmconseil.dz
 
 {
-    'name': 'disable reliquat',
+    'name': 'bhlab disable reliquat',
     'version': '0.2',
     'category': 'stock',
     'description': """
