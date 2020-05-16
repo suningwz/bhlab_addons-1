@@ -5,11 +5,11 @@
         <field name="model">stock.production.lot</field>
         <field name="inherit_id" ref="stock.view_production_lot_form" />
         <field name="arch" type="xml">
-            <field name="ref" position="attributes">
-                <attribute name="string">Lot Number</attribute>
-            </field>
             <field name="name" position="attributes">
                 <attribute name="string">Code a barre</attribute>
+            </field>
+            <field name="ref" position="attributes">
+                <attribute name="string">Lot Number</attribute>
             </field>
             <field name="product_id" position="after">
                 <label for="available_qty"/>
@@ -38,10 +38,12 @@
         <field name="arch" type="xml">
 			<xpath expr="//tree/field[@name='name']" position="after">
 				<field name="expiry_date" widget="date"/>
+                <field name="_alert_date" invisible="True"/>
 			</xpath>
 			<xpath expr="//tree" position="attributes">
 				<attribute name="decoration-success">current_date &lt; expiry_date</attribute>
-				<attribute name="decoration-muted">current_date &gt;= expiry_date</attribute>				
+				<attribute name="decoration-muted">current_date &gt;= expiry_date</attribute>
+                <attribute name="decoration-danger">current_date &lt; expiry_date and current_date &gt;= _alert_date</attribute>				
 			</xpath>			
         </field>
     </record>
@@ -65,16 +67,16 @@
         <field name="model">stock.production.lot</field>
         <field name="inherit_id" ref="stock.view_production_lot_form_simple" />
         <field name="arch" type="xml">
-        <xpath expr="//group[@name='main_group']" position="after">
-            <group string="Exipry Date">
-                <group>
-                    <field name="expiry_date" widget="date"/>
+            <xpath expr="//group[@name='main_group']" position="after">
+                <group string="Exipry Date">
+                    <group>
+                        <field name="expiry_date" widget="date"/>
+                    </group>
+                    <group>
+                        <field name="_alert_date" widget="date"/>
+                    </group>
                 </group>
-                <group>
-                    <field name="_alert_date" widget="date"/>
-                </group>
-            </group>
-        </xpath>
+            </xpath>
         </field>
     </record>
     <!-- <record id="bhlab_product_expiry.view_move_form_expiry" model="ir.ui.view">

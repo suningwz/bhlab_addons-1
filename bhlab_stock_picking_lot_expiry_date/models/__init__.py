@@ -4,4 +4,4 @@ from . import stock_quant
 from . import stock_location
 from . import stock_inventory
 from . import product_product
-#from . import res_config_settings
+from . import res_config_settings

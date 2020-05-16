@@ -30,11 +30,16 @@ class StockProductionLot(models.Model):
 				'message': "Expiry date is earlier then alert date",
 			}}
 
-	@api.depends('expiry_date')
+	@api.onchange('expiry_date')
 	def _compute_alert_date(self):
+		_logger.warn('none> _compute_alert_date()')
+		param = self.env['ir.config_parameter'].sudo()
+		product_expiry_alert_time = int(param.get_param('product_expiry_alert_time.product_expiry_alert_time'))
+
+		_logger.warn('\ninfo> product_expiry_alert_time: %s;',product_expiry_alert_time)
 		for spl in self:
 			if spl.expiry_date:
-				spl._alert_date = self._alert_date
+				spl._alert_date = fields.Date.to_string(fields.Date.from_string(spl.expiry_date) - datetime.timedelta(days = product_expiry_alert_time))
 				#_logger.warn('\ninfo> expiry_date: %s; _alert_date: %s',spl.expiry_date, spl._alert_date)
 	
 	def _get_dates(self, product_id=None):
@@ -51,7 +56,6 @@ class StockProductionLot(models.Model):
 					date = datetime.datetime.now() + datetime.timedelta(days=duration)
 					res[field] = fields.Datetime.to_string(date)
 		return res
-
 
 	# Assign dates according to products data
 	@api.model

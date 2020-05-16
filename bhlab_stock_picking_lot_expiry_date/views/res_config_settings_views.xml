@@ -7,10 +7,10 @@
             <field name="inherit_id" ref="stock.res_config_settings_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='module_product_expiry']" position="attributes">
-					<attribute name="invisible">False</attribute>
+					<attribute name="invisible">True</attribute>
 				</xpath>
 				<xpath expr="//field[@name='module_product_expiry']" position="after">
-					<field name="product_expiry_alert_time" attrs="{'invisible': [('group_stock_production_lot', '=', False)]}"/>            
+         			<field name="product_expiry_alert_time" attrs="{'invisible': [('group_stock_production_lot', '=', False)]}"/>   
 				</xpath>
             </field>
         </record>
