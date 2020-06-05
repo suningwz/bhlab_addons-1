@@ -14,6 +14,5 @@
     ],
     "data": [
         "views/product_view.xml",
-        "views/partner_view.xml",
     ]
 }
