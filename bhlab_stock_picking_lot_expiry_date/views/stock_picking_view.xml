@@ -15,8 +15,8 @@
                 <attribute name="string">Code a barre</attribute>
             </xpath>
             <xpath expr="//field[@name='move_line_ids_without_package']/tree/field[@name='lot_id']" position="after">
-                <field name="ref" attrs="{'column_invisible': [('parent.show_lots_text', '=', True)]}" readonly="True"/>
-                <field name="expiry_date" attrs="{'column_invisible': [('parent.show_lots_text', '=', True)]}" readonly="True" widget="date"/>
+                <field name="ref" attrs="{'column_invisible': [('parent.show_lots_text', '=', True)]}" readonly="False"/>
+                <field name="expiry_date" attrs="{'column_invisible': [('parent.show_lots_text', '=', True)]}" readonly="False" widget="date"/>
             </xpath>
             <xpath expr="//field[@name='move_line_ids_without_package']/tree/field[@name='lot_name']" position="after">
                 <field name="ref_name" attrs="{'column_invisible': [('parent.show_lots_text', '=', False)]}" readonly="True"/>
