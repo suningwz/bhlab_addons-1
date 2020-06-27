@@ -7,6 +7,7 @@ from odoo import fields, models, api
 
 
 class ResCommune(models.Model):
+    _name = 'res.commune'
     _descritpion = 'Commune'
     _order = 'name,id'
 
@@ -14,23 +15,6 @@ class ResCommune(models.Model):
     state_id = fields.Many2one('res.country.state', string='Wilaya', required=True)            
     name = fields.Char(string='Commune', size=64, required=True)
 
-
 class ResPartner(models.Model):
     _inherit = 'res.partner'
-
-    commune_id = fields.Many2one('res.commune', string='Commune')
-
-    # @api.multi
-    # @api.onchange('commune_id')
-    # def commune_id_change(self):
-    #     self.state_id = self.commune_id.state_id.id
-    #     self.city = self.commune_id.name
-    #     self.country_id = self.commune_id.state_id.country_id.id
-
-    # @api.multi
-    # @api.onchange('commune_id')
-    # def commune_id_change(self):
-	#     for partner in self:
-    #         partner.state_id = partner.commune_id.state_id.id
-    #         partner.city = partner.commune_id.name
-    #         partner.country_id = partner.commune_id.state_id.country_id.id
+    commune_id = fields.Many2one('res.commune', string='Commune') 

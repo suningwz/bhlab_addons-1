@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="bhlab_view_backorder_confirmation" model="ir.ui.view">
-        <field name="name">bhlab_stock.overprocessed.transfer.view.form</field>
+        <field name="name">bhlab_stock.desable.reliquts.view.form</field>
         <field name="model">stock.backorder.confirmation</field>
 		<field name="inherit_id" ref="stock.view_backorder_confirmation"/>
         <field name="arch" type="xml">

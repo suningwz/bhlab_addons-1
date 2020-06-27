@@ -15,6 +15,7 @@ class StockMoveLine(models.Model):
     ref = fields.Char(string='Lot', related='lot_id.ref',store=True, compute='_compute_upper')
     expiry_date = fields.Datetime(string="DLC", related='lot_id.expiry_date', store=True)
     available_qty = fields.Float(string='Qty availble', related='lot_id.available_qty',store=True)
-    
+    reserved_qty = fields.Float(string='Qty reserved', related='lot_id.reserved_qty',store=True)
+
     ref_name = fields.Char(string='Lot', store=True)
     expiry_date_name = fields.Datetime(string="DLC", store=True)

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record model="ir.ui.view" id="neopham_account_invoice_form_inherit">
+		<field name="name">neopham.account.invoice.inherit</field>
+		<field name="model">account.invoice</field>
+		<field name="inherit_id" ref="account.invoice_form"/>
+		<field name="arch" type="xml">
+			<data>
+				<xpath expr="//page/field[@name='invoice_line_ids']/tree/field[@name='currency_id']" position="after">
+					<field name="has_lots" attrs="{'invisible': [('has_lots', '=', False)]}" icon="fa-list"/>
+				</xpath>
+			</data>
+		</field>
+	</record>
+
+	<record id="view_invoice_line_form_inherit_neopharm" model="ir.ui.view">
+        <field name="name">account.invoice.line.form.inherit.neopharm</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+				<field name="has_lots" invisible="1"/>
+                <field name="quant_ids" readonly="1" attrs="{'invisible': [('has_lots', '=', False)]}">
+					<tree>
+						<field name="lot_id" readonly="1"/>
+						<field name="expiry_date" readonly="1"/>
+						<field name="qty" readonly="1"/>
+					</tree>
+				</field>
+            </field>
+        </field>
+    </record>
+	
+	<record model="ir.ui.view" id="neopham_account_invoice_supplier_form_inherit">
+		<field name="name">neopham.account.invoice.supplier.inherit</field>
+		<field name="model">account.invoice</field>
+		<field name="inherit_id" ref="account.invoice_supplier_form"/>
+		<field name="arch" type="xml">
+			<data>
+				<xpath expr="//page/field[@name='invoice_line_ids']/tree/field[@name='currency_id']" position="after">
+					<field name="has_lots" attrs="{'invisible': [('has_lots', '=', False)]}" icon="fa-list"/>
+				</xpath>
+			</data>
+		</field>
+	</record>
+	
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="neopham_view_purchase_form_inherit" model="ir.ui.view">
+		<field name="name">neopham.purchase.order.form.inherit</field>
+		<field name="model">purchase.order</field>
+		<field name="inherit_id" ref="purchase.purchase_order_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='name']" position="after">
+				<field name="is_really_shipped" invisible="True"/>
+			</xpath>
+			<!--
+			<xpath expr="//button[@name='action_view_invoice']" position="attributes">
+				<attribute name="attrs">{'invisible':['|', ('is_really_shipped','=',False), ('state', 'in', ('draft','sent','to approve')), ('invoice_ids','=',[])]}</attribute>
+			</xpath>
+			-->
+			<xpath expr="//field[@name='order_line']/tree" position="attributes">
+				<attribute name="editable"/>
+			</xpath>
+			
+			<xpath expr="//field[@name='order_line']/form/sheet/group/group/field[@name='price_unit']" position="after">
+				<field name="currency_id" invisible="1"/>
+				<field name="state" invisible="1"/>
+				<field name="price_subtotal" widget="monetary"/>
+				<field name="pol_lots_visible" invisible="1"/>
+			</xpath>
+			
+			<xpath expr="//field[@name='order_line']/form/sheet/notebook/page[1]" position="before">
+			    <page string="N° de Lots" attrs="{'invisible': [('pol_lots_visible', '=', False)]}">
+					<field name="pol_lot_ids" attrs="{'required': [('pol_lots_visible', '=', True)]}">
+						<tree string="N° de lots et dates de péremptions" editable="bottom">
+							<field name="lot_name"/>
+							<field name="expiry_date" widget="date"/>
+							<field name="qty"/>
+						</tree>
+					</field>
+				</page>
+			</xpath>
+		</field>
+    </record>
+	
+</odoo>

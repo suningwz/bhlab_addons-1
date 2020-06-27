@@ -14,6 +14,7 @@ class StockProductionLot(models.Model):
 		stor=True)
 
 	available_qty = fields.Float('Quantity available', compute='_product_available_qty')
+	reserved_qty = fields.Float('Reserved available', compute='_product_available_qty')
 
 	#_alert_date = fields.Date(string='Alert Date', help='Technical field for xml view decorator', compute='_compute_alert_date')
 	_alert_date = fields.Datetime(string='Alert Date')
@@ -78,3 +79,4 @@ class StockProductionLot(models.Model):
         # We only care for the quants in internal or transit locations and is_stock_quantity_not_reserved.
 		quants = self.quant_ids.filtered(lambda q: q.location_id.usage in ['internal', 'transit'] and q.location_id.is_stock_quantity_not_reserved)
 		self.available_qty = sum(quants.mapped('quantity'))
+		self.reserved_qty = sum(quants.mapped('reserved_quantity'))
