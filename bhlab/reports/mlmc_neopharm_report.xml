@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="neopharm_external_layout_header">
+	<div class="header">
+		<div class="row" style="border-bottom:1px solid #bbb; padding-bottom:10px; padding-top:10px;">
+			<table style="vertical-align: text-top; padding:0px; margin:0px; width:100%" >
+			<tbody>
+				<tr>
+					<td style="paddind:10px; vertical-align: text-center; width:33%">
+						<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+							 style="max-height: 128px; width:192px;"
+							 />
+						<p style="font-size:9px;" t-field="company.rml_header1" /> 
+					</td>
+					<td style="color:#444; padding:0px; margin:0px; margin-left:5px; width:33%">
+						<p style="font-weight:bold; font-size:18px; color:black; padding:0px; margin:0px" t-field="company.partner_id.name"/>
+						<div t-field="company.partner_id" style="font-size:10px; padding:0px; margin:0px;"
+                   	t-field-options='{"widget": "contact", "fields": ["address","country_id"], "no_marker": true}'
+                    	/>
+					</td>
+					<td style="font-size:9px; color:#444; margin-left:5px; vertical-align: text-top; width:33%">
+						<table  style="width:100%">
+							<tr><td>Capital Social :  <span t-field="company.mcl_capital" /></td></tr>
+							<tr><td style="width:60px">RC :  <span t-field="company.mcl_rc" /></td></tr>
+							<tr><td>ID. FISC :  <span t-field="company.mcl_nif" /></td></tr>
+							<tr><td>ART. IMP :  <span t-field="company.mcl_ai" /></td></tr>
+							<tr><td>N.I.S :  <span t-field="company.mcl_nis" /></td></tr>
+							<tr><td>R.I.B :  <span t-field="company.mcl_rib" /></td></tr>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+		<div class="row">
+			<div class="col-xs-6" name="company_address">
+			</div>
+		</div>
+	</div>
+</template>
+
+<template id="neopharm_external_layout_footer">
+	<div class="footer" style="border-top:0">
+		<table style="width:100%; font-size:8px; text-align:center">
+			<tr>
+				<td style="width:60%;">
+					<table style="width:100%; padding:9px; font-size:10px; text-align:center; border-top:1px solid #3366ff;border-bottom:1px solid #3366ff;">
+						<tr style="padding:9px;">
+							<td>
+								<div t-field="company.partner_id" style="width:100%;"
+									t-field-options='{"widget": "contact", "fields": ["phone"]}'/> 
+							</td>
+							<td>|</td> 
+							<td>
+								<div t-field="company.partner_id" style="width:100%;"
+									t-field-options='{"widget": "contact", "fields": ["fax"]}'/> 
+							</td>
+							<td>|</td> 
+							<td>
+								<div t-field="company.partner_id" style="width:100%;"
+									t-field-options='{"widget": "contact", "fields": ["email"]}' /> 
+							</td>
+							<td>|</td> 
+							<td>
+								<div t-field="company.partner_id" style="width:100%;"
+									t-field-options='{"widget": "contact", "fields": ["website"]}' /> 
+							</td>
+						</tr>
+					</table>
+				<!--	
+					<table style="width:100%; margin:5px; padding:5px; font-size:8px; text-align:center">
+						<tr t-foreach="company.bank_ids" t-as="l">
+							<td>Banque : <span t-field="l.bank_name" /></td>
+							<td>Compte N° : <span t-field="l.acc_number" /></td>
+							 <td>Addresse : <span t-field="l.bank_id.street"/> 
+											<span t-field="l.bank_id.zip"/> 
+											<span t-field="l.bank_id.city"/> 
+											<span t-field="l.bank_id.state"/>
+							</td>
+						</tr>
+					</table>
+				-->
+					<ul class="list-inline">
+						<li>Page:</li>
+						<li><span class="page"/></li>
+						<li>/</li>
+						<li><span class="topage"/></li>
+					</ul>
+				</td>
+			</tr>
+		</table>	
+	</div>
+</template>
+
+<template id="neopharm_external_layout" inherit_id="report.external_layout" primary="True">
+	<xpath expr="//t[@t-call='report.external_layout_header']" position="attributes">
+		<attribute name="t-call">neopharm.neopharm_external_layout_header</attribute>
+	</xpath>
+	<xpath expr="//t[@t-call='report.external_layout_footer']" position="attributes">
+		<attribute name="t-call">neopharm.neopharm_external_layout_footer</attribute>
+	</xpath>
+</template>
+
+<record id="account.mlmc_neopharm_paper" model="report.paperformat">
+           <field name="name">Neopharm BL A4</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">32</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">32</field>
+            <field name="dpi">90</field>
+        </record>
+     
+</odoo>

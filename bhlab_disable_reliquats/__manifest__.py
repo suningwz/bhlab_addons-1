@@ -8,7 +8,7 @@
     'version': '0.2',
     'category': 'stock',
     'description': """
-disable overpocessed transfert
+disable disable reliquat
 ========================================================================
 
 This module applies to companies based in Algeria.

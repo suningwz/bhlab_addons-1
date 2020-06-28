@@ -24,6 +24,7 @@
             </xpath>
             <xpath expr="//field[@name='move_line_ids_without_package']/tree/field[@name='product_uom_qty']" position="after">
                 <field name="available_qty" attrs="{'column_invisible': [('parent.picking_type_code', '!=', 'internal')]}"  readonly="True"/>
+                <field name="reserved_qty" attrs="{'column_invisible': [('parent.picking_type_code', '!=', 'internal')]}"  readonly="True"/>
             </xpath>
         </field>
     </record>

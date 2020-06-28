@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="report_picking_inherit_neopharm" inherit_id="stock.report_picking" >
+			<xpath expr="//t[@t-call='stock.external_layout_barcode_right']" position="attributes">
+				<attribute name="t-call">neopharm.neopharm_external_layout</attribute>
+			</xpath>
+		</template>
+	</data>
+</odoo>

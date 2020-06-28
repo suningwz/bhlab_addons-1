@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="report_saleorder_document_inherit_neopharm" inherit_id="sale.report_saleorder_document" >
+		
+		<xpath expr="//t[@t-call='report.external_layout']" position="attributes">
+			<attribute name="t-call">neopharm.neopharm_external_layout</attribute>
+		</xpath>
+		
+		<xpath expr="//div[@t-field='doc.partner_id']" position="before">
+			<strong>Customer:</strong>
+		</xpath>
+
+		<xpath expr="//h2/span[1]" position="replace">
+			<span t-if="doc.state not in ['draft','sent']">Commande N° </span>
+		</xpath>
+		
+		<xpath expr="//p[@t-field='doc.date_order']" position="replace">
+			<p t-field="doc.date_order" t-field-options='{"format": "dd/MM/yyyy"}'/>
+		</xpath>
+
+		<xpath expr="//div[@t-if='doc.user_id.name']" position="replace">
+			<div t-if="doc.user_id.name" class="col-xs-3">
+			</div>
+		</xpath>
+
+		<xpath expr="//table[1]" position="before">
+			<style>
+					.table-bordered2 > thead > tr > th, .table-bordered2 > tbody > tr > th, .table-bordered2 > tfoot > tr > th, .table-bordered2 > thead > tr > td, .table-bordered2 > tbody > tr > td, .table-bordered2 > tfoot > tr > td {
+						border: 1px solid #000 !important;
+					}
+					td, th {
+						padding: 5px;
+						font-size:10px;
+					}
+			</style>
+		</xpath>
+
+		<xpath expr="//table[1]" position="attributes">
+			<attribute name="class" add="table-bordered2" separator=" "/>
+			<attribute name="style">width:100%</attribute>
+		</xpath>
+
+		<xpath expr="//table[1]/thead/tr/th[2]" position="attributes">
+			<attribute name="class">text-center</attribute>
+		</xpath>
+		<xpath expr="//table[1]/thead/tr/th[3]" position="attributes">
+			<attribute name="class">text-center</attribute>
+		</xpath>
+		<xpath expr="//table[1]/thead/tr/th[4]" position="attributes">
+			<attribute name="class">text-center</attribute>
+		</xpath>
+		<xpath expr="//table[1]/thead/tr/th[5]" position="attributes">
+			<attribute name="class">text-center</attribute>
+		</xpath>
+		<xpath expr="//table[1]/thead/tr/th[6]" position="attributes">
+			<attribute name="class">text-center</attribute>
+		</xpath>
+		<xpath expr="//table[1]/thead/tr/th[7]" position="attributes">
+			<attribute name="class">text-center</attribute>
+		</xpath>
+		
+		<xpath expr="//div/div/table" position="attributes">
+			<attribute name="style">margin-top: -1px;</attribute>
+		</xpath>
+
+		<xpath expr="//div[@name='total']/div/table/tr[2]/td[2]/span[@t-field='doc.amount_total']" position="replace">
+			<strong>
+				<span t-field="doc.amount_total"
+					t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+			</strong>
+		</xpath>
+		
+	</template>
+</odoo>
