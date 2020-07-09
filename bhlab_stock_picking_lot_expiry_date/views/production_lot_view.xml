@@ -60,6 +60,9 @@
             <xpath expr="//field[@name='name']" position="before">
                 <field name="ref" string="Lot Number"/>
             </xpath>
+	    <xpath expr="//field[@name='product_id']" position="after">
+                <field name="product_qty"/>
+            </xpath>
         </field>
     </record>
     <record id="bhlab_view_move_form_expiry_simple" model="ir.ui.view">
