@@ -61,7 +61,7 @@
                 <field name="ref" string="Lot Number"/>
             </xpath>
 	    <xpath expr="//field[@name='product_id']" position="after">
-                <field name="product_qty"/>
+                <field name="available_qty"/>
             </xpath>
         </field>
     </record>
