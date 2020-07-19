@@ -13,8 +13,5 @@
         "stock","purchase",
     ],
     "data": [
-        "views/stock_move_line_view.xml",
-        "views/stock_picking_view.xml",
-        "views/purchase_order_view.xml",
     ]
 }
