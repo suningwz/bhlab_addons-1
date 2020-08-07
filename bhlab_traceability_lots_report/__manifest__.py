@@ -7,7 +7,7 @@
     'license': 'AGPL-3',
     'images': [
     ],
-    'depends': ['product', 'stock'],
+    'depends': ['product', 'stock','barcodes'],
     'data': [
         'views/mrp_stock_report_view.xml',
     ],
