@@ -12,12 +12,10 @@
                     'account',
                 ],
     'data' : [
-              'views/report_invoice.xml',
               'views/amount_word_view.xml',
                ],
      
     'images': ['static/description/banner.png'], 
     'application': True,
     'installable': True
-
 }
