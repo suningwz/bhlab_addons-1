@@ -26,6 +26,8 @@ class SaleOrder(models.Model):
     
     _inherit = 'sale.order'
 
+    amount = fields.Char(string="Arrêtée le présent devis à la somme de :", compute='get_amount_letter')
+
     @api.multi
     @api.depends('amount_total')
     def get_amount_letter(self):
@@ -36,6 +38,8 @@ class PurchaseOrder(models.Model):
 
     _inherit = 'purchase.order'
 
+    amount = fields.Char(string="Arrêtée le présent devis à la somme de :", compute='get_amount_letter')
+
     @api.multi
     @api.depends('amount_total')
     def get_amount_letter(self):
@@ -45,6 +49,8 @@ class PurchaseOrder(models.Model):
 class InvoiceOrder(models.Model):
 
     _inherit = 'account.invoice'
+
+    amount = fields.Char(string="Arrêtée le présent devis à la somme de :", compute='get_amount_letter')
 
     @api.multi
     @api.depends('amount_total')

@@ -12,7 +12,7 @@
                     'account',
                 ],
     'data' : [
-            'views/report_invoice.xml',
+            'views/amount_word_view.xml',
             'views/report_invoice.xml',
                ],
      
