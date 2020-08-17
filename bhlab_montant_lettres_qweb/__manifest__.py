@@ -12,7 +12,8 @@
                     'account',
                 ],
     'data' : [
-              'views/amount_word_view.xml',
+            'views/report_invoice.xml',
+            'views/report_invoice.xml',
                ],
      
     'images': ['static/description/banner.png'], 

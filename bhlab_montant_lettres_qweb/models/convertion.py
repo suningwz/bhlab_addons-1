@@ -107,3 +107,5 @@ def trad(nb, unite="DirHam", decim="centime"):
     if nb<0:
         ch="moins "+ch
     return ch
+
+

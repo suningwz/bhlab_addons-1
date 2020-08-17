@@ -27,32 +27,27 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     @api.multi
-    def _compute_amount_in_word(self):
-        for rec in self:
-            rec.num_word = self.currency_id.amount_to_text(self.amount_total)
-
-    num_word = fields.Char(string="Arrêtée le présent devis à la somme de :", compute='_compute_amount_in_word')
-
+    @api.depends('amount_total')
+    def get_amount_letter(self):
+        amount = self.currency_id.amount_to_text(self.amount_total)
+        return amount
 
 class PurchaseOrder(models.Model):
 
     _inherit = 'purchase.order'
 
     @api.multi
-    def _compute_amount_in_word(self):
-        for rec in self:
-            rec.num_word = self.currency_id.amount_to_text(self.amount_total)
-
-    num_word = fields.Char(string="Arrêtée le présente Facture à la somme de :", compute='_compute_amount_in_word')
-
+    @api.depends('amount_total')
+    def get_amount_letter(self):
+        amount = self.currency_id.amount_to_text(self.amount_total)
+        return amount
 
 class InvoiceOrder(models.Model):
 
     _inherit = 'account.invoice'
 
     @api.multi
-    def _compute_amount_in_word(self):
-        for rec in self:
-            rec.num_word = self.currency_id.amount_to_text(self.amount_total)
-
-    num_word = fields.Char(string="Arrêtée le présente Facture à la somme de :", compute='_compute_amount_in_word')
+    @api.depends('amount_total')
+    def get_amount_letter(self):
+        amount = self.currency_id.amount_to_text(self.amount_total)
+        return amount

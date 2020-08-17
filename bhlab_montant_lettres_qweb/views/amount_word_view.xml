@@ -10,8 +10,8 @@
                 <xpath expr="//field[@name='note']" position="after">
                     <group colspan="2" attrs="{'invisible': [('amount_total', '&lt;=', 0)]}">
                         <div class="oe_subtotal_footer_separator oe_inline o_td_label" style="font-size:15px;">
-                            <label for="num_word" style="margin-right: 8px;font-size:15px;"/>
-                            <field name="num_word" string="Arrêtée le présent devis à la somme de : "/>
+                            <label for="amount" style="margin-right: 8px;font-size:15px;"/>
+                            <field name="amount" string="Arrêtée le présent devis à la somme de : "/>
                         </div>
                     </group>
                 </xpath>
@@ -27,8 +27,8 @@
                 <xpath expr="//field[@name='notes']" position="after">
                     <group colspan="2"  attrs="{'invisible': [('amount_total', '&lt;=', 0)]}">
                         <div class="oe_subtotal_footer_separator oe_inline o_td_label" style="font-size:15px;">
-                            <label for="num_word" style="margin-right: 8px;font-size:15px;"/>
-                            <field name="num_word" string="Arrêtée le présent devis à la somme de : "/>
+                            <label for="amount" style="margin-right: 8px;font-size:15px;"/>
+                            <field name="amount" string="Arrêtée le présent devis à la somme de : "/>
                         </div>
                     </group>   
                 </xpath>
@@ -44,8 +44,8 @@
                 <xpath expr="//field[@name='comment']" position="after">
                     <group colspan="2"  attrs="{'invisible': [('amount_total', '&lt;=', 0)]}">
                         <div class="oe_subtotal_footer_separator oe_inline o_td_label" style="font-size:15px; text-align:right;">
-                            <label for="num_word" style="margin-right: 8px;font-size:15px;"/>
-                            <field name="num_word" string="Arrêtée la présente facture à la somme de"/>
+                            <label for="amount" style="margin-right: 8px;font-size:15px;"/>
+                            <field name="amount" string="Arrêtée la présente facture à la somme de"/>
                         </div>
                     </group>   
                 </xpath>
@@ -61,8 +61,8 @@
                 <xpath expr="//field[@name='comment']" position="before">
                     <group colspan="2"  attrs="{'invisible': [('amount_total', '&lt;=', 0)]}">
                         <div class="oe_subtotal_footer_separator oe_inline o_td_label" style="font-size:15px; text-align:right;">
-                            <label for="num_word" style="margin-right: 8px;font-size:15px;"/>
-                            <field name="num_word" string="Arrêtée la présente facture à la somme de : "/>
+                            <label for="amount" style="margin-right: 8px;font-size:15px;"/>
+                            <field name="amount" string="Arrêtée la présente facture à la somme de : "/>
                         </div>
                     </group>   
                 </xpath>
