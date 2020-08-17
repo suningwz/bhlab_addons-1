@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Invoice form view for Vendor Bills -->
+        <record id="invoice_vendor_form_amount_without_taxes_view" model="ir.ui.view">
+            <field name="name">Amount without taxe Invoice Order Vendor Bills</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_untaxed']" position="after">
+                    <field name="amount_without_taxes" string="Montant 0% TVA" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Invoice form view for Customer Invoice -->
+        <record id="invoice_customer_form_amount_without_taxe_view" model="ir.ui.view">
+            <field name="name">Amount without taxe Invoice</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_untaxed']" position="after">
+                    <field name="amount_without_taxes" string="Montant 0% TVA" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
