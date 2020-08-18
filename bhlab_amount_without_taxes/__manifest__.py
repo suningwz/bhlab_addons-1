@@ -10,9 +10,9 @@
                     'account',
                 ],
     'data' : [
-              'views/amount_without_taxes_view.xml',
+            'views/amount_without_taxes_view.xml',
+            'views/amount_tree_without_taxes_view.xml',
                ],
-     
     'images': ['static/description/banner.png'], 
     'application': True,
     'installable': True
