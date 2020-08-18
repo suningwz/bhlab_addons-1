@@ -4,11 +4,11 @@
         <record id="invoice_tree_amount_without_taxes" model="ir.ui.view">
             <field name="name">account.invoice.tree.amount.without.taxes</field>
             <field name="model">account.invoice</field>
-            <field name="inherit_id" ref="account.invoice_tree_with_onboarding"/>
+            <field name="inherit_id" ref="account.invoice_tree"/>
             <field name="arch" type="xml">
                   <xpath expr="//field[@name='amount_total_signed']" position="after">
-                      <field name="amount_without_taxes" string="Montant sans TVA" widget='monetary' options="{'currency_field': 'currency_id'}"/>
-                      <field name="amount_with_taxes" string="Montant avec TVA" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                      <field name="amount_without_taxes" string="Montant sans TVA" widget='monetary' options="{'currency_field': 'currency_id'}" sum="Total"/>
+                      <field name="amount_with_taxes" string="Montant avec TVA" widget='monetary' options="{'currency_field': 'currency_id'}" sum="Total"/>
                   </xpath>
                   <xpath expr="//field[@name='user_id']" position="attributes">
                         <attribute name="invisible">1</attribute>
