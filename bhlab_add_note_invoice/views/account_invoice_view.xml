@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Customer Invoice -->
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="name">account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']" position="after">
+                <page string="Note" name="note">
+                    <field name="note" string="Note" placeholder="Add an internal note that will be printed on the Account Operations sheet"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Vendor Bill -->
+    <record id="invoice_supplier_form" model="ir.ui.view">
+        <field name="name">account.invoice.supplier.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']" position="after">
+                <page string="Note" name="note">
+                    <field name="note" string="Note" placeholder="Add an internal note that will be printed on the Account Operations sheet"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
