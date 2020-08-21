@@ -28,7 +28,7 @@
                     <group colspan="2"  attrs="{'invisible': [('amount_total', '&lt;=', 0)]}">
                         <div class="oe_subtotal_footer_separator oe_inline o_td_label" style="font-size:15px;">
                             <label for="amount" style="margin-right: 8px;font-size:15px;"/>
-                            <field name="amount" string="Arrêtée le présent devis à la somme de : "/>
+                            <field name="amount"/>
                         </div>
                     </group>   
                 </xpath>
@@ -45,7 +45,7 @@
                     <group colspan="2"  attrs="{'invisible': [('amount_total', '&lt;=', 0)]}">
                         <div class="oe_subtotal_footer_separator oe_inline o_td_label" style="font-size:15px; text-align:right;">
                             <label for="amount" style="margin-right: 8px;font-size:15px;"/>
-                            <field name="amount" string="Arrêtée la présente facture à la somme de"/>
+                            <field name="amount"/>
                         </div>
                     </group>   
                 </xpath>
@@ -62,7 +62,7 @@
                     <group colspan="2"  attrs="{'invisible': [('amount_total', '&lt;=', 0)]}">
                         <div class="oe_subtotal_footer_separator oe_inline o_td_label" style="font-size:15px; text-align:right;">
                             <label for="amount" style="margin-right: 8px;font-size:15px;"/>
-                            <field name="amount" string="Arrêtée la présente facture à la somme de : "/>
+                            <field name="amount"/>
                         </div>
                     </group>   
                 </xpath>
