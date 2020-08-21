@@ -2,9 +2,9 @@
     'name': 'Bhlab montant en lettres',
     'version': '12.0.1',
     "author" : "nadir",
-    'summary': """Impression montant en lettre dans le Facture""",
+    'summary': """Impression montant en lettre""",
     "website" : "http://www.bhlab.bhinvest.com",
-    'description': 'Module qui permet de  convertir le montant d/une facture en lettres et l"ajoute  a la facture',
+    'description': 'Module qui permet de  convertir le montant en letrres',
     'category': 'Generic Modules/Accounting',
     'depends' : [
                     'sale_management',
