@@ -8,8 +8,8 @@
             <field name="inherit_id" ref="account.invoice_supplier_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='amount_untaxed']" position="after">
-                    <field name="amount_without_taxes" string="Montant sans TVA" widget='monetary' options="{'currency_field': 'currency_id'}"/>
-                    <field name="amount_with_taxes" string="Montant avec TVA" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                    <field name="amount_without_taxes" string="Montant sans TVA"/>
+                    <field name="amount_with_taxes" string="Montant avec TVA"/>
                 </xpath>
             </field>
         </record>
@@ -21,8 +21,8 @@
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='amount_untaxed']" position="after">
-                    <field name="amount_without_taxes" string="Montant sans TVA" widget='monetary' options="{'currency_field': 'currency_id'}"/>
-                    <field name="amount_with_taxes" string="Montant avec TVA" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                    <field name="amount_without_taxes" string="Montant sans TVA"/>
+                    <field name="amount_with_taxes" string="Montant avec TVA"/>
                 </xpath>
             </field>
         </record>
