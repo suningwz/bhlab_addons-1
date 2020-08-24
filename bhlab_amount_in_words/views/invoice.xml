@@ -17,7 +17,7 @@
 			<xpath expr="//div[@id='total']/.." position="after">
 				<div class="clearfix">	
 					<div class="pull-left">
-								<table style="width:500px;">
+								<table style="width:700px;">
 										<tr>
 											<td><strong>Total en lettre:</strong></td>
 											<td class="text-right">
@@ -49,7 +49,7 @@
 			<xpath expr="//div[@name='total']/.." position="after">
 				<div class="clearfix">	
 					<div class="pull-left">							
-								<table style="width:500px;">
+								<table style="width:700px;">
 										<tr>
 											<td><strong>Total en lettre:</strong></td>
 											<td class="text-right">
