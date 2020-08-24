@@ -1,0 +1,64 @@
+<?xml  version="1.0"?>  
+<odoo>    
+	<record	id="amount_to_words_account_invoice"	model="ir.ui.view">	
+		<field	name="name">Add Amount in words to Invoice</field>	
+                <field name="model">account.invoice</field>
+                <field name="type">form</field> 
+                <field name="inherit_id" ref="account.invoice_form"/>
+                <field name="arch" type="xml">				
+                        <field name="comment" position="before" >						
+								<group>
+									<field name="amount_words"/>
+								</group>
+						</field>								
+                </field>
+     </record> 
+	<template id="amount_to_words_without_payments" inherit_id="account.report_invoice_document">
+			<xpath expr="//div[@id='total']/.." position="after">
+				<div class="clearfix">	
+					<div class="pull-left">
+								<table style="width:500px;">
+										<tr>
+											<td><strong>Total en lettre:</strong></td>
+											<td class="text-right">
+												 <span t-field="o.amount_words"/>
+											</td>
+										</tr>													
+								</table>
+					</div>
+				</div>
+			</xpath>
+		</template>		      
+     
+     
+	<record	id="amount_to_words_sale_order"	model="ir.ui.view">	
+		<field	name="name">Add Amount in words to Sale Order</field>	
+                <field name="model">sale.order</field>
+                <field name="type">form</field> 
+                <field name="inherit_id" ref="sale.view_order_form"/>
+                <field name="arch" type="xml">			
+                        <field name="note" position="before" >						
+								<group>
+									<field name="amount_words"/>
+								</group>
+						</field>								
+                </field>
+     </record> 
+     
+	<template id="amount_to_words_order_without_payments" inherit_id="sale.report_saleorder_document">
+			<xpath expr="//div[@name='total']/.." position="after">
+				<div class="clearfix">	
+					<div class="pull-left">							
+								<table style="width:500px;">
+										<tr>
+											<td><strong>Total en lettre:</strong></td>
+											<td class="text-right">
+												 <span t-field="doc.amount_words"/>
+											</td>
+										</tr>													
+								</table>
+					</div>
+				</div>
+			</xpath>
+		</template>	                
+</odoo> 
