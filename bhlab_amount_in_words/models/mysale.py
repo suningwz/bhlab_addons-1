@@ -25,11 +25,11 @@ class MyInvoice(models.Model):
 			if cents>0:
 				_logger.debug('\n\n\n\n cents 2 :'+str(math.floor(cents*100)))
 				tmp=tmp+' et '+num2words(round(cents*100), lang=lang)+' centimes'
-			self.amount_words=tmp
+			self.num_word=tmp
 		except NotImplementedError:
-			self.amount_words = num2words(self.amount_total, lang="en", to='currency')	
+			self.num_word = num2words(self.amount_total, lang="en", to='currency')
 				
-	amount_words=fields.Char(string='Total en lettre:',compute='_compute_amount_words')
+	num_word=fields.Char(string='Total en lettre:',compute='_compute_amount_words')
 	
 
 class MySale(models.Model):
@@ -49,15 +49,15 @@ class MySale(models.Model):
 			if cents>0:
 				_logger.debug('\n\n\n\n cents 2 :'+str(math.floor(cents*100)))
 				tmp=tmp+' et '+num2words(round(cents*100), lang=lang)+' centimes'
-			self.amount_words=tmp
+			self.num_word=tmp
 		except NotImplementedError:
-			self.amount_words = num2words(self.amount_total, lang="en", to='currency')	
+			self.num_word = num2words(self.amount_total, lang="en", to='currency')
 				
-	amount_words=fields.Char(string='Total en lettre:',compute='_compute_amount_words')
+	num_word=fields.Char(string='Total en lettre:',compute='_compute_amount_words')
 			
 class MyPayment(models.Model):
 	_inherit = "account.payment"
-	amount_words=fields.Char(string='Total en lettre:',compute='_compute_amount_words')
+	num_word=fields.Char(string='Total en lettre:',compute='_compute_amount_words')
 	
 	@api.one
 	@api.depends('amount')
@@ -73,6 +73,6 @@ class MyPayment(models.Model):
 			if cents>0:
 				_logger.debug('\n\n\n\n cents 2 :'+str(math.floor(cents*100)))
 				tmp=tmp+' et '+num2words(round(cents*100), lang=lang)+' centimes'
-			self.amount_words=tmp
+			self.num_word=tmp
 		except NotImplementedError:
-			self.amount_words = num2words(self.amount, lang="en", to='currency')
+			self.num_word = num2words(self.amount, lang="en", to='currency')

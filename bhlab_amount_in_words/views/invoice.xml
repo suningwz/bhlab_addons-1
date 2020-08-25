@@ -8,7 +8,7 @@
                 <field name="arch" type="xml">				
                         <field name="comment" position="before" >						
 								<group>
-									<field name="amount_words"/>
+									<field name="num_word"/>
 								</group>
 						</field>								
                 </field>
@@ -21,7 +21,7 @@
 										<tr>
 											<td><strong>Total en lettre:</strong></td>
 											<td class="text-right">
-												 <span t-field="o.amount_words"/>
+												 <span t-field="o.num_word"/>
 											</td>
 										</tr>													
 								</table>
@@ -39,7 +39,7 @@
                 <field name="arch" type="xml">			
                         <field name="note" position="before" >						
 								<group>
-									<field name="amount_words"/>
+									<field name="num_word"/>
 								</group>
 						</field>								
                 </field>
@@ -53,7 +53,7 @@
 										<tr>
 											<td><strong>Total en lettre:</strong></td>
 											<td class="text-right">
-												 <span t-field="doc.amount_words"/>
+												 <span t-field="doc.num_word"/>
 											</td>
 										</tr>													
 								</table>
