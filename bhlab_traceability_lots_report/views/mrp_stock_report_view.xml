@@ -1,79 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
- <template id="report_stock_inventory">
-        <div class="container o_stock_reports_page o_stock_reports_no_print">
-            <span t-if="lines" class="o_report_heading text-left"><h1>Traceability Report</h1></span>
-            <span><t t-esc="context"/></span>
-            <div class="o_stock_reports_table table-responsive">
-                <t t-if="not lines">
-                    <span class="text-center"><h1>No operation made on this lot.</h1></span>
-                </t>
-                <t t-if="lines">
-                    <table width='100%' class="table">
-                        <thead>
-                            <tr class="o_report_header">
-                                <th class="o_report_line_header">Reference</th>
-                                <th class="o_report_line_header">Partner</th>
-                                <th class="o_report_line_header">Product</th>
-                                <th class="o_report_line_header">Date</th>
-                                <th class="o_report_line_header">Lot/Serial #</th>
-                                <th class="o_report_line_header">From</th>
-                                <th class="o_report_line_header">To</th>
-                                <th class="o_report_line_header">Quantity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <t t-call="stock.report_mrp_line"/>
-                        </tbody>
-                    </table>
-                </t>
-            </div>
-        </div>
-    </template>
-    <template id="report_stock_body_print">
-        <div class="container o_stock_reports_page o_stock_reports_no_print">
-            <span class="text-left"><h3>Traceability Report</h3></span>
-            <div class="table-responsive">
-                <table width='100%' class="o_stock_reports_table table">
-                    <thead>
-                        <tr class="o_report_header">
-                            <th class="o_report_line_header">Reference</th>
-                            <th class="o_report_line_header">Partner</th>
-                            <th class="o_report_line_header">Product</th>
-                            <th class="o_report_line_header">Date</th>
-                            <th class="o_report_line_header">Lot/Serial #</th>
-                            <th class="o_report_line_header">From</th>
-                            <th class="o_report_line_header">To</th>
-                            <th class="o_report_line_header">Quantity</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-set="space_td" t-value="'margin-left: 0'"/>
-                        <t t-foreach="lines" t-as="a">
-                            <t t-set="space_td" t-value="'margin-left: '+ str(a['level']) + 'px;'"/>
-                            <t t-set="trclass" t-value="'o_stock_reports_default_style'"/>
-                            <t t-if="a.get('model') == 'stock.move.line'"><t t-set="trclass" t-value="'o_stock_reports_level0'"/></t>
-                            <t t-set="column" t-value="0" />
-                            <tr t-att-data-id="a['id']" t-att-data-model="a['model']" t-att-class="trclass">
-                                <t t-set="tdclass" t-value="''" />
-                                <t t-if="a.get('unfoldable')"><t t-set="tdclass" t-value="'o_stock_reports_unfoldable'" /></t>
-                                <t t-set="column" t-value="0" />
-                                <t t-foreach="a['columns']" t-as="c">
-                                    <t t-set="column" t-value="column + 1" />
-                                    <td>
-                                        <t t-if="column == 1">
-                                            <span t-att-style="space_td"></span>
-                                        </t>
-                                        <span>
-                                            <t t-raw="c" />
-                                        </span>
-                                    </td>
-                                </t>
-                            </tr>
-                        </t>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <template id="bhlab_assets_backend" name="bhlab_traceability_report_assets" inherit_id="web.assets_backend">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" href="/bhlab_traceability_lots_report/static/src/scss/traceability_report.scss" />
+        </xpath>
     </template>
 </odoo>
