@@ -51,7 +51,7 @@ class AccountInvoice(models.Model):
         # Perform a sanity check for discarding cases that will lead to
         # incorrect data in discounts
         for inv_line in self.invoice_line_ids:
-            if not inv_line.invoice_line_tax_ids:
+            if not inv_line.invoice_line_tax_ids and inv_line.product_id:
                 raise exceptions.UserError(_(
                     "With global discounts, taxes in lines are required."
                 ))
