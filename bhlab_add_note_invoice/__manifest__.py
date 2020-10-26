@@ -32,6 +32,7 @@
     ],
     'data': [
         'views/account_invoice_view.xml',
+        'views/sales_order_view.xml',
     ],
     'demo': [
     ],

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- Customer sales order -->
+    <record id="sales_order_form" model="ir.ui.view">
+        <field name="name">sales.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_information']" position="after">
+                <page string="Note" name="note">
+                    <field name="note" string="Note" placeholder="Add an internal note that will be printed on the sales order Operations sheet"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
