@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <record id="inherited_view_account_form" model="ir.ui.view">
+            <field name="name">account.form.inherited</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_invoice_open']" position="attributes">
+            		<attribute name="groups">bhlab_confirm_unlock_group.group_allow_confirm_unlock_account</attribute>
+                    <attribute name="confirm">Are you sure you want to validate the invoice ?</attribute>
+                </xpath>
+                <button name="action_invoice_draft" position="attributes">
+					<attribute name="groups">bhlab_confirm_unlock_group.group_allow_confirm_unlock_account
+                    </attribute>
+                </button>
+                <button name="action_invoice_cancel" position="attributes">
+					<attribute name="groups">bhlab_confirm_unlock_group.group_allow_confirm_unlock_account</attribute>
+                    <attribute name="confirm">Are you sure you want to cancel the invoice ?</attribute>
+                </button>
+            </field>
+        </record>
+	</data>
+</odoo>
