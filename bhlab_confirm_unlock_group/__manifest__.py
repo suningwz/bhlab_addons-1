@@ -15,6 +15,7 @@
     'data': [
         'security/groups.xml',
         'views/account.xml',
+        'views/stock_picking.xml',
     ],
     'installable': True,
     'auto_install': False,

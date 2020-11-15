@@ -7,15 +7,28 @@ class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
     def button_validate(self):
+        if self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_picking') \
+                and (self.picking_type_id.name == "Réceptions" or self.picking_type_id.name == "Pick"):
+            return super().button_validate()
+        else :
+            if (self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_out')
+                and (self.picking_type_id.name == "Transferts internes" or self.picking_type_id.name == "Livraisons"))\
+                or (self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_out')
+                        and (self.picking_type_id.name == "Réceptions" and self.location_dest_id.name =="Output")):
+                return super().button_validate()
+        raise UserError(
+            _("you are not authorized to perform this action"))
 
-        if self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_picking') and (self.picking_type_id.name == "Livraisons" or self.picking_type_id.name == "Transferts internes"):
-            raise UserError(
-                _("you are not authorized to perform this action"))
-            return
-        if (self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_out') and (self.picking_type_id.name == "Pick" or self.picking_type_id.name == "Réceptions"))\
-                and not(self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_out') and (self.picking_type_id.name == "Réceptions" and self.location_dest_id.name =="Output")):
-            raise UserError(
-                _("you are not authorized to perform this action"))
-            return
+    def action_cancel(self):
+        if self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_picking') \
+                and (self.picking_type_id.name == "Réceptions" or self.picking_type_id.name == "Pick"):
+            return super().button_validate()
+        else :
+            if (self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_out')
+                and (self.picking_type_id.name == "Transferts internes" or self.picking_type_id.name == "Livraisons"))\
+                or (self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_out')
+                        and (self.picking_type_id.name == "Pick" and self.location_dest_id.name =="Stock")):
+                return super().button_validate()
+        raise UserError(
+            _("you are not authorized to perform this action"))
 
-        return super().button_validate()
