@@ -14,11 +14,11 @@
                         <separator/><separator/>
                         <field name="code_tiers" placeholder="Code tiers"/>
 <!--                        <field name="banque_id"/>-->
-                        <field name="num_agrement" attrs="{'required': [('customer','=',True)]}"/>
-                        <field name="rc" attrs="{'required': [('customer','=',True)]}"/>
-                        <field name="nif" attrs="{'required': [('customer','=',True)]}"/>
+                        <field name="num_agrement" attrs="{'required': [('activity_sector','=','PRIV')]}"/>
+                        <field name="rc" attrs="{'required': [('activity_sector','=','PRIV')]}"/>
+                        <field name="nif" attrs="{'required': [('activity_sector','=','PRIV')]}"/>
                         <field name="nis"/>
-                        <field name="ai" attrs="{'required': [('customer','=',True)]}"/>
+                        <field name="ai" attrs="{'required': [('activity_sector','=','PRIV')]}"/>
                 	</xpath>
                     <xpath expr="//field[@name='user_id']" position="before">
                         <separator/><separator/>
@@ -28,8 +28,11 @@
                         <field name="fax"/>
                 	</xpath>
                     <xpath expr="//field[@name='street']" position="attributes">
-                        <attribute name="required">{'required': [('customer','=',True)]}</attribute>
+                        <attribute name="required">True</attribute>
                 	</xpath>
+                    <xpath expr="//page[@name='sales_purchases']//field[@name='customer']" position="after">
+                        <field name="activity_sector" attrs="{'required': [('customer','=',True)], 'invisible': [('customer','!=',True)]}"/>
+                    </xpath>
                 </data>
 			</field>
         </record>
