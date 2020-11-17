@@ -14,11 +14,11 @@
                         <separator/><separator/>
                         <field name="code_tiers" placeholder="Code tiers"/>
 <!--                        <field name="banque_id"/>-->
-                        <field name="num_agrement"/>
-                        <field name="rc"/>
-                        <field name="nif"/>
+                        <field name="num_agrement" attrs="{'required': [('customer','=',True)]}"/>
+                        <field name="rc" attrs="{'required': [('customer','=',True)]}"/>
+                        <field name="nif" attrs="{'required': [('customer','=',True)]}"/>
                         <field name="nis"/>
-                        <field name="ai"/>
+                        <field name="ai" attrs="{'required': [('customer','=',True)]}"/>
                 	</xpath>
                     <xpath expr="//field[@name='user_id']" position="before">
                         <separator/><separator/>
@@ -26,6 +26,9 @@
                 	</xpath>
                     <xpath expr="//field[@name='phone']" position="after">
                         <field name="fax"/>
+                	</xpath>
+                    <xpath expr="//field[@name='street']" position="attributes">
+                        <attribute name="required">{'required': [('customer','=',True)]}</attribute>
                 	</xpath>
                 </data>
 			</field>
