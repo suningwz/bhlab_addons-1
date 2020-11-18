@@ -30,9 +30,6 @@
                     <xpath expr="//field[@name='street']" position="attributes">
                         <attribute name="required">True</attribute>
                 	</xpath>
-                    <xpath expr="//page[@name='sales_purchases']//field[@name='customer']" position="after">
-                        <field name="activity_sector" attrs="{'required': [('customer','=',True)], 'invisible': [('customer','!=',True)]}"/>
-                    </xpath>
                 </data>
 			</field>
         </record>
