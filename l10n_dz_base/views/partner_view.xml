@@ -14,11 +14,11 @@
                         <separator/><separator/>
                         <field name="code_tiers" placeholder="Code tiers"/>
 <!--                        <field name="banque_id"/>-->
-                        <field name="num_agrement" attrs="{'required': [('activity_sector','=','PRIV')]}"/>
-                        <field name="rc" attrs="{'required': [('activity_sector','=','PRIV')]}"/>
-                        <field name="nif" attrs="{'required': [('activity_sector','=','PRIV')]}"/>
+                        <field name="num_agrement"/>
+                        <field name="rc"/>
+                        <field name="nif"/>
                         <field name="nis"/>
-                        <field name="ai" attrs="{'required': [('activity_sector','=','PRIV')]}"/>
+                        <field name="ai"/>
                 	</xpath>
                     <xpath expr="//field[@name='user_id']" position="before">
                         <separator/><separator/>
