@@ -42,6 +42,7 @@ class StockProductionLot(models.Model):
 			if spl.expiry_date:
 				spl._alert_date = fields.Date.to_string(fields.Date.from_string(spl.expiry_date) - datetime.timedelta(days = product_expiry_alert_time))
 				#_logger.warn('\ninfo> expiry_date: %s; _alert_date: %s',spl.expiry_date, spl._alert_date)
+				spl.removal_date = spl.expiry_date
 	
 	def _get_dates(self, product_id=None):
 		"""Returns dates based on number of days configured in current lot's product."""

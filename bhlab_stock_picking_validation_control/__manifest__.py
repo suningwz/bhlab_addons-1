@@ -16,5 +16,6 @@
     'data': [
         'views/product_views.xml',
         'views/stock_picking_type_views.xml',
+        'wizard/confirm_form_view.xml',
     ],
 }
