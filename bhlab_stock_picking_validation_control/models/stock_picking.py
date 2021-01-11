@@ -43,8 +43,9 @@ class StockPicking(models.Model):
                 line_str += ' , ' + str(line.number)
 
         
-        if (check_exipry_products):
-            raise UserError(
-                        _("You have expired product in line" + line_str))
-        else :
-            return super().button_validate()
+        #if (check_exipry_products):
+        #    raise UserError(
+        #                _("You have expired product in line" + line_str))
+        #else :
+        
+        return super().button_validate()
