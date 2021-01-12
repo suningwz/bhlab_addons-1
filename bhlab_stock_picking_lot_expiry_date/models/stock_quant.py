@@ -8,6 +8,16 @@ _logger = logging.getLogger(__name__)
 class StockQuant(models.Model):
     _inherit = 'stock.quant'
     
+    expiry_date = fields.Datetime(related='lot_id.expiry_date', widget='Date')
+    ref = fields.Char(string='Lot', related='lot_id.ref')
+    available_qty = fields.Float(string='Qty availble', related='lot_id.available_qty',store=True)    
+    
+    @api.model
+    def _get_removal_strategy_order(self, removal_strategy):
+        if removal_strategy == 'fefo':
+            return 'removal_date ASC NULLS FIRST, id'
+        return super(StockQuant, self)._get_removal_strategy_order(removal_strategy)
+    
         def _gather(self, product_id, location_id, lot_id=None, package_id=None, owner_id=None, strict=False):
         removal_strategy = self._get_removal_strategy(product_id, location_id)
         removal_strategy_order = self._get_removal_strategy_order(removal_strategy)
