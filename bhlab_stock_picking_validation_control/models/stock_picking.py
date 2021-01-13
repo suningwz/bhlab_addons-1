@@ -36,16 +36,5 @@ class StockPicking(models.Model):
                     _logger.warn("line.product_uom_qty = %s , line.qty_done = %s",line.product_uom_qty,line.qty_done)
                     raise UserError(
                         _("Quntity reserved is not equal to quantity done"))
-
-        for line in self.move_line_ids:
-            if(line.expiry_date < fields.Datetime.today()):
-                check_exipry_products = True
-                line_str += ' , ' + str(line.number)
-
-        
-        #if (check_exipry_products):
-        #    raise UserError(
-        #                _("You have expired product in line" + line_str))
-        #else :
         
         return super().button_validate()
