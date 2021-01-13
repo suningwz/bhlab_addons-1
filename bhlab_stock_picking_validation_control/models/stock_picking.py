@@ -11,6 +11,7 @@ class StockPickingType(models.Model):
 
     availability_validation_control = fields.Boolean(string='Quantity available validation control')
     reservation_validation_control = fields.Boolean(string='Reservation quantity validation control')
+    expiry_date_validation_control = fields.Boolean(string='Exipy date validation control')
 
 
 class StockPicking(models.Model):
@@ -20,6 +21,7 @@ class StockPicking(models.Model):
         number = 1
         check_exipry_products = False
         line_str = ''
+
         for line in self.move_line_ids:
             line.number = number
             number += 1
@@ -36,5 +38,14 @@ class StockPicking(models.Model):
                     _logger.warn("line.product_uom_qty = %s , line.qty_done = %s",line.product_uom_qty,line.qty_done)
                     raise UserError(
                         _("Quntity reserved is not equal to quantity done"))
-        
+
+        if self.picking_type_id.expiry_date_validation_control:
+            for line in self.move_line_ids:
+                if (line.expiry_date < fields.Datetime.now()):
+                    line_str += ',' + str(line.number)
+                    check_exipry_products = True
+
+        if check_exipry_products :
+            raise UserError(
+                _("You have an expiry lot in line " + line_str))
         return super().button_validate()

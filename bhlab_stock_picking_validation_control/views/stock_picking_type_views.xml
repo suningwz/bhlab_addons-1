@@ -10,6 +10,7 @@
             <field name="use_existing_lots" position="after">
                 <field name="availability_validation_control"/>
                 <field name="reservation_validation_control"/>
+                <field name="expiry_date_validation_control"/>
             </field>
         </field>
     </record>
