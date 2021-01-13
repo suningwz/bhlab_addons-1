@@ -41,9 +41,10 @@ class StockPicking(models.Model):
 
         if self.picking_type_id.expiry_date_validation_control:
             for line in self.move_line_ids:
-                if (line.expiry_date < fields.Datetime.now()):
-                    line_str += ',' + str(line.number)
-                    check_exipry_products = True
+                if line.expiry_date :
+                    if (line.expiry_date < fields.Datetime.now()):
+                        line_str += ',' + str(line.number)
+                        check_exipry_products = True
 
         if check_exipry_products :
             raise UserError(
