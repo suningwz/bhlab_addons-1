@@ -125,7 +125,7 @@ def tradn(num):
     return ch
 
 
-def trad(nb, unite="Dinar Algérien et", decim="centime"):
+def trad(nb, unite="Dinar Algérien", decim="centime"):
     global t1,t2
     nb=round(nb,2)
     t1=["","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix","onze","douze","treize","quatorze","quinze","seize","dix-sept","dix-huit","dix-neuf"]
@@ -139,9 +139,9 @@ def trad(nb, unite="Dinar Algérien et", decim="centime"):
         ch=tradn(abs(z1))
     if z1>1 or z1<-1:
         if unite!='':
-            ch=ch+" "+unite+'s'
+            ch=ch+" "+unite+'s et'
     else:
-        ch=ch+" "+unite
+        ch=ch+" "+unite + 'et'
     if z2>0:
         ch=ch+tradn(z2)
         if z2>1 or z2<-1:
@@ -152,5 +152,3 @@ def trad(nb, unite="Dinar Algérien et", decim="centime"):
     if nb<0:
         ch="moins "+ch
     return ch
-
-
