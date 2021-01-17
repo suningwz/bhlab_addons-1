@@ -125,7 +125,7 @@ def tradn(num):
     return ch
 
 
-def trad(nb, unite="Dinar Algérien", decim="centime"):
+def trad(nb, unite="Dinar Algérien et", decim="centime"):
     global t1,t2
     nb=round(nb,2)
     t1=["","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix","onze","douze","treize","quatorze","quinze","seize","dix-sept","dix-huit","dix-neuf"]
