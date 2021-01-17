@@ -1,48 +1,3 @@
-# -*- coding: utf-8 -*-
-
-from num2words import num2words
-from odoo import api, models,fields
-from odoo.exceptions import UserError 
-from odoo import exceptions
-import math
-import logging
-_logger = logging.getLogger(__name__) 
-
-class MyInvoice(models.Model):
-	_inherit = "account.invoice"
-	
-	@api.one
-	@api.depends('amount_total')
-	def _compute_amount_words(self):
-		self.num_word = trad(self.amount_total)
-				
-	num_word=fields.Char(string='Total en lettre:',compute='_compute_amount_words')
-	
-
-class MySale(models.Model):
-	_inherit = "sale.order"	
-	
-	@api.one
-	@api.depends('amount_total')
-	def _compute_amount_words(self):
-		self.num_word = trad(self.amount_total)
-				
-	num_word=fields.Char(string='Total en lettre:',compute='_compute_amount_words')
-			
-class MyPayment(models.Model):
-	_inherit = "account.payment"
-	
-	@api.one
-	@api.depends('amount')
-	def _compute_amount_words(self):
-		self.num_word = trad(self.amount_total)
-				
-	num_word=fields.Char(string='Total en lettre:',compute='_compute_amount_words')
-
-
-
-
-
 # -*- encoding: utf-8 -*-
 
 """
@@ -125,7 +80,7 @@ def tradn(num):
     return ch
 
 
-def trad(nb, unite="Dinar Algérien", decim="centime"):
+def trad(nb, unite="DirHam", decim="centime"):
     global t1,t2
     nb=round(nb,2)
     t1=["","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix","onze","douze","treize","quatorze","quinze","seize","dix-sept","dix-huit","dix-neuf"]
