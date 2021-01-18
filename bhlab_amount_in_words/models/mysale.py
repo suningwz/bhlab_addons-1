@@ -141,7 +141,7 @@ def trad(nb, unite="Dinar Algérien", decim="centime"):
         if unite!='':
             ch=ch+" "+unite+'s et'
     else:
-        ch=ch+" "+unite + 'et'
+        ch=ch+" "+unite + ' et'
     if z2>0:
         ch=ch+tradn(z2)
         if z2>1 or z2<-1:
