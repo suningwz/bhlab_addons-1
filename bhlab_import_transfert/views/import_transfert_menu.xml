@@ -11,7 +11,6 @@
 				name="Tranfert product"
 				parent="bhlab_import_transfert.tranfert_menu"
 				action = "import_transfert_wizard_action"
-				groups="bhlab_import_transfert.group_allow_transfer"
 		/>
 	</data>
 </odoo>
