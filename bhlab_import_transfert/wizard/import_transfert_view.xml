@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		
+		<!-- Import transferts Wizard View -->
+		<record id="import_transferts_form_view" model="ir.ui.view">
+			<field name="name">bhlab.import.transferts.wizard.view</field>
+			<field name="model">import.transferts</field>
+			<field name="arch" type="xml">
+			<form string="Import Transfert">
+				<group>
+					<group>
+						<field name="file_type" widget="radio"/>
+					</group>
+					<group>
+						<field name="file" placeholder="Upload Your File"/>
+					</group>
+				</group>
+				<group>
+					<group string="Transfer">
+						<field name="partner_id" string="Parten"/>
+						<field name="location_id" string="Source Location"/>
+						<field name="location_dest_id" string="Destination Location"/>
+						<field name="picking_type_id" string="Operation Type"/>
+					</group>
+				</group>
+				<footer>
+					<button name="import_transfert" string="Import" type="object" icon="fa-download" class="btn btn-primary active"/>
+					<button string="Cancel" special="cancel" icon="fa-times" class="btn btn-danger"  />
+				</footer>
+			</form>
+			</field>
+		</record>
+
+		<!-- Import transferts Wizard Action -->
+		<record id="import_transfert_wizard_action" model="ir.actions.act_window">
+            <field name="name">import.transferts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">import.transferts</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+	</data>
+</odoo>

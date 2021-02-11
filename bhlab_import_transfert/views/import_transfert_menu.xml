@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<menuitem
+				id="tranfert_menu"
+				name="Transferts"
+				parent="stock.menu_stock_root"
+		/>
+		<menuitem
+				id="tranfert_product_menu"
+				name="Tranfert product"
+				parent="bhlab_import_transfert.tranfert_menu"
+				action = "import_transfert_wizard_action"
+				groups="bhlab_import_transfert.group_allow_transfer"
+		/>
+	</data>
+</odoo>
