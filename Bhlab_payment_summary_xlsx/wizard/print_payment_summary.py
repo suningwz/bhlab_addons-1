@@ -84,7 +84,7 @@ class PrintPaymentSummary(models.TransientModel):
         row = INDEX + 3
         for wizard in self:
 
-            heading = 'Payment Summary Report (' + str(wizard.currency_id.name) + ')'
+            heading = 'Detail des paiements (' + str(wizard.currency_id.name) + ')'
             worksheet.write_merge(INDEX - 6, INDEX - 3, 1, 6, heading, easyxf('font:height 600; align: vert center; align: horiz center;pattern:' \
                           ' pattern solid, fore_color white; font: color black;' \
                           ' font:bold True;' "borders: top thin,bottom thin,left thin,right thin"))
