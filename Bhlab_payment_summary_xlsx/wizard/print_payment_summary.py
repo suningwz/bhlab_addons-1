@@ -37,7 +37,7 @@ class PrintPaymentSummary(models.TransientModel):
         column_heading_style_3 = easyxf('font:height 300; align: horiz center;pattern:'
                                         ' pattern solid, fore_color black; font: color white;'
                                         ' font:bold True;' "borders: top thin,bottom thin,left thin,right thin")
-        total_style = easyxf('font:height 200; align: vert center; align: horiz center;pattern:' \
+        total_style = easyxf('font:height 300; align: vert center; align: horiz center;pattern:' \
                           ' pattern solid, fore_color white; font: color red;' \
                           ' font:bold True;' "borders: top thin,bottom thin,left thin,right thin")
         total_style.num_format_str = '#,##0.00 [$DZD]'
