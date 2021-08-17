@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="sties_sub_menu_root"
+            name="Abonnements"
+            web_icon="sties_sub,static/description/icon.png"
+            groups="group_tender_user,group_tender_manager"
+            sequence="6"/>
+    </data>
+</odoo>

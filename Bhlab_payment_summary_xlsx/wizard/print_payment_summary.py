@@ -19,11 +19,12 @@ class PrintPaymentSummary(models.TransientModel):
     
     from_date = fields.Date(string='From Date', default=_get_from_date)
     to_date = fields.Date(string='To Date', default=fields.Date.context_today)
-    payment_summary_file = fields.Binary('Payment Summary Report')
+    payment_summary_file = fields.Binary('Details de paiements')
     file_name = fields.Char('File Name')
     payment_report_printed = fields.Boolean('Detail des paiements')
     currency_id = fields.Many2one('res.currency','Currency', default=lambda self: self.env.user.company_id.currency_id)
     partner_id = fields.Many2one('res.partner', string='Partner', required=True, help='Select Partner for movement')
+    xls_file = 'D:\\0001-Projects\\Dev_bhlab_odoo_12\\bhlab_addons\\Bhlab_payment_summary_xlsx_template\\templates\\payment_template.xlsx'
 
     @api.multi
     def action_print_payment_summary(self):
@@ -36,13 +37,17 @@ class PrintPaymentSummary(models.TransientModel):
         column_heading_style_3 = easyxf('font:height 300; align: horiz center;pattern:'
                                         ' pattern solid, fore_color black; font: color white;'
                                         ' font:bold True;' "borders: top thin,bottom thin,left thin,right thin")
-        
+        total_style = easyxf('font:height 200; align: vert center; align: horiz center;pattern:' \
+                          ' pattern solid, fore_color white; font: color red;' \
+                          ' font:bold True;' "borders: top thin,bottom thin,left thin,right thin")
+        total_style.num_format_str = '#,##0.00 [$DZD]'
+
 
         currency_style = easyxf('font:bold True; borders: top thin,bottom thin,left thin,right thin')
         currency_style.num_format_str = '#,##0.00 [$DZD]'
         border_style = easyxf('borders: top thin,bottom thin,left thin,right thin')
 
-        worksheet = workbook.add_sheet('Payment Summary')
+        worksheet = workbook.add_sheet('Details de paiements')
 
         worksheet.write(INDEX, 0, _('De'), column_heading_style)
         worksheet.write(INDEX, 2, _('A'), column_heading_style)
@@ -65,14 +70,14 @@ class PrintPaymentSummary(models.TransientModel):
         worksheet.col(2).width = 7000
         worksheet.col(3).width = 7000
         worksheet.col(4).width = 7000
-        worksheet.col(5).height = 10000
-        worksheet.col(6).height = 3000
-        worksheet.col(7).height = 10000
-        worksheet.col(8).height = 9000
+        worksheet.col(5).width = 7000
+        worksheet.col(6).width = 3000
+        worksheet.col(7).width = 7000
+        worksheet.col(8).width = 8000
 
 
         
-        company = 'SARL BHLAB'
+        company = 'SARL BH Lab'
         slogan = 'EQUIPEMENTS ET RÉACTIFS DE LABORATOIRES.'
         adress = '130, Cité Cadat Rouiba, Alger 16012, Algérie'
         worksheet.write_merge(0, 2, 0, 1, company, easyxf('font:height 400; align: vert center; align: horiz center;pattern:' \
@@ -98,6 +103,12 @@ class PrintPaymentSummary(models.TransientModel):
             invoice_objs = self.env['account.invoice'].search([('date_invoice', '>=', wizard.from_date),
                                                                ('date_invoice', '<=', wizard.to_date)])
 
+            total_amount = 0.0
+            total_amount_taxed = 0.0
+            total_amount_untaxed = 0.0
+            total_payments = 0.0
+            total_amount_du = 0.0
+            
             for invoice in invoice_objs:
                 if invoice.partner_id == wizard.partner_id:
                     worksheet.write(row, 0, invoice.number, border_style)
@@ -105,6 +116,8 @@ class PrintPaymentSummary(models.TransientModel):
                     worksheet.write(row, 4, invoice.amount_total, currency_style)
                     worksheet.write(row, 3, invoice.amount_tax, currency_style)
                     worksheet.write(row, 2, invoice.amount_untaxed, currency_style)
+
+
                     curent_row = row
                     total_payment = 0.0
                     for p in invoice.payment_move_line_ids:
@@ -117,6 +130,21 @@ class PrintPaymentSummary(models.TransientModel):
                                 row += 1
                     worksheet.write(curent_row, 5, invoice.amount_total - total_payment, currency_style)
                     row += 1
+
+                    total_amount += invoice.amount_total
+                    total_amount_taxed += invoice.amount_tax
+                    total_amount_untaxed += invoice.amount_untaxed
+                    total_payments += total_payment
+                    total_amount_du += invoice.amount_total - total_payment
+
+            worksheet.write_merge(row , row , 0, 1, 'TOTAUX', total_style)
+            worksheet.write(row , 2, total_amount, total_style)
+            worksheet.write(row , 3, total_amount_taxed, total_style)
+            worksheet.write(row , 4, total_amount_untaxed, total_style)
+            worksheet.write(row , 5, total_amount_du, total_style)
+            worksheet.write(row , 7, total_payments, total_style)
+
+
 
             footing1 = 'Tél. : +21321855200  Courriel: secretariat.bhlab@bhinvest.net  Web: http://www.bhlab-algeria.com'
             footing2 = 'SARL BH LAB capital de 700.000.000 DA – AGR N° 242/2020 & N° 111/2012'
