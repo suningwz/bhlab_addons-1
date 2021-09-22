@@ -17,24 +17,24 @@
             <field name="arch" type="xml">
                 <form string="Appels d'offres" class="o_opportunity_form">
                     <header>
-                        <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" states="draft" groups="sties_tenders.group_tender_manager" />                                
-                        <button name="action_sent" string="Sent" type="object" class="oe_highlight" states="confirmed" groups="sties_tenders.group_tender_manager"/>                                
-                        <button name="action_won" string="Retenu" type="object" class="oe_highlight" states="sent" groups="sties_tenders.group_tender_manager"/>   
-                        <button name="%(tender_partial_won_action)d" string="Partiellement Retenu" type="action"  class="oe_highlight" context="{'default_lead_id': active_id}" states="sent" groups="sties_tenders.group_tender_manager"/> 
-                        <button name="%(tender_lost_action)d" string="Non Retenu" type="action"  context="{'default_lead_id': active_id}" states="sent" groups="sties_tenders.group_tender_manager"/>     
+                        <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" states="draft" groups="sties_sub.group_tender_manager" />                                
+                        <button name="action_sent" string="Sent" type="object" class="oe_highlight" states="confirmed" groups="sties_sub.group_tender_manager"/>                                
+                        <button name="action_won" string="Retenu" type="object" class="oe_highlight" states="sent" groups="sties_sub.group_tender_manager"/>   
+                        <button name="%(tender_partial_won_action)d" string="Partiellement Retenu" type="action"  class="oe_highlight" context="{'default_lead_id': active_id}" states="sent" groups="sties_sub.group_tender_manager"/> 
+                        <button name="%(tender_lost_action)d" string="Non Retenu" type="action"  context="{'default_lead_id': active_id}" states="sent" groups="sties_sub.group_tender_manager"/>     
                         
                         <button name="%(tender_lost_action_)d" string="Motif de la perte" type="action"  context="{'default_lead_id': active_id}"  
                                 attrs="{'invisible': ['|',('lost_reason', '!=', False),('state', '!=', 'lost')]}"
-                                groups="sties_tenders.group_tender_manager"/>            
+                                groups="sties_sub.group_tender_manager"/>            
                                      
-                        <button name="action_cancel" string="Annuler" type="object"  states="draft,confirmed" groups="sties_tenders.group_tender_manager"/>  
-                        <button name="set_draft"  string="Remettre enbrouillon " type="object" states="cancel" groups="sties_tenders.group_tender_manager"/>   
+                        <button name="action_cancel" string="Annuler" type="object"  states="draft,confirmed" groups="sties_sub.group_tender_manager"/>  
+                        <button name="set_draft"  string="Remettre enbrouillon " type="object" states="cancel" groups="sties_sub.group_tender_manager"/>   
                         <button name="%(generate_contract_view_action)d" 
                             string="Génération du contrat et liste de prix" 
                             type="action"  
                             class="oe_highlight" 
                             context="{'default_lead_id': active_id}" 
-                            groups="sties_tenders.group_tender_manager"
+                            groups="sties_sub.group_tender_manager"
                             attrs="{'invisible': ['|',('contract_number', '>', 0),('state', 'not in', ['won','partial_won'])]}"
                         /> 
                         <field name="state" widget="statusbar"  attrs="{'invisible': [('active', '=', False)]}"/>

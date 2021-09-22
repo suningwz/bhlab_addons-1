@@ -25,17 +25,17 @@
                 <field name="client_order_ref" position="replace">
                 </field>
                 <field name="partner_shipping_id" position="after">
-                    <field name="lead_tender_id" groups="sties_tenders.group_tender_user"/>
-                    <field name="contract_id" groups="sties_tenders.group_tender_user"/>
+                    <field name="lead_tender_id" groups="sties_sub.group_tender_user"/>
+                    <field name="contract_id" groups="sties_sub.group_tender_user"/>
                     <field name="client_order_ref"/>
                 </field>
-                <field name="is_mad" position="attributes">
+                <!-- <field name="is_mad" position="attributes">
                     <attribute name="attrs">{'invisible': [('contract_id', '!=', False)]}</attribute>
-                </field>
+                </field> -->
                 
             </field>
         </record>
-        <record id="view_order_form_contract_mad" model="ir.ui.view">
+        <!-- <record id="view_order_form_contract_mad" model="ir.ui.view">
             <field name="name">sale.order.form.contract.mad</field>
             <field name="model">sale.order</field>
             <field name="type">form</field>
@@ -46,6 +46,6 @@
                 </field>
                 
             </field>
-        </record>
+        </record> -->
 
 </odoo>

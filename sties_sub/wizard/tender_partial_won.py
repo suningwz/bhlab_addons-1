@@ -76,7 +76,7 @@ class TendersPartialWon(models.TransientModel):
             self.lead_id=lead.id
             
         ir_model_data = self.env['ir.model.data']
-        view_id = ir_model_data.get_object_reference('sties_tenders', 'tender_partial_won_view_form')[1]        
+        view_id = ir_model_data.get_object_reference('sties_sub', 'tender_partial_won_view_form')[1]        
         
         self.tender_lines_ = lead.tender_line.ids
         return {   

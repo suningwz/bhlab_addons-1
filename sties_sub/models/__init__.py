@@ -4,4 +4,5 @@ from . import account_invoice
 from . import sale_order
 from . import sties_sub
 from . import tender_contract
-
+from . import product_template
+from . import sale_order_line

@@ -83,9 +83,9 @@ class GenerateContractWiz(models.TransientModel):
                     self.env['contract.lines'].create(line_vals)
                     self.env['product.pricelist.item'].create(pricelist_item_vals)
                     
-            for contract_line in contract.contract_lines : 
-                if contract_line.invoicing =='do_not_invoice' and contract_line.pattern_not_invoicing =='std' : 
-                    related_line = self.env['contract.lines'].search([('tender_line_id', '=', contract_line.tender_line_id.related_line_id.id)], limit =1)
-                    if related_line :
-                        contract_line.write({'related_line_id' : related_line.id})
+            # for contract_line in contract.contract_lines : 
+            #     if contract_line.invoicing =='do_not_invoice' and contract_line.pattern_not_invoicing =='std' : 
+            #         related_line = self.env['contract.lines'].search([('tender_line_id', '=', contract_line.tender_line_id.related_line_id.id)], limit =1)
+            #         if related_line :
+            #             contract_line.write({'related_line_id' : related_line.id})
         return True

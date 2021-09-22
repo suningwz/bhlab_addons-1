@@ -40,12 +40,12 @@ class SaleOrderLine(models.Model):
     
         result = super(SaleOrderLine, self).create(vals)
         
-        if result and  result.order_id.contract_id and (result.is_reactif_dedie or result.is_reactif_manuel) :
-            std = self.search([('id','!=',result.id),('related_line_id', '=', result.id)])
-            for contract_line in result.order_id.contract_id.contract_lines : 
-                    if contract_line.product_id.id == std.product_id.id :
-                        std.write({'contract_line_id' : contract_line.id})
-                        break
+        # if result and  result.order_id.contract_id and (result.is_reactif_dedie or result.is_reactif_manuel) :
+        #     std = self.search([('id','!=',result.id),('related_line_id', '=', result.id)])
+        #     for contract_line in result.order_id.contract_id.contract_lines : 
+        #             if contract_line.product_id.id == std.product_id.id :
+        #                 std.write({'contract_line_id' : contract_line.id})
+        #                 break
         return result
     
     

@@ -236,8 +236,8 @@ class TenderLines(models.Model):
                 template_obj = self.env['product.template']
                 reactif_obj = template_obj.browse(vals.get('product_id',False))
                 vals['standard_ids']= [(6,0,reactif_obj.standard_ids.ids)]
-            vals_ls.append(vals)    
-    
+            vals_ls.append(vals)
+
         lines = super().create(vals_ls)
         
         for line in lines:
@@ -426,20 +426,20 @@ class TenderLines(models.Model):
                 self.product_id = False
                 
                 
-        if self.product_id.is_reactif_dedie :
-            self.is_reactif_dedie =True
-            self.standard_ids = [(6,0,self.product_id.standard_ids.ids)]
-            self.is_reactif_manuel =False
-        else :
-            self.is_reactif_dedie =False    
+        # if self.product_id.is_reactif_dedie :
+        #     self.is_reactif_dedie =True
+        #     self.standard_ids = [(6,0,self.product_id.standard_ids.ids)]
+        #     self.is_reactif_manuel =False
+        # else :
+        #     self.is_reactif_dedie =False    
             
-        if self.product_id.is_reactif_manuel :
-            self.is_reactif_manuel =True
-            self.standard_ids = [(6,0,self.product_id.standard_ids.ids)]
-            self.is_reactif_dedie =False
+        # if self.product_id.is_reactif_manuel :
+        #     self.is_reactif_manuel =True
+        #     self.standard_ids = [(6,0,self.product_id.standard_ids.ids)]
+        #     self.is_reactif_dedie =False
             
-        else :
-            self.is_reactif_manuel =False    
+        # else :
+        #     self.is_reactif_manuel =False    
             
         return result
 

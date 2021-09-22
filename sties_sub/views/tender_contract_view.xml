@@ -258,7 +258,7 @@
                                         <field name="state" invisible="1"/>
                                         <field name="amount_total" sum="Total Tax Included" widget="monetary"/>
                                         <field name="currency_id" invisible="1"/>
-                                        <field name="amount_to_invoice" sum="A facturer" widget="monetary"/>
+                                        <!-- <field name="amount_to_invoice" sum="A facturer" widget="monetary"/> -->
                                     </tree>
                                 </field>    
                             </page>
@@ -272,8 +272,8 @@
                                         <field name="date_due"/>
                                         <field name="origin"/>
                                         <field name="state"/>
-                                        <field name="coffre_payment"  invisible="1"/>
-                                        <field name="payment_state"/>
+                                        <!-- <field name="coffre_payment"  invisible="1"/> -->
+                                        <!-- <field name="payment_state"/> -->
                                         <field name="amount_untaxed_invoice_signed" string="Tax Excluded" sum="Total"/>
                                         <field name="amount_tax_signed" string="Tax" sum="Total"/>
                                         <field name="amount_total_signed" string="Total" sum="Total"/>
@@ -284,7 +284,7 @@
                                 </field>    
                             </page>
                             <page string="Vente hors contrat" name="contract_extra_lines">
-                                <button name="action_generate_extra_lines" string="Mettre à jour" type="object" class="btn-primary"  groups="sties_tenders.group_tender_user"/>
+                                <button name="action_generate_extra_lines" string="Mettre à jour" type="object" class="btn-primary"  groups="sties_sub.group_tender_user"/>
                                 <field
                                     name="contract_extra_lines"
                                     widget="section_and_note_one2many"

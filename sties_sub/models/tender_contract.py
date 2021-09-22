@@ -75,6 +75,9 @@ class TenderContract(models.Model):
     amount_total_invoiced = fields.Monetary(string='Total facturé ', store=False, readonly=True, compute='_amount_all_contract_values')
     amount_total_follow = fields.Monetary(string='Total encours ', store=False, readonly=True, compute='_amount_all_contract_values', track_visibility='always', track_sequence=6)
     global_percentage_of_target = fields.Float(compute='_amount_all_contract_values', string='Objectif(%)', store=True, readonly=True)
+
+    amount_to_invoice = fields.Monetary(store=True, readonly=True, track_sequence=6)
+
        
     contract_type = fields.Selection([
         ('ao_sale', 'Vente'),
@@ -410,7 +413,8 @@ class ContractLines(models.Model):
                                           'tender_id': line.tender_id.id,
                                           'invoicing':'do_not_invoice',
                                           'pattern_not_invoicing':'std',
-                                          'related_line_id' :line.id} 
+                                        #   'related_line_id' :line.id
+                                        } 
                         super().create(standard_vals)
         
         return lines
@@ -611,14 +615,14 @@ class ContractLines(models.Model):
         if self.tender_id.contract_type == 'prived_mad' :
             if self.product_id.is_reactif_dedie :
                 self.is_reactif_dedie =True
-                self.standard_ids = [(6,0,self.product_id.standard_ids.ids)]
+                #self.standard_ids = [(6,0,self.product_id.standard_ids.ids)]
                 self.is_reactif_manuel =False
             else :
                 self.is_reactif_dedie =False    
                 
             if self.product_id.is_reactif_manuel :
                 self.is_reactif_manuel =True
-                self.standard_ids = [(6,0,self.product_id.standard_ids.ids)]
+                #self.standard_ids = [(6,0,self.product_id.standard_ids.ids)]
                 self.is_reactif_dedie =False
                 
             else :
