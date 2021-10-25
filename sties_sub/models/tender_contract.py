@@ -120,7 +120,7 @@ class TenderContract(models.Model):
             amount_total_invoiced =  0.0
             amount_total_to_invoice =  0.0
             for invoice in contract.invoice_ids.filtered(lambda inv: inv.state !='cancel'): 
-                amount_total_invoiced += (invoice.amount_total - invoice.tax_stamp_amount) 
+                amount_total_invoiced += invoice.amount_total
             for contract_line in contract.contract_lines:
                 for line in contract_line.order_line.filtered(lambda ln: ln.invoice_status =='to invoice'):
                     amount_total_to_invoice += line.price_reduce_taxinc * line.qty_to_invoice

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="stock_card_tree">
+        <field name="name">stock_card_report.stock_card_tree</field>
+        <field name="model">card.tree</field>
+        <field name="priority" eval="14"/>
+        <field name="arch" type="xml">
+            <tree string="Fiche produit" decoration-success="(location_dest_id &gt; 9)" decoration-danger="(location_dest_id &gt; 12)">
+                <field name="partner_id"/>
+                <field name="date"/>
+                <field name="reference"/>
+                <field name="ref"/>
+                <field name="reference"/>
+                <field name="location_id" string ="De"/>
+                <field name="location_dest_id" string ="Vers"/>
+                <field name="product_qty"/>
+                <field name="location_id" invisible="1"/>
+                <field name="location_dest_id" invisible="1"/>
+                <button name="open_stock_piking" type="object" icon="fa-arrow-up"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="search_product_card_filter">
+        <field name="name">Production Card Filter</field>
+        <field name="model">card.tree</field>
+        <field name="arch" type="xml">
+            <search string="Product card Filter">
+                <field name="ref" string="Product Ref"/>
+                <field name="partner_id" string="Partner name"/>
+                <field name="expiry_date" string="Expiry date"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_Parnter" string="Parnter" domain="[]" context="{'group_by':'partner_id'}"/>
+                    <filter name="group_by_Lots" string="Lots" domain="[]" context="{'group_by':'ref'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

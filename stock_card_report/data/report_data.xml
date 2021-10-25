@@ -1,0 +1,17 @@
+<odoo>
+    <record model="ir.actions.act_window" id="action_stock_card_tree">
+        <field name="name">Stock Card</field>
+        <field name="res_model">card.tree</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No inventory found
+            </p>
+            <p>
+                This analysis gives you a fast overview on the current stock level of your products and their current
+                inventory value.
+            </p>
+        </field>
+    </record>
+</odoo>
