@@ -9,7 +9,8 @@
                 <field name="partner_id"/>
                 <field name="date"/>
                 <field name="reference"/>
-                <field name="ref"/>
+                <field name="ref" string ="Lot"/>
+                <field name="expiry_date" widget="date"/>
                 <field name="reference"/>
                 <field name="location_id" string ="De"/>
                 <field name="location_dest_id" string ="Vers"/>
