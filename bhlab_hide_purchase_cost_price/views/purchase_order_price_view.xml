@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_price_product_form" model="ir.ui.view">
+        <field name="name">bhlab_purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_purchase_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_untaxed']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_tax']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_total']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
