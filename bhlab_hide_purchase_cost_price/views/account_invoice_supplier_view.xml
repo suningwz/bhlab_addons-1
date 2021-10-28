@@ -17,7 +17,7 @@
             <xpath expr="//field[@name='amount_tax']" position="attributes">
                 <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
             </xpath>
-            <xpath expr="//field[@name='amount_total']" position="attributes">
+            <xpath expr="//group[@class='oe_subtotal_footer oe_right']/field[@name='amount_total']" position="attributes">
                 <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
             </xpath>
             <xpath expr="//field[@name='residual']" position="attributes">
