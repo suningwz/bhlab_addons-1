@@ -34,7 +34,8 @@
         'security/show_purchase_cost_price_fields.xml',
         'views/product_price_view.xml',
         'views/account_invoice_supplier_view.xml',
-        'views/purchase_order_price_view.xml'
+        'views/purchase_order_price_view.xml',
+        'views/cost_price_view.xml'
     ],
     'images': ['static/description/banner.png'],
     'installable': True,
