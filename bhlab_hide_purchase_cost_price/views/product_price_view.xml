@@ -5,7 +5,7 @@
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_normal_form_view"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='purchase']/group[@name='vendors']/field[@name='seller_ids']" position="attributes">
+            <xpath expr="//page[@name='purchase']" position="attributes">
                 <attribute name="groups">bhlab_hide_purchase_cost_price.group_purchase_price_show</attribute>
             </xpath>
         </field>
