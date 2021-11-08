@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_price_product_form" model="ir.ui.view">
+        <field name="name">bhlab_invoice_supplier_form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_purchase_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_untaxed']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_tax']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+            <xpath expr="//group[@class='oe_subtotal_footer oe_right']/field[@name='amount_total']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='residual']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_with_taxes']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_without_taxes']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='payments_widget']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_cost_price_show</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

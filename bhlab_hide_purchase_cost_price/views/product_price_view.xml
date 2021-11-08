@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bhlab_product_price_normal_form_view" model="ir.ui.view">
+        <field name="name">bhlab_product.normal.form</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='purchase']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_purchase_price_show</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="bhlab_product_price_template_only_form_view" model="ir.ui.view">
+        <field name="name">bhlab_product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='purchase']" position="attributes">
+                <attribute name="groups">bhlab_hide_purchase_cost_price.group_purchase_price_show</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

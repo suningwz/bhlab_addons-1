@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="stock.menu_valuation" model="ir.ui.menu">
+        <field name="groups" eval="[(4, ref('bhlab_hide_purchase_cost_price.group_purchase_price_show'))]"/>
+    </record>
+</odoo>
