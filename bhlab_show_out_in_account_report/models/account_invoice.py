@@ -8,10 +8,9 @@ from odoo import models, fields, api
 class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice'
 
-    name_out = fields.Char(compute='_compute_out', store=True)
+    num_picking = fields.Char(compute = '_find_picking_number', store=True)
 
-    @api.depends('invoice_id')
-    def _compute_out(self):
-        so = self.env['sale.order'].search([('name', '=', self.origin)])
-        print(self.origin)
-        print(so)
+    @api.depends('move_id', 'move_id.stock_move_id', 'move_id.stock_move_id.picking_id')
+    def _find_picking_number(self):
+        for line in self:
+            line.num_picking = line.move_id.stock_move_id.picking_id.name if line.move_id and line.move_id.stock_move_id else False
