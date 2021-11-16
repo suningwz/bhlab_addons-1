@@ -24,6 +24,7 @@ Gestion des appels d\'offres clients
         'views/lost_reason_views.xml',
         'views/tender_contract_view.xml',
         'views/sties_tenders_view.xml',
+        'views/link_sales_order_view.xml',
         'views/private_mad_contract_view.xml'
     ],
     'auto_install': True,

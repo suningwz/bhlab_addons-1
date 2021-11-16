@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<odoo>
+        
+    <record id="link_sales_order_view_form" model="ir.ui.view">
+        <field name="name">link.sales.order.wiz.form</field>
+        <field name="model">link.sales.order.wiz</field>
+        <field name="arch" type="xml">
+            <form string="Commendes du contrat">
+                <sheet>
+                    <div>
+                        <p>
+                            Veuillez saisir les commendes du contrat :
+                        </p>
+                        <group>
+                            <notebook>
+                                <page string="Contract details" name="contract_details" editable="bottom"> 
+                                    <group>
+                                            <field name="sales_order_ids" widget="many2many_tags"/>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </group>
+                    </div>
+                    <footer>
+                        <button name="action_link_sales_order" string="Lier les commendes" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="link_sales_order_view_action" model="ir.actions.act_window">
+        <field name="name">Commendes du contrat</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">link.sales.order.wiz</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="link_sales_order_view_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>
+
+
