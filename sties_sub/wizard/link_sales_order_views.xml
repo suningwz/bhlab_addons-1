@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
-        
+
     <record id="link_sales_order_view_form" model="ir.ui.view">
         <field name="name">link.sales.order.wiz.form</field>
         <field name="model">link.sales.order.wiz</field>
@@ -9,20 +9,15 @@
                 <sheet>
                     <div>
                         <p>
-                            Veuillez saisir les commendes du contrat :
+                            Veuillez selectionner les commandes a lier au contrat :
                         </p>
-                        <group>
-                            <notebook>
-                                <page string="Contract details" name="contract_details" editable="bottom"> 
-                                    <group>
-                                            <field name="sales_order_ids" widget="many2many_tags"/>
-                                    </group>
-                                </page>
-                            </notebook>
-                        </group>
+                            <tree string="Sales Order" decoration-danger="(order_ids.contract_id &gt; 12)">
+                                <field name="order_ids"/>
+                            </tree>
                     </div>
                     <footer>
-                        <button name="action_link_sales_order" string="Lier les commendes" type="object" class="btn-primary"/>
+                        <button name="action_link_sales_order" string="Lier des commandes" type="object"
+                                class="btn-primary"/>
                         <button string="Cancel" class="btn-secondary" special="cancel"/>
                     </footer>
                 </sheet>
@@ -36,6 +31,7 @@
         <field name="res_model">link.sales.order.wiz</field>
         <field name="view_mode">form</field>
         <field name="view_id" ref="link_sales_order_view_form"/>
+        <field name="context">{'search_default_contract_id': active_id, 'default_contract_id': active_id}</field>
         <field name="target">new</field>
     </record>
 </odoo>

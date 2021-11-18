@@ -19,12 +19,12 @@ Gestion des appels d\'offres clients
         'wizard/tender_lost_views.xml',
         'wizard/tender_partial_won_views.xml',
         'wizard/generate_contract_views.xml',
+        'wizard/link_sales_order_views.xml',
         'views/sale_order_views.xml',
         'views/menu_views.xml',
         'views/lost_reason_views.xml',
         'views/tender_contract_view.xml',
         'views/sties_tenders_view.xml',
-        'views/link_sales_order_view.xml',
         'views/private_mad_contract_view.xml'
     ],
     'auto_install': True,
