@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, _
+from odoo.exceptions import UserError, AccessError
+from odoo.exceptions import UserError,Warning
+
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -22,23 +25,13 @@ class LinkSelesOrderWiz(models.TransientModel):
         _logger.warning("contract --> " + contract_id.name)
         for order_ctr in self.order_ids:
             if order_ctr.contract_id:
-                title = _("Warning for %s") % order_ctr.name
                 message = _(
-                    "The %s is already linked to contract") % order_ctr.name
-                warning = {
-                    'title': title,
-                    'message': message
-                }
-                return {'warning': warning}
+                    "The (%s) is already linked to contract named (%s) " % (order_ctr.name, order_ctr.contract_id.name))
+                raise UserError(message)
             if order_ctr.invoice_status == 'invoiced' or order_ctr.invoice_status == 'no':
-                title = _("Warning for %s") % order_ctr.name
                 message = _(
-                    "The %s is already invoiced") % order_ctr.name
-                warning = {
-                    'title': title,
-                    'message': message
-                }
-                return {'warning': warning}
+                    "The (%s) is already invoiced") % order_ctr.name
+                raise UserError(message)
 
         for order in self.order_ids:
             _logger.warning("SOs --> " + order.name)
