@@ -22,6 +22,8 @@ class LinkSelesOrderWiz(models.TransientModel):
         _logger.warning("id --> " + str(self.env.context.get('active_ids')))
         contract_id = self.env['tender.contract']\
             .search([('id', 'in', self.env.context.get('active_ids'))])
+        contract_line_id = self.env['tender.line'] \
+            .search([('id', 'in', self.env.context.get('active_ids'))])
         _logger.warning("contract --> " + contract_id.name)
         for order_ctr in self.order_ids:
             if order_ctr.contract_id:
@@ -36,8 +38,8 @@ class LinkSelesOrderWiz(models.TransientModel):
         for order in self.order_ids:
             _logger.warning("SOs --> " + order.name)
             order.write({'contract_id': contract_id.id})
-            for line in order.contract_id.contract_lines:
-                for product in order.order_line:
-                    if line.id == product.id:
-                        order.write({'contract_line_id': line.id})
+            for line in contract_id.contract_lines:
+                for order_line in order.order_line:
+                    if line.product_id.id == order_line.product_id.id:
+                        order.write({'contract_line_id': order_line.product_id.id})
         return

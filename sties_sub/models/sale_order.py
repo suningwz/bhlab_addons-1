@@ -38,6 +38,7 @@ class SaleOrderLine(models.Model):
                     if line.product_id.id == vals.get('product_id', False):
                         vals['contract_line_id'] = line.id
                         break
+
         result = super(SaleOrderLine, self).create(vals)
 
         # if result and  result.order_id.contract_id and (result.is_reactif_dedie or result.is_reactif_manuel) :
