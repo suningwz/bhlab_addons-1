@@ -273,6 +273,7 @@
                                         string="Lier des commandes au contrat"
                                         type="action"
                                         class="oe_highlight"
+                                        attrs="{'invisible': [('state', '!=', 'running')]}"
                                         context="{'contract_number': name, 'search_default_partner_id': partner_id,
                                         'default_partner_id': partner_id}"
                                         groups="sties_sub.group_tender_manager"
