@@ -29,11 +29,15 @@ class LinkSelesOrderWiz(models.TransientModel):
                 message = _(
                     "The (%s) is already linked to contract named (%s) " % (order_ctr.name, order_ctr.contract_id.name))
                 raise UserError(message)
+            msg = ""
             for line in order_ctr.order_line:
                 if line.qty_invoiced > 0:
-                    message = _(
-                        "The (%s) has item (%s) invoiced") % (order_ctr.name, line.name)
-                    raise UserError(message)
+                    msg += "- " + line.name + "\n"
+
+            if msg != "":
+                message = _(
+                    "The (%s) has items invoiced:\n%s " % (order_ctr.name, msg))
+                raise UserError(message)
 
         for order in self.order_ids:
             order.write({'contract_id': contract_id.id})
