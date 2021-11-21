@@ -22,6 +22,7 @@ class GenerateContractWiz(models.TransientModel):
             pricelist_vals = {'name':str(self.name) + " " + str(lead.partner_id.name), 'partner_id' : lead.partner_id.id}
             pricelist = self.env['product.pricelist'].create(pricelist_vals)
             lead.write({'pricelist_id':pricelist.id})
+            lead.partner_id.write({'property_product_pricelist':pricelist})
             vals = {'name':self.name,
                     'partner_id' : lead.partner_id.id,
                     'begin_date':self.begin_date,
