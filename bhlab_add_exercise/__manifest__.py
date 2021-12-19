@@ -31,7 +31,6 @@
     ],
     'data': [
         'views/sales_order_view.xml',
-        'views/picking_line_views.xml',
     ],
     'demo': [
     ],
