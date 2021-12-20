@@ -18,7 +18,7 @@
 #
 ##############################################################################
 {
-    'name': 'bhlab add exercise and delivery men in SOs and OUTs',
+    'name': 'bhlab add exercise and in SOs',
     'version': '12.0.1.0.0',
     'category': 'Sales',
     'sequence': 14,
