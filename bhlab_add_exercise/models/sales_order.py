@@ -8,5 +8,5 @@ from odoo import models, fields, api
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    exercise = fields.Selection([(2020, '2020'),
-                                (2021, '2021')], required=True)
+    exercise = fields.Selection([(2020, '2021'),
+                                (2021, '2022')], required=True)
