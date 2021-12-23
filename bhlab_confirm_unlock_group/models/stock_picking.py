@@ -22,7 +22,7 @@ class StockPicking(models.Model):
     def action_cancel(self):
         if self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_picking') \
                 and (self.picking_type_id.name == "Réceptions" or self.picking_type_id.name == "Pick"):
-            return super().button_validate()
+            return super().action_cancel()
         else :
             if (self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_out')
                 and (self.picking_type_id.name == "Transferts internes" or self.picking_type_id.name == "Livraisons"))\
