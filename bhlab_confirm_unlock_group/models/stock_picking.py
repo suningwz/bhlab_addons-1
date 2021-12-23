@@ -28,7 +28,7 @@ class StockPicking(models.Model):
                 and (self.picking_type_id.name == "Transferts internes" or self.picking_type_id.name == "Livraisons"))\
                 or (self.env.user.has_group('bhlab_confirm_unlock_group.group_allow_confirm_out')
                         and (self.picking_type_id.name == "Pick" and self.location_dest_id.name =="Stock")):
-                return super().button_validate()
+                return super().action_cancel()
         raise UserError(
             _("you are not authorized to perform this action"))
 
