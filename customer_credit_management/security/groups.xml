@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="group_allow_confirm_SO_over_limits" model="res.groups">
+	        <field name="name">Allow Confirm SO over credits limit</field>
+	        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+	        <field name="comment">Users in this group can Confirm SO Over credits limit.</field>
+	    </record>
+	</data>
+</odoo>
