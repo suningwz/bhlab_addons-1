@@ -37,20 +37,30 @@ class SaleOrder(models.Model):
                 total_sales = 0
                 sale_amt = 0
                 inv_total_amt = 0
+                inv_total_amt_draft = 0
                 inv_rec = self.env['account.invoice'].search([
                     ('partner_id', '=', partner.id),
                     ('state', 'not in', ['draft', 'cancel'])])
+                inv_rec_draft = self.env['account.invoice'].search([
+                    ('partner_id', '=', partner.id),
+                    ('state', 'not in', ['cancel'])])
                 sale_amount = self.search(
                     [('partner_id', '=', partner.id),
+                     ('invoice_status', '=', 'to invoice'),
                      ]).mapped('amount_total')
+                sale_amount_current = self.search(
+                    [('partner_id', '=', partner.id),
+                     ('name', '=', self.name),
+                     ]).mapped('amount_total')
+
                 sale_amt = sum([sale for sale in sale_amount])
+                sale_amt_current = sum([sale for sale in sale_amount_current])
                 for inv in inv_rec:
                     inv_total_amt += inv.amount_total - inv.residual
-                if partner.parent_id and partner.parent_id.credit < 0:
-                    credit = partner.parent_id.credit
-                elif partner.credit < 0:
-                    credit = partner.credit
-                total_sales = sale_amt + credit - inv_total_amt
+                for inv in inv_rec_draft:
+                    inv_total_amt_draft += inv.amount_total
+
+                total_sales = inv_total_amt_draft - inv_total_amt + sale_amt + sale_amt_current
                 if total_sales > partner.credit_limit:
                     view_id = self.env.ref(
                         'customer_credit_management.credit_management_limit_wizard').id
