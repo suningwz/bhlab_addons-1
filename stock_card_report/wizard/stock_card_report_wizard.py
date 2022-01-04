@@ -38,7 +38,7 @@ class StockCardReportWizard(models.TransientModel):
         date_to = self.date_to or fields.Date.context_today(self)
 
         self._cr.execute("""
-                SELECT move.date, move.product_id, move.product_qty,
+                SELECT move.date, move.product_id, stock_move_line.qty_done,
                     move.product_uom_qty, move.product_uom, move.reference,
                     move.location_id,move.location_dest_id,move.name,
                     move.partner_id,stock_move_line.ref,stock_move_line.expiry_date
@@ -59,7 +59,7 @@ class StockCardReportWizard(models.TransientModel):
             result = {
                 'partner_id': line.get("partner_id"),
                 'date': line.get("date"),
-                'product_qty': line.get("product_qty"),
+                'product_qty': line.get("qty_done"),
                 'location_id':line.get("location_id"),
                 'location_dest_id': line.get("location_dest_id"),
                 'reference': line.get("reference"),
